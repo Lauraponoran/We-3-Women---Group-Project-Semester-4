@@ -69,8 +69,8 @@ from tqdm import tqdm
 
 OUTPUT_DIR                  = "news_output"
 PROGRESS_FILE               = os.path.join(OUTPUT_DIR, "progress.json")
-MAX_PER_PUBLISHER           = 200   # target sample per publisher per protest event
-CONTROL_PER_PUBLISHER       = 100   # reduced target for control weeks
+MAX_PER_PUBLISHER           = 50   # target sample per publisher per protest event
+CONTROL_PER_PUBLISHER       = 50   # reduced target for control weeks
 DEFAULT_PROCESSES           = 2
 
 OUTPUT_COLUMNS = [
