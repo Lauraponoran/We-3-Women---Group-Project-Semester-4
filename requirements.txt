@@ -1,0 +1,18 @@
+# Core data
+pandas==2.2.2
+tqdm==4.66.4
+
+# Crawling (CC-News)
+fundus==0.5.5
+requests==2.32.3
+lxml==5.2.1
+
+# Topic modeling
+bertopic==0.16.0
+sentence-transformers==2.6.1
+scikit-learn==1.4.2
+umap-learn==0.5.5
+hdbscan==0.8.33
+
+# LLM (local)
+ollama==0.3.0
