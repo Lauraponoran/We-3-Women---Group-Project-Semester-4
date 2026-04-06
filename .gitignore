@@ -2,7 +2,10 @@
 venv-agent
 bin/
 venv-agent/
+news_output/
 
 # files
 .DS_Store
 .env
+*output
+output*
