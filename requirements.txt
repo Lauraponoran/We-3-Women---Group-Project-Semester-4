@@ -9,7 +9,7 @@ requests==2.32.3
 lxml==5.2.1
 
 # Topic modeling
-bertopic==0.16.0
+# bertopic==0.16.0
 sentence-transformers==2.6.1
 scikit-learn==1.4.2
 umap-learn==0.5.5
