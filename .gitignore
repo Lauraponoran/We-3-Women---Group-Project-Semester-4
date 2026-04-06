@@ -1,0 +1,8 @@
+# folders
+venv-agent
+bin/
+venv-agent/
+
+# files
+.DS_Store
+.env
