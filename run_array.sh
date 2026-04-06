@@ -7,11 +7,14 @@
 # Check job:
 # squeue -u scur0741
 #
-# Check logs:
-# tail -f /home/scur0741/kun/logs/<jobid>_<taskid>.out
-#
 # Cancel job:
 # scancel <jobid>
+# 
+# Check logs example:
+# tail -f /home/scur0741/kun/logs/<jobid>_<taskid>.out
+# 
+# Copy result example:
+# scp -r scur0741@snellius.surf.nl:/home/scur0741/kun/We-3-Women---Group-Project-Semester-4/news_output .
 # ============================
 
 #SBATCH --job-name=IWD_2018_Global
