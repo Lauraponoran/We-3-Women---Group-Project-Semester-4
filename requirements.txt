@@ -2,6 +2,10 @@
 pandas==2.2.2
 tqdm==4.66.4
 
+# Parquet support
+pyarrow==15.0.2
+fastparquet==2024.2.0
+
 # Crawling (CC-News)
 fastwarc==0.14.8
 fundus==0.5.5
