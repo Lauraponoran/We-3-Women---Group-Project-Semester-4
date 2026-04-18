@@ -9,3 +9,7 @@ news_output/
 .env
 *output
 output*
+
+# exceptions
+!analysis_output/
+!analysis_output/**

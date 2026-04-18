@@ -1,0 +1,306 @@
+publisher,topic_label,mean_sentiment,median_sentiment,std_sentiment,n_articles
+Frankfurter Allgemeine Zeitung,36_men_mujeres_paz_women,-0.9955,-0.9955,,1
+Deutsche Welle,40_georgia_russia_belarus_political,-0.9948,-0.9948,,1
+Die Tageszeitung (taz),26_grünen_er_merz_spd,-0.9928333333333333,-0.9936499999999999,0.0041365041601171436,6
+Die Tageszeitung (taz),47_maßnahmen_allemagne_parteitag_scottish,-0.9922666666666666,-0.9911,0.0037872593432894965,3
+Deutsche Welle,45_amb_més_cementerios_tots,-0.9917,-0.9917,,1
+The BBC,14_pakistan_macron_khan_islam,-0.991,-0.991,,1
+Deutsche Welle,46_europa_morales_proteste_muerte,-0.9902,-0.9902,,1
+Spiegel Online,2_students_university_school_student,-0.9901,-0.9901,,1
+Euronews (EN),9_mr_shulkin_kudlow_trump,-0.9893,-0.9893,,1
+Spiegel Online,18_jet_ber_flight_flughafen,-0.9892,-0.9892,,1
+Frankfurter Allgemeine Zeitung,24_css_inlinelink_css yidnqd_yidnqd inlinelink,-0.9892,-0.9892,,1
+Die Tageszeitung (taz),37_tier_spiegel_gerät_restrictions,-0.9892,-0.9892,,1
+Deutsche Welle,36_men_mujeres_paz_women,-0.9878,-0.9878,,1
+Spiegel Online,8_nizza_nice_frankreich_notre,-0.9878,-0.9878,0.001979898987322272,2
+Die Tageszeitung (taz),45_amb_més_cementerios_tots,-0.987,-0.987,,1
+Spiegel Online,40_georgia_russia_belarus_political,-0.9864,-0.9864,,1
+Frankfurter Allgemeine Zeitung,11_product_product marketing_marketing_quarter,-0.9863500000000001,-0.9863500000000001,0.006858935777509422,2
+Frankfurter Allgemeine Zeitung,29_patienten_dass_prozent_intensivstationen,-0.9861,-0.9861,0.004384062043356583,2
+Deutsche Welle,-1_er_dass_000_year,-0.985704,-0.9902,0.011621835770078106,25
+Deutsche Welle,10_je_kultur_art_ich,-0.9853428571428571,-0.9892,0.011374805074206358,7
+Spiegel Online,-1_er_dass_000_year,-0.985295,-0.98765,0.007409345095002823,20
+Deutsche Welle,42_says_kandidaten_électorat_etats,-0.98455,-0.98455,0.006576093065034913,2
+Die Tageszeitung (taz),8_nizza_nice_frankreich_notre,-0.98438,-0.9823,0.003949936708353656,5
+Die Zeit,35_ich_ruth_frauen_familia,-0.9842,-0.9842,,1
+Spiegel Online,23_vs_bundesliga_gegen_stuttgart,-0.9839,-0.9839,0.011030865786510182,2
+Die Zeit,7_plants_garden_binoculars_flowers,-0.9838333333333334,-0.9914,0.014246520042920412,3
+The Telegraph,8_nizza_nice_frankreich_notre,-0.9829,-0.9829,,1
+Die Zeit,-1_er_dass_000_year,-0.98285,-0.98285,0.01506137443927353,2
+Deutsche Welle,34_asylum_crossings_usa_asylum seekers,-0.98275,-0.98275,0.009404520189781107,2
+Deutsche Welle,23_vs_bundesliga_gegen_stuttgart,-0.9823333333333334,-0.9844,0.011638442049232105,3
+Deutsche Welle,20_land_africa_south_opposition,-0.9823,-0.9823,,1
+Spiegel Online,26_grünen_er_merz_spd,-0.9823,-0.9823,,1
+Die Tageszeitung (taz),24_css_inlinelink_css yidnqd_yidnqd inlinelink,-0.9823,-0.9823,,1
+Frankfurter Allgemeine Zeitung,6_prozent_pour_ne_sont,-0.98155,-0.98155,0.0072831998462214225,2
+Die Tageszeitung (taz),29_patienten_dass_prozent_intensivstationen,-0.9812,-0.9812,,1
+The Sun,4_murder_county_year old_death,-0.9808399999999999,-0.9813,0.012939203994063918,5
+Euronews (EN),33_samos_izmir_turquie_tsunami,-0.9806,-0.9806,,1
+Frankfurter Allgemeine Zeitung,18_jet_ber_flight_flughafen,-0.9804666666666666,-0.9761,0.007563288526384097,3
+Frankfurter Allgemeine Zeitung,-1_er_dass_000_year,-0.9798899999999999,-0.9864,0.020045393223224243,20
+Frankfurter Allgemeine Zeitung,3_lawsuit_sentencia_er_mossos,-0.9796,-0.9796,,1
+Deutsche Welle,29_patienten_dass_prozent_intensivstationen,-0.9794,-0.9794,,1
+Die Tageszeitung (taz),13_corbyn_labour_party_anti,-0.9786999999999999,-0.9786999999999999,0.014849242404917551,2
+Spiegel Online,35_ich_ruth_frauen_familia,-0.9783,-0.9783,,1
+Die Zeit,19_album_ich_lucky_woodward,-0.9781,-0.9781,,1
+Spiegel Online,19_album_ich_lucky_woodward,-0.97785,-0.97785,0.00841457069611993,2
+The Telegraph,32_cannabis_art_terry_talbot,-0.9774,-0.9774,,1
+i,0_league_arsenal_premier league_game,-0.9771,-0.9771,,1
+Die Tageszeitung (taz),20_land_africa_south_opposition,-0.9771,-0.9771,,1
+Spiegel Online,20_land_africa_south_opposition,-0.977,-0.9823,0.012894572501638026,3
+Frankfurter Allgemeine Zeitung,8_nizza_nice_frankreich_notre,-0.977,-0.977,,1
+Die Tageszeitung (taz),14_pakistan_macron_khan_islam,-0.9769749999999999,-0.9782,0.013855774969304402,4
+Frankfurter Allgemeine Zeitung,10_je_kultur_art_ich,-0.9769,-0.9769,,1
+Frankfurter Allgemeine Zeitung,21_confinement_lockdown_pour_france,-0.97665,-0.97665,0.0184554869889689,2
+Frankfurter Allgemeine Zeitung,16_voters_trump_democrats_vote,-0.97655,-0.97655,0.008980256121069147,2
+Frankfurter Allgemeine Zeitung,39_electric_range_charging_cars,-0.9764,-0.9764,,1
+Deutsche Welle,44_pubs_pub_león_castilla león,-0.9761,-0.9761,,1
+Spiegel Online,41_oregon_lópez_criminal_drug,-0.9761,-0.9761,,1
+Deutsche Welle,8_nizza_nice_frankreich_notre,-0.9759333333333333,-0.9761,0.016850618188462237,3
+Die Tageszeitung (taz),3_lawsuit_sentencia_er_mossos,-0.9759,-0.9759,0.0012727922061358025,2
+Deutsche Welle,6_prozent_pour_ne_sont,-0.9737666666666667,-0.9864,0.02188157520228685,3
+Frankfurter Allgemeine Zeitung,33_samos_izmir_turquie_tsunami,-0.9731666666666667,-0.9661,0.01713047965858913,3
+The Washington Times,24_css_inlinelink_css yidnqd_yidnqd inlinelink,-0.9724,-0.9724,,1
+Daily Mail,13_corbyn_labour_party_anti,-0.972,-0.972,,1
+Frankfurter Allgemeine Zeitung,46_europa_morales_proteste_muerte,-0.9716,-0.9716,,1
+Frankfurter Allgemeine Zeitung,13_corbyn_labour_party_anti,-0.9709,-0.9709,,1
+Daily Mail,24_css_inlinelink_css yidnqd_yidnqd inlinelink,-0.9702,-0.9702,,1
+Die Tageszeitung (taz),6_prozent_pour_ne_sont,-0.96985,-0.96985,0.03019345955666555,2
+Frankfurter Allgemeine Zeitung,23_vs_bundesliga_gegen_stuttgart,-0.968925,-0.96675,0.004822430231048798,4
+Daily Mail,41_oregon_lópez_criminal_drug,-0.9686,-0.9686,,1
+The Telegraph,24_css_inlinelink_css yidnqd_yidnqd inlinelink,-0.9665,-0.9665,,1
+Die Zeit,36_men_mujeres_paz_women,-0.9661,-0.9661,,1
+Spiegel Online,11_product_product marketing_marketing_quarter,-0.9661,-0.9661,,1
+Euronews (EN),3_lawsuit_sentencia_er_mossos,-0.96555,-0.96555,0.015627059864222706,2
+The Washington Times,40_georgia_russia_belarus_political,-0.9578,-0.9578,,1
+Die Tageszeitung (taz),-1_er_dass_000_year,-0.9572849999999999,-0.9768,0.06906976850296105,20
+Spiegel Online,22_facebook_twitter_zuckerberg_post,-0.9524,-0.9524,,1
+Frankfurter Allgemeine Zeitung,22_facebook_twitter_zuckerberg_post,-0.9506,-0.9506,,1
+Die Tageszeitung (taz),18_jet_ber_flight_flughafen,-0.9485,-0.9485,,1
+Spiegel Online,25_cup_england_united_world cup,-0.9474666666666667,-0.9561,0.05268323579027134,3
+Spiegel Online,3_lawsuit_sentencia_er_mossos,-0.9413,-0.9413,,1
+i,7_plants_garden_binoculars_flowers,-0.9377,-0.9377,,1
+The Telegraph,37_tier_spiegel_gerät_restrictions,-0.9366,-0.9366,,1
+Fox News,12_gun_school_students_shooting,-0.93525,-0.9758,0.08000660687004005,8
+Spiegel Online,37_tier_spiegel_gerät_restrictions,-0.93225,-0.93225,0.06540737725975566,2
+The Washington Times,12_gun_school_students_shooting,-0.9286727272727273,-0.9493,0.06723265710812106,11
+The Washington Times,3_lawsuit_sentencia_er_mossos,-0.9284142857142857,-0.9836,0.07676610425119121,7
+Fox News,4_murder_county_year old_death,-0.92735,-0.94895,0.07954095381206672,4
+Fox News,41_oregon_lópez_criminal_drug,-0.9253,-0.9253,,1
+The Telegraph,13_corbyn_labour_party_anti,-0.9225,-0.9442,0.07388010557653531,3
+The BBC,3_lawsuit_sentencia_er_mossos,-0.9217,-0.9217,,1
+es,36_men_mujeres_paz_women,-0.9153,-0.9153,,1
+Spiegel Online,42_says_kandidaten_électorat_etats,-0.9136,-0.9136,,1
+The Telegraph,11_product_product marketing_marketing_quarter,-0.9136,-0.9136,,1
+Daily Mail,3_lawsuit_sentencia_er_mossos,-0.91195,-0.91195,0.1182989644925094,2
+i,37_tier_spiegel_gerät_restrictions,-0.9075,-0.9075,,1
+The BBC,4_murder_county_year old_death,-0.9065125,-0.97045,0.15632770010918914,8
+Le Monde,3_lawsuit_sentencia_er_mossos,-0.9062,-0.9062,,1
+Euronews (EN),36_men_mujeres_paz_women,-0.90185,-0.90185,0.1191474926299333,2
+Euronews (EN),29_patienten_dass_prozent_intensivstationen,-0.8847,-0.8847,,1
+Euronews (FR),29_patienten_dass_prozent_intensivstationen,-0.8689,-0.8689,,1
+The Sun,27_show_nathan_sister_series,-0.8599,-0.8599,0.14566399692442875,2
+Daily Mail,18_jet_ber_flight_flughafen,-0.83805,-0.83805,0.07488260812765542,2
+Deutsche Welle,17_cases_vitamin_covid_covid 19,-0.8363,-0.8363,,1
+Euronews (EN),5_halloween_pumpkin_trick_moon,-0.8074,-0.8074,,1
+CNBC,9_mr_shulkin_kudlow_trump,-0.8017,-0.8017,,1
+The Washington Times,4_murder_county_year old_death,-0.7912076923076923,-0.9748,0.43895847461451,13
+The Washington Times,20_land_africa_south_opposition,-0.7652,-0.7652,,1
+The Washington Times,7_plants_garden_binoculars_flowers,-0.7579,-0.7579,,1
+The BBC,35_ich_ruth_frauen_familia,-0.7506,-0.7506,,1
+The BBC,1_biden_trump_president_joe,-0.714,-0.714,,1
+Daily Mail,34_asylum_crossings_usa_asylum seekers,-0.7096,-0.7096,,1
+The Washington Times,34_asylum_crossings_usa_asylum seekers,-0.7096,-0.7096,,1
+Fox News,3_lawsuit_sentencia_er_mossos,-0.7035571428571429,-0.872,0.26929441049492564,7
+Fox News,14_pakistan_macron_khan_islam,-0.6643,-0.6643,,1
+Fox News,35_ich_ruth_frauen_familia,-0.6456999999999999,-0.6456999999999999,0.4699431667765795,2
+The Telegraph,22_facebook_twitter_zuckerberg_post,-0.6428,-0.6428,,1
+The Washington Times,22_facebook_twitter_zuckerberg_post,-0.63225,-0.63225,0.20697015485330242,2
+Le Monde,46_europa_morales_proteste_muerte,-0.6249,-0.6249,,1
+Euronews (FR),44_pubs_pub_león_castilla león,-0.6249,-0.6249,,1
+Daily Mail,11_product_product marketing_marketing_quarter,-0.6052,-0.9601,0.7704337220033921,5
+i,44_pubs_pub_león_castilla león,-0.598,-0.598,,1
+The BBC,24_css_inlinelink_css yidnqd_yidnqd inlinelink,-0.5954714285714287,-0.9528,0.6584830286709135,7
+The BBC,32_cannabis_art_terry_talbot,-0.59235,-0.59235,0.5516140000036257,2
+es,46_europa_morales_proteste_muerte,-0.5574,-0.5574,,1
+Euronews (EN),21_confinement_lockdown_pour_france,-0.5301333333333333,-0.5204,0.07785764787953292,3
+Daily Mail,22_facebook_twitter_zuckerberg_post,-0.5267,-0.5267,,1
+Le Monde,32_cannabis_art_terry_talbot,-0.52125,-0.52125,0.45106341571889863,2
+Daily Mail,32_cannabis_art_terry_talbot,-0.5187,-0.5187,,1
+Frankfurter Allgemeine Zeitung,5_halloween_pumpkin_trick_moon,-0.5141,-0.5141,,1
+es,16_voters_trump_democrats_vote,-0.4767,-0.4767,,1
+Business Insider,22_facebook_twitter_zuckerberg_post,-0.4678,-0.4678,,1
+Spiegel Online,1_biden_trump_president_joe,-0.46495,-0.46495,0.7452198366925025,2
+es,41_oregon_lópez_criminal_drug,-0.4588,-0.4588,,1
+Spiegel Online,29_patienten_dass_prozent_intensivstationen,-0.45459999999999995,-0.9235,0.8359999820574161,3
+The Washington Times,41_oregon_lópez_criminal_drug,-0.44445,-0.44445,0.773786950652439,2
+Euronews (EN),17_cases_vitamin_covid_covid 19,-0.43900000000000006,-0.7227,0.6210180271135453,3
+The BBC,25_cup_england_united_world cup,-0.4215,-0.4215,,1
+The Telegraph,3_lawsuit_sentencia_er_mossos,-0.4116,-0.4116,,1
+Euronews (FR),5_halloween_pumpkin_trick_moon,-0.3987,-0.3987,,1
+Daily Mail,17_cases_vitamin_covid_covid 19,-0.3906,-0.3906,,1
+Le Monde,36_men_mujeres_paz_women,-0.3612,-0.3612,,1
+Le Monde,20_land_africa_south_opposition,-0.3612,-0.3612,,1
+es,14_pakistan_macron_khan_islam,-0.34,-0.34,,1
+Euronews (EN),8_nizza_nice_frankreich_notre,-0.3393333333333333,-0.9861,1.1234385445289534,3
+Fox News,2_students_university_school_student,-0.32855,-0.32855,0.014637110370561512,2
+Le Monde,14_pakistan_macron_khan_islam,-0.3182,-0.3182,,1
+CNBC,22_facebook_twitter_zuckerberg_post,-0.3109,-0.6359,0.8229286967897036,3
+es,44_pubs_pub_león_castilla león,-0.296,-0.296,,1
+Euronews (FR),13_corbyn_labour_party_anti,-0.296,-0.296,,1
+es,6_prozent_pour_ne_sont,-0.28245,-0.53715,0.7163972943369714,4
+Fox News,37_tier_spiegel_gerät_restrictions,-0.2509,-0.2509,,1
+es,5_halloween_pumpkin_trick_moon,-0.24695,-0.24695,0.3492400392280358,2
+Euronews (FR),16_voters_trump_democrats_vote,-0.2244,-0.2244,,1
+Fox News,-1_er_dass_000_year,-0.2166375,-0.54035,0.7357447110504497,32
+Le Monde,6_prozent_pour_ne_sont,-0.21024999999999996,-0.21835,0.4394732426439635,6
+Euronews (FR),33_samos_izmir_turquie_tsunami,-0.20095,-0.20095,0.28418621535887345,2
+The Telegraph,29_patienten_dass_prozent_intensivstationen,-0.1913,-0.1913,,1
+The Sun,1_biden_trump_president_joe,-0.19056666666666666,-0.5705,1.045903362330064,3
+Euronews (FR),21_confinement_lockdown_pour_france,-0.17727999999999997,-0.0679,0.34670032737221346,5
+The BBC,17_cases_vitamin_covid_covid 19,-0.17379999999999998,-0.17379999999999998,0.1728168973219922,2
+CNBC,2_students_university_school_student,-0.16519999999999999,-0.16519999999999999,0.9161275457052909,2
+The Washington Times,9_mr_shulkin_kudlow_trump,-0.16454615384615384,-0.6486,0.7654125245201489,13
+The Sun,21_confinement_lockdown_pour_france,-0.1531,-0.1531,,1
+Le Monde,7_plants_garden_binoculars_flowers,-0.15293333333333334,-0.4588,0.5752201085961212,3
+Daily Mail,1_biden_trump_president_joe,-0.14914999999999998,-0.14914999999999998,0.6176577733664492,2
+Euronews (FR),14_pakistan_macron_khan_islam,-0.14279999999999998,-0.17039999999999997,0.6279637356833063,4
+Le Monde,10_je_kultur_art_ich,-0.13845,0.0,0.2769,4
+es,-1_er_dass_000_year,-0.137375,-0.07875,0.4755775891832303,16
+Le Monde,-1_er_dass_000_year,-0.12490588235294119,-0.2003,0.5667182384909059,17
+es,34_asylum_crossings_usa_asylum seekers,-0.12020000000000002,-0.11530000000000004,0.6373485022602103,4
+The BBC,44_pubs_pub_león_castilla león,-0.1154,-0.1154,,1
+The Washington Times,-1_er_dass_000_year,-0.106828,-0.2152,0.7857258403964239,25
+Fox News,9_mr_shulkin_kudlow_trump,-0.10275999999999999,-0.1779,0.7204498129640954,5
+Euronews (FR),6_prozent_pour_ne_sont,-0.08587499999999999,-0.24225,0.5769121503025108,4
+The BBC,13_corbyn_labour_party_anti,-0.07194999999999996,-0.07194999999999996,1.0921264235426227,2
+The Telegraph,31_credit_gen_retirement_muscle,-0.06400000000000003,-0.14685000000000004,0.9697927304326426,4
+The Telegraph,2_students_university_school_student,-0.021356521739130434,-0.2813,0.8112629474109472,23
+Fox News,5_halloween_pumpkin_trick_moon,-0.019833333333333317,-0.0188,0.9584504177751363,3
+Le Monde,33_samos_izmir_turquie_tsunami,0.0,0.0,0.0,2
+Le Monde,47_maßnahmen_allemagne_parteitag_scottish,0.0,0.0,,1
+Euronews (EN),14_pakistan_macron_khan_islam,0.002799999999999969,0.002799999999999969,1.378999644670005,2
+The Telegraph,25_cup_england_united_world cup,0.002950000000000008,0.003049999999999997,1.1342047037461978,4
+Daily Mail,30_myers_franklin_team_nfl,0.008833333333333332,-0.17515,0.824257585143544,6
+Business Insider,5_halloween_pumpkin_trick_moon,0.0126,0.0126,1.2896213475280254,2
+The BBC,-1_er_dass_000_year,0.022683333333333333,0.09325,0.5713902182139524,18
+i,13_corbyn_labour_party_anti,0.022700000000000015,0.020600000000000007,0.9944504150534607,6
+Fox News,1_biden_trump_president_joe,0.023393333333333332,0.4019,0.9099867051357451,15
+Fox News,15_lamb_republican_mr_race,0.02501666666666667,0.08560000000000001,0.832183012123335,6
+es,20_land_africa_south_opposition,0.0258,0.0258,0.0,2
+Euronews (EN),32_cannabis_art_terry_talbot,0.026099999999999957,0.026099999999999957,1.3621705032777651,2
+The BBC,20_land_africa_south_opposition,0.0557,0.0557,,1
+The Sun,16_voters_trump_democrats_vote,0.06165000000000004,0.06165000000000004,1.3110466829979777,2
+Euronews (FR),1_biden_trump_president_joe,0.06743333333333333,0.0,0.1167979594570613,3
+The Washington Times,17_cases_vitamin_covid_covid 19,0.0796,0.0796,,1
+Business Insider,39_electric_range_charging_cars,0.08410000000000001,0.08410000000000001,1.2196177761905571,2
+The Telegraph,-1_er_dass_000_year,0.08851111111111111,0.1752,0.8290191518309841,27
+Euronews (FR),-1_er_dass_000_year,0.09816315789473684,0.0,0.3684057217110962,19
+es,1_biden_trump_president_joe,0.1027,0.1027,,1
+Fox News,26_grünen_er_merz_spd,0.1027,0.1027,,1
+The Sun,13_corbyn_labour_party_anti,0.11209999999999998,0.11209999999999998,1.2047685337856398,2
+Fox News,22_facebook_twitter_zuckerberg_post,0.11820000000000003,0.11820000000000003,1.1026623145823022,2
+es,11_product_product marketing_marketing_quarter,0.128,0.128,,1
+The Telegraph,20_land_africa_south_opposition,0.1343,0.1343,,1
+Business Insider,42_says_kandidaten_électorat_etats,0.1531,0.1531,,1
+The Sun,30_myers_franklin_team_nfl,0.1638,0.1638,,1
+The Washington Times,16_voters_trump_democrats_vote,0.21043333333333333,0.6705,0.9422797956728848,3
+Le Monde,21_confinement_lockdown_pour_france,0.2263,0.2263,,1
+Fox News,8_nizza_nice_frankreich_notre,0.2263,0.2263,,1
+es,35_ich_ruth_frauen_familia,0.2263,0.2263,,1
+Daily Mail,-1_er_dass_000_year,0.22952777777777778,0.7887,0.8534060028225691,18
+Business Insider,11_product_product marketing_marketing_quarter,0.25,0.25,,1
+Le Monde,42_says_kandidaten_électorat_etats,0.2732,0.2732,,1
+Le Monde,40_georgia_russia_belarus_political,0.2732,0.2732,,1
+Fox News,18_jet_ber_flight_flughafen,0.28573333333333334,0.8765,1.046969361219961,3
+CNBC,43_market cap_ticker_cap_market,0.31743333333333335,0.8555,1.038422266389417,3
+Euronews (EN),-1_er_dass_000_year,0.3263157894736842,0.7369,0.8031956488256132,19
+The Sun,-1_er_dass_000_year,0.32805,0.6090500000000001,0.8007734528923539,8
+The Sun,14_pakistan_macron_khan_islam,0.3347,0.3347,,1
+Euronews (EN),40_georgia_russia_belarus_political,0.36106666666666665,0.7826,0.9169061965835618,3
+Fox News,39_electric_range_charging_cars,0.3659,0.3659,0.8335374736627023,2
+i,5_halloween_pumpkin_trick_moon,0.37966923076923076,0.9063,0.8602021713766047,13
+Euronews (FR),10_je_kultur_art_ich,0.3804,0.3804,0.5379668391267254,2
+es,3_lawsuit_sentencia_er_mossos,0.3809857142857143,0.6705,0.6502233806638337,7
+The Washington Times,1_biden_trump_president_joe,0.3989,0.6011,0.7063523823135305,6
+i,27_show_nathan_sister_series,0.4227,0.7469,0.8273796377721656,5
+CNBC,1_biden_trump_president_joe,0.4276,0.4276,,1
+CNBC,-1_er_dass_000_year,0.44941764705882353,0.7606,0.681787632107035,17
+CNBC,17_cases_vitamin_covid_covid 19,0.452875,0.59035,0.6211803891248768,4
+es,26_grünen_er_merz_spd,0.46295,0.46295,0.173877557493772,2
+Daily Mail,23_vs_bundesliga_gegen_stuttgart,0.4769,0.4769,0.674438447895729,2
+Le Monde,19_album_ich_lucky_woodward,0.5171333333333333,0.6322,0.44509852092916835,3
+Business Insider,-1_er_dass_000_year,0.5554416666666667,0.93225,0.6872954582157939,24
+The Telegraph,5_halloween_pumpkin_trick_moon,0.5647,0.5647,,1
+CNBC,11_product_product marketing_marketing_quarter,0.5691625,0.8454,0.6404043386519845,8
+Business Insider,17_cases_vitamin_covid_covid 19,0.5741,0.5741,,1
+Le Monde,27_show_nathan_sister_series,0.57925,0.57925,0.4005759915421792,2
+Fox News,17_cases_vitamin_covid_covid 19,0.5859,0.5859,,1
+The Telegraph,0_league_arsenal_premier league_game,0.6841125,0.97525,0.6299799938716876,8
+es,45_amb_més_cementerios_tots,0.6933,0.6933,0.04751757569573606,2
+The Sun,9_mr_shulkin_kudlow_trump,0.7003,0.7003,,1
+Daily Mail,0_league_arsenal_premier league_game,0.7463000000000001,0.8997999999999999,0.4371778598882503,18
+The Washington Times,2_students_university_school_student,0.7482,0.7482,,1
+es,10_je_kultur_art_ich,0.7506,0.7506,,1
+Business Insider,18_jet_ber_flight_flughafen,0.7642,0.7642,,1
+The Sun,0_league_arsenal_premier league_game,0.7686076923076922,0.9708,0.3881434280897086,13
+Euronews (FR),8_nizza_nice_frankreich_notre,0.769025,0.81175,0.13595546758651034,4
+Euronews (FR),20_land_africa_south_opposition,0.7783,0.7783,,1
+The Telegraph,7_plants_garden_binoculars_flowers,0.7805727272727272,0.9527,0.5273969057378117,11
+Daily Mail,26_grünen_er_merz_spd,0.7845,0.7845,,1
+CNBC,16_voters_trump_democrats_vote,0.78535,0.78535,0.1458761289587847,2
+CNBC,37_tier_spiegel_gerät_restrictions,0.7914,0.7914,0.14934095218659887,2
+The Washington Times,15_lamb_republican_mr_race,0.7980666666666667,0.9273,0.3395982442534119,9
+Daily Mail,39_electric_range_charging_cars,0.8037000000000001,0.8037000000000001,0.19586857838867364,2
+The Washington Times,5_halloween_pumpkin_trick_moon,0.8068,0.8068,,1
+Le Monde,45_amb_més_cementerios_tots,0.824,0.824,,1
+The BBC,19_album_ich_lucky_woodward,0.8349,0.8349,,1
+i,-1_er_dass_000_year,0.84519,0.96305,0.35701715629488856,10
+The BBC,6_prozent_pour_ne_sont,0.8462,0.8462,,1
+Euronews (EN),1_biden_trump_president_joe,0.8807,0.8807,,1
+The BBC,2_students_university_school_student,0.8809,0.8809,0.08259007204258877,2
+CNBC,31_credit_gen_retirement_muscle,0.8902333333333333,0.9834,0.17283848915485625,3
+CNBC,18_jet_ber_flight_flughafen,0.8904,0.8904,0.08555992052357225,2
+Daily Mail,16_voters_trump_democrats_vote,0.8924,0.8924,,1
+The Telegraph,1_biden_trump_president_joe,0.8927499999999999,0.8927499999999999,0.10571246378738887,2
+Business Insider,43_market cap_ticker_cap_market,0.903,0.903,0.12077383822666232,2
+Daily Mail,4_murder_county_year old_death,0.9041,0.9041,,1
+i,16_voters_trump_democrats_vote,0.9075,0.9075,,1
+The Sun,23_vs_bundesliga_gegen_stuttgart,0.9118,0.9118,,1
+Daily Mail,7_plants_garden_binoculars_flowers,0.9175500000000001,0.9175500000000001,0.03754737008100574,2
+Le Monde,8_nizza_nice_frankreich_notre,0.9274,0.9274,,1
+Fox News,25_cup_england_united_world cup,0.9326,0.9326,,1
+Business Insider,31_credit_gen_retirement_muscle,0.9413,0.9413,,1
+Spiegel Online,14_pakistan_macron_khan_islam,0.9433,0.9433,,1
+The Telegraph,44_pubs_pub_león_castilla león,0.9492,0.9492,,1
+i,32_cannabis_art_terry_talbot,0.9507,0.9507,,1
+The Telegraph,28_christmas_gift_calendar_ll,0.952325,0.99415,0.08482681867585669,4
+The Telegraph,36_men_mujeres_paz_women,0.9524,0.9524,,1
+Euronews (EN),6_prozent_pour_ne_sont,0.9527,0.9527,,1
+es,18_jet_ber_flight_flughafen,0.9531,0.9531,,1
+Fox News,16_voters_trump_democrats_vote,0.9561999999999999,0.9561999999999999,0.030971277015970786,2
+i,46_europa_morales_proteste_muerte,0.959,0.959,,1
+Euronews (EN),10_je_kultur_art_ich,0.95995,0.9556,0.023120914053442233,4
+The Sun,19_album_ich_lucky_woodward,0.96305,0.96305,0.027506453788156693,2
+The Sun,25_cup_england_united_world cup,0.9633,0.9633,,1
+CNBC,42_says_kandidaten_électorat_etats,0.9645,0.9645,,1
+The Telegraph,30_myers_franklin_team_nfl,0.9668,0.9668,,1
+i,47_maßnahmen_allemagne_parteitag_scottish,0.9676,0.9676,,1
+Daily Mail,25_cup_england_united_world cup,0.9699,0.9699,,1
+i,17_cases_vitamin_covid_covid 19,0.9719,0.9719,,1
+i,1_biden_trump_president_joe,0.9735,0.9735,,1
+CNBC,30_myers_franklin_team_nfl,0.9744,0.9744,,1
+The Sun,7_plants_garden_binoculars_flowers,0.9746,0.9746,,1
+i,2_students_university_school_student,0.97475,0.97475,0.014778531726798785,2
+i,19_album_ich_lucky_woodward,0.97805,0.98255,0.015048920227046174,4
+The Washington Times,14_pakistan_macron_khan_islam,0.9823,0.9823,,1
+Euronews (EN),25_cup_england_united_world cup,0.9833,0.9833,,1
+The Sun,35_ich_ruth_frauen_familia,0.9849,0.9849,,1
+Daily Mail,35_ich_ruth_frauen_familia,0.9849,0.9849,,1
+Daily Mail,20_land_africa_south_opposition,0.9886,0.9886,,1
+Business Insider,38_course_class_online_courses,0.989075,0.9893000000000001,0.00515911121913734,8
+The Sun,5_halloween_pumpkin_trick_moon,0.989125,0.98845,0.006140236151810431,4
+Daily Mail,43_market cap_ticker_cap_market,0.9899,0.9899,,1
+The Telegraph,27_show_nathan_sister_series,0.9909,0.9909,,1
+The Sun,31_credit_gen_retirement_muscle,0.9931,0.9931,,1
+Business Insider,28_christmas_gift_calendar_ll,0.9954000000000001,0.9955,0.00154790180567113,6

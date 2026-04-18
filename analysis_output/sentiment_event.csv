@@ -1,0 +1,3 @@
+event_label,is_control,mean_sentiment,median_sentiment,std_sentiment,n_articles
+Polish_Womens_Strike_2020,False,-0.1496226148409894,-0.3906,0.8120919873117147,849
+IWD_2018_Global,False,-0.014883695652173913,-0.20879999999999999,0.8418457930616255,184

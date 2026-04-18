@@ -4,6 +4,17 @@ topic_model.py — BERTopic Topic Modelling for Women's Protest News Corpus
 Fits a BERTopic model on the full corpus, assigns a topic to every article,
 and produces per-publisher and per-event topic distribution tables.
 
+Two-pass topic modelling
+-------------------------
+❶  GLOBAL model  — fit on the full corpus to discover overarching themes that
+   span all events and outlets. These topic_id / topic_label columns are what
+   sentiment_analysis.py uses for cross-event sentiment comparisons.
+
+❷  PER-EVENT models — a separate BERTopic is fit on each event's articles to
+   discover the fine-grained topics specific to that event's news cycle.
+   Results are saved to a dedicated folder (analysis_output/event_topics/) and
+   also attached to the article dataframe as event_topic_id / event_topic_label.
+
 Research design
 ---------------
 We characterise the ENTIRE news environment during each protest event week —
@@ -40,9 +51,11 @@ Usage
 -----
     python topic_model.py                            # full run, auto topics
     python topic_model.py --input path/to/corpus.parquet
-    python topic_model.py --min-topic-size 5         # finer topics (default)
-    python topic_model.py --reduce-topics 50         # merge down to ~50 topics
+    python topic_model.py --min-topic-size 5         # finer global topics (default)
+    python topic_model.py --reduce-topics 50         # merge global topics down to ~50
     python topic_model.py --top-n-words 10           # words per topic label
+    python topic_model.py --event-min-topic-size 3   # finer per-event topics (default)
+    python topic_model.py --no-event-topics          # skip per-event modelling
 """
 
 from __future__ import annotations
@@ -98,21 +111,20 @@ STOPWORDS = (
 # ❶  CONFIGURATION
 # ══════════════════════════════════════════════════════════════════════════════
 
-DEFAULT_INPUT   = os.path.join("news_output", "corpus_all.parquet")
-OUTPUT_DIR      = "analysis_output"
+DEFAULT_INPUT        = os.path.join("news_output", "corpus_all.parquet")
+OUTPUT_DIR           = "analysis_output"
+EVENT_TOPICS_DIR     = os.path.join(OUTPUT_DIR, "event_topics")
 
 # Multilingual model — clusters by theme across EN/DE/FR/ES rather than by language
-EMBEDDING_MODEL = "paraphrase-multilingual-MiniLM-L12-v2"
+EMBEDDING_MODEL      = "paraphrase-multilingual-MiniLM-L12-v2"
 
-# Keep small to allow fine-grained discovery; merge afterwards with --reduce-topics
-MIN_TOPIC_SIZE  = 5
+# Global model defaults
+MIN_TOPIC_SIZE       = 5
+TOP_N_WORDS          = 10
+REDUCE_TOPICS        = None  # None = keep all discovered topics
 
-TOP_N_WORDS     = 10    # more keywords → easier to interpret each topic
-REDUCE_TOPICS   = None  # set via --reduce-topics N; None = keep all discovered topics
-
-# Actual columns from collect_articles.py:
-# url, publisher, title, body, authors, topics, publishing_date,
-# event_label, event_type, is_control
+# Per-event model defaults — smaller because event subsets are much smaller
+EVENT_MIN_TOPIC_SIZE = 3
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -123,23 +135,14 @@ def load_corpus(path: str) -> pd.DataFrame:
     print(f"Loading corpus from {path} ...")
     df = pd.read_parquet(path)
 
-    # Ensure expected columns are present
     required = {"publisher", "title", "body", "event_label", "event_type", "is_control"}
     missing = required - set(df.columns)
     if missing:
         raise ValueError(f"Corpus is missing expected columns: {missing}")
 
-    # Drop articles with negligible body text
     df = df[df["body"].fillna("").str.strip().str.len() > 100].copy()
-
-    # Combine title + body as the document text for BERTopic
     df["text"] = df["title"].fillna("") + " " + df["body"].fillna("")
-
-    # Normalise is_control to bool (it may be stored as bool or 0/1)
     df["is_control"] = df["is_control"].astype(bool)
-
-    # publisher is stored as a repr string like "<PublisherEnum.APNews: ...>"
-    # Extract a clean name for display
     df["publisher"] = (
         df["publisher"].astype(str)
         .str.extract(r"\.([A-Za-z0-9]+)")[0]
@@ -153,24 +156,19 @@ def load_corpus(path: str) -> pd.DataFrame:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# ❸  FIT BERTOPIC
+# ❸  BUILD A BERTOPIC MODEL  (shared helper)
 # ══════════════════════════════════════════════════════════════════════════════
 
-def fit_topic_model(
-    df: pd.DataFrame,
+def build_topic_model(
+    docs: list[str],
+    embedding_model: SentenceTransformer,
     min_topic_size: int,
     top_n_words: int,
-    reduce_topics: int | None,
+    reduce_topics: int | None = None,
+    label: str = "",
 ) -> tuple[BERTopic, list[int]]:
+    """Fit a BERTopic model on `docs` and return (model, topic_assignments)."""
 
-    print(f"\nFitting BERTopic (embedding model: {EMBEDDING_MODEL}) ...")
-    print(f"  min_topic_size={min_topic_size}, top_n_words={top_n_words}")
-    if reduce_topics:
-        print(f"  Will reduce to ~{reduce_topics} topics after fitting")
-
-    embedding_model = SentenceTransformer(EMBEDDING_MODEL)
-
-    # min_df=2 (not 3) because with small min_topic_size some topics have few docs
     vectorizer_model = CountVectorizer(
         stop_words=STOPWORDS,
         ngram_range=(1, 2),
@@ -183,97 +181,216 @@ def fit_topic_model(
         min_topic_size=min_topic_size,
         top_n_words=top_n_words,
         calculate_probabilities=False,
-        verbose=True,
+        verbose=False,
     )
 
-    docs = df["text"].tolist()
     topics, _ = topic_model.fit_transform(docs)
 
     n_topics   = len(set(topics)) - (1 if -1 in topics else 0)
     n_outliers = sum(1 for t in topics if t == -1)
-    print(f"\n  Topics found (before reduction) : {n_topics}")
-    print(f"  Outlier articles                : {n_outliers} ({100 * n_outliers / len(topics):.1f}%)")
+    prefix     = f"  [{label}] " if label else "  "
+    print(f"{prefix}Topics found: {n_topics}  |  "
+          f"Outliers: {n_outliers} ({100 * n_outliers / len(topics):.1f}%)")
 
-    # --- optional post-hoc reduction ---
     if reduce_topics and n_topics > reduce_topics:
-        print(f"\n  Reducing to ~{reduce_topics} topics ...")
+        print(f"{prefix}Reducing to ~{reduce_topics} topics ...")
         topic_model.reduce_topics(docs, nr_topics=reduce_topics)
-        topics = topic_model.topics_  # updated assignments after reduction
-        n_topics_after = len(set(topics)) - (1 if -1 in topics else 0)
-        print(f"  Topics after reduction : {n_topics_after}")
+        topics   = topic_model.topics_
+        n_after  = len(set(topics)) - (1 if -1 in topics else 0)
+        print(f"{prefix}Topics after reduction: {n_after}")
 
     return topic_model, list(topics)
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# ❹  ATTACH RESULTS TO DATAFRAME
+# ❹  GLOBAL MODEL
 # ══════════════════════════════════════════════════════════════════════════════
 
-def attach_topics(
+def fit_global_model(
+    df: pd.DataFrame,
+    embedding_model: SentenceTransformer,
+    min_topic_size: int,
+    top_n_words: int,
+    reduce_topics: int | None,
+) -> tuple[BERTopic, list[int]]:
+    print(f"\nFitting GLOBAL BERTopic model on {len(df):,} articles ...")
+    print(f"  min_topic_size={min_topic_size}, top_n_words={top_n_words}")
+    if reduce_topics:
+        print(f"  Will reduce to ~{reduce_topics} topics after fitting")
+
+    return build_topic_model(
+        docs=df["text"].tolist(),
+        embedding_model=embedding_model,
+        min_topic_size=min_topic_size,
+        top_n_words=top_n_words,
+        reduce_topics=reduce_topics,
+        label="global",
+    )
+
+
+def attach_global_topics(
     df: pd.DataFrame,
     topic_model: BERTopic,
     topics: list[int],
 ) -> pd.DataFrame:
     df = df.copy()
     df["topic_id"] = topics
-    topic_info = topic_model.get_topic_info()
-    label_map  = dict(zip(topic_info["Topic"], topic_info["Name"]))
+    label_map = dict(zip(
+        topic_model.get_topic_info()["Topic"],
+        topic_model.get_topic_info()["Name"],
+    ))
     df["topic_label"] = df["topic_id"].map(label_map).fillna("outlier")
     return df
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# ❺  DISTRIBUTION TABLES
+# ❺  PER-EVENT MODELS
+# ══════════════════════════════════════════════════════════════════════════════
+
+def fit_event_models(
+    df: pd.DataFrame,
+    embedding_model: SentenceTransformer,
+    event_min_topic_size: int,
+    top_n_words: int,
+) -> pd.DataFrame:
+    """
+    Fit a separate BERTopic model for each event_label and attach
+    event_topic_id / event_topic_label columns to df.
+    Also saves per-event CSVs to EVENT_TOPICS_DIR.
+    """
+    os.makedirs(EVENT_TOPICS_DIR, exist_ok=True)
+
+    events = sorted(df["event_label"].unique())
+    print(f"\nFitting PER-EVENT BERTopic models for {len(events)} events ...")
+    print(f"  event_min_topic_size={event_min_topic_size}, top_n_words={top_n_words}")
+
+    df = df.copy()
+    df["event_topic_id"]    = -1
+    df["event_topic_label"] = "outlier"
+
+    all_event_dists = []
+
+    for event in events:
+        mask  = df["event_label"] == event
+        subset = df[mask].copy()
+
+        if len(subset) < event_min_topic_size * 2:
+            print(f"  [{event}] Skipping — too few articles ({len(subset)})")
+            continue
+
+        docs = subset["text"].tolist()
+
+        try:
+            event_model, event_topics = build_topic_model(
+                docs=docs,
+                embedding_model=embedding_model,
+                min_topic_size=event_min_topic_size,
+                top_n_words=top_n_words,
+                label=event,
+            )
+        except Exception as e:
+            print(f"  [{event}] ⚠️  Model failed: {e}")
+            continue
+
+        # Attach event-level topic assignments back to the main df
+        topic_info = event_model.get_topic_info()
+        label_map  = dict(zip(topic_info["Topic"], topic_info["Name"]))
+        subset_idx = subset.index
+
+        df.loc[subset_idx, "event_topic_id"]    = event_topics
+        df.loc[subset_idx, "event_topic_label"] = [
+            label_map.get(t, "outlier") for t in event_topics
+        ]
+
+        # ── Per-event topic info CSV ──────────────────────────────────────────
+        safe_name = event.replace(" ", "_").replace("/", "-")
+
+        topic_info["event_label"] = event
+        topic_info.to_csv(
+            os.path.join(EVENT_TOPICS_DIR, f"{safe_name}_topic_info.csv"),
+            index=False,
+        )
+
+        # ── Per-event topic distribution (publisher × topic) ──────────────────
+        subset = subset.copy()
+        subset["event_topic_label"] = df.loc[subset_idx, "event_topic_label"].values
+
+        dist = topic_distribution(subset, ["publisher", "is_control", "event_topic_label"])
+        dist["event_label"] = event
+        dist.to_csv(
+            os.path.join(EVENT_TOPICS_DIR, f"{safe_name}_topic_dist.csv"),
+            index=False,
+        )
+
+        all_event_dists.append(dist)
+        print(f"  [{event}] Saved CSVs → {EVENT_TOPICS_DIR}/{safe_name}_*.csv")
+
+    # Combined long-format table across all events
+    if all_event_dists:
+        combined = pd.concat(all_event_dists, ignore_index=True)
+        combined.to_csv(
+            os.path.join(EVENT_TOPICS_DIR, "all_events_topic_dist.csv"),
+            index=False,
+        )
+        print(f"\n  Saved combined event topic dist → {EVENT_TOPICS_DIR}/all_events_topic_dist.csv")
+
+    return df
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# ❻  DISTRIBUTION TABLES  (shared helper)
 # ══════════════════════════════════════════════════════════════════════════════
 
 def topic_distribution(df: pd.DataFrame, group_cols: list[str]) -> pd.DataFrame:
-    """Topic share (%) within each group defined by group_cols."""
-    counts = (df.groupby(group_cols + ["topic_label"])
-                .size().reset_index(name="n_articles"))
-    totals = (df.groupby(group_cols)
-                .size().reset_index(name="total_articles"))
-    merged = counts.merge(totals, on=group_cols)
+    """Topic share (%) within each group defined by group_cols.
+
+    group_cols must include the topic column (topic_label or event_topic_label)
+    as its last element. base_cols are everything except the topic column, and
+    are used to compute per-group totals for the share calculation.
+    """
+    # The topic column is always the last entry in group_cols
+    topic_col = group_cols[-1]
+    base_cols = group_cols[:-1]
+
+    counts = df.groupby(group_cols).size().reset_index(name="n_articles")
+    totals = df.groupby(base_cols).size().reset_index(name="total_articles")
+    merged = counts.merge(totals, on=base_cols)
     merged["topic_share_pct"] = (
         merged["n_articles"] / merged["total_articles"] * 100
     ).round(2)
     return merged.sort_values(
-        group_cols + ["topic_share_pct"],
-        ascending=[True] * len(group_cols) + [False],
+        base_cols + [topic_col, "topic_share_pct"],
+        ascending=[True] * len(base_cols) + [True, False],
     )
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# ❻  SAVE OUTPUTS
+# ❼  SAVE GLOBAL OUTPUTS
 # ══════════════════════════════════════════════════════════════════════════════
 
-def save_outputs(df: pd.DataFrame, topic_model: BERTopic) -> None:
+def save_global_outputs(df: pd.DataFrame, topic_model: BERTopic) -> None:
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-    # Article-level results — drop the temporary text column
+    # Article-level results
     out_cols = [c for c in df.columns if c != "text"]
     df[out_cols].to_parquet(
         os.path.join(OUTPUT_DIR, "articles_with_topics.parquet"), index=False)
     print(f"\n  Saved article-level results → {OUTPUT_DIR}/articles_with_topics.parquet")
 
-    # Topic info table
+    # Global topic info
     topic_model.get_topic_info().to_csv(
         os.path.join(OUTPUT_DIR, "topic_info.csv"), index=False)
-    print(f"  Saved topic info            → {OUTPUT_DIR}/topic_info.csv")
+    print(f"  Saved global topic info     → {OUTPUT_DIR}/topic_info.csv")
 
-    # Distribution tables
+    # Global distribution tables
     distribution_configs = [
-        # per publisher × event window × control flag
-        ("publisher_event",    ["publisher", "event_label", "is_control"]),
-        # per event window × control flag
-        ("event",              ["event_label", "is_control"]),
-        # protest weeks vs control weeks only
-        ("protest_vs_control", ["is_control"]),
-        # per event_type (single / sustained) × control flag
-        ("event_type",         ["event_type", "is_control"]),
+        ("publisher_event",    ["publisher", "event_label", "is_control", "topic_label"]),
+        ("event",              ["event_label", "is_control", "topic_label"]),
+        ("protest_vs_control", ["is_control", "topic_label"]),
+        ("event_type",         ["event_type", "is_control", "topic_label"]),
     ]
 
     for name, group_cols in distribution_configs:
-        # Skip if any required column is missing (safety guard)
         if not all(c in df.columns for c in group_cols):
             print(f"  ⚠️  Skipping {name}: missing columns {set(group_cols) - set(df.columns)}")
             continue
@@ -281,42 +398,67 @@ def save_outputs(df: pd.DataFrame, topic_model: BERTopic) -> None:
         topic_distribution(df, group_cols).to_csv(out, index=False)
         print(f"  Saved {name:<24s} → {out}")
 
-    # Save model for reuse in sentiment step
+    # Save model for potential reuse
     topic_model.save(os.path.join(OUTPUT_DIR, "bertopic_model"))
     print(f"  Saved BERTopic model        → {OUTPUT_DIR}/bertopic_model")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# ❼  MAIN
+# ❽  MAIN
 # ══════════════════════════════════════════════════════════════════════════════
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input",          default=DEFAULT_INPUT)
-    parser.add_argument("--min-topic-size", type=int, default=MIN_TOPIC_SIZE)
-    parser.add_argument("--top-n-words",    type=int, default=TOP_N_WORDS)
+    parser.add_argument("--input",                default=DEFAULT_INPUT)
+    parser.add_argument("--min-topic-size",       type=int,  default=MIN_TOPIC_SIZE)
+    parser.add_argument("--top-n-words",          type=int,  default=TOP_N_WORDS)
+    parser.add_argument("--event-min-topic-size", type=int,  default=EVENT_MIN_TOPIC_SIZE)
     parser.add_argument(
         "--reduce-topics",
         type=int,
         default=REDUCE_TOPICS,
         metavar="N",
-        help="After fitting, merge topics down to ~N using BERTopic's reduce_topics(). "
-             "Useful for inspection: fit with small min-topic-size, then reduce. "
+        help="After fitting the global model, merge topics down to ~N. "
              "Omit to keep all discovered topics.",
+    )
+    parser.add_argument(
+        "--no-event-topics",
+        action="store_true",
+        help="Skip per-event topic modelling and only run the global model.",
     )
     args = parser.parse_args()
 
     df = load_corpus(args.input)
-    topic_model, topics = fit_topic_model(
+
+    # Load embedding model once — shared by global and per-event passes
+    print(f"\nLoading embedding model: {EMBEDDING_MODEL} ...")
+    embedding_model = SentenceTransformer(EMBEDDING_MODEL)
+
+    # ── Pass 1: global model ──────────────────────────────────────────────────
+    global_model, global_topics = fit_global_model(
         df,
+        embedding_model=embedding_model,
         min_topic_size=args.min_topic_size,
         top_n_words=args.top_n_words,
         reduce_topics=args.reduce_topics,
     )
-    df = attach_topics(df, topic_model, topics)
-    save_outputs(df, topic_model)
+    df = attach_global_topics(df, global_model, global_topics)
+
+    # ── Pass 2: per-event models ──────────────────────────────────────────────
+    if not args.no_event_topics:
+        df = fit_event_models(
+            df,
+            embedding_model=embedding_model,
+            event_min_topic_size=args.event_min_topic_size,
+            top_n_words=args.top_n_words,
+        )
+
+    save_global_outputs(df, global_model)
 
     print("\n✅  Topic modelling complete.")
+    print(f"    Global outputs  → {OUTPUT_DIR}/")
+    if not args.no_event_topics:
+        print(f"    Per-event CSVs  → {EVENT_TOPICS_DIR}/")
     print(f"    Next step: run  python sentiment_analysis.py")
 
 

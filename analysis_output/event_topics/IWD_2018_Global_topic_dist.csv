@@ -1,0 +1,43 @@
+publisher,is_control,event_topic_label,n_articles,total_articles,topic_share_pct,event_label
+Daily Mail,False,-1_air_people_shower_study,1,23,4.35,IWD_2018_Global
+Daily Mail,False,11_day_teams_mother_state,1,23,4.35,IWD_2018_Global
+Daily Mail,False,1_live_champions_action_click,21,23,91.3,IWD_2018_Global
+Deutsche Welle,False,5_mr_story_mccabe_intelligence,1,3,33.33,IWD_2018_Global
+Deutsche Welle,False,9_jet_oscar_18_fire,2,3,66.67,IWD_2018_Global
+Die Zeit,False,-1_air_people_shower_study,1,8,12.5,IWD_2018_Global
+Die Zeit,False,3_garden_flowers_plant_really,3,8,37.5,IWD_2018_Global
+Die Zeit,False,7_ich_habe_mich_dass,3,8,37.5,IWD_2018_Global
+Die Zeit,False,8_land_south_africa_female,1,8,12.5,IWD_2018_Global
+Fox News,False,-1_air_people_shower_study,9,50,18.0,IWD_2018_Global
+Fox News,False,0_school_gun_students_police,15,50,30.0,IWD_2018_Global
+Fox News,False,11_day_teams_mother_state,3,50,6.0,IWD_2018_Global
+Fox News,False,12_federal_trading_company_sold,3,50,6.0,IWD_2018_Global
+Fox News,False,14_hawking_nobel prize_prize_nobel,1,50,2.0,IWD_2018_Global
+Fox News,False,15_mr_trump_pompeo_source,1,50,2.0,IWD_2018_Global
+Fox News,False,16_wall_border_border wall_mexico,1,50,2.0,IWD_2018_Global
+Fox News,False,2_shulkin_kudlow_trump_va,5,50,10.0,IWD_2018_Global
+Fox News,False,4_lamb_district_democrats_election,3,50,6.0,IWD_2018_Global
+Fox News,False,6_schools_teachers_children_school,2,50,4.0,IWD_2018_Global
+Fox News,False,7_ich_habe_mich_dass,2,50,4.0,IWD_2018_Global
+Fox News,False,8_land_south_africa_female,1,50,2.0,IWD_2018_Global
+Fox News,False,9_jet_oscar_18_fire,4,50,8.0,IWD_2018_Global
+The Telegraph,False,-1_air_people_shower_study,17,50,34.0,IWD_2018_Global
+The Telegraph,False,10_higher_university_education_college,4,50,8.0,IWD_2018_Global
+The Telegraph,False,11_day_teams_mother_state,1,50,2.0,IWD_2018_Global
+The Telegraph,False,13_muscle_help_research_people,4,50,8.0,IWD_2018_Global
+The Telegraph,False,14_hawking_nobel prize_prize_nobel,2,50,4.0,IWD_2018_Global
+The Telegraph,False,17_children_teeth_parents_genetic,3,50,6.0,IWD_2018_Global
+The Telegraph,False,3_garden_flowers_plant_really,8,50,16.0,IWD_2018_Global
+The Telegraph,False,6_schools_teachers_children_school,6,50,12.0,IWD_2018_Global
+The Telegraph,False,7_ich_habe_mich_dass,2,50,4.0,IWD_2018_Global
+The Telegraph,False,8_land_south_africa_female,3,50,6.0,IWD_2018_Global
+The Washington Times,False,-1_air_people_shower_study,11,50,22.0,IWD_2018_Global
+The Washington Times,False,0_school_gun_students_police,10,50,20.0,IWD_2018_Global
+The Washington Times,False,10_higher_university_education_college,1,50,2.0,IWD_2018_Global
+The Washington Times,False,12_federal_trading_company_sold,2,50,4.0,IWD_2018_Global
+The Washington Times,False,15_mr_trump_pompeo_source,2,50,4.0,IWD_2018_Global
+The Washington Times,False,16_wall_border_border wall_mexico,2,50,4.0,IWD_2018_Global
+The Washington Times,False,2_shulkin_kudlow_trump_va,6,50,12.0,IWD_2018_Global
+The Washington Times,False,4_lamb_district_democrats_election,8,50,16.0,IWD_2018_Global
+The Washington Times,False,5_mr_story_mccabe_intelligence,7,50,14.0,IWD_2018_Global
+The Washington Times,False,8_land_south_africa_female,1,50,2.0,IWD_2018_Global
