@@ -194,7 +194,7 @@ EVENTS = [
 # ❹ CONTROL WEEKS
 # ══════════════════════════════════════════════════════════════════════════════
 
-_CONTROL_CANDIDATES = [2016, 2024]
+_CONTROL_CANDIDATES = [2024, 2016]
 
 
 def build_control_week(event: dict) -> dict | None:
