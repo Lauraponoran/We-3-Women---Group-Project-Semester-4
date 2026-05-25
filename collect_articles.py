@@ -146,14 +146,55 @@ EVENTS = [
         "window_end": date(2022, 9, 23),
         "note": "Mahsa Amini death Sep 16",
     },
+    {
+        "label": "Womens_March_2017",
+        "event_type": "single",
+        "window_start": date(2017, 1, 19),
+        "window_end": date(2017, 1, 26),
+        "note": "Women's March protests",
+    },
+    {
+        "label": "International_Womens_Strike_2017",
+        "event_type": "single",
+        "window_start": date(2017, 3, 6),
+        "window_end": date(2017, 3, 13),
+        "note": "International Women's Strike 2017",
+    },
+    {
+        "label": "MeToo_Protests_2017",
+        "event_type": "single",
+        "window_start": date(2017, 10, 15),
+        "window_end": date(2017, 10, 22),
+        "note": "#MeToo protests",
+    },
+    {
+        "label": "Swiss_Womens_Strike_2019",
+        "event_type": "single",
+        "window_start": date(2019, 6, 12),
+        "window_end": date(2019, 6, 19),
+        "note": "Swiss Women's Strike 2019",
+    },
+    {
+        "label": "Sarah_Everard_Vigils_2021",
+        "event_type": "single",
+        "window_start": date(2021, 3, 11),
+        "window_end": date(2021, 3, 18),
+        "note": "Sarah Everard vigils",
+    },
+    {
+        "label": "Israeli_Womens_Protests_2023",
+        "event_type": "single",
+        "window_start": date(2023, 2, 27),
+        "window_end": date(2023, 3, 6),
+        "note": "Israeli women's protests",
+    },
 ]
-
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ❹ CONTROL WEEKS
 # ══════════════════════════════════════════════════════════════════════════════
 
-_CONTROL_CANDIDATES = [2015, 2016, 2024]
+_CONTROL_CANDIDATES = [2024, 2016]
 
 
 def build_control_week(event: dict) -> dict | None:
