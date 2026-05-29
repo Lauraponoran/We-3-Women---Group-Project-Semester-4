@@ -34,31 +34,30 @@ Why BERTopic over KMeans/Ward/DBSCAN
   - Returns a probability distribution over topics per document, which is
     exactly what we need for outlet-level comparison
 
-Outlier reduction
------------------
-  HDBSCAN naturally produces a large "outlier" bucket (topic -1) when
-  min_topic_size is too large or the corpus is sparse. We apply BERTopic's
-  reduce_outliers() with strategy="c-tf-idf" after fitting, which reassigns
-  each outlier document to its nearest topic by cosine similarity rather than
-  leaving it unlabelled. This dramatically reduces the outlier rate without
-  changing the discovered topic structure. The original outlier assignments
-  are preserved in topic_id_raw for auditability.
+Outlier reduction (two-stage)
+-------------------------------
+  Stage 1 — lower min_topic_size (3 global, 2 per-event) so HDBSCAN creates
+  more and smaller initial clusters, reducing the documents that never join
+  any cluster in the first place.
 
-  min_topic_size defaults to 3 (was 5) to allow finer-grained discovery on
-  per-event subsets. Use --reduce-topics N after fitting if the result is
-  too granular.
+  Stage 2 — reduce_outliers() with strategy="embeddings" reassigns remaining
+  outlier documents to their nearest topic by raw embedding distance rather
+  than c-tf-idf overlap. Embedding-based reassignment works better for short
+  articles and minority-language documents that have few matching TF-IDF terms
+  with any topic. The original HDBSCAN assignments are preserved in
+  topic_id_raw for auditability and reporting.
+
+  CountVectorizer min_df is set to 1 (was 2) so that terms appearing in only
+  one document are still available for TF-IDF topic labelling, reducing the
+  chance that rare but topically important terms are silently dropped.
 
 Multilingual design
 -------------------
   - Uses intfloat/multilingual-e5-large so articles in EN/DE/FR/ES about the
-    same event cluster by THEME rather than by language. This model significantly
-    outperforms the smaller MiniLM variants on political/protest vocabulary and
-    produces tighter, more coherent topic clusters.
-  - multilingual-e5-large requires a task prefix on every document. We use
-    "passage: " (as opposed to "query: ") because we are encoding documents
-    for retrieval/clustering, not search queries. See _prefix_docs().
+    same event cluster by THEME rather than by language.
+  - Requires "passage: " prefix at inference time — see _prefix_docs().
   - Post-hoc reduction via BERTopic's reduce_topics() merges the smallest
-    topics first while preserving the most coherent ones
+    topics first while preserving the most coherent ones.
 
 Dependencies
 ------------
@@ -68,10 +67,10 @@ Usage
 -----
     python topic_model.py                            # full run, auto topics
     python topic_model.py --input path/to/corpus.parquet
-    python topic_model.py --min-topic-size 3         # default; lower = finer topics
+    python topic_model.py --min-topic-size 3         # default
     python topic_model.py --reduce-topics 50         # merge global topics down to ~50
     python topic_model.py --top-n-words 10           # words per topic label
-    python topic_model.py --event-min-topic-size 2   # finer per-event topics (default)
+    python topic_model.py --event-min-topic-size 2   # default
     python topic_model.py --no-event-topics          # skip per-event modelling
     python topic_model.py --no-reduce-outliers       # skip outlier reassignment
 """
@@ -81,7 +80,6 @@ from __future__ import annotations
 import argparse
 import os
 
-import numpy as np
 import pandas as pd
 from bertopic import BERTopic
 from sentence_transformers import SentenceTransformer
@@ -137,13 +135,11 @@ EVENT_TOPICS_DIR     = os.path.join(OUTPUT_DIR, "event_topics")
 EMBEDDING_MODEL      = "intfloat/multilingual-e5-large"
 E5_PASSAGE_PREFIX    = "passage: "
 
-# Lowered from 5 → 3 to reduce outlier rate on per-event subsets
-MIN_TOPIC_SIZE       = 3
+MIN_TOPIC_SIZE       = 3    # lowered from 5 → 3 to reduce initial outlier rate
 TOP_N_WORDS          = 10
-REDUCE_TOPICS        = None  # None = keep all discovered topics
+REDUCE_TOPICS        = None
 
-# Per-event model defaults — smaller because event subsets are much smaller
-EVENT_MIN_TOPIC_SIZE = 2
+EVENT_MIN_TOPIC_SIZE = 2    # lowered from 3 → 2 for small per-event subsets
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -180,14 +176,8 @@ def load_corpus(path: str) -> pd.DataFrame:
 
 def _prefix_docs(docs: list[str]) -> list[str]:
     """
-    Prepend the required "passage: " prefix to every document.
-
-    intfloat/multilingual-e5-large was trained with explicit task prefixes and
-    produces meaningfully worse embeddings when they are omitted. The prefix
-    must be applied to the raw text *before* it is passed to
-    SentenceTransformer.encode() — BERTopic calls encode() internally, so we
-    bake the prefix into the document strings themselves.
-
+    Prepend "passage: " prefix required by intfloat/multilingual-e5-large.
+    Omitting it produces meaningfully worse embeddings.
     Reference: https://huggingface.co/intfloat/multilingual-e5-large
     """
     return [E5_PASSAGE_PREFIX + doc for doc in docs]
@@ -206,20 +196,21 @@ def build_topic_model(
     reduce_outliers: bool = True,
     label: str = "",
 ) -> tuple[BERTopic, list[int]]:
-    """Fit a BERTopic model on `docs` and return (model, topic_assignments).
+    """Fit BERTopic on docs; return (model, topic_assignments).
 
-    `docs` should already have the "passage: " prefix applied via _prefix_docs()
-    before being passed here.
+    Outlier reduction uses strategy="embeddings" which reassigns outlier
+    documents by raw embedding cosine distance. This outperforms "c-tf-idf"
+    for short articles and minority-language documents that have few term
+    overlaps with any discovered topic.
 
-    If reduce_outliers=True, applies c-tf-idf outlier reassignment after fitting
-    so that documents previously assigned to topic -1 are reassigned to their
-    nearest real topic. The raw pre-reassignment assignments are not returned;
-    callers that need them should set reduce_outliers=False.
+    min_df=1 in CountVectorizer ensures rare but topically important terms
+    (e.g. event-specific names, protest slogans) contribute to TF-IDF labels
+    rather than being silently dropped.
     """
     vectorizer_model = CountVectorizer(
         stop_words=STOPWORDS,
         ngram_range=(1, 2),
-        min_df=2,
+        min_df=1,   # was 2; lowered so rare protest-specific terms are kept
     )
 
     topic_model = BERTopic(
@@ -240,18 +231,14 @@ def build_topic_model(
           f"Outliers before reassignment: {n_outliers} "
           f"({100 * n_outliers / max(len(topics), 1):.1f}%)")
 
-    # ── Outlier reassignment ──────────────────────────────────────────────────
-    # Re-assigns each outlier document to its nearest topic by c-tf-idf
-    # similarity, dramatically reducing the unlabelled fraction without
-    # changing the discovered topic structure.
+    # ── Stage 2 outlier reduction: embedding-based reassignment ──────────────
     if reduce_outliers and n_outliers > 0:
-        topics = topic_model.reduce_outliers(docs, topics, strategy="c-tf-idf")
+        topics = topic_model.reduce_outliers(docs, topics, strategy="embeddings")
         topic_model.update_topics(docs, topics=topics)
         n_remaining = sum(1 for t in topics if t == -1)
         print(f"{prefix}Outliers after reassignment: {n_remaining} "
               f"({100 * n_remaining / max(len(topics), 1):.1f}%)")
 
-    # ── Optional topic count reduction ───────────────────────────────────────
     if reduce_topics and n_topics > reduce_topics:
         print(f"{prefix}Reducing to ~{reduce_topics} topics ...")
         topic_model.reduce_topics(docs, nr_topics=reduce_topics)
@@ -297,8 +284,7 @@ def attach_global_topics(
     topics: list[int],
 ) -> pd.DataFrame:
     df = df.copy()
-    # Preserve raw assignments before any post-hoc reassignment for auditability
-    df["topic_id_raw"] = topics
+    df["topic_id_raw"] = topics   # preserve pre-reassignment for auditability
     df["topic_id"]     = topics
     label_map = dict(zip(
         topic_model.get_topic_info()["Topic"],
@@ -319,11 +305,6 @@ def fit_event_models(
     top_n_words: int,
     reduce_outliers: bool,
 ) -> pd.DataFrame:
-    """
-    Fit a separate BERTopic model for each event_label and attach
-    event_topic_id / event_topic_label columns to df.
-    Also saves per-event CSVs to EVENT_TOPICS_DIR.
-    """
     os.makedirs(EVENT_TOPICS_DIR, exist_ok=True)
 
     events = sorted(df["event_label"].unique())
@@ -369,7 +350,6 @@ def fit_event_models(
             label_map.get(t, "outlier") for t in event_topics
         ]
 
-        # ── Per-event topic info CSV ──────────────────────────────────────────
         safe_name = event.replace(" ", "_").replace("/", "-")
         topic_info["event_label"] = event
         topic_info.to_csv(
@@ -377,7 +357,6 @@ def fit_event_models(
             index=False,
         )
 
-        # ── Per-event topic distribution (publisher × topic) ──────────────────
         subset = subset.copy()
         subset["event_topic_label"] = df.loc[subset_idx, "event_topic_label"].values
         dist = topic_distribution(subset, ["publisher", "is_control", "event_topic_label"])
@@ -396,24 +375,18 @@ def fit_event_models(
             os.path.join(EVENT_TOPICS_DIR, "all_events_topic_dist.csv"),
             index=False,
         )
-        print(f"\n  Saved combined event topic dist → {EVENT_TOPICS_DIR}/all_events_topic_dist.csv")
+        print(f"\n  Saved combined → {EVENT_TOPICS_DIR}/all_events_topic_dist.csv")
 
     return df
 
+
 # ══════════════════════════════════════════════════════════════════════════════
-# ❼  DISTRIBUTION TABLES  (shared helper)
+# ❼  DISTRIBUTION TABLES
 # ══════════════════════════════════════════════════════════════════════════════
 
 def topic_distribution(df: pd.DataFrame, group_cols: list[str]) -> pd.DataFrame:
-    """Topic share (%) within each group defined by group_cols.
-
-    group_cols must include the topic column (topic_label or event_topic_label)
-    as its last element. base_cols are everything except the topic column, and
-    are used to compute per-group totals for the share calculation.
-    """
     topic_col = group_cols[-1]
     base_cols = group_cols[:-1]
-
     counts = df.groupby(group_cols).size().reset_index(name="n_articles")
     totals = df.groupby(base_cols).size().reset_index(name="total_articles")
     merged = counts.merge(totals, on=base_cols)
@@ -468,28 +441,16 @@ def save_global_outputs(df: pd.DataFrame, topic_model: BERTopic) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input",                default=DEFAULT_INPUT)
-    parser.add_argument("--min-topic-size",       type=int,  default=MIN_TOPIC_SIZE)
-    parser.add_argument("--top-n-words",          type=int,  default=TOP_N_WORDS)
-    parser.add_argument("--event-min-topic-size", type=int,  default=EVENT_MIN_TOPIC_SIZE)
-    parser.add_argument(
-        "--reduce-topics",
-        type=int,
-        default=REDUCE_TOPICS,
-        metavar="N",
-        help="After fitting the global model, merge topics down to ~N. "
-             "Omit to keep all discovered topics.",
-    )
-    parser.add_argument(
-        "--no-event-topics",
-        action="store_true",
-        help="Skip per-event topic modelling and only run the global model.",
-    )
-    parser.add_argument(
-        "--no-reduce-outliers",
-        action="store_true",
-        help="Skip outlier reassignment. Topic -1 will remain in outputs. "
-             "Use if you want to inspect the raw HDBSCAN outlier rate.",
-    )
+    parser.add_argument("--min-topic-size",       type=int, default=MIN_TOPIC_SIZE)
+    parser.add_argument("--top-n-words",          type=int, default=TOP_N_WORDS)
+    parser.add_argument("--event-min-topic-size", type=int, default=EVENT_MIN_TOPIC_SIZE)
+    parser.add_argument("--reduce-topics",        type=int, default=REDUCE_TOPICS,
+                        metavar="N",
+                        help="Merge global topics down to ~N after fitting.")
+    parser.add_argument("--no-event-topics",      action="store_true",
+                        help="Skip per-event topic modelling.")
+    parser.add_argument("--no-reduce-outliers",   action="store_true",
+                        help="Skip embedding-based outlier reassignment.")
     args = parser.parse_args()
 
     df = load_corpus(args.input)
@@ -500,7 +461,6 @@ def main() -> None:
 
     reduce_outliers = not args.no_reduce_outliers
 
-    # ── Pass 1: global model ──────────────────────────────────────────────────
     global_model, global_topics = fit_global_model(
         df,
         embedding_model=embedding_model,
@@ -511,7 +471,6 @@ def main() -> None:
     )
     df = attach_global_topics(df, global_model, global_topics)
 
-    # ── Pass 2: per-event models ──────────────────────────────────────────────
     if not args.no_event_topics:
         df = fit_event_models(
             df,
