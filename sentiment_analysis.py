@@ -4,7 +4,11 @@ sentiment_analysis.py — VADER Sentiment Analysis for Women's Protest News Corp
 Runs sentiment analysis on every article in the corpus using VADER (Valence Aware
 Dictionary and sEntiment Reasoner). Sentiment is scored on a -1 to +1 scale
 (VADER's compound score) and saved back to the article-level parquet produced
-by topic_model.py.
+by collect_articles_optimized.py / build_corpus.py.
+
+The translated text columns (translated_title, translated_body) saved here
+are used as input to topic_model.py so that topic clustering operates on
+English text rather than mixed-language text.
 
 Non-English articles (DE / FR / ES) are translated to English before scoring
 using Helsinki-NLP's opus-mt models. Translation preserves emotional valence
@@ -103,7 +107,7 @@ from transformers import MarianMTModel, MarianTokenizer
 # ❶  CONFIGURATION
 # ══════════════════════════════════════════════════════════════════════════════
 
-DEFAULT_INPUT  = os.path.join("analysis_output", "articles_with_topics.parquet")
+DEFAULT_INPUT  = os.path.join("news_output", "corpus_all.parquet")
 OUTPUT_DIR     = "analysis_output"
 MAX_BODY_CHARS = 1500   # truncate article body before translation + scoring
 
@@ -289,9 +293,14 @@ def run_sentiment(
         sentiment = score_article(title_en, body_en, analyzer, max_body_chars)
 
         records.append({
-            "language":         lang,
-            "was_translated":   translate and lang not in ("EN", "OTHER"),
-            "translation_note": translation_note,
+            "language":          lang,
+            "was_translated":    translate and lang not in ("EN", "OTHER"),
+            "translation_note":  translation_note,
+            # Translated text columns — consumed by topic_model.py so that
+            # BERTopic clusters on English text rather than mixed-language text.
+            # For English articles these are identical to the original columns.
+            "translated_title":  title_en,
+            "translated_body":   body_en,
             **sentiment,
         })
 
@@ -361,7 +370,8 @@ def sentiment_aggregates(df: pd.DataFrame) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input",          default=DEFAULT_INPUT)
+    parser.add_argument("--input", default=DEFAULT_INPUT,
+                        help="Path to corpus parquet (default: corpus_all.parquet).")
     parser.add_argument("--max-body-chars", type=int, default=MAX_BODY_CHARS)
     parser.add_argument(
         "--no-translate",
@@ -406,7 +416,7 @@ def main() -> None:
 
     print("\n✅  Sentiment analysis complete.")
     print(f"    Outputs → {OUTPUT_DIR}/")
-    print(f"    Next step: run  python visualise.py  (or your analysis notebook)")
+    print(f"    Next step: run  python topic_model.py")
 
 
 if __name__ == "__main__":

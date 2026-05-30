@@ -48,19 +48,19 @@ build_corpus.py                 ← merge all events into one file
          |
     news_output/corpus_all.parquet
 
-topic_model.py                  ← BERTopic (global + per-event)
+sentiment_analysis.py           ← language detection -> translation -> VADER
+         |                           also saves translated_title / translated_body
+    analysis_output/
+    +-- articles_with_sentiment.parquet / .csv   (contains translated text columns)
+    +-- sentiment_*.csv
+
+topic_model.py                  ← reads translated text -> BERTopic (global + per-event)
          |
     analysis_output/
     +-- articles_with_topics.parquet
     +-- topic_info.csv
     +-- topic_dist_*.csv
     +-- event_topics/
-
-sentiment_analysis.py           ← language detection -> translation -> VADER
-         |
-    analysis_output/
-    +-- articles_with_sentiment.parquet / .csv
-    +-- sentiment_*.csv
 
 visualise.py                    ← publication figures + bias report
          |
@@ -159,12 +159,25 @@ Runs BERTopic in two passes:
 2. **Per-event models** — a separate BERTopic fit on each event's articles to discover fine-grained topics specific to that event's news cycle. Saved to `analysis_output/event_topics/`.
 
 ```bash
+# Standard: run sentiment_analysis.py first, then:
 python topic_model.py
-python topic_model.py --reduce-topics 50       # merge down to ~50 global topics
-python topic_model.py --no-event-topics        # global model only
-python topic_model.py --min-topic-size 3       # default
-python topic_model.py --no-reduce-outliers     # skip outlier reassignment (inspect raw rate)
+
+# Explicit input (same as default):
+python topic_model.py --input analysis_output/articles_with_sentiment.parquet
+
+# Raw corpus without translation benefit (not recommended):
+python topic_model.py --input news_output/corpus_all.parquet
+
+python topic_model.py --reduce-topics 20   # fewer, broader topics
+python topic_model.py --reduce-topics 50   # more granular
+python topic_model.py --reduce-topics 0    # disable reduction entirely
+python topic_model.py --no-event-topics    # global model only
+python topic_model.py --no-reduce-outliers # inspect raw outlier rate
 ```
+
+**Pipeline order:** `topic_model.py` now runs *after* `sentiment_analysis.py`, not before it. `sentiment_analysis.py` saves `translated_title` and `translated_body` columns alongside the sentiment scores. `topic_model.py` reads these columns and uses the translated English text for embedding and clustering. This means BERTopic clusters articles by **topic** rather than by **language** — without this step, HDBSCAN produces language-homogeneous clusters (one large cluster of English articles, one of German, one of French) even with a multilingual embedding model, because within-language embedding similarity is higher than cross-language similarity on the same topic.
+
+The embedding model has also been changed from `intfloat/multilingual-e5-large` to `all-MiniLM-L6-v2` — a fast, high-quality English sentence encoder (~80 MB). Since all input text is now English, the multilingual model's cross-language alignment is no longer needed and the smaller model is faster and produces tighter English topic clusters.
 
 **Why BERTopic over LDA / KMeans / DBSCAN:**
 - KMeans and hierarchical methods require specifying *k* in advance; the number of topics in a multilingual protest news corpus is not known a priori
@@ -221,6 +234,8 @@ Multilingual neural sentiment models (e.g. `twitter-xlm-roberta-base-sentiment`)
 | `sentiment_score` | VADER compound score in [−1, +1] |
 | `sentiment_pos/neu/neg` | VADER component scores |
 | `sentiment_label` | `positive` / `neutral` / `negative` |
+| `translated_title` | English translation of title (= original for EN articles) |
+| `translated_body` | English translation of body (= original for EN articles) |
 
 ---
 
@@ -278,7 +293,7 @@ The pipeline addresses five categories of bias. Where bias cannot be fully elimi
 **What it is:** analytical choices — stopword lists, topic model hyperparameters, sentiment lexicon — embed assumptions that shape results.
 
 **What we do:**
-- Stopword lists are fully documented in `topic_model.py` and cover all four corpus languages; they are deterministic and inspectable
+- Stopword lists are fully documented in `topic_model.py` and cover all four corpus languages; they are deterministic and inspectable. `max_df=0.95` in the CountVectorizer provides a second layer of defence against function-word labels by excluding any term appearing in more than 95% of documents. The root cause of language-cluster topics ("The, To, And"; "Die, Der, Und") is now solved upstream: topic modelling runs on pre-translated English text produced by `sentiment_analysis.py`, so HDBSCAN clusters by topic rather than by language
 - BERTopic's TF-IDF labels are reproducible; the full topic info is saved to `topic_info.csv` for manual review
 - `topic_id_raw` preserves pre-reassignment topic assignments; `bias_report.csv` Section D reports the raw and final outlier rates side by side, so the impact of the reassignment heuristic is transparent
 - `min_df=1` ensures no terms are silently dropped from topic labelling

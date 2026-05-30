@@ -4,26 +4,40 @@ topic_model.py — BERTopic Topic Modelling for Women's Protest News Corpus
 Fits a BERTopic model on the full corpus, assigns a topic to every article,
 and produces per-publisher and per-event topic distribution tables.
 
+Pipeline order
+--------------
+topic_model.py now runs AFTER sentiment_analysis.py, not before it.
+
+  sentiment_analysis.py  →  articles_with_sentiment.parquet
+                                         ↓
+                             topic_model.py  (default input)
+                                         ↓
+                             articles_with_topics.parquet
+
+Reason: sentiment_analysis.py detects the language of each article and
+translates DE/FR/ES bodies to English via Helsinki opus-mt before scoring.
+We reuse that translated text for topic modelling so that BERTopic clusters
+articles by THEME rather than by LANGUAGE. Without this step, the multilingual
+embedding model still produces language-homogeneous clusters because the
+embedding similarity between two English articles about abortion is higher
+than between an English and a German article about the same topic — even with
+a multilingual model.
+
+The translated text is stored in the `translated_title` and `translated_body`
+columns added by sentiment_analysis.py. `load_corpus()` builds the `text`
+column from these when available, falling back to the original title/body for
+articles that were already English.
+
 Two-pass topic modelling
 -------------------------
 ❶  GLOBAL model  — fit on the full corpus to discover overarching themes that
-   span all events and outlets. These topic_id / topic_label columns are what
-   sentiment_analysis.py uses for cross-event sentiment comparisons.
+   span all events and outlets. topic_id / topic_label columns are used for
+   cross-event comparisons in visualise.py.
 
 ❷  PER-EVENT models — a separate BERTopic is fit on each event's articles to
-   discover the fine-grained topics specific to that event's news cycle.
-   Results are saved to a dedicated folder (analysis_output/event_topics/) and
-   also attached to the article dataframe as event_topic_id / event_topic_label.
-
-Research design
----------------
-We characterise the ENTIRE news environment during each protest event week —
-not just protest-relevant articles. BERTopic is used to discover what topics
-filled the news cycle, allowing us to:
-  - Compare topic distributions across ideologically different outlets
-  - Compare protest-week topic distributions against matched control weeks
-  - Measure what fraction of coverage each topic (including protest-related)
-    occupied per outlet per event
+   discover fine-grained topics specific to that event's news cycle. Results
+   are saved to analysis_output/event_topics/ and attached to the dataframe
+   as event_topic_id / event_topic_label.
 
 Why BERTopic over KMeans/Ward/DBSCAN
 --------------------------------------
@@ -31,33 +45,37 @@ Why BERTopic over KMeans/Ward/DBSCAN
   - DBSCAN is sensitive to hyperparameters and struggles with high-dimensional text
   - BERTopic uses sentence embeddings + HDBSCAN to find k automatically,
     and produces human-readable topic labels via TF-IDF keyphrases
-  - Returns a probability distribution over topics per document, which is
-    exactly what we need for outlet-level comparison
+  - Returns per-document topic assignments suitable for outlet-level comparison
 
 Outlier reduction (two-stage)
 -------------------------------
   Stage 1 — lower min_topic_size (3 global, 2 per-event) so HDBSCAN creates
-  more and smaller initial clusters, reducing the documents that never join
-  any cluster in the first place.
+  more and smaller initial clusters.
 
-  Stage 2 — reduce_outliers() with strategy="embeddings" reassigns remaining
-  outlier documents to their nearest topic by raw embedding distance rather
-  than c-tf-idf overlap. Embedding-based reassignment works better for short
-  articles and minority-language documents that have few matching TF-IDF terms
-  with any topic. The original HDBSCAN assignments are preserved in
-  topic_id_raw for auditability and reporting.
+  Stage 2 — reduce_outliers(strategy="embeddings") reassigns remaining outlier
+  documents to their nearest topic by raw embedding distance. Works better than
+  "c-tf-idf" for short articles. Original assignments preserved in topic_id_raw.
 
-  CountVectorizer min_df is set to 1 (was 2) so that terms appearing in only
-  one document are still available for TF-IDF topic labelling, reducing the
-  chance that rare but topically important terms are silently dropped.
+Topic reduction (default 30)
+------------------------------
+  min_topic_size=3 on ~7,500 articles discovers hundreds of micro-topics that
+  all fall into "All Other Topics" in visualisations. REDUCE_TOPICS=30 merges
+  them into ~30 coherent macro-themes via BERTopic's hierarchical reduction.
+  Per-event models skip reduction — their small subsets benefit from granularity.
+  Pass --reduce-topics 0 to disable.
 
-Multilingual design
--------------------
-  - Uses intfloat/multilingual-e5-large so articles in EN/DE/FR/ES about the
-    same event cluster by THEME rather than by language.
-  - Requires "passage: " prefix at inference time — see _prefix_docs().
-  - Post-hoc reduction via BERTopic's reduce_topics() merges the smallest
-    topics first while preserving the most coherent ones.
+Stopword lists + max_df
+------------------------
+  Stopword lists cover all function word forms in EN/DE/FR/ES. Additionally,
+  max_df=0.95 excludes terms that appear in more than 95% of documents — this
+  catches ultra-high-frequency words (articles, pronouns, conjunctions) that
+  evade the stopword list because of spelling variants, casing, or tokenisation.
+  Together these two measures prevent purely functional vocabulary appearing as
+  TF-IDF topic labels.
+
+  Note: since we now cluster on English-translated text, the German/French/
+  Spanish stopword lists are retained as a safety net for any untranslated
+  fragments but are no longer the primary defence.
 
 Dependencies
 ------------
@@ -65,14 +83,20 @@ Dependencies
 
 Usage
 -----
-    python topic_model.py                            # full run, auto topics
-    python topic_model.py --input path/to/corpus.parquet
-    python topic_model.py --min-topic-size 3         # default
-    python topic_model.py --reduce-topics 50         # merge global topics down to ~50
-    python topic_model.py --top-n-words 10           # words per topic label
-    python topic_model.py --event-min-topic-size 2   # default
-    python topic_model.py --no-event-topics          # skip per-event modelling
-    python topic_model.py --no-reduce-outliers       # skip outlier reassignment
+    # Standard: run sentiment_analysis.py first, then:
+    python topic_model.py
+
+    # Explicit input:
+    python topic_model.py --input analysis_output/articles_with_sentiment.parquet
+
+    # Raw corpus (skips translation benefit — not recommended):
+    python topic_model.py --input news_output/corpus_all.parquet
+
+    python topic_model.py --reduce-topics 20   # fewer, broader topics
+    python topic_model.py --reduce-topics 50   # more granular
+    python topic_model.py --reduce-topics 0    # disable reduction
+    python topic_model.py --no-event-topics    # global model only
+    python topic_model.py --no-reduce-outliers # skip outlier reassignment
 """
 
 from __future__ import annotations
@@ -85,42 +109,80 @@ from bertopic import BERTopic
 from sentence_transformers import SentenceTransformer
 from sklearn.feature_extraction.text import CountVectorizer
 
-# ---------------------------------------------------------------------------
+# ──────────────────────────────────────────────────────────────────────────────
 # Multilingual stopwords (EN / DE / FR / ES)
-# ---------------------------------------------------------------------------
+#
+# Primary defence against function-word topic labels. Since input text is now
+# English-translated, the EN list does most of the work. DE/FR/ES lists act as
+# a safety net for untranslated fragments and proper nouns that survive
+# translation. max_df=0.95 in the CountVectorizer provides a second layer of
+# defence by excluding any term appearing in >95% of documents regardless of
+# whether it appears in this list.
+# ──────────────────────────────────────────────────────────────────────────────
 STOPWORDS = (
-    # English
-    ["the","and","to","of","in","is","it","that","for","he","his","was","with",
-     "on","are","at","as","this","be","by","from","or","an","but","not","they",
-     "we","have","had","were","been","has","their","which","who","its","said",
-     "also","more","one","would","about","up","out","so","can","all","when","if",
-     "into","than","do","there","over","what","no","just","some","two","will",
-     "after","other","her","him","she","our","your","my","us","me","you","them",
-     "did","how","may","while","then","such","these","those","before","between",
-     "through","now","only","new","could","should","both","well","since","even",
-     "most","many","any","very","same","because","time","first","way","each",
-     "under","during","without"] +
-    # German
-    ["die","der","und","das","den","zu","von","mit","sich","ist","des","ein",
-     "eine","auch","auf","an","dem","im","es","für","sind","nicht","wie","sie",
-     "werden","hat","war","bei","wird","als","durch","einer","oder","um","nach",
-     "noch","aber","aus","am","haben","wenn","mehr","nur","doch","beim","zur",
-     "worden","wurde","wurden","sei","ob","da","wir","ihr","uns","man","kann",
-     "muss","soll","wird","worden","hatte","haben","wäre","müssen","sollen"] +
-    # French
-    ["de","le","la","les","et","des","en","un","une","du","au","qui","que","pas",
-     "sur","est","par","ou","dans","il","elle","ils","ce","se","si","mais","nous",
-     "vous","leur","plus","tout","cette","ces","son","ses","ont","été","aussi",
-     "après","avant","même","bien","peut","comme","avec","très","non","ni","lui",
-     "leur","dont","car","donc","puis","cela","cet","cette","entre","sous",
-     "vers","sans","lors","dès","chez","fait","tout","tous","toutes"] +
-    # Spanish
-    ["el","los","del","las","que","en","al","lo","con","una","por","para","su",
-     "se","es","más","no","si","ha","son","sus","le","me","ya","pero","como",
-     "cuando","bien","donde","ser","un","ante","así","sobre","tan","hasta",
-     "desde","entre","sin","dos","este","esta","estos","estas","ese","esa",
-     "esos","esas","siendo","sido","fue","eran","era","han","había","tienen",
-     "tiene","hacer","hace","porque","aunque","además","durante","mediante"]
+    # ── English ───────────────────────────────────────────────────────────────
+    ["a","about","above","after","again","against","all","also","am","an","and",
+     "any","are","as","at","be","because","been","before","being","below",
+     "between","both","but","by","can","could","did","do","does","doing","down",
+     "during","each","few","for","from","further","get","got","had","has","have",
+     "having","he","her","here","him","himself","his","how","i","if","in","into",
+     "is","it","its","itself","just","me","more","most","my","myself","new","no",
+     "nor","not","now","of","off","on","once","only","or","other","our","out",
+     "over","own","re","s","said","same","she","should","so","some","such",
+     "t","than","that","the","their","them","then","there","these","they",
+     "this","those","through","time","to","too","under","until","up","us",
+     "very","was","we","were","what","when","where","which","while","who",
+     "whom","why","will","with","would","you","your","yourself","after","also",
+     "back","even","first","into","just","may","much","new","now","one","only",
+     "other","still","two","use","way","well","within","without","year","years",
+     "said","says","say","told","tell","going","went","come","came","take",
+     "made","make","know","good","people","man","men","woman","women","day",
+     "week","month","report","news","according","told","like","want","see",
+     "think","need","work","part","place","point","right","left","large",
+     "long","high","since","ago","around","another","government","country",
+     "city","world","state","mr","ms","mrs","dr","per","cent"] +
+    # ── German (safety net) ───────────────────────────────────────────────────
+    ["ab","aber","alle","allem","allen","aller","alles","als","also","am","an",
+     "andere","anderen","anderer","anderes","auch","auf","aus","bei","beim",
+     "da","damit","dann","das","dass","dem","den","denn","der","deren","des",
+     "deshalb","die","dies","diese","diesem","diesen","dieser","dieses","doch",
+     "du","durch","ein","eine","einem","einen","einer","eines","er","es","etwa",
+     "etwas","für","gegen","hatte","haben","hat","ich","ihm","ihn","ihnen",
+     "ihr","ihre","ihrem","ihren","ihrer","ihres","im","in","ins","ist","ja",
+     "jede","jedem","jeden","jeder","jedes","kann","kein","keine","keinem",
+     "keinen","keiner","keines","man","mehr","mein","meine","mit","muss","nach",
+     "nicht","nichts","noch","nun","nur","ob","oder","ohne","schon","sehr",
+     "sein","seine","seinem","seinen","seiner","seines","sich","sie","sind",
+     "so","soll","sondern","über","um","und","uns","unter","vom","von","vor",
+     "war","was","weil","wie","wieder","wir","wird","zu","zum","zur","zwischen",
+     "wurde","wurden","worden","hatte","hatten","wäre","müssen","sollen"] +
+    # ── French (safety net) ───────────────────────────────────────────────────
+    ["au","aux","avait","avec","avoir","c","ca","ce","cela","ces","cet","cette",
+     "ceux","comme","dans","de","des","dont","du","elle","elles","en","entre",
+     "et","eux","il","ils","je","l","la","le","les","leur","leurs","lui","ma",
+     "mais","me","meme","mes","mon","ni","non","nous","on","ou","par","pas",
+     "pour","qu","que","qui","quoi","sa","se","si","ses","son","sur","te","tes",
+     "toi","ton","tout","toute","toutes","tous","tu","un","une","vous","y",
+     "ete","etre","fait","faire","apres","avant","aussi","alors","ainsi","bien",
+     "bon","bonne","car","donc","lors","meme","depuis","selon","quand","sous",
+     "vers","notre","nos","chez","puis","donc","ceci","cela","celle","celui",
+     "peu","plusieurs","souvent","toujours","tres","trop","ici","la","peut",
+     "sera","serait","seront","sommes","suis","etait","etaient","etant"] +
+    # ── Spanish (safety net) ──────────────────────────────────────────────────
+    ["al","algo","alguien","alguna","algunas","algunos","ante","antes","aquel",
+     "aquella","aquellas","aquellos","aqui","asi","aunque","bajo","bien","cada",
+     "como","con","contra","cual","cuales","cuando","cuanto","cuya","cuyas",
+     "cuyo","cuyos","de","del","desde","donde","el","ella","ellas","ello",
+     "ellos","en","entre","era","eran","eres","es","esa","esas","ese","eso",
+     "esos","esta","estas","este","esto","estos","estoy","fue","fueron","gran",
+     "ha","habia","habian","han","hasta","hay","he","hemos","hubo","la","las",
+     "le","les","lo","los","me","mi","mis","mismo","misma","mas","mucho",
+     "muchos","muy","nada","ni","no","nos","nosotras","nosotros","nuestra",
+     "nuestras","nuestro","nuestros","o","otra","otras","otro","otros","para",
+     "pero","poco","por","porque","que","quien","quienes","se","ser","si",
+     "sin","sobre","su","sus","tambien","tan","tanto","te","tiene","tienen",
+     "toda","todas","todo","todos","tu","tus","un","una","unas","uno","unos",
+     "y","ya","yo","esta","estan","el","segun","tras","durante","mediante"]
 )
 
 
@@ -128,18 +190,22 @@ STOPWORDS = (
 # ❶  CONFIGURATION
 # ══════════════════════════════════════════════════════════════════════════════
 
-DEFAULT_INPUT        = os.path.join("news_output", "corpus_all.parquet")
+# Default input is now the sentiment output which contains translated text
+DEFAULT_INPUT        = os.path.join("analysis_output", "articles_with_sentiment.parquet")
 OUTPUT_DIR           = "analysis_output"
 EVENT_TOPICS_DIR     = os.path.join(OUTPUT_DIR, "event_topics")
 
-EMBEDDING_MODEL      = "intfloat/multilingual-e5-large"
-E5_PASSAGE_PREFIX    = "passage: "
+# English-only model — safe to use now that all text is translated to English.
+# paraphrase-MiniLM-L6-v2 is fast and produces excellent topic clusters on
+# English news text. If you want to keep the multilingual model for any reason,
+# change this back to "intfloat/multilingual-e5-large" and restore _prefix_docs.
+EMBEDDING_MODEL      = "all-MiniLM-L6-v2"
 
-MIN_TOPIC_SIZE       = 3    # lowered from 5 → 3 to reduce initial outlier rate
+MIN_TOPIC_SIZE       = 3
 TOP_N_WORDS          = 10
-REDUCE_TOPICS        = None
+REDUCE_TOPICS        = 30
 
-EVENT_MIN_TOPIC_SIZE = 2    # lowered from 3 → 2 for small per-event subsets
+EVENT_MIN_TOPIC_SIZE = 2
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -147,8 +213,21 @@ EVENT_MIN_TOPIC_SIZE = 2    # lowered from 3 → 2 for small per-event subsets
 # ══════════════════════════════════════════════════════════════════════════════
 
 def load_corpus(path: str) -> pd.DataFrame:
+    """Load corpus from parquet or CSV.
+
+    Builds a `text` column for BERTopic from translated text when available
+    (columns added by sentiment_analysis.py), falling back to original title
+    and body for articles that were already English.
+
+    Column priority for text construction:
+      title : translated_title  > title
+      body  : translated_body   > body
+    """
     print(f"Loading corpus from {path} ...")
-    df = pd.read_parquet(path)
+    if path.endswith(".csv"):
+        df = pd.read_csv(path)
+    else:
+        df = pd.read_parquet(path)
 
     required = {"publisher", "title", "body", "event_label", "event_type", "is_control"}
     missing = required - set(df.columns)
@@ -156,7 +235,6 @@ def load_corpus(path: str) -> pd.DataFrame:
         raise ValueError(f"Corpus is missing expected columns: {missing}")
 
     df = df[df["body"].fillna("").str.strip().str.len() > 100].copy()
-    df["text"] = df["title"].fillna("") + " " + df["body"].fillna("")
     df["is_control"] = df["is_control"].astype(bool)
     df["publisher"] = (
         df["publisher"].astype(str)
@@ -164,27 +242,33 @@ def load_corpus(path: str) -> pd.DataFrame:
         .fillna(df["publisher"].astype(str))
     )
 
+    # Use translated text if available, otherwise fall back to original
+    has_translated = (
+        "translated_title" in df.columns and "translated_body" in df.columns
+    )
+    if has_translated:
+        title_col = df["translated_title"].fillna(df["title"].fillna(""))
+        body_col  = df["translated_body"].fillna(df["body"].fillna(""))
+        print("  Using translated_title / translated_body for topic modelling ✓")
+    else:
+        title_col = df["title"].fillna("")
+        body_col  = df["body"].fillna("")
+        print("  ⚠️  No translated text columns found — clustering on raw multilingual text.")
+        print("       Run sentiment_analysis.py first for best results.")
+
+    df["text"] = title_col + " " + body_col
+
     print(f"  {len(df):,} articles loaded "
           f"({df['publisher'].nunique()} publishers, "
           f"{df['event_label'].nunique()} event windows)")
+    if "language" in df.columns:
+        print(f"  Language mix: {df['language'].value_counts().to_dict()}")
+
     return df
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# ❸  E5 PREFIX HELPER
-# ══════════════════════════════════════════════════════════════════════════════
-
-def _prefix_docs(docs: list[str]) -> list[str]:
-    """
-    Prepend "passage: " prefix required by intfloat/multilingual-e5-large.
-    Omitting it produces meaningfully worse embeddings.
-    Reference: https://huggingface.co/intfloat/multilingual-e5-large
-    """
-    return [E5_PASSAGE_PREFIX + doc for doc in docs]
-
-
-# ══════════════════════════════════════════════════════════════════════════════
-# ❹  BUILD A BERTOPIC MODEL  (shared helper)
+# ❸  BUILD A BERTOPIC MODEL  (shared helper)
 # ══════════════════════════════════════════════════════════════════════════════
 
 def build_topic_model(
@@ -198,19 +282,19 @@ def build_topic_model(
 ) -> tuple[BERTopic, list[int]]:
     """Fit BERTopic on docs; return (model, topic_assignments).
 
-    Outlier reduction uses strategy="embeddings" which reassigns outlier
-    documents by raw embedding cosine distance. This outperforms "c-tf-idf"
-    for short articles and minority-language documents that have few term
-    overlaps with any discovered topic.
-
-    min_df=1 in CountVectorizer ensures rare but topically important terms
-    (e.g. event-specific names, protest slogans) contribute to TF-IDF labels
-    rather than being silently dropped.
+    CountVectorizer settings:
+      stop_words=STOPWORDS  — removes function words from TF-IDF labels
+      max_df=0.95           — removes any term in >95% of docs (catches
+                              high-frequency words that evade the stopword list)
+      min_df=2              — requires a term to appear in at least 2 docs
+                              (prevents hapax legomena dominating labels)
+      ngram_range=(1,2)     — allows bigrams for richer topic labels
     """
     vectorizer_model = CountVectorizer(
         stop_words=STOPWORDS,
         ngram_range=(1, 2),
-        min_df=1,   # was 2; lowered so rare protest-specific terms are kept
+        min_df=2,
+        max_df=0.95,
     )
 
     topic_model = BERTopic(
@@ -231,7 +315,7 @@ def build_topic_model(
           f"Outliers before reassignment: {n_outliers} "
           f"({100 * n_outliers / max(len(topics), 1):.1f}%)")
 
-    # ── Stage 2 outlier reduction: embedding-based reassignment ──────────────
+    # ── Outlier reassignment ──────────────────────────────────────────────────
     if reduce_outliers and n_outliers > 0:
         topics = topic_model.reduce_outliers(docs, topics, strategy="embeddings")
         topic_model.update_topics(docs, topics=topics)
@@ -239,18 +323,21 @@ def build_topic_model(
         print(f"{prefix}Outliers after reassignment: {n_remaining} "
               f"({100 * n_remaining / max(len(topics), 1):.1f}%)")
 
-    if reduce_topics and n_topics > reduce_topics:
-        print(f"{prefix}Reducing to ~{reduce_topics} topics ...")
-        topic_model.reduce_topics(docs, nr_topics=reduce_topics)
-        topics  = topic_model.topics_
-        n_after = len(set(topics)) - (1 if -1 in topics else 0)
-        print(f"{prefix}Topics after reduction: {n_after}")
+    # ── Topic count reduction ─────────────────────────────────────────────────
+    if reduce_topics and reduce_topics > 0:
+        n_before = len(set(topics)) - (1 if -1 in topics else 0)
+        if n_before > reduce_topics:
+            print(f"{prefix}Reducing {n_before} topics → ~{reduce_topics} ...")
+            topic_model.reduce_topics(docs, nr_topics=reduce_topics)
+            topics  = topic_model.topics_
+            n_after = len(set(topics)) - (1 if -1 in topics else 0)
+            print(f"{prefix}Topics after reduction: {n_after}")
 
     return topic_model, list(topics)
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# ❺  GLOBAL MODEL
+# ❹  GLOBAL MODEL
 # ══════════════════════════════════════════════════════════════════════════════
 
 def fit_global_model(
@@ -263,12 +350,10 @@ def fit_global_model(
 ) -> tuple[BERTopic, list[int]]:
     print(f"\nFitting GLOBAL BERTopic model on {len(df):,} articles ...")
     print(f"  min_topic_size={min_topic_size}, top_n_words={top_n_words}, "
-          f"reduce_outliers={reduce_outliers}")
-    if reduce_topics:
-        print(f"  Will reduce to ~{reduce_topics} topics after fitting")
+          f"reduce_outliers={reduce_outliers}, reduce_topics={reduce_topics}")
 
     return build_topic_model(
-        docs=_prefix_docs(df["text"].tolist()),
+        docs=df["text"].tolist(),
         embedding_model=embedding_model,
         min_topic_size=min_topic_size,
         top_n_words=top_n_words,
@@ -284,7 +369,7 @@ def attach_global_topics(
     topics: list[int],
 ) -> pd.DataFrame:
     df = df.copy()
-    df["topic_id_raw"] = topics   # preserve pre-reassignment for auditability
+    df["topic_id_raw"] = topics   # pre-reassignment for auditability
     df["topic_id"]     = topics
     label_map = dict(zip(
         topic_model.get_topic_info()["Topic"],
@@ -295,7 +380,7 @@ def attach_global_topics(
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# ❻  PER-EVENT MODELS
+# ❺  PER-EVENT MODELS
 # ══════════════════════════════════════════════════════════════════════════════
 
 def fit_event_models(
@@ -305,11 +390,15 @@ def fit_event_models(
     top_n_words: int,
     reduce_outliers: bool,
 ) -> pd.DataFrame:
+    """Fit a separate BERTopic per event_label.
+    Per-event models intentionally do NOT apply reduce_topics — the subsets
+    are small enough that micro-topic granularity is informative.
+    """
     os.makedirs(EVENT_TOPICS_DIR, exist_ok=True)
 
     events = sorted(df["event_label"].unique())
     print(f"\nFitting PER-EVENT BERTopic models for {len(events)} events ...")
-    print(f"  event_min_topic_size={event_min_topic_size}, top_n_words={top_n_words}, "
+    print(f"  event_min_topic_size={event_min_topic_size}, "
           f"reduce_outliers={reduce_outliers}")
 
     df = df.copy()
@@ -326,14 +415,13 @@ def fit_event_models(
             print(f"  [{event}] Skipping — too few articles ({len(subset)})")
             continue
 
-        docs = _prefix_docs(subset["text"].tolist())
-
         try:
             event_model, event_topics = build_topic_model(
-                docs=docs,
+                docs=subset["text"].tolist(),
                 embedding_model=embedding_model,
                 min_topic_size=event_min_topic_size,
                 top_n_words=top_n_words,
+                reduce_topics=None,
                 reduce_outliers=reduce_outliers,
                 label=event,
             )
@@ -367,11 +455,10 @@ def fit_event_models(
         )
 
         all_event_dists.append(dist)
-        print(f"  [{event}] Saved CSVs → {EVENT_TOPICS_DIR}/{safe_name}_*.csv")
+        print(f"  [{event}] Saved → {EVENT_TOPICS_DIR}/{safe_name}_*.csv")
 
     if all_event_dists:
-        combined = pd.concat(all_event_dists, ignore_index=True)
-        combined.to_csv(
+        pd.concat(all_event_dists, ignore_index=True).to_csv(
             os.path.join(EVENT_TOPICS_DIR, "all_events_topic_dist.csv"),
             index=False,
         )
@@ -381,7 +468,7 @@ def fit_event_models(
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# ❼  DISTRIBUTION TABLES
+# ❻  DISTRIBUTION TABLES
 # ══════════════════════════════════════════════════════════════════════════════
 
 def topic_distribution(df: pd.DataFrame, group_cols: list[str]) -> pd.DataFrame:
@@ -400,7 +487,7 @@ def topic_distribution(df: pd.DataFrame, group_cols: list[str]) -> pd.DataFrame:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# ❽  SAVE GLOBAL OUTPUTS
+# ❼  SAVE GLOBAL OUTPUTS
 # ══════════════════════════════════════════════════════════════════════════════
 
 def save_global_outputs(df: pd.DataFrame, topic_model: BERTopic) -> None:
@@ -424,7 +511,7 @@ def save_global_outputs(df: pd.DataFrame, topic_model: BERTopic) -> None:
 
     for name, group_cols in distribution_configs:
         if not all(c in df.columns for c in group_cols):
-            print(f"  ⚠️  Skipping {name}: missing columns {set(group_cols) - set(df.columns)}")
+            print(f"  ⚠️  Skipping {name}: missing {set(group_cols) - set(df.columns)}")
             continue
         out = os.path.join(OUTPUT_DIR, f"topic_dist_{name}.csv")
         topic_distribution(df, group_cols).to_csv(out, index=False)
@@ -435,38 +522,42 @@ def save_global_outputs(df: pd.DataFrame, topic_model: BERTopic) -> None:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# ❾  MAIN
+# ❽  MAIN
 # ══════════════════════════════════════════════════════════════════════════════
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input",                default=DEFAULT_INPUT)
+    parser.add_argument(
+        "--input", default=DEFAULT_INPUT,
+        help="Path to input parquet/CSV. Default: articles_with_sentiment.parquet "
+             "(produced by sentiment_analysis.py). Pass corpus_all.parquet to run "
+             "without pre-translation, but topic quality will be lower.",
+    )
     parser.add_argument("--min-topic-size",       type=int, default=MIN_TOPIC_SIZE)
     parser.add_argument("--top-n-words",          type=int, default=TOP_N_WORDS)
     parser.add_argument("--event-min-topic-size", type=int, default=EVENT_MIN_TOPIC_SIZE)
-    parser.add_argument("--reduce-topics",        type=int, default=REDUCE_TOPICS,
-                        metavar="N",
-                        help="Merge global topics down to ~N after fitting.")
-    parser.add_argument("--no-event-topics",      action="store_true",
-                        help="Skip per-event topic modelling.")
-    parser.add_argument("--no-reduce-outliers",   action="store_true",
-                        help="Skip embedding-based outlier reassignment.")
+    parser.add_argument(
+        "--reduce-topics", type=int, default=REDUCE_TOPICS, metavar="N",
+        help="Merge global topics down to ~N (default 30). Pass 0 to disable.",
+    )
+    parser.add_argument("--no-event-topics",    action="store_true")
+    parser.add_argument("--no-reduce-outliers", action="store_true")
     args = parser.parse_args()
 
     df = load_corpus(args.input)
 
     print(f"\nLoading embedding model: {EMBEDDING_MODEL} ...")
-    print("  Note: multilingual-e5-large (~1.1 GB). Ensure sufficient RAM/VRAM.")
     embedding_model = SentenceTransformer(EMBEDDING_MODEL)
 
     reduce_outliers = not args.no_reduce_outliers
+    reduce_topics   = args.reduce_topics if args.reduce_topics > 0 else None
 
     global_model, global_topics = fit_global_model(
         df,
         embedding_model=embedding_model,
         min_topic_size=args.min_topic_size,
         top_n_words=args.top_n_words,
-        reduce_topics=args.reduce_topics,
+        reduce_topics=reduce_topics,
         reduce_outliers=reduce_outliers,
     )
     df = attach_global_topics(df, global_model, global_topics)
@@ -483,10 +574,10 @@ def main() -> None:
     save_global_outputs(df, global_model)
 
     print("\n✅  Topic modelling complete.")
-    print(f"    Global outputs  → {OUTPUT_DIR}/")
+    print(f"    Global outputs → {OUTPUT_DIR}/")
     if not args.no_event_topics:
-        print(f"    Per-event CSVs  → {EVENT_TOPICS_DIR}/")
-    print(f"    Next step: run  python sentiment_analysis.py")
+        print(f"    Per-event CSVs → {EVENT_TOPICS_DIR}/")
+    print(f"    Next step: run  python visualise.py")
 
 
 if __name__ == "__main__":
