@@ -1,0 +1,60 @@
+event_type,is_control,topic_label,n_articles,total_articles,topic_share_pct
+single,False,"Abortion, Election, Labour",265,3580,7.4
+single,False,"Appeals, Church england, Planet",5,3580,0.14
+single,False,"Asian, Schools, Students",48,3580,1.34
+single,False,"Best online, Classes, Oxford",8,3580,0.22
+single,False,"Biden, Death, France",1128,3580,31.51
+single,False,"Bill gates, Coronavirus, Vaccine",90,3580,2.51
+single,False,"Boat, Border, Migrants",38,3580,1.06
+single,False,"Cancels, Floyd, John",3,3580,0.08
+single,False,"Cancer, Fire, Nhs",36,3580,1.01
+single,False,"Carl, Comic relief, Katie",203,3580,5.67
+single,False,"Chocolate, Puff, Warm",5,3580,0.14
+single,False,"Cia, Jet, Spy",32,3580,0.89
+single,False,"Climate change, Fiona, Hurricane",57,3580,1.59
+single,False,"Coffee, Daily, Walk",8,3580,0.22
+single,False,"Collision, Driver, Truck",10,3580,0.28
+single,False,"Draft, Nba, Rangers",72,3580,2.01
+single,False,"Earnings, Earnings snapshot, Stocks",228,3580,6.37
+single,False,"Elon musk, Tiktok, Twitter",73,3580,2.04
+single,False,"Expert, Killer, Medium",2,3580,0.06
+single,False,"Gift, Halloween, Star sign",19,3580,0.53
+single,False,"Guerre, Krieg, Ukraine",738,3580,20.61
+single,False,"Harvey, Sentenced, Teen",99,3580,2.77
+single,False,"Launch, Nasa, Rocket",8,3580,0.22
+single,False,"Lifts sail, Ships, Warming",12,3580,0.34
+single,False,"Lisa, Mario batali, Sexual misconduct",14,3580,0.39
+single,False,"Liverpool, Transfer, Utd",235,3580,6.56
+single,False,"Meloni, Nigeria, Philippines",19,3580,0.53
+single,False,"Missile, North korea, Taiwan",45,3580,1.26
+single,False,"Nato, Putin, Russians",51,3580,1.42
+single,False,"Plague, Pollen, Spring",29,3580,0.81
+sustained,False,"Abortion, Election, Labour",319,3874,8.23
+sustained,False,"Appeals, Church england, Planet",11,3874,0.28
+sustained,False,"Asian, Schools, Students",20,3874,0.52
+sustained,False,"Best online, Classes, Oxford",14,3874,0.36
+sustained,False,"Biden, Death, France",1086,3874,28.03
+sustained,False,"Bill gates, Coronavirus, Vaccine",89,3874,2.3
+sustained,False,"Boat, Border, Migrants",49,3874,1.26
+sustained,False,"Cancels, Floyd, John",9,3874,0.23
+sustained,False,"Cancer, Fire, Nhs",24,3874,0.62
+sustained,False,"Carl, Comic relief, Katie",169,3874,4.36
+sustained,False,"Cia, Jet, Spy",37,3874,0.96
+sustained,False,"Climate change, Fiona, Hurricane",77,3874,1.99
+sustained,False,"Coffee, Daily, Walk",4,3874,0.1
+sustained,False,"Collision, Driver, Truck",11,3874,0.28
+sustained,False,"Draft, Nba, Rangers",106,3874,2.74
+sustained,False,"Earnings, Earnings snapshot, Stocks",228,3874,5.89
+sustained,False,"Elon musk, Tiktok, Twitter",76,3874,1.96
+sustained,False,"Expert, Killer, Medium",3,3874,0.08
+sustained,False,"Gift, Halloween, Star sign",41,3874,1.06
+sustained,False,"Guerre, Krieg, Ukraine",987,3874,25.48
+sustained,False,"Harvey, Sentenced, Teen",80,3874,2.07
+sustained,False,"Launch, Nasa, Rocket",17,3874,0.44
+sustained,False,"Lifts sail, Ships, Warming",6,3874,0.15
+sustained,False,"Lisa, Mario batali, Sexual misconduct",13,3874,0.34
+sustained,False,"Liverpool, Transfer, Utd",173,3874,4.47
+sustained,False,"Meloni, Nigeria, Philippines",52,3874,1.34
+sustained,False,"Missile, North korea, Taiwan",45,3874,1.16
+sustained,False,"Nato, Putin, Russians",107,3874,2.76
+sustained,False,"Plague, Pollen, Spring",21,3874,0.54

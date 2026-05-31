@@ -1,0 +1,43 @@
+publisher,is_control,event_topic_label,n_articles,total_articles,topic_share_pct,event_label
+Daily Mail,False,"Action, Champions, Champions league",8,23,34.78,IWD_2018_Global
+Daily Mail,False,"Arsenal, Score premier, Tottenham",3,23,13.04,IWD_2018_Global
+Daily Mail,False,"Avalanche, Chris, Conservative",1,23,4.35,IWD_2018_Global
+Daily Mail,False,"Cheltenham festival, Festival, Mother",1,23,4.35,IWD_2018_Global
+Daily Mail,False,"Madrid, Real, Real madrid",6,23,26.09,IWD_2018_Global
+Daily Mail,False,"Manchester, Score premier, United",4,23,17.39,IWD_2018_Global
+Deutsche Welle,False,"Avalanche, Chris, Conservative",1,3,33.33,IWD_2018_Global
+Deutsche Welle,False,outlier,2,3,66.67,IWD_2018_Global
+Die Zeit,False,outlier,8,8,100.0,IWD_2018_Global
+Fox News,False,"American, Plan",3,50,6.0,IWD_2018_Global
+Fox News,False,"Arizona, Race, Special election",2,50,4.0,IWD_2018_Global
+Fox News,False,"Avalanche, Chris, Conservative",11,50,22.0,IWD_2018_Global
+Fox News,False,"Battle, Best, Study finds",3,50,6.0,IWD_2018_Global
+Fox News,False,"Card, David, Stop",1,50,2.0,IWD_2018_Global
+Fox News,False,"David, Job, Shulkin",3,50,6.0,IWD_2018_Global
+Fox News,False,"Deal, Legislature, Wall",1,50,2.0,IWD_2018_Global
+Fox News,False,"Democrats, Inside, Scandal",1,50,2.0,IWD_2018_Global
+Fox News,False,"Interest, Senate, Trump border",3,50,6.0,IWD_2018_Global
+Fox News,False,"Key, Training, West",5,50,10.0,IWD_2018_Global
+Fox News,False,"Lesson, Students, Violence",15,50,30.0,IWD_2018_Global
+Fox News,False,"Madrid, Real, Real madrid",1,50,2.0,IWD_2018_Global
+Fox News,False,"Tax, Victory, Won",1,50,2.0,IWD_2018_Global
+The Telegraph,False,"Avalanche, Chris, Conservative",3,50,6.0,IWD_2018_Global
+The Telegraph,False,"Battle, Best, Study finds",11,50,22.0,IWD_2018_Global
+The Telegraph,False,"Believe, Pressure, Scientists",5,50,10.0,IWD_2018_Global
+The Telegraph,False,"Britain, Russian, Scientists",1,50,2.0,IWD_2018_Global
+The Telegraph,False,"Cheltenham festival, Festival, Mother",1,50,2.0,IWD_2018_Global
+The Telegraph,False,"Interest, Senate, Trump border",1,50,2.0,IWD_2018_Global
+The Telegraph,False,"Lesson, Students, Violence",24,50,48.0,IWD_2018_Global
+The Telegraph,False,"Professor, Stars, Won",4,50,8.0,IWD_2018_Global
+The Washington Times,False,"American, Plan",1,50,2.0,IWD_2018_Global
+The Washington Times,False,"Arizona, Race, Special election",6,50,12.0,IWD_2018_Global
+The Washington Times,False,"Avalanche, Chris, Conservative",8,50,16.0,IWD_2018_Global
+The Washington Times,False,"Britain, Russian, Scientists",2,50,4.0,IWD_2018_Global
+The Washington Times,False,"Card, David, Stop",2,50,4.0,IWD_2018_Global
+The Washington Times,False,"David, Job, Shulkin",5,50,10.0,IWD_2018_Global
+The Washington Times,False,"Deal, Legislature, Wall",3,50,6.0,IWD_2018_Global
+The Washington Times,False,"Democrats, Inside, Scandal",3,50,6.0,IWD_2018_Global
+The Washington Times,False,"Interest, Senate, Trump border",7,50,14.0,IWD_2018_Global
+The Washington Times,False,"Lesson, Students, Violence",10,50,20.0,IWD_2018_Global
+The Washington Times,False,"Professor, Stars, Won",1,50,2.0,IWD_2018_Global
+The Washington Times,False,"Tax, Victory, Won",2,50,4.0,IWD_2018_Global

@@ -1,0 +1,11 @@
+event_label,status,n_articles,min_topic_size_used,requested_size,n_topics,is_sparse
+IWD_2018_Global,fallback,184,2,15,20,True
+International_Womens_Strike_2017,fallback,66,7,15,3,True
+Israeli_Womens_Protests_2023,ok,1568,15,15,16,False
+MeToo_Protests_2017,fallback,139,7,15,4,True
+Polish_Womens_Strike_2020,ok,902,15,15,8,False
+Roe_Leak_Protests_2022,ok,1426,15,15,15,False
+Sarah_Everard_Vigils_2021,ok,1011,15,15,12,False
+Swiss_Womens_Strike_2019,ok,536,15,15,5,False
+Women_Life_Freedom_2022,ok,1546,15,15,22,False
+Womens_March_2017,fallback,76,7,15,3,True

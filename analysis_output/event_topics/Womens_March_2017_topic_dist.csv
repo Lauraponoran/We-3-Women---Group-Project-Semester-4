@@ -1,0 +1,8 @@
+publisher,is_control,event_topic_label,n_articles,total_articles,topic_share_pct,event_label
+Daily Mail,False,"Alternative, Six, Utd",15,23,65.22,Womens_March_2017
+Daily Mail,False,"Anthony, Manchester united, Striker",8,23,34.78,Womens_March_2017
+Deutsche Welle,False,"Alternative, Six, Utd",4,4,100.0,Womens_March_2017
+The Telegraph,False,"Alternative, Six, Utd",28,49,57.14,Womens_March_2017
+The Telegraph,False,"Anthony, Manchester united, Striker",1,49,2.04,Womens_March_2017
+The Telegraph,False,Debate,1,49,2.04,Womens_March_2017
+The Telegraph,False,"Debate, Nations, Obsession",19,49,38.78,Womens_March_2017

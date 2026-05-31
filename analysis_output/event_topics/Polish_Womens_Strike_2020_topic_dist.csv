@@ -1,0 +1,95 @@
+publisher,is_control,event_topic_label,n_articles,total_articles,topic_share_pct,event_label
+Associated Press News,False,"Boris johnson, Free, Stay",4,7,57.14,Polish_Womens_Strike_2020
+Associated Press News,False,"Trump biden, Warns, Win",3,7,42.86,Polish_Womens_Strike_2020
+Business Insider,False,"Apple, Companies, Tech",9,50,18.0,Polish_Womens_Strike_2020
+Business Insider,False,"Boris johnson, Free, Stay",27,50,54.0,Polish_Womens_Strike_2020
+Business Insider,False,"Coronavirus, Deaths, Restrictions",1,50,2.0,Polish_Womens_Strike_2020
+Business Insider,False,"Festival, Halloween, Moon",9,50,18.0,Polish_Womens_Strike_2020
+Business Insider,False,"Trump biden, Warns, Win",4,50,8.0,Polish_Womens_Strike_2020
+CNBC,False,"Apple, Companies, Tech",14,50,28.0,Polish_Womens_Strike_2020
+CNBC,False,"Boris johnson, Free, Stay",18,50,36.0,Polish_Womens_Strike_2020
+CNBC,False,"Coronavirus, Deaths, Restrictions",7,50,14.0,Polish_Womens_Strike_2020
+CNBC,False,"Festival, Halloween, Moon",1,50,2.0,Polish_Womens_Strike_2020
+CNBC,False,"Trump biden, Warns, Win",10,50,20.0,Polish_Womens_Strike_2020
+Daily Mail,False,"Accused, Children, Old",3,50,6.0,Polish_Womens_Strike_2020
+Daily Mail,False,"Apple, Companies, Tech",5,50,10.0,Polish_Womens_Strike_2020
+Daily Mail,False,"Boris johnson, Free, Stay",22,50,44.0,Polish_Womens_Strike_2020
+Daily Mail,False,"Coronavirus, Deaths, Restrictions",6,50,12.0,Polish_Womens_Strike_2020
+Daily Mail,False,"Crisis, Cymru, Remain",1,50,2.0,Polish_Womens_Strike_2020
+Daily Mail,False,"France, Spiegel politik, Video",4,50,8.0,Polish_Womens_Strike_2020
+Daily Mail,False,"Nobby, Nobby stiles, Stiles",2,50,4.0,Polish_Womens_Strike_2020
+Daily Mail,False,"Trump biden, Warns, Win",7,50,14.0,Polish_Womens_Strike_2020
+Deutsche Welle,False,"Crisis, Cymru, Remain",1,50,2.0,Polish_Womens_Strike_2020
+Deutsche Welle,False,"France, Spiegel politik, Video",49,50,98.0,Polish_Womens_Strike_2020
+Die Tageszeitung (taz),False,"Crisis, Cymru, Remain",2,50,4.0,Polish_Womens_Strike_2020
+Die Tageszeitung (taz),False,"France, Spiegel politik, Video",48,50,96.0,Polish_Womens_Strike_2020
+Euronews (EN),False,"Accused, Children, Old",5,50,10.0,Polish_Womens_Strike_2020
+Euronews (EN),False,"Boris johnson, Free, Stay",17,50,34.0,Polish_Womens_Strike_2020
+Euronews (EN),False,"Coronavirus, Deaths, Restrictions",11,50,22.0,Polish_Womens_Strike_2020
+Euronews (EN),False,"Festival, Halloween, Moon",2,50,4.0,Polish_Womens_Strike_2020
+Euronews (EN),False,"France, Spiegel politik, Video",8,50,16.0,Polish_Womens_Strike_2020
+Euronews (EN),False,"Nobby, Nobby stiles, Stiles",1,50,2.0,Polish_Womens_Strike_2020
+Euronews (EN),False,"Trump biden, Warns, Win",6,50,12.0,Polish_Womens_Strike_2020
+Euronews (FR),False,"Crisis, Cymru, Remain",1,49,2.04,Polish_Womens_Strike_2020
+Euronews (FR),False,"France, Spiegel politik, Video",48,49,97.96,Polish_Womens_Strike_2020
+Fox News,False,"Accused, Children, Old",8,50,16.0,Polish_Womens_Strike_2020
+Fox News,False,"Apple, Companies, Tech",1,50,2.0,Polish_Womens_Strike_2020
+Fox News,False,"Boris johnson, Free, Stay",12,50,24.0,Polish_Womens_Strike_2020
+Fox News,False,"Coronavirus, Deaths, Restrictions",4,50,8.0,Polish_Womens_Strike_2020
+Fox News,False,"Festival, Halloween, Moon",1,50,2.0,Polish_Womens_Strike_2020
+Fox News,False,"Trump biden, Warns, Win",24,50,48.0,Polish_Womens_Strike_2020
+Frankfurter Allgemeine Zeitung,False,"Boris johnson, Free, Stay",1,50,2.0,Polish_Womens_Strike_2020
+Frankfurter Allgemeine Zeitung,False,"Crisis, Cymru, Remain",1,50,2.0,Polish_Womens_Strike_2020
+Frankfurter Allgemeine Zeitung,False,"France, Spiegel politik, Video",48,50,96.0,Polish_Womens_Strike_2020
+Le Monde,False,"Coronavirus, Deaths, Restrictions",1,50,2.0,Polish_Womens_Strike_2020
+Le Monde,False,"France, Spiegel politik, Video",49,50,98.0,Polish_Womens_Strike_2020
+Spiegel Online,False,"France, Spiegel politik, Video",48,50,96.0,Polish_Womens_Strike_2020
+Spiegel Online,False,"Trump biden, Warns, Win",2,50,4.0,Polish_Womens_Strike_2020
+The BBC,False,"Accused, Children, Old",18,50,36.0,Polish_Womens_Strike_2020
+The BBC,False,"Boris johnson, Free, Stay",9,50,18.0,Polish_Womens_Strike_2020
+The BBC,False,"Coronavirus, Deaths, Restrictions",9,50,18.0,Polish_Womens_Strike_2020
+The BBC,False,"Crisis, Cymru, Remain",2,50,4.0,Polish_Womens_Strike_2020
+The BBC,False,"France, Spiegel politik, Video",8,50,16.0,Polish_Womens_Strike_2020
+The BBC,False,"Nobby, Nobby stiles, Stiles",1,50,2.0,Polish_Womens_Strike_2020
+The BBC,False,"Trump biden, Warns, Win",3,50,6.0,Polish_Womens_Strike_2020
+The Nation,False,"Accused, Children, Old",2,46,4.35,Polish_Womens_Strike_2020
+The Nation,False,"Boris johnson, Free, Stay",8,46,17.39,Polish_Womens_Strike_2020
+The Nation,False,"Coronavirus, Deaths, Restrictions",4,46,8.7,Polish_Womens_Strike_2020
+The Nation,False,"Crisis, Cymru, Remain",1,46,2.17,Polish_Womens_Strike_2020
+The Nation,False,"Festival, Halloween, Moon",1,46,2.17,Polish_Womens_Strike_2020
+The Nation,False,"France, Spiegel politik, Video",7,46,15.22,Polish_Womens_Strike_2020
+The Nation,False,"Trump biden, Warns, Win",23,46,50.0,Polish_Womens_Strike_2020
+The Sun,False,"Accused, Children, Old",6,50,12.0,Polish_Womens_Strike_2020
+The Sun,False,"Boris johnson, Free, Stay",16,50,32.0,Polish_Womens_Strike_2020
+The Sun,False,"Coronavirus, Deaths, Restrictions",2,50,4.0,Polish_Womens_Strike_2020
+The Sun,False,"Crisis, Cymru, Remain",2,50,4.0,Polish_Womens_Strike_2020
+The Sun,False,"Festival, Halloween, Moon",4,50,8.0,Polish_Womens_Strike_2020
+The Sun,False,"France, Spiegel politik, Video",1,50,2.0,Polish_Womens_Strike_2020
+The Sun,False,"Nobby, Nobby stiles, Stiles",14,50,28.0,Polish_Womens_Strike_2020
+The Sun,False,"Trump biden, Warns, Win",5,50,10.0,Polish_Womens_Strike_2020
+The Telegraph,False,"Accused, Children, Old",2,50,4.0,Polish_Womens_Strike_2020
+The Telegraph,False,"Apple, Companies, Tech",1,50,2.0,Polish_Womens_Strike_2020
+The Telegraph,False,"Boris johnson, Free, Stay",16,50,32.0,Polish_Womens_Strike_2020
+The Telegraph,False,"Coronavirus, Deaths, Restrictions",4,50,8.0,Polish_Womens_Strike_2020
+The Telegraph,False,"Crisis, Cymru, Remain",4,50,8.0,Polish_Womens_Strike_2020
+The Telegraph,False,"Festival, Halloween, Moon",4,50,8.0,Polish_Womens_Strike_2020
+The Telegraph,False,"France, Spiegel politik, Video",1,50,2.0,Polish_Womens_Strike_2020
+The Telegraph,False,"Nobby, Nobby stiles, Stiles",13,50,26.0,Polish_Womens_Strike_2020
+The Telegraph,False,"Trump biden, Warns, Win",5,50,10.0,Polish_Womens_Strike_2020
+The Washington Times,False,"Accused, Children, Old",23,50,46.0,Polish_Womens_Strike_2020
+The Washington Times,False,"Boris johnson, Free, Stay",7,50,14.0,Polish_Womens_Strike_2020
+The Washington Times,False,"Coronavirus, Deaths, Restrictions",5,50,10.0,Polish_Womens_Strike_2020
+The Washington Times,False,"Festival, Halloween, Moon",1,50,2.0,Polish_Womens_Strike_2020
+The Washington Times,False,"France, Spiegel politik, Video",1,50,2.0,Polish_Womens_Strike_2020
+The Washington Times,False,"Trump biden, Warns, Win",13,50,26.0,Polish_Womens_Strike_2020
+es,False,"Coronavirus, Deaths, Restrictions",1,50,2.0,Polish_Womens_Strike_2020
+es,False,"France, Spiegel politik, Video",48,50,96.0,Polish_Womens_Strike_2020
+es,False,"Trump biden, Warns, Win",1,50,2.0,Polish_Womens_Strike_2020
+i,False,"Accused, Children, Old",1,50,2.0,Polish_Womens_Strike_2020
+i,False,"Boris johnson, Free, Stay",18,50,36.0,Polish_Womens_Strike_2020
+i,False,"Coronavirus, Deaths, Restrictions",3,50,6.0,Polish_Womens_Strike_2020
+i,False,"Crisis, Cymru, Remain",6,50,12.0,Polish_Womens_Strike_2020
+i,False,"Festival, Halloween, Moon",12,50,24.0,Polish_Womens_Strike_2020
+i,False,"France, Spiegel politik, Video",6,50,12.0,Polish_Womens_Strike_2020
+i,False,"Nobby, Nobby stiles, Stiles",1,50,2.0,Polish_Womens_Strike_2020
+i,False,"Trump biden, Warns, Win",3,50,6.0,Polish_Womens_Strike_2020

@@ -1,0 +1,6 @@
+publisher,is_control,event_topic_label,n_articles,total_articles,topic_share_pct,event_label
+Daily Mail,False,"Ordered, Play, Record",16,16,100.0,International_Womens_Strike_2017
+The Telegraph,False,"Accused, Paid, Sell",10,50,20.0,International_Womens_Strike_2017
+The Telegraph,False,"Children, Old, Three",12,50,24.0,International_Womens_Strike_2017
+The Telegraph,False,"Help, Paid, Play",10,50,20.0,International_Womens_Strike_2017
+The Telegraph,False,"Ordered, Play, Record",18,50,36.0,International_Womens_Strike_2017

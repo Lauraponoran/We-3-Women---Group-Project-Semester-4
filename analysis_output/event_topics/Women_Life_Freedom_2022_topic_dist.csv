@@ -1,0 +1,299 @@
+publisher,is_control,event_topic_label,n_articles,total_articles,topic_share_pct,event_label
+Associated Press News,False,"Data, Jan, Qanon",1,7,14.29,Women_Life_Freedom_2022
+Associated Press News,False,"Elections, Female, Giorgia meloni",1,7,14.29,Women_Life_Freedom_2022
+Associated Press News,False,"Home, Korea, Store",2,7,28.57,Women_Life_Freedom_2022
+Associated Press News,False,"Kanzler, Scholz, Strike",3,7,42.86,Women_Life_Freedom_2022
+Business Insider,False,"Arizona, Democrats, Gop",1,50,2.0,Women_Life_Freedom_2022
+Business Insider,False,"Dakota, Texas, Win",2,50,4.0,Women_Life_Freedom_2022
+Business Insider,False,"Data, Jan, Qanon",13,50,26.0,Women_Life_Freedom_2022
+Business Insider,False,"Death, Festnahmen, Protesten",1,50,2.0,Women_Life_Freedom_2022
+Business Insider,False,"Florida, Launch, Nasa",1,50,2.0,Women_Life_Freedom_2022
+Business Insider,False,"Home, Korea, Store",18,50,36.0,Women_Life_Freedom_2022
+Business Insider,False,"Inflation, Markets, Rates",5,50,10.0,Women_Life_Freedom_2022
+Business Insider,False,"Liz, Mini budget, Tax cuts",3,50,6.0,Women_Life_Freedom_2022
+Business Insider,False,"Putin, Russian, Ukraine",5,50,10.0,Women_Life_Freedom_2022
+Business Insider,False,"Tensions, Travel, Won",1,50,2.0,Women_Life_Freedom_2022
+CBC News,False,"Cancer, Horror, Portugal",1,50,2.0,Women_Life_Freedom_2022
+CBC News,False,"Comeback, England, Southgate",4,50,8.0,Women_Life_Freedom_2022
+CBC News,False,"Dakota, Texas, Win",3,50,6.0,Women_Life_Freedom_2022
+CBC News,False,"Data, Jan, Qanon",8,50,16.0,Women_Life_Freedom_2022
+CBC News,False,"Doubles, Laver cup, Roger",1,50,2.0,Women_Life_Freedom_2022
+CBC News,False,"East coast, Fiona, Hurricane",8,50,16.0,Women_Life_Freedom_2022
+CBC News,False,"Florida, Launch, Nasa",2,50,4.0,Women_Life_Freedom_2022
+CBC News,False,"Home, Korea, Store",19,50,38.0,Women_Life_Freedom_2022
+CBC News,False,"King charles, Palace, Queen",2,50,4.0,Women_Life_Freedom_2022
+CBC News,False,"Putin, Russian, Ukraine",2,50,4.0,Women_Life_Freedom_2022
+CNBC,False,"Arizona, Democrats, Gop",1,50,2.0,Women_Life_Freedom_2022
+CNBC,False,"Data, Jan, Qanon",1,50,2.0,Women_Life_Freedom_2022
+CNBC,False,"Euros, Latinos, Mundo",3,50,6.0,Women_Life_Freedom_2022
+CNBC,False,"Home, Korea, Store",19,50,38.0,Women_Life_Freedom_2022
+CNBC,False,"Inflation, Markets, Rates",23,50,46.0,Women_Life_Freedom_2022
+CNBC,False,"Liz, Mini budget, Tax cuts",3,50,6.0,Women_Life_Freedom_2022
+Daily Mail,False,"Arizona, Democrats, Gop",1,50,2.0,Women_Life_Freedom_2022
+Daily Mail,False,"Cancer, Horror, Portugal",1,50,2.0,Women_Life_Freedom_2022
+Daily Mail,False,"Dakota, Texas, Win",10,50,20.0,Women_Life_Freedom_2022
+Daily Mail,False,"Data, Jan, Qanon",5,50,10.0,Women_Life_Freedom_2022
+Daily Mail,False,"Death, Festnahmen, Protesten",1,50,2.0,Women_Life_Freedom_2022
+Daily Mail,False,"Florida, Launch, Nasa",1,50,2.0,Women_Life_Freedom_2022
+Daily Mail,False,"Home, Korea, Store",13,50,26.0,Women_Life_Freedom_2022
+Daily Mail,False,"Kanzler, Scholz, Strike",1,50,2.0,Women_Life_Freedom_2022
+Daily Mail,False,"Kardashian, Strictly, Strictly dancing",3,50,6.0,Women_Life_Freedom_2022
+Daily Mail,False,"Keir starmer, Tory, Voting",1,50,2.0,Women_Life_Freedom_2022
+Daily Mail,False,"King charles, Palace, Queen",8,50,16.0,Women_Life_Freedom_2022
+Daily Mail,False,"Liz, Mini budget, Tax cuts",3,50,6.0,Women_Life_Freedom_2022
+Daily Mail,False,"Putin, Russian, Ukraine",2,50,4.0,Women_Life_Freedom_2022
+Deutsche Welle,False,"Cancer, Horror, Portugal",23,50,46.0,Women_Life_Freedom_2022
+Deutsche Welle,False,"Death, Festnahmen, Protesten",2,50,4.0,Women_Life_Freedom_2022
+Deutsche Welle,False,"Home, Korea, Store",1,50,2.0,Women_Life_Freedom_2022
+Deutsche Welle,False,"Kanzler, Scholz, Strike",1,50,2.0,Women_Life_Freedom_2022
+Deutsche Welle,False,"Konig, Plant, Winter",16,50,32.0,Women_Life_Freedom_2022
+Deutsche Welle,False,"Putins, Referendums, Weiter",7,50,14.0,Women_Life_Freedom_2022
+Die Tageszeitung (taz),False,"Death, Festnahmen, Protesten",4,50,8.0,Women_Life_Freedom_2022
+Die Tageszeitung (taz),False,"Home, Korea, Store",4,50,8.0,Women_Life_Freedom_2022
+Die Tageszeitung (taz),False,"Kanzler, Scholz, Strike",2,50,4.0,Women_Life_Freedom_2022
+Die Tageszeitung (taz),False,"Konig, Plant, Winter",32,50,64.0,Women_Life_Freedom_2022
+Die Tageszeitung (taz),False,"Putins, Referendums, Weiter",7,50,14.0,Women_Life_Freedom_2022
+Die Tageszeitung (taz),False,"Tensions, Travel, Won",1,50,2.0,Women_Life_Freedom_2022
+El Mundo,False,"Euros, Latinos, Mundo",50,50,100.0,Women_Life_Freedom_2022
+El País,False,"Euros, Latinos, Mundo",4,4,100.0,Women_Life_Freedom_2022
+Euronews (EN),False,"Data, Jan, Qanon",1,50,2.0,Women_Life_Freedom_2022
+Euronews (EN),False,"Death, Festnahmen, Protesten",2,50,4.0,Women_Life_Freedom_2022
+Euronews (EN),False,"Doubles, Laver cup, Roger",1,50,2.0,Women_Life_Freedom_2022
+Euronews (EN),False,"East coast, Fiona, Hurricane",1,50,2.0,Women_Life_Freedom_2022
+Euronews (EN),False,"Elections, Female, Giorgia meloni",7,50,14.0,Women_Life_Freedom_2022
+Euronews (EN),False,"Euros, Latinos, Mundo",2,50,4.0,Women_Life_Freedom_2022
+Euronews (EN),False,"Florida, Launch, Nasa",1,50,2.0,Women_Life_Freedom_2022
+Euronews (EN),False,"France, Paris, Uefa",1,50,2.0,Women_Life_Freedom_2022
+Euronews (EN),False,"Home, Korea, Store",20,50,40.0,Women_Life_Freedom_2022
+Euronews (EN),False,"Kardashian, Strictly, Strictly dancing",1,50,2.0,Women_Life_Freedom_2022
+Euronews (EN),False,"Putin, Russian, Ukraine",12,50,24.0,Women_Life_Freedom_2022
+Euronews (EN),False,"Tensions, Travel, Won",1,50,2.0,Women_Life_Freedom_2022
+Euronews (FR),False,"Death, Festnahmen, Protesten",3,50,6.0,Women_Life_Freedom_2022
+Euronews (FR),False,"Doubles, Laver cup, Roger",1,50,2.0,Women_Life_Freedom_2022
+Euronews (FR),False,"Elections, Female, Giorgia meloni",1,50,2.0,Women_Life_Freedom_2022
+Euronews (FR),False,"Florida, Launch, Nasa",2,50,4.0,Women_Life_Freedom_2022
+Euronews (FR),False,"France, Paris, Uefa",25,50,50.0,Women_Life_Freedom_2022
+Euronews (FR),False,"Home, Korea, Store",4,50,8.0,Women_Life_Freedom_2022
+Euronews (FR),False,"Putins, Referendums, Weiter",14,50,28.0,Women_Life_Freedom_2022
+Fox News,False,"Arizona, Democrats, Gop",3,50,6.0,Women_Life_Freedom_2022
+Fox News,False,"Comeback, England, Southgate",1,50,2.0,Women_Life_Freedom_2022
+Fox News,False,"Dakota, Texas, Win",7,50,14.0,Women_Life_Freedom_2022
+Fox News,False,"Data, Jan, Qanon",12,50,24.0,Women_Life_Freedom_2022
+Fox News,False,"Elections, Female, Giorgia meloni",2,50,4.0,Women_Life_Freedom_2022
+Fox News,False,"Florida, Launch, Nasa",3,50,6.0,Women_Life_Freedom_2022
+Fox News,False,"Home, Korea, Store",16,50,32.0,Women_Life_Freedom_2022
+Fox News,False,"King charles, Palace, Queen",1,50,2.0,Women_Life_Freedom_2022
+Fox News,False,"Putin, Russian, Ukraine",3,50,6.0,Women_Life_Freedom_2022
+Fox News,False,"Tensions, Travel, Won",2,50,4.0,Women_Life_Freedom_2022
+Frankfurter Allgemeine Zeitung,False,"Death, Festnahmen, Protesten",2,50,4.0,Women_Life_Freedom_2022
+Frankfurter Allgemeine Zeitung,False,"Doubles, Laver cup, Roger",1,50,2.0,Women_Life_Freedom_2022
+Frankfurter Allgemeine Zeitung,False,"France, Paris, Uefa",2,50,4.0,Women_Life_Freedom_2022
+Frankfurter Allgemeine Zeitung,False,"Home, Korea, Store",2,50,4.0,Women_Life_Freedom_2022
+Frankfurter Allgemeine Zeitung,False,"Konig, Plant, Winter",31,50,62.0,Women_Life_Freedom_2022
+Frankfurter Allgemeine Zeitung,False,"Putin, Russian, Ukraine",1,50,2.0,Women_Life_Freedom_2022
+Frankfurter Allgemeine Zeitung,False,"Putins, Referendums, Weiter",11,50,22.0,Women_Life_Freedom_2022
+Le Figaro,False,"Doubles, Laver cup, Roger",2,50,4.0,Women_Life_Freedom_2022
+Le Figaro,False,"Elections, Female, Giorgia meloni",1,50,2.0,Women_Life_Freedom_2022
+Le Figaro,False,"Florida, Launch, Nasa",1,50,2.0,Women_Life_Freedom_2022
+Le Figaro,False,"France, Paris, Uefa",43,50,86.0,Women_Life_Freedom_2022
+Le Figaro,False,"Home, Korea, Store",2,50,4.0,Women_Life_Freedom_2022
+Le Figaro,False,"Putins, Referendums, Weiter",1,50,2.0,Women_Life_Freedom_2022
+Le Monde,False,"Arizona, Democrats, Gop",1,50,2.0,Women_Life_Freedom_2022
+Le Monde,False,"Death, Festnahmen, Protesten",2,50,4.0,Women_Life_Freedom_2022
+Le Monde,False,"Doubles, Laver cup, Roger",1,50,2.0,Women_Life_Freedom_2022
+Le Monde,False,"East coast, Fiona, Hurricane",1,50,2.0,Women_Life_Freedom_2022
+Le Monde,False,"Elections, Female, Giorgia meloni",4,50,8.0,Women_Life_Freedom_2022
+Le Monde,False,"Euros, Latinos, Mundo",1,50,2.0,Women_Life_Freedom_2022
+Le Monde,False,"Florida, Launch, Nasa",1,50,2.0,Women_Life_Freedom_2022
+Le Monde,False,"France, Paris, Uefa",22,50,44.0,Women_Life_Freedom_2022
+Le Monde,False,"Home, Korea, Store",9,50,18.0,Women_Life_Freedom_2022
+Le Monde,False,"Inflation, Markets, Rates",1,50,2.0,Women_Life_Freedom_2022
+Le Monde,False,"Kanzler, Scholz, Strike",1,50,2.0,Women_Life_Freedom_2022
+Le Monde,False,"Putin, Russian, Ukraine",3,50,6.0,Women_Life_Freedom_2022
+Le Monde,False,"Putins, Referendums, Weiter",3,50,6.0,Women_Life_Freedom_2022
+Reuters,False,"Arizona, Democrats, Gop",1,50,2.0,Women_Life_Freedom_2022
+Reuters,False,"Cancer, Horror, Portugal",1,50,2.0,Women_Life_Freedom_2022
+Reuters,False,"Comeback, England, Southgate",4,50,8.0,Women_Life_Freedom_2022
+Reuters,False,"Dakota, Texas, Win",1,50,2.0,Women_Life_Freedom_2022
+Reuters,False,"Death, Festnahmen, Protesten",3,50,6.0,Women_Life_Freedom_2022
+Reuters,False,"Doubles, Laver cup, Roger",1,50,2.0,Women_Life_Freedom_2022
+Reuters,False,"Elections, Female, Giorgia meloni",1,50,2.0,Women_Life_Freedom_2022
+Reuters,False,"Florida, Launch, Nasa",3,50,6.0,Women_Life_Freedom_2022
+Reuters,False,"Home, Korea, Store",11,50,22.0,Women_Life_Freedom_2022
+Reuters,False,"Inflation, Markets, Rates",3,50,6.0,Women_Life_Freedom_2022
+Reuters,False,"Kanzler, Scholz, Strike",7,50,14.0,Women_Life_Freedom_2022
+Reuters,False,"Kardashian, Strictly, Strictly dancing",2,50,4.0,Women_Life_Freedom_2022
+Reuters,False,"King charles, Palace, Queen",1,50,2.0,Women_Life_Freedom_2022
+Reuters,False,"Putin, Russian, Ukraine",9,50,18.0,Women_Life_Freedom_2022
+Reuters,False,"Tensions, Travel, Won",2,50,4.0,Women_Life_Freedom_2022
+Rolling Stone,False,"Arizona, Democrats, Gop",1,50,2.0,Women_Life_Freedom_2022
+Rolling Stone,False,"Comeback, England, Southgate",1,50,2.0,Women_Life_Freedom_2022
+Rolling Stone,False,"Dakota, Texas, Win",1,50,2.0,Women_Life_Freedom_2022
+Rolling Stone,False,"Data, Jan, Qanon",5,50,10.0,Women_Life_Freedom_2022
+Rolling Stone,False,"Florida, Launch, Nasa",1,50,2.0,Women_Life_Freedom_2022
+Rolling Stone,False,"Home, Korea, Store",16,50,32.0,Women_Life_Freedom_2022
+Rolling Stone,False,"Inflation, Markets, Rates",1,50,2.0,Women_Life_Freedom_2022
+Rolling Stone,False,"Kardashian, Strictly, Strictly dancing",23,50,46.0,Women_Life_Freedom_2022
+Rolling Stone,False,"King charles, Palace, Queen",1,50,2.0,Women_Life_Freedom_2022
+Spiegel Online,False,"Death, Festnahmen, Protesten",6,50,12.0,Women_Life_Freedom_2022
+Spiegel Online,False,"Florida, Launch, Nasa",1,50,2.0,Women_Life_Freedom_2022
+Spiegel Online,False,"France, Paris, Uefa",3,50,6.0,Women_Life_Freedom_2022
+Spiegel Online,False,"Home, Korea, Store",3,50,6.0,Women_Life_Freedom_2022
+Spiegel Online,False,"Kanzler, Scholz, Strike",5,50,10.0,Women_Life_Freedom_2022
+Spiegel Online,False,"Konig, Plant, Winter",23,50,46.0,Women_Life_Freedom_2022
+Spiegel Online,False,"Putins, Referendums, Weiter",9,50,18.0,Women_Life_Freedom_2022
+Tagesschau,False,"Death, Festnahmen, Protesten",6,50,12.0,Women_Life_Freedom_2022
+Tagesschau,False,"Doubles, Laver cup, Roger",1,50,2.0,Women_Life_Freedom_2022
+Tagesschau,False,"Elections, Female, Giorgia meloni",1,50,2.0,Women_Life_Freedom_2022
+Tagesschau,False,"Florida, Launch, Nasa",1,50,2.0,Women_Life_Freedom_2022
+Tagesschau,False,"France, Paris, Uefa",1,50,2.0,Women_Life_Freedom_2022
+Tagesschau,False,"Home, Korea, Store",2,50,4.0,Women_Life_Freedom_2022
+Tagesschau,False,"Kanzler, Scholz, Strike",3,50,6.0,Women_Life_Freedom_2022
+Tagesschau,False,"Konig, Plant, Winter",25,50,50.0,Women_Life_Freedom_2022
+Tagesschau,False,"Putins, Referendums, Weiter",9,50,18.0,Women_Life_Freedom_2022
+Tagesschau,False,"Tensions, Travel, Won",1,50,2.0,Women_Life_Freedom_2022
+The BBC,False,"Comeback, England, Southgate",8,49,16.33,Women_Life_Freedom_2022
+The BBC,False,"Data, Jan, Qanon",5,49,10.2,Women_Life_Freedom_2022
+The BBC,False,"Elections, Female, Giorgia meloni",1,49,2.04,Women_Life_Freedom_2022
+The BBC,False,"Florida, Launch, Nasa",1,49,2.04,Women_Life_Freedom_2022
+The BBC,False,"Home, Korea, Store",22,49,44.9,Women_Life_Freedom_2022
+The BBC,False,"Inflation, Markets, Rates",1,49,2.04,Women_Life_Freedom_2022
+The BBC,False,"Kardashian, Strictly, Strictly dancing",2,49,4.08,Women_Life_Freedom_2022
+The BBC,False,"King charles, Palace, Queen",1,49,2.04,Women_Life_Freedom_2022
+The BBC,False,"Konig, Plant, Winter",3,49,6.12,Women_Life_Freedom_2022
+The BBC,False,"Putin, Russian, Ukraine",4,49,8.16,Women_Life_Freedom_2022
+The BBC,False,"Tensions, Travel, Won",1,49,2.04,Women_Life_Freedom_2022
+The Globe and Mail,False,"Comeback, England, Southgate",2,50,4.0,Women_Life_Freedom_2022
+The Globe and Mail,False,"Dakota, Texas, Win",3,50,6.0,Women_Life_Freedom_2022
+The Globe and Mail,False,"Data, Jan, Qanon",8,50,16.0,Women_Life_Freedom_2022
+The Globe and Mail,False,"East coast, Fiona, Hurricane",3,50,6.0,Women_Life_Freedom_2022
+The Globe and Mail,False,"Florida, Launch, Nasa",2,50,4.0,Women_Life_Freedom_2022
+The Globe and Mail,False,"Home, Korea, Store",22,50,44.0,Women_Life_Freedom_2022
+The Globe and Mail,False,"Inflation, Markets, Rates",3,50,6.0,Women_Life_Freedom_2022
+The Globe and Mail,False,"Kanzler, Scholz, Strike",1,50,2.0,Women_Life_Freedom_2022
+The Globe and Mail,False,"Putin, Russian, Ukraine",3,50,6.0,Women_Life_Freedom_2022
+The Globe and Mail,False,"Tensions, Travel, Won",3,50,6.0,Women_Life_Freedom_2022
+The Guardian,False,"Arizona, Democrats, Gop",1,49,2.04,Women_Life_Freedom_2022
+The Guardian,False,"Comeback, England, Southgate",8,49,16.33,Women_Life_Freedom_2022
+The Guardian,False,"Data, Jan, Qanon",2,49,4.08,Women_Life_Freedom_2022
+The Guardian,False,"Doubles, Laver cup, Roger",2,49,4.08,Women_Life_Freedom_2022
+The Guardian,False,"East coast, Fiona, Hurricane",1,49,2.04,Women_Life_Freedom_2022
+The Guardian,False,"Elections, Female, Giorgia meloni",1,49,2.04,Women_Life_Freedom_2022
+The Guardian,False,"Florida, Launch, Nasa",3,49,6.12,Women_Life_Freedom_2022
+The Guardian,False,"Home, Korea, Store",17,49,34.69,Women_Life_Freedom_2022
+The Guardian,False,"Inflation, Markets, Rates",1,49,2.04,Women_Life_Freedom_2022
+The Guardian,False,"Kanzler, Scholz, Strike",1,49,2.04,Women_Life_Freedom_2022
+The Guardian,False,"Keir starmer, Tory, Voting",5,49,10.2,Women_Life_Freedom_2022
+The Guardian,False,"King charles, Palace, Queen",1,49,2.04,Women_Life_Freedom_2022
+The Guardian,False,"Liz, Mini budget, Tax cuts",3,49,6.12,Women_Life_Freedom_2022
+The Guardian,False,"Putin, Russian, Ukraine",2,49,4.08,Women_Life_Freedom_2022
+The Guardian,False,"Tensions, Travel, Won",1,49,2.04,Women_Life_Freedom_2022
+The Independent,False,"Arizona, Democrats, Gop",1,50,2.0,Women_Life_Freedom_2022
+The Independent,False,"Comeback, England, Southgate",7,50,14.0,Women_Life_Freedom_2022
+The Independent,False,"Data, Jan, Qanon",3,50,6.0,Women_Life_Freedom_2022
+The Independent,False,"Doubles, Laver cup, Roger",1,50,2.0,Women_Life_Freedom_2022
+The Independent,False,"East coast, Fiona, Hurricane",1,50,2.0,Women_Life_Freedom_2022
+The Independent,False,"Euros, Latinos, Mundo",2,50,4.0,Women_Life_Freedom_2022
+The Independent,False,"Home, Korea, Store",19,50,38.0,Women_Life_Freedom_2022
+The Independent,False,"Kanzler, Scholz, Strike",2,50,4.0,Women_Life_Freedom_2022
+The Independent,False,"Kardashian, Strictly, Strictly dancing",1,50,2.0,Women_Life_Freedom_2022
+The Independent,False,"Keir starmer, Tory, Voting",6,50,12.0,Women_Life_Freedom_2022
+The Independent,False,"King charles, Palace, Queen",1,50,2.0,Women_Life_Freedom_2022
+The Independent,False,"Liz, Mini budget, Tax cuts",4,50,8.0,Women_Life_Freedom_2022
+The Independent,False,"Putin, Russian, Ukraine",2,50,4.0,Women_Life_Freedom_2022
+The Intercept,False,"Arizona, Democrats, Gop",5,50,10.0,Women_Life_Freedom_2022
+The Intercept,False,"Data, Jan, Qanon",9,50,18.0,Women_Life_Freedom_2022
+The Intercept,False,"Death, Festnahmen, Protesten",2,50,4.0,Women_Life_Freedom_2022
+The Intercept,False,"Elections, Female, Giorgia meloni",1,50,2.0,Women_Life_Freedom_2022
+The Intercept,False,"Euros, Latinos, Mundo",6,50,12.0,Women_Life_Freedom_2022
+The Intercept,False,"France, Paris, Uefa",1,50,2.0,Women_Life_Freedom_2022
+The Intercept,False,"Home, Korea, Store",10,50,20.0,Women_Life_Freedom_2022
+The Intercept,False,"Inflation, Markets, Rates",2,50,4.0,Women_Life_Freedom_2022
+The Intercept,False,"Kanzler, Scholz, Strike",9,50,18.0,Women_Life_Freedom_2022
+The Intercept,False,"Putin, Russian, Ukraine",4,50,8.0,Women_Life_Freedom_2022
+The Intercept,False,"Tensions, Travel, Won",1,50,2.0,Women_Life_Freedom_2022
+The Nation,False,"Arizona, Democrats, Gop",4,42,9.52,Women_Life_Freedom_2022
+The Nation,False,"Data, Jan, Qanon",7,42,16.67,Women_Life_Freedom_2022
+The Nation,False,"Elections, Female, Giorgia meloni",1,42,2.38,Women_Life_Freedom_2022
+The Nation,False,"Euros, Latinos, Mundo",1,42,2.38,Women_Life_Freedom_2022
+The Nation,False,"Home, Korea, Store",24,42,57.14,Women_Life_Freedom_2022
+The Nation,False,"Kanzler, Scholz, Strike",1,42,2.38,Women_Life_Freedom_2022
+The Nation,False,"King charles, Palace, Queen",2,42,4.76,Women_Life_Freedom_2022
+The Nation,False,"Putin, Russian, Ukraine",1,42,2.38,Women_Life_Freedom_2022
+The Nation,False,"Tensions, Travel, Won",1,42,2.38,Women_Life_Freedom_2022
+The New Yorker,False,"Data, Jan, Qanon",7,45,15.56,Women_Life_Freedom_2022
+The New Yorker,False,"Death, Festnahmen, Protesten",1,45,2.22,Women_Life_Freedom_2022
+The New Yorker,False,"Doubles, Laver cup, Roger",1,45,2.22,Women_Life_Freedom_2022
+The New Yorker,False,"Elections, Female, Giorgia meloni",2,45,4.44,Women_Life_Freedom_2022
+The New Yorker,False,"Home, Korea, Store",17,45,37.78,Women_Life_Freedom_2022
+The New Yorker,False,"Kardashian, Strictly, Strictly dancing",6,45,13.33,Women_Life_Freedom_2022
+The New Yorker,False,"King charles, Palace, Queen",6,45,13.33,Women_Life_Freedom_2022
+The New Yorker,False,"Konig, Plant, Winter",2,45,4.44,Women_Life_Freedom_2022
+The New Yorker,False,"Putin, Russian, Ukraine",3,45,6.67,Women_Life_Freedom_2022
+The Sun,False,"Comeback, England, Southgate",6,50,12.0,Women_Life_Freedom_2022
+The Sun,False,"Data, Jan, Qanon",4,50,8.0,Women_Life_Freedom_2022
+The Sun,False,"Home, Korea, Store",27,50,54.0,Women_Life_Freedom_2022
+The Sun,False,"Kardashian, Strictly, Strictly dancing",9,50,18.0,Women_Life_Freedom_2022
+The Sun,False,"Keir starmer, Tory, Voting",1,50,2.0,Women_Life_Freedom_2022
+The Sun,False,"King charles, Palace, Queen",1,50,2.0,Women_Life_Freedom_2022
+The Sun,False,"Putin, Russian, Ukraine",2,50,4.0,Women_Life_Freedom_2022
+The Telegraph,False,"Comeback, England, Southgate",9,50,18.0,Women_Life_Freedom_2022
+The Telegraph,False,"Data, Jan, Qanon",3,50,6.0,Women_Life_Freedom_2022
+The Telegraph,False,"Doubles, Laver cup, Roger",1,50,2.0,Women_Life_Freedom_2022
+The Telegraph,False,"Home, Korea, Store",19,50,38.0,Women_Life_Freedom_2022
+The Telegraph,False,"Kanzler, Scholz, Strike",1,50,2.0,Women_Life_Freedom_2022
+The Telegraph,False,"Kardashian, Strictly, Strictly dancing",2,50,4.0,Women_Life_Freedom_2022
+The Telegraph,False,"Keir starmer, Tory, Voting",2,50,4.0,Women_Life_Freedom_2022
+The Telegraph,False,"King charles, Palace, Queen",2,50,4.0,Women_Life_Freedom_2022
+The Telegraph,False,"Konig, Plant, Winter",1,50,2.0,Women_Life_Freedom_2022
+The Telegraph,False,"Liz, Mini budget, Tax cuts",7,50,14.0,Women_Life_Freedom_2022
+The Telegraph,False,"Putin, Russian, Ukraine",3,50,6.0,Women_Life_Freedom_2022
+The Washington Times,False,"Arizona, Democrats, Gop",6,50,12.0,Women_Life_Freedom_2022
+The Washington Times,False,"Dakota, Texas, Win",1,50,2.0,Women_Life_Freedom_2022
+The Washington Times,False,"Data, Jan, Qanon",9,50,18.0,Women_Life_Freedom_2022
+The Washington Times,False,"Death, Festnahmen, Protesten",1,50,2.0,Women_Life_Freedom_2022
+The Washington Times,False,"East coast, Fiona, Hurricane",2,50,4.0,Women_Life_Freedom_2022
+The Washington Times,False,"Florida, Launch, Nasa",1,50,2.0,Women_Life_Freedom_2022
+The Washington Times,False,"Home, Korea, Store",17,50,34.0,Women_Life_Freedom_2022
+The Washington Times,False,"Inflation, Markets, Rates",1,50,2.0,Women_Life_Freedom_2022
+The Washington Times,False,"Kanzler, Scholz, Strike",3,50,6.0,Women_Life_Freedom_2022
+The Washington Times,False,"Kardashian, Strictly, Strictly dancing",1,50,2.0,Women_Life_Freedom_2022
+The Washington Times,False,"King charles, Palace, Queen",2,50,4.0,Women_Life_Freedom_2022
+The Washington Times,False,"Putin, Russian, Ukraine",4,50,8.0,Women_Life_Freedom_2022
+The Washington Times,False,"Tensions, Travel, Won",2,50,4.0,Women_Life_Freedom_2022
+Voice Of America,False,"Arizona, Democrats, Gop",2,50,4.0,Women_Life_Freedom_2022
+Voice Of America,False,"Data, Jan, Qanon",1,50,2.0,Women_Life_Freedom_2022
+Voice Of America,False,"Death, Festnahmen, Protesten",10,50,20.0,Women_Life_Freedom_2022
+Voice Of America,False,"Doubles, Laver cup, Roger",1,50,2.0,Women_Life_Freedom_2022
+Voice Of America,False,"East coast, Fiona, Hurricane",3,50,6.0,Women_Life_Freedom_2022
+Voice Of America,False,"Florida, Launch, Nasa",2,50,4.0,Women_Life_Freedom_2022
+Voice Of America,False,"Home, Korea, Store",6,50,12.0,Women_Life_Freedom_2022
+Voice Of America,False,"Inflation, Markets, Rates",1,50,2.0,Women_Life_Freedom_2022
+Voice Of America,False,"Kanzler, Scholz, Strike",10,50,20.0,Women_Life_Freedom_2022
+Voice Of America,False,"King charles, Palace, Queen",1,50,2.0,Women_Life_Freedom_2022
+Voice Of America,False,"Putin, Russian, Ukraine",7,50,14.0,Women_Life_Freedom_2022
+Voice Of America,False,"Tensions, Travel, Won",6,50,12.0,Women_Life_Freedom_2022
+Washington Post,False,"Arizona, Democrats, Gop",1,50,2.0,Women_Life_Freedom_2022
+Washington Post,False,"Comeback, England, Southgate",1,50,2.0,Women_Life_Freedom_2022
+Washington Post,False,"Dakota, Texas, Win",43,50,86.0,Women_Life_Freedom_2022
+Washington Post,False,"Data, Jan, Qanon",2,50,4.0,Women_Life_Freedom_2022
+Washington Post,False,"Home, Korea, Store",2,50,4.0,Women_Life_Freedom_2022
+Washington Post,False,"Konig, Plant, Winter",1,50,2.0,Women_Life_Freedom_2022
+es,False,"Euros, Latinos, Mundo",42,50,84.0,Women_Life_Freedom_2022
+es,False,"France, Paris, Uefa",2,50,4.0,Women_Life_Freedom_2022
+es,False,"Home, Korea, Store",3,50,6.0,Women_Life_Freedom_2022
+es,False,"Kanzler, Scholz, Strike",1,50,2.0,Women_Life_Freedom_2022
+es,False,"Putins, Referendums, Weiter",2,50,4.0,Women_Life_Freedom_2022
+i,False,"Arizona, Democrats, Gop",1,50,2.0,Women_Life_Freedom_2022
+i,False,"Comeback, England, Southgate",2,50,4.0,Women_Life_Freedom_2022
+i,False,"Data, Jan, Qanon",2,50,4.0,Women_Life_Freedom_2022
+i,False,"Doubles, Laver cup, Roger",3,50,6.0,Women_Life_Freedom_2022
+i,False,"East coast, Fiona, Hurricane",1,50,2.0,Women_Life_Freedom_2022
+i,False,"Elections, Female, Giorgia meloni",1,50,2.0,Women_Life_Freedom_2022
+i,False,"Home, Korea, Store",22,50,44.0,Women_Life_Freedom_2022
+i,False,"Inflation, Markets, Rates",1,50,2.0,Women_Life_Freedom_2022
+i,False,"Kardashian, Strictly, Strictly dancing",6,50,12.0,Women_Life_Freedom_2022
+i,False,"Keir starmer, Tory, Voting",1,50,2.0,Women_Life_Freedom_2022
+i,False,"King charles, Palace, Queen",2,50,4.0,Women_Life_Freedom_2022
+i,False,"Liz, Mini budget, Tax cuts",6,50,12.0,Women_Life_Freedom_2022
+i,False,"Putin, Russian, Ukraine",2,50,4.0,Women_Life_Freedom_2022

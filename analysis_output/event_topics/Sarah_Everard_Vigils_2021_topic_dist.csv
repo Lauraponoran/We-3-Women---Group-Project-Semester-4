@@ -1,0 +1,126 @@
+publisher,is_control,event_topic_label,n_articles,total_articles,topic_share_pct,event_label
+Associated Press News,False,"Atlanta, Harris, Violence",1,14,7.14,Sarah_Everard_Vigils_2021
+Associated Press News,False,"Change, Fight, Instagram",12,14,85.71,Sarah_Everard_Vigils_2021
+Associated Press News,False,"Europe, Jab, Pandemic",1,14,7.14,Sarah_Everard_Vigils_2021
+Business Insider,False,"Arrested, Cuomo, Police",3,50,6.0,Sarah_Everard_Vigils_2021
+Business Insider,False,"Atlanta, Harris, Violence",4,50,8.0,Sarah_Everard_Vigils_2021
+Business Insider,False,"Change, Fight, Instagram",19,50,38.0,Sarah_Everard_Vigils_2021
+Business Insider,False,"Comic relief, Line duty, Red nose",2,50,4.0,Sarah_Everard_Vigils_2021
+Business Insider,False,"Europe, Jab, Pandemic",6,50,12.0,Sarah_Everard_Vigils_2021
+Business Insider,False,"Nicola sturgeon, Stimulus, Tax",14,50,28.0,Sarah_Everard_Vigils_2021
+Business Insider,False,"Pregnant, Princess, Reveals",2,50,4.0,Sarah_Everard_Vigils_2021
+CNBC,False,"Arrested, Cuomo, Police",3,50,6.0,Sarah_Everard_Vigils_2021
+CNBC,False,"Atlanta, Harris, Violence",2,50,4.0,Sarah_Everard_Vigils_2021
+CNBC,False,"Bayern, Lockdown, Macht",1,50,2.0,Sarah_Everard_Vigils_2021
+CNBC,False,"Change, Fight, Instagram",13,50,26.0,Sarah_Everard_Vigils_2021
+CNBC,False,"Claims, Meghan, Music",1,50,2.0,Sarah_Everard_Vigils_2021
+CNBC,False,"Diet, Final, Hora",1,50,2.0,Sarah_Everard_Vigils_2021
+CNBC,False,"Europe, Jab, Pandemic",4,50,8.0,Sarah_Everard_Vigils_2021
+CNBC,False,"Nicola sturgeon, Stimulus, Tax",25,50,50.0,Sarah_Everard_Vigils_2021
+Daily Mail,False,"Arrested, Cuomo, Police",7,50,14.0,Sarah_Everard_Vigils_2021
+Daily Mail,False,"Atlanta, Harris, Violence",1,50,2.0,Sarah_Everard_Vigils_2021
+Daily Mail,False,"Change, Fight, Instagram",23,50,46.0,Sarah_Everard_Vigils_2021
+Daily Mail,False,"Claims, Meghan, Music",2,50,4.0,Sarah_Everard_Vigils_2021
+Daily Mail,False,"Comic relief, Line duty, Red nose",1,50,2.0,Sarah_Everard_Vigils_2021
+Daily Mail,False,"Europe, Jab, Pandemic",3,50,6.0,Sarah_Everard_Vigils_2021
+Daily Mail,False,"League draw, Premier league, United",2,50,4.0,Sarah_Everard_Vigils_2021
+Daily Mail,False,"Nicola sturgeon, Stimulus, Tax",3,50,6.0,Sarah_Everard_Vigils_2021
+Daily Mail,False,"Pregnant, Princess, Reveals",8,50,16.0,Sarah_Everard_Vigils_2021
+Deutsche Welle,False,"Change, Fight, Instagram",18,50,36.0,Sarah_Everard_Vigils_2021
+Deutsche Welle,False,"Corona, Deutschland, Impfen",31,50,62.0,Sarah_Everard_Vigils_2021
+Deutsche Welle,False,"Nord, Paris, Pays",1,50,2.0,Sarah_Everard_Vigils_2021
+Die Tageszeitung (taz),False,"Bayern, Lockdown, Macht",4,50,8.0,Sarah_Everard_Vigils_2021
+Die Tageszeitung (taz),False,"Change, Fight, Instagram",15,50,30.0,Sarah_Everard_Vigils_2021
+Die Tageszeitung (taz),False,"Corona, Deutschland, Impfen",28,50,56.0,Sarah_Everard_Vigils_2021
+Die Tageszeitung (taz),False,"Nord, Paris, Pays",3,50,6.0,Sarah_Everard_Vigils_2021
+Euronews (EN),False,"Arrested, Cuomo, Police",2,50,4.0,Sarah_Everard_Vigils_2021
+Euronews (EN),False,"Atlanta, Harris, Violence",2,50,4.0,Sarah_Everard_Vigils_2021
+Euronews (EN),False,"Change, Fight, Instagram",24,50,48.0,Sarah_Everard_Vigils_2021
+Euronews (EN),False,"Comic relief, Line duty, Red nose",1,50,2.0,Sarah_Everard_Vigils_2021
+Euronews (EN),False,"Europe, Jab, Pandemic",19,50,38.0,Sarah_Everard_Vigils_2021
+Euronews (EN),False,"League draw, Premier league, United",1,50,2.0,Sarah_Everard_Vigils_2021
+Euronews (EN),False,"Nord, Paris, Pays",1,50,2.0,Sarah_Everard_Vigils_2021
+Euronews (FR),False,"Change, Fight, Instagram",7,50,14.0,Sarah_Everard_Vigils_2021
+Euronews (FR),False,"Diet, Final, Hora",1,50,2.0,Sarah_Everard_Vigils_2021
+Euronews (FR),False,"Europe, Jab, Pandemic",9,50,18.0,Sarah_Everard_Vigils_2021
+Euronews (FR),False,"Nord, Paris, Pays",33,50,66.0,Sarah_Everard_Vigils_2021
+Fox News,False,"Arrested, Cuomo, Police",13,50,26.0,Sarah_Everard_Vigils_2021
+Fox News,False,"Atlanta, Harris, Violence",7,50,14.0,Sarah_Everard_Vigils_2021
+Fox News,False,"Change, Fight, Instagram",23,50,46.0,Sarah_Everard_Vigils_2021
+Fox News,False,"Claims, Meghan, Music",2,50,4.0,Sarah_Everard_Vigils_2021
+Fox News,False,"Comic relief, Line duty, Red nose",1,50,2.0,Sarah_Everard_Vigils_2021
+Fox News,False,"Europe, Jab, Pandemic",1,50,2.0,Sarah_Everard_Vigils_2021
+Fox News,False,"Pregnant, Princess, Reveals",3,50,6.0,Sarah_Everard_Vigils_2021
+Frankfurter Allgemeine Zeitung,False,"Bayern, Lockdown, Macht",7,50,14.0,Sarah_Everard_Vigils_2021
+Frankfurter Allgemeine Zeitung,False,"Change, Fight, Instagram",8,50,16.0,Sarah_Everard_Vigils_2021
+Frankfurter Allgemeine Zeitung,False,"Corona, Deutschland, Impfen",33,50,66.0,Sarah_Everard_Vigils_2021
+Frankfurter Allgemeine Zeitung,False,"Nord, Paris, Pays",2,50,4.0,Sarah_Everard_Vigils_2021
+Le Monde,False,"Change, Fight, Instagram",5,50,10.0,Sarah_Everard_Vigils_2021
+Le Monde,False,"Corona, Deutschland, Impfen",1,50,2.0,Sarah_Everard_Vigils_2021
+Le Monde,False,"Europe, Jab, Pandemic",5,50,10.0,Sarah_Everard_Vigils_2021
+Le Monde,False,"Nord, Paris, Pays",39,50,78.0,Sarah_Everard_Vigils_2021
+Spiegel Online,False,"Bayern, Lockdown, Macht",3,50,6.0,Sarah_Everard_Vigils_2021
+Spiegel Online,False,"Change, Fight, Instagram",19,50,38.0,Sarah_Everard_Vigils_2021
+Spiegel Online,False,"Corona, Deutschland, Impfen",26,50,52.0,Sarah_Everard_Vigils_2021
+Spiegel Online,False,"Nord, Paris, Pays",2,50,4.0,Sarah_Everard_Vigils_2021
+Tagesschau,False,"Bayern, Lockdown, Macht",1,50,2.0,Sarah_Everard_Vigils_2021
+Tagesschau,False,"Change, Fight, Instagram",16,50,32.0,Sarah_Everard_Vigils_2021
+Tagesschau,False,"Corona, Deutschland, Impfen",30,50,60.0,Sarah_Everard_Vigils_2021
+Tagesschau,False,"Diet, Final, Hora",1,50,2.0,Sarah_Everard_Vigils_2021
+Tagesschau,False,"Europe, Jab, Pandemic",1,50,2.0,Sarah_Everard_Vigils_2021
+Tagesschau,False,"Nord, Paris, Pays",1,50,2.0,Sarah_Everard_Vigils_2021
+The BBC,False,"Arrested, Cuomo, Police",9,50,18.0,Sarah_Everard_Vigils_2021
+The BBC,False,"Atlanta, Harris, Violence",4,50,8.0,Sarah_Everard_Vigils_2021
+The BBC,False,"Bayern, Lockdown, Macht",1,50,2.0,Sarah_Everard_Vigils_2021
+The BBC,False,"Change, Fight, Instagram",21,50,42.0,Sarah_Everard_Vigils_2021
+The BBC,False,"Comic relief, Line duty, Red nose",1,50,2.0,Sarah_Everard_Vigils_2021
+The BBC,False,"Corona, Deutschland, Impfen",1,50,2.0,Sarah_Everard_Vigils_2021
+The BBC,False,"Europe, Jab, Pandemic",10,50,20.0,Sarah_Everard_Vigils_2021
+The BBC,False,"Nicola sturgeon, Stimulus, Tax",3,50,6.0,Sarah_Everard_Vigils_2021
+The Gateway Pundit,False,"Change, Fight, Instagram",1,2,50.0,Sarah_Everard_Vigils_2021
+The Gateway Pundit,False,"Europe, Jab, Pandemic",1,2,50.0,Sarah_Everard_Vigils_2021
+The Guardian,False,"Arrested, Cuomo, Police",4,50,8.0,Sarah_Everard_Vigils_2021
+The Guardian,False,"Atlanta, Harris, Violence",4,50,8.0,Sarah_Everard_Vigils_2021
+The Guardian,False,"Change, Fight, Instagram",23,50,46.0,Sarah_Everard_Vigils_2021
+The Guardian,False,"Claims, Meghan, Music",3,50,6.0,Sarah_Everard_Vigils_2021
+The Guardian,False,"Comic relief, Line duty, Red nose",1,50,2.0,Sarah_Everard_Vigils_2021
+The Guardian,False,"Europe, Jab, Pandemic",3,50,6.0,Sarah_Everard_Vigils_2021
+The Guardian,False,"League draw, Premier league, United",8,50,16.0,Sarah_Everard_Vigils_2021
+The Guardian,False,"Nicola sturgeon, Stimulus, Tax",2,50,4.0,Sarah_Everard_Vigils_2021
+The Guardian,False,"Pregnant, Princess, Reveals",2,50,4.0,Sarah_Everard_Vigils_2021
+The Nation,False,"Arrested, Cuomo, Police",8,45,17.78,Sarah_Everard_Vigils_2021
+The Nation,False,"Atlanta, Harris, Violence",8,45,17.78,Sarah_Everard_Vigils_2021
+The Nation,False,"Change, Fight, Instagram",20,45,44.44,Sarah_Everard_Vigils_2021
+The Nation,False,"Claims, Meghan, Music",2,45,4.44,Sarah_Everard_Vigils_2021
+The Nation,False,"Europe, Jab, Pandemic",5,45,11.11,Sarah_Everard_Vigils_2021
+The Nation,False,"Nicola sturgeon, Stimulus, Tax",2,45,4.44,Sarah_Everard_Vigils_2021
+The Sun,False,"Arrested, Cuomo, Police",13,50,26.0,Sarah_Everard_Vigils_2021
+The Sun,False,"Atlanta, Harris, Violence",1,50,2.0,Sarah_Everard_Vigils_2021
+The Sun,False,"Change, Fight, Instagram",9,50,18.0,Sarah_Everard_Vigils_2021
+The Sun,False,"Claims, Meghan, Music",3,50,6.0,Sarah_Everard_Vigils_2021
+The Sun,False,"League draw, Premier league, United",1,50,2.0,Sarah_Everard_Vigils_2021
+The Sun,False,"Pregnant, Princess, Reveals",23,50,46.0,Sarah_Everard_Vigils_2021
+The Telegraph,False,"Arrested, Cuomo, Police",4,50,8.0,Sarah_Everard_Vigils_2021
+The Telegraph,False,"Change, Fight, Instagram",24,50,48.0,Sarah_Everard_Vigils_2021
+The Telegraph,False,"Claims, Meghan, Music",2,50,4.0,Sarah_Everard_Vigils_2021
+The Telegraph,False,"Comic relief, Line duty, Red nose",3,50,6.0,Sarah_Everard_Vigils_2021
+The Telegraph,False,"Europe, Jab, Pandemic",8,50,16.0,Sarah_Everard_Vigils_2021
+The Telegraph,False,"League draw, Premier league, United",7,50,14.0,Sarah_Everard_Vigils_2021
+The Telegraph,False,"Nicola sturgeon, Stimulus, Tax",2,50,4.0,Sarah_Everard_Vigils_2021
+The Washington Times,False,"Arrested, Cuomo, Police",30,50,60.0,Sarah_Everard_Vigils_2021
+The Washington Times,False,"Atlanta, Harris, Violence",4,50,8.0,Sarah_Everard_Vigils_2021
+The Washington Times,False,"Change, Fight, Instagram",12,50,24.0,Sarah_Everard_Vigils_2021
+The Washington Times,False,"Diet, Final, Hora",1,50,2.0,Sarah_Everard_Vigils_2021
+The Washington Times,False,"Europe, Jab, Pandemic",3,50,6.0,Sarah_Everard_Vigils_2021
+es,False,"Change, Fight, Instagram",14,50,28.0,Sarah_Everard_Vigils_2021
+es,False,"Diet, Final, Hora",32,50,64.0,Sarah_Everard_Vigils_2021
+es,False,"Europe, Jab, Pandemic",2,50,4.0,Sarah_Everard_Vigils_2021
+es,False,"Nord, Paris, Pays",2,50,4.0,Sarah_Everard_Vigils_2021
+i,False,"Arrested, Cuomo, Police",3,50,6.0,Sarah_Everard_Vigils_2021
+i,False,"Change, Fight, Instagram",14,50,28.0,Sarah_Everard_Vigils_2021
+i,False,"Claims, Meghan, Music",4,50,8.0,Sarah_Everard_Vigils_2021
+i,False,"Comic relief, Line duty, Red nose",13,50,26.0,Sarah_Everard_Vigils_2021
+i,False,"Europe, Jab, Pandemic",3,50,6.0,Sarah_Everard_Vigils_2021
+i,False,"League draw, Premier league, United",3,50,6.0,Sarah_Everard_Vigils_2021
+i,False,"Nicola sturgeon, Stimulus, Tax",5,50,10.0,Sarah_Everard_Vigils_2021
+i,False,"Pregnant, Princess, Reveals",5,50,10.0,Sarah_Everard_Vigils_2021

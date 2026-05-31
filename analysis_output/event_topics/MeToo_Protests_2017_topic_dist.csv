@@ -1,0 +1,14 @@
+publisher,is_control,event_topic_label,n_articles,total_articles,topic_share_pct,event_label
+Daily Mail,False,"Drama, England, Win",17,17,100.0,MeToo_Protests_2017
+Deutsche Welle,False,"Drama, England, Win",1,1,100.0,MeToo_Protests_2017
+Fox News,False,"Crisis, Fallen, Warns",3,50,6.0,MeToo_Protests_2017
+Fox News,False,"Drama, England, Win",1,50,2.0,MeToo_Protests_2017
+Fox News,False,"Father, Real, Warns",27,50,54.0,MeToo_Protests_2017
+Fox News,False,"Full, Help, Power",2,50,4.0,MeToo_Protests_2017
+Fox News,False,"Lose, Playing, Season",17,50,34.0,MeToo_Protests_2017
+The Sun,False,"Crisis, Fallen, Warns",1,21,4.76,MeToo_Protests_2017
+The Sun,False,"Father, Real, Warns",20,21,95.24,MeToo_Protests_2017
+The Telegraph,False,"Crisis, Fallen, Warns",17,50,34.0,MeToo_Protests_2017
+The Telegraph,False,"Drama, England, Win",7,50,14.0,MeToo_Protests_2017
+The Telegraph,False,"Father, Real, Warns",24,50,48.0,MeToo_Protests_2017
+The Telegraph,False,"Full, Help, Power",2,50,4.0,MeToo_Protests_2017

@@ -101,6 +101,8 @@ from lingua import Language, LanguageDetectorBuilder
 
 # ── Translation ───────────────────────────────────────────────────────────────
 from transformers import MarianMTModel, MarianTokenizer
+from transformers.utils import logging as hf_logging
+hf_logging.set_verbosity_error()   # suppress per-file "loading weights" messages
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -403,6 +405,7 @@ def main() -> None:
     )
 
     # ── Save full results ──────────────────────────────────────────────────────
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
     out_parquet = os.path.join(OUTPUT_DIR, "articles_with_sentiment.parquet")
     out_csv     = out_parquet.replace(".parquet", ".csv")
     df.to_parquet(out_parquet, index=False)

@@ -1,0 +1,1134 @@
+publisher,is_control,event_topic_label,n_articles,total_articles,topic_share_pct,event_label
+Daily Mail,False,"Action, Champions, Champions league",8,23,34.78,IWD_2018_Global
+Daily Mail,False,"Arsenal, Score premier, Tottenham",3,23,13.04,IWD_2018_Global
+Daily Mail,False,"Avalanche, Chris, Conservative",1,23,4.35,IWD_2018_Global
+Daily Mail,False,"Cheltenham festival, Festival, Mother",1,23,4.35,IWD_2018_Global
+Daily Mail,False,"Madrid, Real, Real madrid",6,23,26.09,IWD_2018_Global
+Daily Mail,False,"Manchester, Score premier, United",4,23,17.39,IWD_2018_Global
+Deutsche Welle,False,"Avalanche, Chris, Conservative",1,3,33.33,IWD_2018_Global
+Deutsche Welle,False,outlier,2,3,66.67,IWD_2018_Global
+Die Zeit,False,outlier,8,8,100.0,IWD_2018_Global
+Fox News,False,"American, Plan",3,50,6.0,IWD_2018_Global
+Fox News,False,"Arizona, Race, Special election",2,50,4.0,IWD_2018_Global
+Fox News,False,"Avalanche, Chris, Conservative",11,50,22.0,IWD_2018_Global
+Fox News,False,"Battle, Best, Study finds",3,50,6.0,IWD_2018_Global
+Fox News,False,"Card, David, Stop",1,50,2.0,IWD_2018_Global
+Fox News,False,"David, Job, Shulkin",3,50,6.0,IWD_2018_Global
+Fox News,False,"Deal, Legislature, Wall",1,50,2.0,IWD_2018_Global
+Fox News,False,"Democrats, Inside, Scandal",1,50,2.0,IWD_2018_Global
+Fox News,False,"Interest, Senate, Trump border",3,50,6.0,IWD_2018_Global
+Fox News,False,"Key, Training, West",5,50,10.0,IWD_2018_Global
+Fox News,False,"Lesson, Students, Violence",15,50,30.0,IWD_2018_Global
+Fox News,False,"Madrid, Real, Real madrid",1,50,2.0,IWD_2018_Global
+Fox News,False,"Tax, Victory, Won",1,50,2.0,IWD_2018_Global
+The Telegraph,False,"Avalanche, Chris, Conservative",3,50,6.0,IWD_2018_Global
+The Telegraph,False,"Battle, Best, Study finds",11,50,22.0,IWD_2018_Global
+The Telegraph,False,"Believe, Pressure, Scientists",5,50,10.0,IWD_2018_Global
+The Telegraph,False,"Britain, Russian, Scientists",1,50,2.0,IWD_2018_Global
+The Telegraph,False,"Cheltenham festival, Festival, Mother",1,50,2.0,IWD_2018_Global
+The Telegraph,False,"Interest, Senate, Trump border",1,50,2.0,IWD_2018_Global
+The Telegraph,False,"Lesson, Students, Violence",24,50,48.0,IWD_2018_Global
+The Telegraph,False,"Professor, Stars, Won",4,50,8.0,IWD_2018_Global
+The Washington Times,False,"American, Plan",1,50,2.0,IWD_2018_Global
+The Washington Times,False,"Arizona, Race, Special election",6,50,12.0,IWD_2018_Global
+The Washington Times,False,"Avalanche, Chris, Conservative",8,50,16.0,IWD_2018_Global
+The Washington Times,False,"Britain, Russian, Scientists",2,50,4.0,IWD_2018_Global
+The Washington Times,False,"Card, David, Stop",2,50,4.0,IWD_2018_Global
+The Washington Times,False,"David, Job, Shulkin",5,50,10.0,IWD_2018_Global
+The Washington Times,False,"Deal, Legislature, Wall",3,50,6.0,IWD_2018_Global
+The Washington Times,False,"Democrats, Inside, Scandal",3,50,6.0,IWD_2018_Global
+The Washington Times,False,"Interest, Senate, Trump border",7,50,14.0,IWD_2018_Global
+The Washington Times,False,"Lesson, Students, Violence",10,50,20.0,IWD_2018_Global
+The Washington Times,False,"Professor, Stars, Won",1,50,2.0,IWD_2018_Global
+The Washington Times,False,"Tax, Victory, Won",2,50,4.0,IWD_2018_Global
+Daily Mail,False,"Ordered, Play, Record",16,16,100.0,International_Womens_Strike_2017
+The Telegraph,False,"Accused, Paid, Sell",10,50,20.0,International_Womens_Strike_2017
+The Telegraph,False,"Children, Old, Three",12,50,24.0,International_Womens_Strike_2017
+The Telegraph,False,"Help, Paid, Play",10,50,20.0,International_Womens_Strike_2017
+The Telegraph,False,"Ordered, Play, Record",18,50,36.0,International_Womens_Strike_2017
+Associated Press News,False,"Arrested, Family, Fox",5,49,10.2,Israeli_Womens_Protests_2023
+Associated Press News,False,"Biden, Debt, Supreme court",2,49,4.08,Israeli_Womens_Protests_2023
+Associated Press News,False,"Coach, Contract, Seasons",5,49,10.2,Israeli_Womens_Protests_2023
+Associated Press News,False,"Cup, Foden, Pick",8,49,16.33,Israeli_Womens_Protests_2023
+Associated Press News,False,"Derailment, Ohio, Train",2,49,4.08,Israeli_Womens_Protests_2023
+Associated Press News,False,"Diana, Militar, Nuclear",10,49,20.41,Israeli_Womens_Protests_2023
+Associated Press News,False,"Home, Market, Surplus",10,49,20.41,Israeli_Womens_Protests_2023
+Associated Press News,False,"Nachrichten, Study, Wegen",7,49,14.29,Israeli_Womens_Protests_2023
+Business Insider,False,"Arrested, Family, Fox",5,48,10.42,Israeli_Womens_Protests_2023
+Business Insider,False,"Biden, Debt, Supreme court",6,48,12.5,Israeli_Womens_Protests_2023
+Business Insider,False,"Chinese, Covid, Hearing",1,48,2.08,Israeli_Womens_Protests_2023
+Business Insider,False,"Derailment, Ohio, Train",1,48,2.08,Israeli_Womens_Protests_2023
+Business Insider,False,"Home, Market, Surplus",11,48,22.92,Israeli_Womens_Protests_2023
+Business Insider,False,"Nachrichten, Study, Wegen",22,48,45.83,Israeli_Womens_Protests_2023
+Business Insider,False,"Putin, Russia, Russie",2,48,4.17,Israeli_Womens_Protests_2023
+CBC News,False,"Arrested, Family, Fox",13,50,26.0,Israeli_Womens_Protests_2023
+CBC News,False,"Awards, Festival, Jury",2,50,4.0,Israeli_Womens_Protests_2023
+CBC News,False,"Chinese, Covid, Hearing",4,50,8.0,Israeli_Womens_Protests_2023
+CBC News,False,"Coach, Contract, Seasons",2,50,4.0,Israeli_Womens_Protests_2023
+CBC News,False,"Derailment, Ohio, Train",2,50,4.0,Israeli_Womens_Protests_2023
+CBC News,False,"Home, Market, Surplus",10,50,20.0,Israeli_Womens_Protests_2023
+CBC News,False,"Nachrichten, Study, Wegen",14,50,28.0,Israeli_Womens_Protests_2023
+CBC News,False,"Parliament, Security, Tiktok",3,50,6.0,Israeli_Womens_Protests_2023
+CNBC,False,"Arrested, Family, Fox",2,50,4.0,Israeli_Womens_Protests_2023
+CNBC,False,"Biden, Debt, Supreme court",5,50,10.0,Israeli_Womens_Protests_2023
+CNBC,False,"Chinese, Covid, Hearing",4,50,8.0,Israeli_Womens_Protests_2023
+CNBC,False,"Desantis, Disney, Health care",1,50,2.0,Israeli_Womens_Protests_2023
+CNBC,False,"Diana, Militar, Nuclear",1,50,2.0,Israeli_Womens_Protests_2023
+CNBC,False,"Home, Market, Surplus",27,50,54.0,Israeli_Womens_Protests_2023
+CNBC,False,"Nachrichten, Study, Wegen",10,50,20.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Arrested, Family, Fox",27,50,54.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Brexit, Northern, Rishi sunak",1,50,2.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Chinese, Covid, Hearing",1,50,2.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Coach, Contract, Seasons",1,50,2.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Cup, Foden, Pick",4,50,8.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Derailment, Ohio, Train",1,50,2.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Desantis, Disney, Health care",1,50,2.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Home, Market, Surplus",2,50,4.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Nachrichten, Study, Wegen",9,50,18.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Parliament, Security, Tiktok",2,50,4.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Putin, Russia, Russie",1,50,2.0,Israeli_Womens_Protests_2023
+Deutsche Welle,False,"Diana, Militar, Nuclear",1,50,2.0,Israeli_Womens_Protests_2023
+Deutsche Welle,False,"Est, Fevrier, Turquie",1,50,2.0,Israeli_Womens_Protests_2023
+Deutsche Welle,False,"Geht, Koalition, Spd",16,50,32.0,Israeli_Womens_Protests_2023
+Deutsche Welle,False,"Iaea, Iranian, Pressure",1,50,2.0,Israeli_Womens_Protests_2023
+Deutsche Welle,False,"Nachrichten, Study, Wegen",26,50,52.0,Israeli_Womens_Protests_2023
+Deutsche Welle,False,"Putin, Russia, Russie",5,50,10.0,Israeli_Womens_Protests_2023
+Die Tageszeitung (taz),False,"Est, Fevrier, Turquie",4,50,8.0,Israeli_Womens_Protests_2023
+Die Tageszeitung (taz),False,"Geht, Koalition, Spd",25,50,50.0,Israeli_Womens_Protests_2023
+Die Tageszeitung (taz),False,"Iaea, Iranian, Pressure",2,50,4.0,Israeli_Womens_Protests_2023
+Die Tageszeitung (taz),False,"Nachrichten, Study, Wegen",16,50,32.0,Israeli_Womens_Protests_2023
+Die Tageszeitung (taz),False,"Putin, Russia, Russie",3,50,6.0,Israeli_Womens_Protests_2023
+El Mundo,False,"Diana, Militar, Nuclear",16,16,100.0,Israeli_Womens_Protests_2023
+Euronews (EN),False,"Awards, Festival, Jury",2,50,4.0,Israeli_Womens_Protests_2023
+Euronews (EN),False,"Brexit, Northern, Rishi sunak",3,50,6.0,Israeli_Womens_Protests_2023
+Euronews (EN),False,"Chinese, Covid, Hearing",3,50,6.0,Israeli_Womens_Protests_2023
+Euronews (EN),False,"Desantis, Disney, Health care",1,50,2.0,Israeli_Womens_Protests_2023
+Euronews (EN),False,"Iaea, Iranian, Pressure",1,50,2.0,Israeli_Womens_Protests_2023
+Euronews (EN),False,"Nachrichten, Study, Wegen",27,50,54.0,Israeli_Womens_Protests_2023
+Euronews (EN),False,"Parliament, Security, Tiktok",2,50,4.0,Israeli_Womens_Protests_2023
+Euronews (EN),False,"Putin, Russia, Russie",11,50,22.0,Israeli_Womens_Protests_2023
+Euronews (FR),False,"Awards, Festival, Jury",4,50,8.0,Israeli_Womens_Protests_2023
+Euronews (FR),False,"Diana, Militar, Nuclear",1,50,2.0,Israeli_Womens_Protests_2023
+Euronews (FR),False,"Est, Fevrier, Turquie",25,50,50.0,Israeli_Womens_Protests_2023
+Euronews (FR),False,"Iaea, Iranian, Pressure",2,50,4.0,Israeli_Womens_Protests_2023
+Euronews (FR),False,"Nachrichten, Study, Wegen",13,50,26.0,Israeli_Womens_Protests_2023
+Euronews (FR),False,"Putin, Russia, Russie",5,50,10.0,Israeli_Womens_Protests_2023
+Fox News,False,"Arrested, Family, Fox",21,50,42.0,Israeli_Womens_Protests_2023
+Fox News,False,"Chinese, Covid, Hearing",3,50,6.0,Israeli_Womens_Protests_2023
+Fox News,False,"Coach, Contract, Seasons",3,50,6.0,Israeli_Womens_Protests_2023
+Fox News,False,"Derailment, Ohio, Train",3,50,6.0,Israeli_Womens_Protests_2023
+Fox News,False,"Desantis, Disney, Health care",2,50,4.0,Israeli_Womens_Protests_2023
+Fox News,False,"Home, Market, Surplus",4,50,8.0,Israeli_Womens_Protests_2023
+Fox News,False,"Nachrichten, Study, Wegen",12,50,24.0,Israeli_Womens_Protests_2023
+Fox News,False,"Parliament, Security, Tiktok",2,50,4.0,Israeli_Womens_Protests_2023
+Frankfurter Allgemeine Zeitung,False,"Awards, Festival, Jury",1,50,2.0,Israeli_Womens_Protests_2023
+Frankfurter Allgemeine Zeitung,False,"Est, Fevrier, Turquie",3,50,6.0,Israeli_Womens_Protests_2023
+Frankfurter Allgemeine Zeitung,False,"Geht, Koalition, Spd",22,50,44.0,Israeli_Womens_Protests_2023
+Frankfurter Allgemeine Zeitung,False,"Iaea, Iranian, Pressure",2,50,4.0,Israeli_Womens_Protests_2023
+Frankfurter Allgemeine Zeitung,False,"Nachrichten, Study, Wegen",14,50,28.0,Israeli_Womens_Protests_2023
+Frankfurter Allgemeine Zeitung,False,"Putin, Russia, Russie",8,50,16.0,Israeli_Womens_Protests_2023
+La Vanguardia,False,"Diana, Militar, Nuclear",49,50,98.0,Israeli_Womens_Protests_2023
+La Vanguardia,False,"Est, Fevrier, Turquie",1,50,2.0,Israeli_Womens_Protests_2023
+Le Figaro,False,"Awards, Festival, Jury",5,50,10.0,Israeli_Womens_Protests_2023
+Le Figaro,False,"Diana, Militar, Nuclear",1,50,2.0,Israeli_Womens_Protests_2023
+Le Figaro,False,"Est, Fevrier, Turquie",35,50,70.0,Israeli_Womens_Protests_2023
+Le Figaro,False,"Geht, Koalition, Spd",1,50,2.0,Israeli_Womens_Protests_2023
+Le Figaro,False,"Iaea, Iranian, Pressure",1,50,2.0,Israeli_Womens_Protests_2023
+Le Figaro,False,"Nachrichten, Study, Wegen",2,50,4.0,Israeli_Womens_Protests_2023
+Le Figaro,False,"Putin, Russia, Russie",5,50,10.0,Israeli_Womens_Protests_2023
+Le Monde,False,"Arrested, Family, Fox",1,50,2.0,Israeli_Womens_Protests_2023
+Le Monde,False,"Brexit, Northern, Rishi sunak",1,50,2.0,Israeli_Womens_Protests_2023
+Le Monde,False,"Chinese, Covid, Hearing",5,50,10.0,Israeli_Womens_Protests_2023
+Le Monde,False,"Diana, Militar, Nuclear",3,50,6.0,Israeli_Womens_Protests_2023
+Le Monde,False,"Est, Fevrier, Turquie",21,50,42.0,Israeli_Womens_Protests_2023
+Le Monde,False,"Iaea, Iranian, Pressure",1,50,2.0,Israeli_Womens_Protests_2023
+Le Monde,False,"Nachrichten, Study, Wegen",11,50,22.0,Israeli_Womens_Protests_2023
+Le Monde,False,"Putin, Russia, Russie",7,50,14.0,Israeli_Womens_Protests_2023
+Reuters,False,"Arrested, Family, Fox",3,50,6.0,Israeli_Womens_Protests_2023
+Reuters,False,"Biden, Debt, Supreme court",1,50,2.0,Israeli_Womens_Protests_2023
+Reuters,False,"Brexit, Northern, Rishi sunak",3,50,6.0,Israeli_Womens_Protests_2023
+Reuters,False,"Coach, Contract, Seasons",1,50,2.0,Israeli_Womens_Protests_2023
+Reuters,False,"Cup, Foden, Pick",1,50,2.0,Israeli_Womens_Protests_2023
+Reuters,False,"Diana, Militar, Nuclear",1,50,2.0,Israeli_Womens_Protests_2023
+Reuters,False,"Est, Fevrier, Turquie",1,50,2.0,Israeli_Womens_Protests_2023
+Reuters,False,"Geht, Koalition, Spd",1,50,2.0,Israeli_Womens_Protests_2023
+Reuters,False,"Home, Market, Surplus",12,50,24.0,Israeli_Womens_Protests_2023
+Reuters,False,"Nachrichten, Study, Wegen",24,50,48.0,Israeli_Womens_Protests_2023
+Reuters,False,"Putin, Russia, Russie",2,50,4.0,Israeli_Womens_Protests_2023
+Rolling Stone,False,"Arrested, Family, Fox",33,50,66.0,Israeli_Womens_Protests_2023
+Rolling Stone,False,"Chinese, Covid, Hearing",1,50,2.0,Israeli_Womens_Protests_2023
+Rolling Stone,False,"Home, Market, Surplus",1,50,2.0,Israeli_Womens_Protests_2023
+Rolling Stone,False,"Nachrichten, Study, Wegen",14,50,28.0,Israeli_Womens_Protests_2023
+Rolling Stone,False,"Parliament, Security, Tiktok",1,50,2.0,Israeli_Womens_Protests_2023
+Spiegel Online,False,"Awards, Festival, Jury",1,50,2.0,Israeli_Womens_Protests_2023
+Spiegel Online,False,"Diana, Militar, Nuclear",1,50,2.0,Israeli_Womens_Protests_2023
+Spiegel Online,False,"Est, Fevrier, Turquie",5,50,10.0,Israeli_Womens_Protests_2023
+Spiegel Online,False,"Geht, Koalition, Spd",26,50,52.0,Israeli_Womens_Protests_2023
+Spiegel Online,False,"Iaea, Iranian, Pressure",4,50,8.0,Israeli_Womens_Protests_2023
+Spiegel Online,False,"Nachrichten, Study, Wegen",11,50,22.0,Israeli_Womens_Protests_2023
+Spiegel Online,False,"Putin, Russia, Russie",2,50,4.0,Israeli_Womens_Protests_2023
+Tagesschau,False,"Arrested, Family, Fox",2,50,4.0,Israeli_Womens_Protests_2023
+Tagesschau,False,"Est, Fevrier, Turquie",2,50,4.0,Israeli_Womens_Protests_2023
+Tagesschau,False,"Geht, Koalition, Spd",22,50,44.0,Israeli_Womens_Protests_2023
+Tagesschau,False,"Iaea, Iranian, Pressure",2,50,4.0,Israeli_Womens_Protests_2023
+Tagesschau,False,"Nachrichten, Study, Wegen",21,50,42.0,Israeli_Womens_Protests_2023
+Tagesschau,False,"Putin, Russia, Russie",1,50,2.0,Israeli_Womens_Protests_2023
+The BBC,False,"Arrested, Family, Fox",8,50,16.0,Israeli_Womens_Protests_2023
+The BBC,False,"Biden, Debt, Supreme court",1,50,2.0,Israeli_Womens_Protests_2023
+The BBC,False,"Brexit, Northern, Rishi sunak",3,50,6.0,Israeli_Womens_Protests_2023
+The BBC,False,"Cup, Foden, Pick",5,50,10.0,Israeli_Womens_Protests_2023
+The BBC,False,"Derailment, Ohio, Train",2,50,4.0,Israeli_Womens_Protests_2023
+The BBC,False,"Home, Market, Surplus",7,50,14.0,Israeli_Womens_Protests_2023
+The BBC,False,"Nachrichten, Study, Wegen",21,50,42.0,Israeli_Womens_Protests_2023
+The BBC,False,"Parliament, Security, Tiktok",2,50,4.0,Israeli_Womens_Protests_2023
+The BBC,False,"Putin, Russia, Russie",1,50,2.0,Israeli_Womens_Protests_2023
+The Gateway Pundit,False,"Arrested, Family, Fox",16,50,32.0,Israeli_Womens_Protests_2023
+The Gateway Pundit,False,"Biden, Debt, Supreme court",3,50,6.0,Israeli_Womens_Protests_2023
+The Gateway Pundit,False,"Chinese, Covid, Hearing",5,50,10.0,Israeli_Womens_Protests_2023
+The Gateway Pundit,False,"Derailment, Ohio, Train",1,50,2.0,Israeli_Womens_Protests_2023
+The Gateway Pundit,False,"Desantis, Disney, Health care",4,50,8.0,Israeli_Womens_Protests_2023
+The Gateway Pundit,False,"Home, Market, Surplus",3,50,6.0,Israeli_Womens_Protests_2023
+The Gateway Pundit,False,"Nachrichten, Study, Wegen",17,50,34.0,Israeli_Womens_Protests_2023
+The Gateway Pundit,False,"Putin, Russia, Russie",1,50,2.0,Israeli_Womens_Protests_2023
+The Globe and Mail,False,"Arrested, Family, Fox",7,50,14.0,Israeli_Womens_Protests_2023
+The Globe and Mail,False,"Chinese, Covid, Hearing",4,50,8.0,Israeli_Womens_Protests_2023
+The Globe and Mail,False,"Coach, Contract, Seasons",3,50,6.0,Israeli_Womens_Protests_2023
+The Globe and Mail,False,"Derailment, Ohio, Train",1,50,2.0,Israeli_Womens_Protests_2023
+The Globe and Mail,False,"Diana, Militar, Nuclear",1,50,2.0,Israeli_Womens_Protests_2023
+The Globe and Mail,False,"Home, Market, Surplus",11,50,22.0,Israeli_Womens_Protests_2023
+The Globe and Mail,False,"Nachrichten, Study, Wegen",19,50,38.0,Israeli_Womens_Protests_2023
+The Globe and Mail,False,"Parliament, Security, Tiktok",3,50,6.0,Israeli_Womens_Protests_2023
+The Globe and Mail,False,"Putin, Russia, Russie",1,50,2.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Arrested, Family, Fox",9,50,18.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Biden, Debt, Supreme court",2,50,4.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Brexit, Northern, Rishi sunak",3,50,6.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Chinese, Covid, Hearing",1,50,2.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Coach, Contract, Seasons",1,50,2.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Cup, Foden, Pick",10,50,20.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Derailment, Ohio, Train",2,50,4.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Diana, Militar, Nuclear",1,50,2.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Est, Fevrier, Turquie",1,50,2.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Home, Market, Surplus",3,50,6.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Iaea, Iranian, Pressure",1,50,2.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Nachrichten, Study, Wegen",15,50,30.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Putin, Russia, Russie",1,50,2.0,Israeli_Womens_Protests_2023
+The Independent,False,"Arrested, Family, Fox",17,50,34.0,Israeli_Womens_Protests_2023
+The Independent,False,"Biden, Debt, Supreme court",3,50,6.0,Israeli_Womens_Protests_2023
+The Independent,False,"Brexit, Northern, Rishi sunak",1,50,2.0,Israeli_Womens_Protests_2023
+The Independent,False,"Chinese, Covid, Hearing",2,50,4.0,Israeli_Womens_Protests_2023
+The Independent,False,"Cup, Foden, Pick",8,50,16.0,Israeli_Womens_Protests_2023
+The Independent,False,"Derailment, Ohio, Train",2,50,4.0,Israeli_Womens_Protests_2023
+The Independent,False,"Home, Market, Surplus",2,50,4.0,Israeli_Womens_Protests_2023
+The Independent,False,"Nachrichten, Study, Wegen",15,50,30.0,Israeli_Womens_Protests_2023
+The Intercept,False,"Arrested, Family, Fox",1,7,14.29,Israeli_Womens_Protests_2023
+The Intercept,False,"Diana, Militar, Nuclear",2,7,28.57,Israeli_Womens_Protests_2023
+The Intercept,False,"Nachrichten, Study, Wegen",4,7,57.14,Israeli_Womens_Protests_2023
+The Nation,False,"Arrested, Family, Fox",3,13,23.08,Israeli_Womens_Protests_2023
+The Nation,False,"Biden, Debt, Supreme court",2,13,15.38,Israeli_Womens_Protests_2023
+The Nation,False,"Desantis, Disney, Health care",1,13,7.69,Israeli_Womens_Protests_2023
+The Nation,False,"Diana, Militar, Nuclear",1,13,7.69,Israeli_Womens_Protests_2023
+The Nation,False,"Home, Market, Surplus",1,13,7.69,Israeli_Womens_Protests_2023
+The Nation,False,"Nachrichten, Study, Wegen",5,13,38.46,Israeli_Womens_Protests_2023
+The New Yorker,False,"Arrested, Family, Fox",16,35,45.71,Israeli_Womens_Protests_2023
+The New Yorker,False,"Biden, Debt, Supreme court",1,35,2.86,Israeli_Womens_Protests_2023
+The New Yorker,False,"Chinese, Covid, Hearing",1,35,2.86,Israeli_Womens_Protests_2023
+The New Yorker,False,"Diana, Militar, Nuclear",2,35,5.71,Israeli_Womens_Protests_2023
+The New Yorker,False,"Geht, Koalition, Spd",1,35,2.86,Israeli_Womens_Protests_2023
+The New Yorker,False,"Home, Market, Surplus",2,35,5.71,Israeli_Womens_Protests_2023
+The New Yorker,False,"Iaea, Iranian, Pressure",1,35,2.86,Israeli_Womens_Protests_2023
+The New Yorker,False,"Nachrichten, Study, Wegen",10,35,28.57,Israeli_Womens_Protests_2023
+The New Yorker,False,"Putin, Russia, Russie",1,35,2.86,Israeli_Womens_Protests_2023
+The Sun,False,"Arrested, Family, Fox",16,50,32.0,Israeli_Womens_Protests_2023
+The Sun,False,"Biden, Debt, Supreme court",1,50,2.0,Israeli_Womens_Protests_2023
+The Sun,False,"Brexit, Northern, Rishi sunak",4,50,8.0,Israeli_Womens_Protests_2023
+The Sun,False,"Coach, Contract, Seasons",1,50,2.0,Israeli_Womens_Protests_2023
+The Sun,False,"Cup, Foden, Pick",10,50,20.0,Israeli_Womens_Protests_2023
+The Sun,False,"Derailment, Ohio, Train",2,50,4.0,Israeli_Womens_Protests_2023
+The Sun,False,"Diana, Militar, Nuclear",1,50,2.0,Israeli_Womens_Protests_2023
+The Sun,False,"Home, Market, Surplus",1,50,2.0,Israeli_Womens_Protests_2023
+The Sun,False,"Nachrichten, Study, Wegen",13,50,26.0,Israeli_Womens_Protests_2023
+The Sun,False,"Putin, Russia, Russie",1,50,2.0,Israeli_Womens_Protests_2023
+The Telegraph,False,"Arrested, Family, Fox",16,50,32.0,Israeli_Womens_Protests_2023
+The Telegraph,False,"Awards, Festival, Jury",1,50,2.0,Israeli_Womens_Protests_2023
+The Telegraph,False,"Biden, Debt, Supreme court",3,50,6.0,Israeli_Womens_Protests_2023
+The Telegraph,False,"Brexit, Northern, Rishi sunak",4,50,8.0,Israeli_Womens_Protests_2023
+The Telegraph,False,"Cup, Foden, Pick",3,50,6.0,Israeli_Womens_Protests_2023
+The Telegraph,False,"Derailment, Ohio, Train",1,50,2.0,Israeli_Womens_Protests_2023
+The Telegraph,False,"Desantis, Disney, Health care",1,50,2.0,Israeli_Womens_Protests_2023
+The Telegraph,False,"Diana, Militar, Nuclear",1,50,2.0,Israeli_Womens_Protests_2023
+The Telegraph,False,"Home, Market, Surplus",4,50,8.0,Israeli_Womens_Protests_2023
+The Telegraph,False,"Nachrichten, Study, Wegen",15,50,30.0,Israeli_Womens_Protests_2023
+The Telegraph,False,"Parliament, Security, Tiktok",1,50,2.0,Israeli_Womens_Protests_2023
+The Washington Times,False,"Arrested, Family, Fox",12,50,24.0,Israeli_Womens_Protests_2023
+The Washington Times,False,"Biden, Debt, Supreme court",3,50,6.0,Israeli_Womens_Protests_2023
+The Washington Times,False,"Chinese, Covid, Hearing",7,50,14.0,Israeli_Womens_Protests_2023
+The Washington Times,False,"Cup, Foden, Pick",1,50,2.0,Israeli_Womens_Protests_2023
+The Washington Times,False,"Desantis, Disney, Health care",3,50,6.0,Israeli_Womens_Protests_2023
+The Washington Times,False,"Diana, Militar, Nuclear",1,50,2.0,Israeli_Womens_Protests_2023
+The Washington Times,False,"Home, Market, Surplus",1,50,2.0,Israeli_Womens_Protests_2023
+The Washington Times,False,"Nachrichten, Study, Wegen",20,50,40.0,Israeli_Womens_Protests_2023
+The Washington Times,False,"Parliament, Security, Tiktok",2,50,4.0,Israeli_Womens_Protests_2023
+Voice Of America,False,"Arrested, Family, Fox",2,50,4.0,Israeli_Womens_Protests_2023
+Voice Of America,False,"Biden, Debt, Supreme court",1,50,2.0,Israeli_Womens_Protests_2023
+Voice Of America,False,"Brexit, Northern, Rishi sunak",2,50,4.0,Israeli_Womens_Protests_2023
+Voice Of America,False,"Chinese, Covid, Hearing",9,50,18.0,Israeli_Womens_Protests_2023
+Voice Of America,False,"Derailment, Ohio, Train",1,50,2.0,Israeli_Womens_Protests_2023
+Voice Of America,False,"Desantis, Disney, Health care",2,50,4.0,Israeli_Womens_Protests_2023
+Voice Of America,False,"Home, Market, Surplus",1,50,2.0,Israeli_Womens_Protests_2023
+Voice Of America,False,"Nachrichten, Study, Wegen",21,50,42.0,Israeli_Womens_Protests_2023
+Voice Of America,False,"Parliament, Security, Tiktok",3,50,6.0,Israeli_Womens_Protests_2023
+Voice Of America,False,"Putin, Russia, Russie",8,50,16.0,Israeli_Womens_Protests_2023
+Washington Post,False,"Arrested, Family, Fox",5,50,10.0,Israeli_Womens_Protests_2023
+Washington Post,False,"Biden, Debt, Supreme court",1,50,2.0,Israeli_Womens_Protests_2023
+Washington Post,False,"Chinese, Covid, Hearing",3,50,6.0,Israeli_Womens_Protests_2023
+Washington Post,False,"Coach, Contract, Seasons",6,50,12.0,Israeli_Womens_Protests_2023
+Washington Post,False,"Cup, Foden, Pick",2,50,4.0,Israeli_Womens_Protests_2023
+Washington Post,False,"Derailment, Ohio, Train",2,50,4.0,Israeli_Womens_Protests_2023
+Washington Post,False,"Home, Market, Surplus",23,50,46.0,Israeli_Womens_Protests_2023
+Washington Post,False,"Nachrichten, Study, Wegen",7,50,14.0,Israeli_Womens_Protests_2023
+Washington Post,False,"Putin, Russia, Russie",1,50,2.0,Israeli_Womens_Protests_2023
+es,False,"Diana, Militar, Nuclear",49,50,98.0,Israeli_Womens_Protests_2023
+es,False,"Nachrichten, Study, Wegen",1,50,2.0,Israeli_Womens_Protests_2023
+i,False,"Arrested, Family, Fox",12,50,24.0,Israeli_Womens_Protests_2023
+i,False,"Biden, Debt, Supreme court",1,50,2.0,Israeli_Womens_Protests_2023
+i,False,"Brexit, Northern, Rishi sunak",11,50,22.0,Israeli_Womens_Protests_2023
+i,False,"Coach, Contract, Seasons",1,50,2.0,Israeli_Womens_Protests_2023
+i,False,"Cup, Foden, Pick",4,50,8.0,Israeli_Womens_Protests_2023
+i,False,"Derailment, Ohio, Train",1,50,2.0,Israeli_Womens_Protests_2023
+i,False,"Home, Market, Surplus",4,50,8.0,Israeli_Womens_Protests_2023
+i,False,"Nachrichten, Study, Wegen",12,50,24.0,Israeli_Womens_Protests_2023
+i,False,"Parliament, Security, Tiktok",1,50,2.0,Israeli_Womens_Protests_2023
+i,False,"Putin, Russia, Russie",3,50,6.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Drama, England, Win",17,17,100.0,MeToo_Protests_2017
+Deutsche Welle,False,"Drama, England, Win",1,1,100.0,MeToo_Protests_2017
+Fox News,False,"Crisis, Fallen, Warns",3,50,6.0,MeToo_Protests_2017
+Fox News,False,"Drama, England, Win",1,50,2.0,MeToo_Protests_2017
+Fox News,False,"Father, Real, Warns",27,50,54.0,MeToo_Protests_2017
+Fox News,False,"Full, Help, Power",2,50,4.0,MeToo_Protests_2017
+Fox News,False,"Lose, Playing, Season",17,50,34.0,MeToo_Protests_2017
+The Sun,False,"Crisis, Fallen, Warns",1,21,4.76,MeToo_Protests_2017
+The Sun,False,"Father, Real, Warns",20,21,95.24,MeToo_Protests_2017
+The Telegraph,False,"Crisis, Fallen, Warns",17,50,34.0,MeToo_Protests_2017
+The Telegraph,False,"Drama, England, Win",7,50,14.0,MeToo_Protests_2017
+The Telegraph,False,"Father, Real, Warns",24,50,48.0,MeToo_Protests_2017
+The Telegraph,False,"Full, Help, Power",2,50,4.0,MeToo_Protests_2017
+Associated Press News,False,"Boris johnson, Free, Stay",4,7,57.14,Polish_Womens_Strike_2020
+Associated Press News,False,"Trump biden, Warns, Win",3,7,42.86,Polish_Womens_Strike_2020
+Business Insider,False,"Apple, Companies, Tech",9,50,18.0,Polish_Womens_Strike_2020
+Business Insider,False,"Boris johnson, Free, Stay",27,50,54.0,Polish_Womens_Strike_2020
+Business Insider,False,"Coronavirus, Deaths, Restrictions",1,50,2.0,Polish_Womens_Strike_2020
+Business Insider,False,"Festival, Halloween, Moon",9,50,18.0,Polish_Womens_Strike_2020
+Business Insider,False,"Trump biden, Warns, Win",4,50,8.0,Polish_Womens_Strike_2020
+CNBC,False,"Apple, Companies, Tech",14,50,28.0,Polish_Womens_Strike_2020
+CNBC,False,"Boris johnson, Free, Stay",18,50,36.0,Polish_Womens_Strike_2020
+CNBC,False,"Coronavirus, Deaths, Restrictions",7,50,14.0,Polish_Womens_Strike_2020
+CNBC,False,"Festival, Halloween, Moon",1,50,2.0,Polish_Womens_Strike_2020
+CNBC,False,"Trump biden, Warns, Win",10,50,20.0,Polish_Womens_Strike_2020
+Daily Mail,False,"Accused, Children, Old",3,50,6.0,Polish_Womens_Strike_2020
+Daily Mail,False,"Apple, Companies, Tech",5,50,10.0,Polish_Womens_Strike_2020
+Daily Mail,False,"Boris johnson, Free, Stay",22,50,44.0,Polish_Womens_Strike_2020
+Daily Mail,False,"Coronavirus, Deaths, Restrictions",6,50,12.0,Polish_Womens_Strike_2020
+Daily Mail,False,"Crisis, Cymru, Remain",1,50,2.0,Polish_Womens_Strike_2020
+Daily Mail,False,"France, Spiegel politik, Video",4,50,8.0,Polish_Womens_Strike_2020
+Daily Mail,False,"Nobby, Nobby stiles, Stiles",2,50,4.0,Polish_Womens_Strike_2020
+Daily Mail,False,"Trump biden, Warns, Win",7,50,14.0,Polish_Womens_Strike_2020
+Deutsche Welle,False,"Crisis, Cymru, Remain",1,50,2.0,Polish_Womens_Strike_2020
+Deutsche Welle,False,"France, Spiegel politik, Video",49,50,98.0,Polish_Womens_Strike_2020
+Die Tageszeitung (taz),False,"Crisis, Cymru, Remain",2,50,4.0,Polish_Womens_Strike_2020
+Die Tageszeitung (taz),False,"France, Spiegel politik, Video",48,50,96.0,Polish_Womens_Strike_2020
+Euronews (EN),False,"Accused, Children, Old",5,50,10.0,Polish_Womens_Strike_2020
+Euronews (EN),False,"Boris johnson, Free, Stay",17,50,34.0,Polish_Womens_Strike_2020
+Euronews (EN),False,"Coronavirus, Deaths, Restrictions",11,50,22.0,Polish_Womens_Strike_2020
+Euronews (EN),False,"Festival, Halloween, Moon",2,50,4.0,Polish_Womens_Strike_2020
+Euronews (EN),False,"France, Spiegel politik, Video",8,50,16.0,Polish_Womens_Strike_2020
+Euronews (EN),False,"Nobby, Nobby stiles, Stiles",1,50,2.0,Polish_Womens_Strike_2020
+Euronews (EN),False,"Trump biden, Warns, Win",6,50,12.0,Polish_Womens_Strike_2020
+Euronews (FR),False,"Crisis, Cymru, Remain",1,49,2.04,Polish_Womens_Strike_2020
+Euronews (FR),False,"France, Spiegel politik, Video",48,49,97.96,Polish_Womens_Strike_2020
+Fox News,False,"Accused, Children, Old",8,50,16.0,Polish_Womens_Strike_2020
+Fox News,False,"Apple, Companies, Tech",1,50,2.0,Polish_Womens_Strike_2020
+Fox News,False,"Boris johnson, Free, Stay",12,50,24.0,Polish_Womens_Strike_2020
+Fox News,False,"Coronavirus, Deaths, Restrictions",4,50,8.0,Polish_Womens_Strike_2020
+Fox News,False,"Festival, Halloween, Moon",1,50,2.0,Polish_Womens_Strike_2020
+Fox News,False,"Trump biden, Warns, Win",24,50,48.0,Polish_Womens_Strike_2020
+Frankfurter Allgemeine Zeitung,False,"Boris johnson, Free, Stay",1,50,2.0,Polish_Womens_Strike_2020
+Frankfurter Allgemeine Zeitung,False,"Crisis, Cymru, Remain",1,50,2.0,Polish_Womens_Strike_2020
+Frankfurter Allgemeine Zeitung,False,"France, Spiegel politik, Video",48,50,96.0,Polish_Womens_Strike_2020
+Le Monde,False,"Coronavirus, Deaths, Restrictions",1,50,2.0,Polish_Womens_Strike_2020
+Le Monde,False,"France, Spiegel politik, Video",49,50,98.0,Polish_Womens_Strike_2020
+Spiegel Online,False,"France, Spiegel politik, Video",48,50,96.0,Polish_Womens_Strike_2020
+Spiegel Online,False,"Trump biden, Warns, Win",2,50,4.0,Polish_Womens_Strike_2020
+The BBC,False,"Accused, Children, Old",18,50,36.0,Polish_Womens_Strike_2020
+The BBC,False,"Boris johnson, Free, Stay",9,50,18.0,Polish_Womens_Strike_2020
+The BBC,False,"Coronavirus, Deaths, Restrictions",9,50,18.0,Polish_Womens_Strike_2020
+The BBC,False,"Crisis, Cymru, Remain",2,50,4.0,Polish_Womens_Strike_2020
+The BBC,False,"France, Spiegel politik, Video",8,50,16.0,Polish_Womens_Strike_2020
+The BBC,False,"Nobby, Nobby stiles, Stiles",1,50,2.0,Polish_Womens_Strike_2020
+The BBC,False,"Trump biden, Warns, Win",3,50,6.0,Polish_Womens_Strike_2020
+The Nation,False,"Accused, Children, Old",2,46,4.35,Polish_Womens_Strike_2020
+The Nation,False,"Boris johnson, Free, Stay",8,46,17.39,Polish_Womens_Strike_2020
+The Nation,False,"Coronavirus, Deaths, Restrictions",4,46,8.7,Polish_Womens_Strike_2020
+The Nation,False,"Crisis, Cymru, Remain",1,46,2.17,Polish_Womens_Strike_2020
+The Nation,False,"Festival, Halloween, Moon",1,46,2.17,Polish_Womens_Strike_2020
+The Nation,False,"France, Spiegel politik, Video",7,46,15.22,Polish_Womens_Strike_2020
+The Nation,False,"Trump biden, Warns, Win",23,46,50.0,Polish_Womens_Strike_2020
+The Sun,False,"Accused, Children, Old",6,50,12.0,Polish_Womens_Strike_2020
+The Sun,False,"Boris johnson, Free, Stay",16,50,32.0,Polish_Womens_Strike_2020
+The Sun,False,"Coronavirus, Deaths, Restrictions",2,50,4.0,Polish_Womens_Strike_2020
+The Sun,False,"Crisis, Cymru, Remain",2,50,4.0,Polish_Womens_Strike_2020
+The Sun,False,"Festival, Halloween, Moon",4,50,8.0,Polish_Womens_Strike_2020
+The Sun,False,"France, Spiegel politik, Video",1,50,2.0,Polish_Womens_Strike_2020
+The Sun,False,"Nobby, Nobby stiles, Stiles",14,50,28.0,Polish_Womens_Strike_2020
+The Sun,False,"Trump biden, Warns, Win",5,50,10.0,Polish_Womens_Strike_2020
+The Telegraph,False,"Accused, Children, Old",2,50,4.0,Polish_Womens_Strike_2020
+The Telegraph,False,"Apple, Companies, Tech",1,50,2.0,Polish_Womens_Strike_2020
+The Telegraph,False,"Boris johnson, Free, Stay",16,50,32.0,Polish_Womens_Strike_2020
+The Telegraph,False,"Coronavirus, Deaths, Restrictions",4,50,8.0,Polish_Womens_Strike_2020
+The Telegraph,False,"Crisis, Cymru, Remain",4,50,8.0,Polish_Womens_Strike_2020
+The Telegraph,False,"Festival, Halloween, Moon",4,50,8.0,Polish_Womens_Strike_2020
+The Telegraph,False,"France, Spiegel politik, Video",1,50,2.0,Polish_Womens_Strike_2020
+The Telegraph,False,"Nobby, Nobby stiles, Stiles",13,50,26.0,Polish_Womens_Strike_2020
+The Telegraph,False,"Trump biden, Warns, Win",5,50,10.0,Polish_Womens_Strike_2020
+The Washington Times,False,"Accused, Children, Old",23,50,46.0,Polish_Womens_Strike_2020
+The Washington Times,False,"Boris johnson, Free, Stay",7,50,14.0,Polish_Womens_Strike_2020
+The Washington Times,False,"Coronavirus, Deaths, Restrictions",5,50,10.0,Polish_Womens_Strike_2020
+The Washington Times,False,"Festival, Halloween, Moon",1,50,2.0,Polish_Womens_Strike_2020
+The Washington Times,False,"France, Spiegel politik, Video",1,50,2.0,Polish_Womens_Strike_2020
+The Washington Times,False,"Trump biden, Warns, Win",13,50,26.0,Polish_Womens_Strike_2020
+es,False,"Coronavirus, Deaths, Restrictions",1,50,2.0,Polish_Womens_Strike_2020
+es,False,"France, Spiegel politik, Video",48,50,96.0,Polish_Womens_Strike_2020
+es,False,"Trump biden, Warns, Win",1,50,2.0,Polish_Womens_Strike_2020
+i,False,"Accused, Children, Old",1,50,2.0,Polish_Womens_Strike_2020
+i,False,"Boris johnson, Free, Stay",18,50,36.0,Polish_Womens_Strike_2020
+i,False,"Coronavirus, Deaths, Restrictions",3,50,6.0,Polish_Womens_Strike_2020
+i,False,"Crisis, Cymru, Remain",6,50,12.0,Polish_Womens_Strike_2020
+i,False,"Festival, Halloween, Moon",12,50,24.0,Polish_Womens_Strike_2020
+i,False,"France, Spiegel politik, Video",6,50,12.0,Polish_Womens_Strike_2020
+i,False,"Nobby, Nobby stiles, Stiles",1,50,2.0,Polish_Womens_Strike_2020
+i,False,"Trump biden, Warns, Win",3,50,6.0,Polish_Womens_Strike_2020
+Associated Press News,False,"California, Climate, Debate",2,9,22.22,Roe_Leak_Protests_2022
+Associated Press News,False,"Cover, Hotel, Threatens",1,9,11.11,Roe_Leak_Protests_2022
+Associated Press News,False,"Draft, Hopes, Lottery",1,9,11.11,Roe_Leak_Protests_2022
+Associated Press News,False,"Nato, Saudi, Sports",5,9,55.56,Roe_Leak_Protests_2022
+Business Insider,False,"Ban, Donald, Social media",3,50,6.0,Roe_Leak_Protests_2022
+Business Insider,False,"Bill gates, Covid, Taiwan",3,50,6.0,Roe_Leak_Protests_2022
+Business Insider,False,"Charles, Cost living, Speech",14,50,28.0,Roe_Leak_Protests_2022
+Business Insider,False,"Cover, Hotel, Threatens",1,50,2.0,Roe_Leak_Protests_2022
+Business Insider,False,"Daily, Summer, Teen mom",1,50,2.0,Roe_Leak_Protests_2022
+Business Insider,False,"Democrats, Senate, Supreme court",3,50,6.0,Roe_Leak_Protests_2022
+Business Insider,False,"Fur, Putin, Ukraine",2,50,4.0,Roe_Leak_Protests_2022
+Business Insider,False,"List, Virginia, Wrong",4,50,8.0,Roe_Leak_Protests_2022
+Business Insider,False,"Nato, Saudi, Sports",19,50,38.0,Roe_Leak_Protests_2022
+CBC News,False,"Bill gates, Covid, Taiwan",4,9,44.44,Roe_Leak_Protests_2022
+CBC News,False,"California, Climate, Debate",2,9,22.22,Roe_Leak_Protests_2022
+CBC News,False,"Draft, Hopes, Lottery",1,9,11.11,Roe_Leak_Protests_2022
+CBC News,False,"League, Liverpool, Test",1,9,11.11,Roe_Leak_Protests_2022
+CBC News,False,"Nato, Saudi, Sports",1,9,11.11,Roe_Leak_Protests_2022
+CNBC,False,"Ban, Donald, Social media",1,50,2.0,Roe_Leak_Protests_2022
+CNBC,False,"Bill gates, Covid, Taiwan",6,50,12.0,Roe_Leak_Protests_2022
+CNBC,False,"Charles, Cost living, Speech",30,50,60.0,Roe_Leak_Protests_2022
+CNBC,False,"Fur, Putin, Ukraine",2,50,4.0,Roe_Leak_Protests_2022
+CNBC,False,"League, Liverpool, Test",1,50,2.0,Roe_Leak_Protests_2022
+CNBC,False,"Nato, Saudi, Sports",10,50,20.0,Roe_Leak_Protests_2022
+Daily Mail,False,"Appeal, Killed, Mystery",1,50,2.0,Roe_Leak_Protests_2022
+Daily Mail,False,"Bill gates, Covid, Taiwan",2,50,4.0,Roe_Leak_Protests_2022
+Daily Mail,False,"California, Climate, Debate",1,50,2.0,Roe_Leak_Protests_2022
+Daily Mail,False,"Charles, Cost living, Speech",5,50,10.0,Roe_Leak_Protests_2022
+Daily Mail,False,"Contest, Final, Song",1,50,2.0,Roe_Leak_Protests_2022
+Daily Mail,False,"Cover, Hotel, Threatens",3,50,6.0,Roe_Leak_Protests_2022
+Daily Mail,False,"Democrats, Senate, Supreme court",3,50,6.0,Roe_Leak_Protests_2022
+Daily Mail,False,"Draft, Hopes, Lottery",8,50,16.0,Roe_Leak_Protests_2022
+Daily Mail,False,"Fur, Putin, Ukraine",5,50,10.0,Roe_Leak_Protests_2022
+Daily Mail,False,"League, Liverpool, Test",3,50,6.0,Roe_Leak_Protests_2022
+Daily Mail,False,"List, Virginia, Wrong",1,50,2.0,Roe_Leak_Protests_2022
+Daily Mail,False,"Nato, Saudi, Sports",17,50,34.0,Roe_Leak_Protests_2022
+Deutsche Welle,False,"Bill gates, Covid, Taiwan",1,50,2.0,Roe_Leak_Protests_2022
+Deutsche Welle,False,"Daily, Summer, Teen mom",1,50,2.0,Roe_Leak_Protests_2022
+Deutsche Welle,False,"Fur, Putin, Ukraine",40,50,80.0,Roe_Leak_Protests_2022
+Deutsche Welle,False,"League, Liverpool, Test",2,50,4.0,Roe_Leak_Protests_2022
+Deutsche Welle,False,"Millones euros, Mujeres, Vestido",1,50,2.0,Roe_Leak_Protests_2022
+Deutsche Welle,False,"Nato, Saudi, Sports",3,50,6.0,Roe_Leak_Protests_2022
+Deutsche Welle,False,"Nine, Polls, Retour",2,50,4.0,Roe_Leak_Protests_2022
+Die Tageszeitung (taz),False,"Fur, Putin, Ukraine",46,50,92.0,Roe_Leak_Protests_2022
+Die Tageszeitung (taz),False,"Nato, Saudi, Sports",2,50,4.0,Roe_Leak_Protests_2022
+Die Tageszeitung (taz),False,"Nine, Polls, Retour",2,50,4.0,Roe_Leak_Protests_2022
+El Mundo,False,"Contest, Final, Song",1,50,2.0,Roe_Leak_Protests_2022
+El Mundo,False,"Fur, Putin, Ukraine",2,50,4.0,Roe_Leak_Protests_2022
+El Mundo,False,"Millones euros, Mujeres, Vestido",47,50,94.0,Roe_Leak_Protests_2022
+El País,False,"Millones euros, Mujeres, Vestido",6,6,100.0,Roe_Leak_Protests_2022
+Euronews (EN),False,"Ban, Donald, Social media",2,50,4.0,Roe_Leak_Protests_2022
+Euronews (EN),False,"Bill gates, Covid, Taiwan",1,50,2.0,Roe_Leak_Protests_2022
+Euronews (EN),False,"Charles, Cost living, Speech",4,50,8.0,Roe_Leak_Protests_2022
+Euronews (EN),False,"Contest, Final, Song",2,50,4.0,Roe_Leak_Protests_2022
+Euronews (EN),False,"Cover, Hotel, Threatens",2,50,4.0,Roe_Leak_Protests_2022
+Euronews (EN),False,"Daily, Summer, Teen mom",1,50,2.0,Roe_Leak_Protests_2022
+Euronews (EN),False,"Fur, Putin, Ukraine",21,50,42.0,Roe_Leak_Protests_2022
+Euronews (EN),False,"League, Liverpool, Test",1,50,2.0,Roe_Leak_Protests_2022
+Euronews (EN),False,"Millones euros, Mujeres, Vestido",1,50,2.0,Roe_Leak_Protests_2022
+Euronews (EN),False,"Nato, Saudi, Sports",14,50,28.0,Roe_Leak_Protests_2022
+Euronews (EN),False,"Nine, Polls, Retour",1,50,2.0,Roe_Leak_Protests_2022
+Euronews (FR),False,"Charles, Cost living, Speech",1,50,2.0,Roe_Leak_Protests_2022
+Euronews (FR),False,"Contest, Final, Song",2,50,4.0,Roe_Leak_Protests_2022
+Euronews (FR),False,"Fur, Putin, Ukraine",40,50,80.0,Roe_Leak_Protests_2022
+Euronews (FR),False,"League, Liverpool, Test",1,50,2.0,Roe_Leak_Protests_2022
+Euronews (FR),False,"Nato, Saudi, Sports",3,50,6.0,Roe_Leak_Protests_2022
+Euronews (FR),False,"Nine, Polls, Retour",3,50,6.0,Roe_Leak_Protests_2022
+Fox News,False,"Appeal, Killed, Mystery",4,50,8.0,Roe_Leak_Protests_2022
+Fox News,False,"Ban, Donald, Social media",3,50,6.0,Roe_Leak_Protests_2022
+Fox News,False,"Cover, Hotel, Threatens",2,50,4.0,Roe_Leak_Protests_2022
+Fox News,False,"Daily, Summer, Teen mom",2,50,4.0,Roe_Leak_Protests_2022
+Fox News,False,"Democrats, Senate, Supreme court",10,50,20.0,Roe_Leak_Protests_2022
+Fox News,False,"Draft, Hopes, Lottery",5,50,10.0,Roe_Leak_Protests_2022
+Fox News,False,"Fur, Putin, Ukraine",2,50,4.0,Roe_Leak_Protests_2022
+Fox News,False,"League, Liverpool, Test",1,50,2.0,Roe_Leak_Protests_2022
+Fox News,False,"List, Virginia, Wrong",4,50,8.0,Roe_Leak_Protests_2022
+Fox News,False,"Nato, Saudi, Sports",16,50,32.0,Roe_Leak_Protests_2022
+Fox News,False,"Nine, Polls, Retour",1,50,2.0,Roe_Leak_Protests_2022
+Frankfurter Allgemeine Zeitung,False,"Ban, Donald, Social media",2,50,4.0,Roe_Leak_Protests_2022
+Frankfurter Allgemeine Zeitung,False,"Charles, Cost living, Speech",1,50,2.0,Roe_Leak_Protests_2022
+Frankfurter Allgemeine Zeitung,False,"Fur, Putin, Ukraine",39,50,78.0,Roe_Leak_Protests_2022
+Frankfurter Allgemeine Zeitung,False,"League, Liverpool, Test",3,50,6.0,Roe_Leak_Protests_2022
+Frankfurter Allgemeine Zeitung,False,"Millones euros, Mujeres, Vestido",1,50,2.0,Roe_Leak_Protests_2022
+Frankfurter Allgemeine Zeitung,False,"Nato, Saudi, Sports",3,50,6.0,Roe_Leak_Protests_2022
+Frankfurter Allgemeine Zeitung,False,"Nine, Polls, Retour",1,50,2.0,Roe_Leak_Protests_2022
+Le Figaro,False,"Ban, Donald, Social media",1,50,2.0,Roe_Leak_Protests_2022
+Le Figaro,False,"Charles, Cost living, Speech",1,50,2.0,Roe_Leak_Protests_2022
+Le Figaro,False,"Fur, Putin, Ukraine",41,50,82.0,Roe_Leak_Protests_2022
+Le Figaro,False,"League, Liverpool, Test",2,50,4.0,Roe_Leak_Protests_2022
+Le Figaro,False,"Millones euros, Mujeres, Vestido",1,50,2.0,Roe_Leak_Protests_2022
+Le Figaro,False,"Nato, Saudi, Sports",3,50,6.0,Roe_Leak_Protests_2022
+Le Figaro,False,"Nine, Polls, Retour",1,50,2.0,Roe_Leak_Protests_2022
+Le Monde,False,"Ban, Donald, Social media",1,50,2.0,Roe_Leak_Protests_2022
+Le Monde,False,"Fur, Putin, Ukraine",44,50,88.0,Roe_Leak_Protests_2022
+Le Monde,False,"League, Liverpool, Test",1,50,2.0,Roe_Leak_Protests_2022
+Le Monde,False,"Millones euros, Mujeres, Vestido",3,50,6.0,Roe_Leak_Protests_2022
+Le Monde,False,"Nato, Saudi, Sports",1,50,2.0,Roe_Leak_Protests_2022
+Reuters,False,"Bill gates, Covid, Taiwan",2,50,4.0,Roe_Leak_Protests_2022
+Reuters,False,"California, Climate, Debate",1,50,2.0,Roe_Leak_Protests_2022
+Reuters,False,"Charles, Cost living, Speech",9,50,18.0,Roe_Leak_Protests_2022
+Reuters,False,"Contest, Final, Song",1,50,2.0,Roe_Leak_Protests_2022
+Reuters,False,"Cover, Hotel, Threatens",8,50,16.0,Roe_Leak_Protests_2022
+Reuters,False,"Draft, Hopes, Lottery",1,50,2.0,Roe_Leak_Protests_2022
+Reuters,False,"Fur, Putin, Ukraine",10,50,20.0,Roe_Leak_Protests_2022
+Reuters,False,"League, Liverpool, Test",1,50,2.0,Roe_Leak_Protests_2022
+Reuters,False,"Millones euros, Mujeres, Vestido",2,50,4.0,Roe_Leak_Protests_2022
+Reuters,False,"Nato, Saudi, Sports",15,50,30.0,Roe_Leak_Protests_2022
+Spiegel Online,False,"Ban, Donald, Social media",3,50,6.0,Roe_Leak_Protests_2022
+Spiegel Online,False,"Charles, Cost living, Speech",2,50,4.0,Roe_Leak_Protests_2022
+Spiegel Online,False,"Contest, Final, Song",1,50,2.0,Roe_Leak_Protests_2022
+Spiegel Online,False,"Daily, Summer, Teen mom",2,50,4.0,Roe_Leak_Protests_2022
+Spiegel Online,False,"Fur, Putin, Ukraine",35,50,70.0,Roe_Leak_Protests_2022
+Spiegel Online,False,"League, Liverpool, Test",2,50,4.0,Roe_Leak_Protests_2022
+Spiegel Online,False,"Nato, Saudi, Sports",4,50,8.0,Roe_Leak_Protests_2022
+Spiegel Online,False,"Nine, Polls, Retour",1,50,2.0,Roe_Leak_Protests_2022
+Tagesschau,False,"Fur, Putin, Ukraine",44,50,88.0,Roe_Leak_Protests_2022
+Tagesschau,False,"League, Liverpool, Test",1,50,2.0,Roe_Leak_Protests_2022
+Tagesschau,False,"Millones euros, Mujeres, Vestido",1,50,2.0,Roe_Leak_Protests_2022
+Tagesschau,False,"Nato, Saudi, Sports",3,50,6.0,Roe_Leak_Protests_2022
+Tagesschau,False,"Nine, Polls, Retour",1,50,2.0,Roe_Leak_Protests_2022
+The BBC,False,"Appeal, Killed, Mystery",2,49,4.08,Roe_Leak_Protests_2022
+The BBC,False,"Ban, Donald, Social media",1,49,2.04,Roe_Leak_Protests_2022
+The BBC,False,"Bill gates, Covid, Taiwan",1,49,2.04,Roe_Leak_Protests_2022
+The BBC,False,"California, Climate, Debate",2,49,4.08,Roe_Leak_Protests_2022
+The BBC,False,"Charles, Cost living, Speech",6,49,12.24,Roe_Leak_Protests_2022
+The BBC,False,"Contest, Final, Song",1,49,2.04,Roe_Leak_Protests_2022
+The BBC,False,"Cover, Hotel, Threatens",2,49,4.08,Roe_Leak_Protests_2022
+The BBC,False,"Daily, Summer, Teen mom",2,49,4.08,Roe_Leak_Protests_2022
+The BBC,False,"Fur, Putin, Ukraine",8,49,16.33,Roe_Leak_Protests_2022
+The BBC,False,"League, Liverpool, Test",2,49,4.08,Roe_Leak_Protests_2022
+The BBC,False,"Millones euros, Mujeres, Vestido",1,49,2.04,Roe_Leak_Protests_2022
+The BBC,False,"Nato, Saudi, Sports",21,49,42.86,Roe_Leak_Protests_2022
+The Globe and Mail,False,"Appeal, Killed, Mystery",1,50,2.0,Roe_Leak_Protests_2022
+The Globe and Mail,False,"Bill gates, Covid, Taiwan",8,50,16.0,Roe_Leak_Protests_2022
+The Globe and Mail,False,"California, Climate, Debate",4,50,8.0,Roe_Leak_Protests_2022
+The Globe and Mail,False,"Charles, Cost living, Speech",10,50,20.0,Roe_Leak_Protests_2022
+The Globe and Mail,False,"Cover, Hotel, Threatens",2,50,4.0,Roe_Leak_Protests_2022
+The Globe and Mail,False,"Daily, Summer, Teen mom",3,50,6.0,Roe_Leak_Protests_2022
+The Globe and Mail,False,"Democrats, Senate, Supreme court",1,50,2.0,Roe_Leak_Protests_2022
+The Globe and Mail,False,"Draft, Hopes, Lottery",4,50,8.0,Roe_Leak_Protests_2022
+The Globe and Mail,False,"Fur, Putin, Ukraine",4,50,8.0,Roe_Leak_Protests_2022
+The Globe and Mail,False,"Nato, Saudi, Sports",13,50,26.0,Roe_Leak_Protests_2022
+The Guardian,False,"Appeal, Killed, Mystery",3,50,6.0,Roe_Leak_Protests_2022
+The Guardian,False,"Ban, Donald, Social media",1,50,2.0,Roe_Leak_Protests_2022
+The Guardian,False,"Bill gates, Covid, Taiwan",2,50,4.0,Roe_Leak_Protests_2022
+The Guardian,False,"California, Climate, Debate",2,50,4.0,Roe_Leak_Protests_2022
+The Guardian,False,"Charles, Cost living, Speech",3,50,6.0,Roe_Leak_Protests_2022
+The Guardian,False,"Cover, Hotel, Threatens",1,50,2.0,Roe_Leak_Protests_2022
+The Guardian,False,"Daily, Summer, Teen mom",5,50,10.0,Roe_Leak_Protests_2022
+The Guardian,False,"Democrats, Senate, Supreme court",1,50,2.0,Roe_Leak_Protests_2022
+The Guardian,False,"Fur, Putin, Ukraine",8,50,16.0,Roe_Leak_Protests_2022
+The Guardian,False,"League, Liverpool, Test",10,50,20.0,Roe_Leak_Protests_2022
+The Guardian,False,"Nato, Saudi, Sports",12,50,24.0,Roe_Leak_Protests_2022
+The Guardian,False,"Nine, Polls, Retour",2,50,4.0,Roe_Leak_Protests_2022
+The Independent,False,"Appeal, Killed, Mystery",1,50,2.0,Roe_Leak_Protests_2022
+The Independent,False,"Bill gates, Covid, Taiwan",5,50,10.0,Roe_Leak_Protests_2022
+The Independent,False,"California, Climate, Debate",3,50,6.0,Roe_Leak_Protests_2022
+The Independent,False,"Charles, Cost living, Speech",3,50,6.0,Roe_Leak_Protests_2022
+The Independent,False,"Contest, Final, Song",2,50,4.0,Roe_Leak_Protests_2022
+The Independent,False,"Cover, Hotel, Threatens",2,50,4.0,Roe_Leak_Protests_2022
+The Independent,False,"Daily, Summer, Teen mom",2,50,4.0,Roe_Leak_Protests_2022
+The Independent,False,"Democrats, Senate, Supreme court",5,50,10.0,Roe_Leak_Protests_2022
+The Independent,False,"Fur, Putin, Ukraine",3,50,6.0,Roe_Leak_Protests_2022
+The Independent,False,"League, Liverpool, Test",3,50,6.0,Roe_Leak_Protests_2022
+The Independent,False,"List, Virginia, Wrong",1,50,2.0,Roe_Leak_Protests_2022
+The Independent,False,"Nato, Saudi, Sports",20,50,40.0,Roe_Leak_Protests_2022
+The Intercept,False,"Charles, Cost living, Speech",1,14,7.14,Roe_Leak_Protests_2022
+The Intercept,False,"Cover, Hotel, Threatens",1,14,7.14,Roe_Leak_Protests_2022
+The Intercept,False,"Fur, Putin, Ukraine",1,14,7.14,Roe_Leak_Protests_2022
+The Intercept,False,"Millones euros, Mujeres, Vestido",11,14,78.57,Roe_Leak_Protests_2022
+The Nation,False,"Ban, Donald, Social media",1,40,2.5,Roe_Leak_Protests_2022
+The Nation,False,"Bill gates, Covid, Taiwan",4,40,10.0,Roe_Leak_Protests_2022
+The Nation,False,"Charles, Cost living, Speech",1,40,2.5,Roe_Leak_Protests_2022
+The Nation,False,"Cover, Hotel, Threatens",2,40,5.0,Roe_Leak_Protests_2022
+The Nation,False,"Daily, Summer, Teen mom",4,40,10.0,Roe_Leak_Protests_2022
+The Nation,False,"Democrats, Senate, Supreme court",13,40,32.5,Roe_Leak_Protests_2022
+The Nation,False,"Fur, Putin, Ukraine",3,40,7.5,Roe_Leak_Protests_2022
+The Nation,False,"List, Virginia, Wrong",2,40,5.0,Roe_Leak_Protests_2022
+The Nation,False,"Nato, Saudi, Sports",9,40,22.5,Roe_Leak_Protests_2022
+The Nation,False,"Nine, Polls, Retour",1,40,2.5,Roe_Leak_Protests_2022
+The New Yorker,False,"Bill gates, Covid, Taiwan",2,49,4.08,Roe_Leak_Protests_2022
+The New Yorker,False,"California, Climate, Debate",1,49,2.04,Roe_Leak_Protests_2022
+The New Yorker,False,"Charles, Cost living, Speech",3,49,6.12,Roe_Leak_Protests_2022
+The New Yorker,False,"Cover, Hotel, Threatens",1,49,2.04,Roe_Leak_Protests_2022
+The New Yorker,False,"Daily, Summer, Teen mom",24,49,48.98,Roe_Leak_Protests_2022
+The New Yorker,False,"Democrats, Senate, Supreme court",6,49,12.24,Roe_Leak_Protests_2022
+The New Yorker,False,"Draft, Hopes, Lottery",2,49,4.08,Roe_Leak_Protests_2022
+The New Yorker,False,"Fur, Putin, Ukraine",3,49,6.12,Roe_Leak_Protests_2022
+The New Yorker,False,"List, Virginia, Wrong",1,49,2.04,Roe_Leak_Protests_2022
+The New Yorker,False,"Millones euros, Mujeres, Vestido",1,49,2.04,Roe_Leak_Protests_2022
+The New Yorker,False,"Nato, Saudi, Sports",5,49,10.2,Roe_Leak_Protests_2022
+The Sun,False,"Appeal, Killed, Mystery",2,50,4.0,Roe_Leak_Protests_2022
+The Sun,False,"Ban, Donald, Social media",1,50,2.0,Roe_Leak_Protests_2022
+The Sun,False,"Charles, Cost living, Speech",9,50,18.0,Roe_Leak_Protests_2022
+The Sun,False,"Cover, Hotel, Threatens",1,50,2.0,Roe_Leak_Protests_2022
+The Sun,False,"Daily, Summer, Teen mom",20,50,40.0,Roe_Leak_Protests_2022
+The Sun,False,"Fur, Putin, Ukraine",4,50,8.0,Roe_Leak_Protests_2022
+The Sun,False,"Nato, Saudi, Sports",13,50,26.0,Roe_Leak_Protests_2022
+The Telegraph,False,"Ban, Donald, Social media",1,50,2.0,Roe_Leak_Protests_2022
+The Telegraph,False,"Charles, Cost living, Speech",7,50,14.0,Roe_Leak_Protests_2022
+The Telegraph,False,"Contest, Final, Song",2,50,4.0,Roe_Leak_Protests_2022
+The Telegraph,False,"Cover, Hotel, Threatens",2,50,4.0,Roe_Leak_Protests_2022
+The Telegraph,False,"Daily, Summer, Teen mom",4,50,8.0,Roe_Leak_Protests_2022
+The Telegraph,False,"Democrats, Senate, Supreme court",4,50,8.0,Roe_Leak_Protests_2022
+The Telegraph,False,"Fur, Putin, Ukraine",13,50,26.0,Roe_Leak_Protests_2022
+The Telegraph,False,"League, Liverpool, Test",5,50,10.0,Roe_Leak_Protests_2022
+The Telegraph,False,"Nato, Saudi, Sports",12,50,24.0,Roe_Leak_Protests_2022
+The Washington Times,False,"Ban, Donald, Social media",2,50,4.0,Roe_Leak_Protests_2022
+The Washington Times,False,"Bill gates, Covid, Taiwan",4,50,8.0,Roe_Leak_Protests_2022
+The Washington Times,False,"Charles, Cost living, Speech",2,50,4.0,Roe_Leak_Protests_2022
+The Washington Times,False,"Cover, Hotel, Threatens",3,50,6.0,Roe_Leak_Protests_2022
+The Washington Times,False,"Daily, Summer, Teen mom",3,50,6.0,Roe_Leak_Protests_2022
+The Washington Times,False,"Democrats, Senate, Supreme court",8,50,16.0,Roe_Leak_Protests_2022
+The Washington Times,False,"Fur, Putin, Ukraine",4,50,8.0,Roe_Leak_Protests_2022
+The Washington Times,False,"List, Virginia, Wrong",2,50,4.0,Roe_Leak_Protests_2022
+The Washington Times,False,"Nato, Saudi, Sports",22,50,44.0,Roe_Leak_Protests_2022
+Voice Of America,False,"Ban, Donald, Social media",1,50,2.0,Roe_Leak_Protests_2022
+Voice Of America,False,"Bill gates, Covid, Taiwan",6,50,12.0,Roe_Leak_Protests_2022
+Voice Of America,False,"California, Climate, Debate",2,50,4.0,Roe_Leak_Protests_2022
+Voice Of America,False,"Charles, Cost living, Speech",3,50,6.0,Roe_Leak_Protests_2022
+Voice Of America,False,"Cover, Hotel, Threatens",9,50,18.0,Roe_Leak_Protests_2022
+Voice Of America,False,"Daily, Summer, Teen mom",1,50,2.0,Roe_Leak_Protests_2022
+Voice Of America,False,"Democrats, Senate, Supreme court",1,50,2.0,Roe_Leak_Protests_2022
+Voice Of America,False,"Fur, Putin, Ukraine",11,50,22.0,Roe_Leak_Protests_2022
+Voice Of America,False,"Nato, Saudi, Sports",13,50,26.0,Roe_Leak_Protests_2022
+Voice Of America,False,"Nine, Polls, Retour",3,50,6.0,Roe_Leak_Protests_2022
+Washington Post,False,"Appeal, Killed, Mystery",3,50,6.0,Roe_Leak_Protests_2022
+Washington Post,False,"Ban, Donald, Social media",3,50,6.0,Roe_Leak_Protests_2022
+Washington Post,False,"Bill gates, Covid, Taiwan",2,50,4.0,Roe_Leak_Protests_2022
+Washington Post,False,"Charles, Cost living, Speech",3,50,6.0,Roe_Leak_Protests_2022
+Washington Post,False,"Cover, Hotel, Threatens",4,50,8.0,Roe_Leak_Protests_2022
+Washington Post,False,"Daily, Summer, Teen mom",3,50,6.0,Roe_Leak_Protests_2022
+Washington Post,False,"Democrats, Senate, Supreme court",5,50,10.0,Roe_Leak_Protests_2022
+Washington Post,False,"Draft, Hopes, Lottery",5,50,10.0,Roe_Leak_Protests_2022
+Washington Post,False,"Fur, Putin, Ukraine",4,50,8.0,Roe_Leak_Protests_2022
+Washington Post,False,"League, Liverpool, Test",2,50,4.0,Roe_Leak_Protests_2022
+Washington Post,False,"List, Virginia, Wrong",1,50,2.0,Roe_Leak_Protests_2022
+Washington Post,False,"Nato, Saudi, Sports",15,50,30.0,Roe_Leak_Protests_2022
+es,False,"Bill gates, Covid, Taiwan",1,50,2.0,Roe_Leak_Protests_2022
+es,False,"Fur, Putin, Ukraine",3,50,6.0,Roe_Leak_Protests_2022
+es,False,"Millones euros, Mujeres, Vestido",45,50,90.0,Roe_Leak_Protests_2022
+es,False,"Nato, Saudi, Sports",1,50,2.0,Roe_Leak_Protests_2022
+i,False,"Appeal, Killed, Mystery",1,50,2.0,Roe_Leak_Protests_2022
+i,False,"Bill gates, Covid, Taiwan",3,50,6.0,Roe_Leak_Protests_2022
+i,False,"California, Climate, Debate",1,50,2.0,Roe_Leak_Protests_2022
+i,False,"Charles, Cost living, Speech",15,50,30.0,Roe_Leak_Protests_2022
+i,False,"Contest, Final, Song",11,50,22.0,Roe_Leak_Protests_2022
+i,False,"Daily, Summer, Teen mom",7,50,14.0,Roe_Leak_Protests_2022
+i,False,"Democrats, Senate, Supreme court",2,50,4.0,Roe_Leak_Protests_2022
+i,False,"Fur, Putin, Ukraine",1,50,2.0,Roe_Leak_Protests_2022
+i,False,"Nato, Saudi, Sports",9,50,18.0,Roe_Leak_Protests_2022
+Associated Press News,False,"Atlanta, Harris, Violence",1,14,7.14,Sarah_Everard_Vigils_2021
+Associated Press News,False,"Change, Fight, Instagram",12,14,85.71,Sarah_Everard_Vigils_2021
+Associated Press News,False,"Europe, Jab, Pandemic",1,14,7.14,Sarah_Everard_Vigils_2021
+Business Insider,False,"Arrested, Cuomo, Police",3,50,6.0,Sarah_Everard_Vigils_2021
+Business Insider,False,"Atlanta, Harris, Violence",4,50,8.0,Sarah_Everard_Vigils_2021
+Business Insider,False,"Change, Fight, Instagram",19,50,38.0,Sarah_Everard_Vigils_2021
+Business Insider,False,"Comic relief, Line duty, Red nose",2,50,4.0,Sarah_Everard_Vigils_2021
+Business Insider,False,"Europe, Jab, Pandemic",6,50,12.0,Sarah_Everard_Vigils_2021
+Business Insider,False,"Nicola sturgeon, Stimulus, Tax",14,50,28.0,Sarah_Everard_Vigils_2021
+Business Insider,False,"Pregnant, Princess, Reveals",2,50,4.0,Sarah_Everard_Vigils_2021
+CNBC,False,"Arrested, Cuomo, Police",3,50,6.0,Sarah_Everard_Vigils_2021
+CNBC,False,"Atlanta, Harris, Violence",2,50,4.0,Sarah_Everard_Vigils_2021
+CNBC,False,"Bayern, Lockdown, Macht",1,50,2.0,Sarah_Everard_Vigils_2021
+CNBC,False,"Change, Fight, Instagram",13,50,26.0,Sarah_Everard_Vigils_2021
+CNBC,False,"Claims, Meghan, Music",1,50,2.0,Sarah_Everard_Vigils_2021
+CNBC,False,"Diet, Final, Hora",1,50,2.0,Sarah_Everard_Vigils_2021
+CNBC,False,"Europe, Jab, Pandemic",4,50,8.0,Sarah_Everard_Vigils_2021
+CNBC,False,"Nicola sturgeon, Stimulus, Tax",25,50,50.0,Sarah_Everard_Vigils_2021
+Daily Mail,False,"Arrested, Cuomo, Police",7,50,14.0,Sarah_Everard_Vigils_2021
+Daily Mail,False,"Atlanta, Harris, Violence",1,50,2.0,Sarah_Everard_Vigils_2021
+Daily Mail,False,"Change, Fight, Instagram",23,50,46.0,Sarah_Everard_Vigils_2021
+Daily Mail,False,"Claims, Meghan, Music",2,50,4.0,Sarah_Everard_Vigils_2021
+Daily Mail,False,"Comic relief, Line duty, Red nose",1,50,2.0,Sarah_Everard_Vigils_2021
+Daily Mail,False,"Europe, Jab, Pandemic",3,50,6.0,Sarah_Everard_Vigils_2021
+Daily Mail,False,"League draw, Premier league, United",2,50,4.0,Sarah_Everard_Vigils_2021
+Daily Mail,False,"Nicola sturgeon, Stimulus, Tax",3,50,6.0,Sarah_Everard_Vigils_2021
+Daily Mail,False,"Pregnant, Princess, Reveals",8,50,16.0,Sarah_Everard_Vigils_2021
+Deutsche Welle,False,"Change, Fight, Instagram",18,50,36.0,Sarah_Everard_Vigils_2021
+Deutsche Welle,False,"Corona, Deutschland, Impfen",31,50,62.0,Sarah_Everard_Vigils_2021
+Deutsche Welle,False,"Nord, Paris, Pays",1,50,2.0,Sarah_Everard_Vigils_2021
+Die Tageszeitung (taz),False,"Bayern, Lockdown, Macht",4,50,8.0,Sarah_Everard_Vigils_2021
+Die Tageszeitung (taz),False,"Change, Fight, Instagram",15,50,30.0,Sarah_Everard_Vigils_2021
+Die Tageszeitung (taz),False,"Corona, Deutschland, Impfen",28,50,56.0,Sarah_Everard_Vigils_2021
+Die Tageszeitung (taz),False,"Nord, Paris, Pays",3,50,6.0,Sarah_Everard_Vigils_2021
+Euronews (EN),False,"Arrested, Cuomo, Police",2,50,4.0,Sarah_Everard_Vigils_2021
+Euronews (EN),False,"Atlanta, Harris, Violence",2,50,4.0,Sarah_Everard_Vigils_2021
+Euronews (EN),False,"Change, Fight, Instagram",24,50,48.0,Sarah_Everard_Vigils_2021
+Euronews (EN),False,"Comic relief, Line duty, Red nose",1,50,2.0,Sarah_Everard_Vigils_2021
+Euronews (EN),False,"Europe, Jab, Pandemic",19,50,38.0,Sarah_Everard_Vigils_2021
+Euronews (EN),False,"League draw, Premier league, United",1,50,2.0,Sarah_Everard_Vigils_2021
+Euronews (EN),False,"Nord, Paris, Pays",1,50,2.0,Sarah_Everard_Vigils_2021
+Euronews (FR),False,"Change, Fight, Instagram",7,50,14.0,Sarah_Everard_Vigils_2021
+Euronews (FR),False,"Diet, Final, Hora",1,50,2.0,Sarah_Everard_Vigils_2021
+Euronews (FR),False,"Europe, Jab, Pandemic",9,50,18.0,Sarah_Everard_Vigils_2021
+Euronews (FR),False,"Nord, Paris, Pays",33,50,66.0,Sarah_Everard_Vigils_2021
+Fox News,False,"Arrested, Cuomo, Police",13,50,26.0,Sarah_Everard_Vigils_2021
+Fox News,False,"Atlanta, Harris, Violence",7,50,14.0,Sarah_Everard_Vigils_2021
+Fox News,False,"Change, Fight, Instagram",23,50,46.0,Sarah_Everard_Vigils_2021
+Fox News,False,"Claims, Meghan, Music",2,50,4.0,Sarah_Everard_Vigils_2021
+Fox News,False,"Comic relief, Line duty, Red nose",1,50,2.0,Sarah_Everard_Vigils_2021
+Fox News,False,"Europe, Jab, Pandemic",1,50,2.0,Sarah_Everard_Vigils_2021
+Fox News,False,"Pregnant, Princess, Reveals",3,50,6.0,Sarah_Everard_Vigils_2021
+Frankfurter Allgemeine Zeitung,False,"Bayern, Lockdown, Macht",7,50,14.0,Sarah_Everard_Vigils_2021
+Frankfurter Allgemeine Zeitung,False,"Change, Fight, Instagram",8,50,16.0,Sarah_Everard_Vigils_2021
+Frankfurter Allgemeine Zeitung,False,"Corona, Deutschland, Impfen",33,50,66.0,Sarah_Everard_Vigils_2021
+Frankfurter Allgemeine Zeitung,False,"Nord, Paris, Pays",2,50,4.0,Sarah_Everard_Vigils_2021
+Le Monde,False,"Change, Fight, Instagram",5,50,10.0,Sarah_Everard_Vigils_2021
+Le Monde,False,"Corona, Deutschland, Impfen",1,50,2.0,Sarah_Everard_Vigils_2021
+Le Monde,False,"Europe, Jab, Pandemic",5,50,10.0,Sarah_Everard_Vigils_2021
+Le Monde,False,"Nord, Paris, Pays",39,50,78.0,Sarah_Everard_Vigils_2021
+Spiegel Online,False,"Bayern, Lockdown, Macht",3,50,6.0,Sarah_Everard_Vigils_2021
+Spiegel Online,False,"Change, Fight, Instagram",19,50,38.0,Sarah_Everard_Vigils_2021
+Spiegel Online,False,"Corona, Deutschland, Impfen",26,50,52.0,Sarah_Everard_Vigils_2021
+Spiegel Online,False,"Nord, Paris, Pays",2,50,4.0,Sarah_Everard_Vigils_2021
+Tagesschau,False,"Bayern, Lockdown, Macht",1,50,2.0,Sarah_Everard_Vigils_2021
+Tagesschau,False,"Change, Fight, Instagram",16,50,32.0,Sarah_Everard_Vigils_2021
+Tagesschau,False,"Corona, Deutschland, Impfen",30,50,60.0,Sarah_Everard_Vigils_2021
+Tagesschau,False,"Diet, Final, Hora",1,50,2.0,Sarah_Everard_Vigils_2021
+Tagesschau,False,"Europe, Jab, Pandemic",1,50,2.0,Sarah_Everard_Vigils_2021
+Tagesschau,False,"Nord, Paris, Pays",1,50,2.0,Sarah_Everard_Vigils_2021
+The BBC,False,"Arrested, Cuomo, Police",9,50,18.0,Sarah_Everard_Vigils_2021
+The BBC,False,"Atlanta, Harris, Violence",4,50,8.0,Sarah_Everard_Vigils_2021
+The BBC,False,"Bayern, Lockdown, Macht",1,50,2.0,Sarah_Everard_Vigils_2021
+The BBC,False,"Change, Fight, Instagram",21,50,42.0,Sarah_Everard_Vigils_2021
+The BBC,False,"Comic relief, Line duty, Red nose",1,50,2.0,Sarah_Everard_Vigils_2021
+The BBC,False,"Corona, Deutschland, Impfen",1,50,2.0,Sarah_Everard_Vigils_2021
+The BBC,False,"Europe, Jab, Pandemic",10,50,20.0,Sarah_Everard_Vigils_2021
+The BBC,False,"Nicola sturgeon, Stimulus, Tax",3,50,6.0,Sarah_Everard_Vigils_2021
+The Gateway Pundit,False,"Change, Fight, Instagram",1,2,50.0,Sarah_Everard_Vigils_2021
+The Gateway Pundit,False,"Europe, Jab, Pandemic",1,2,50.0,Sarah_Everard_Vigils_2021
+The Guardian,False,"Arrested, Cuomo, Police",4,50,8.0,Sarah_Everard_Vigils_2021
+The Guardian,False,"Atlanta, Harris, Violence",4,50,8.0,Sarah_Everard_Vigils_2021
+The Guardian,False,"Change, Fight, Instagram",23,50,46.0,Sarah_Everard_Vigils_2021
+The Guardian,False,"Claims, Meghan, Music",3,50,6.0,Sarah_Everard_Vigils_2021
+The Guardian,False,"Comic relief, Line duty, Red nose",1,50,2.0,Sarah_Everard_Vigils_2021
+The Guardian,False,"Europe, Jab, Pandemic",3,50,6.0,Sarah_Everard_Vigils_2021
+The Guardian,False,"League draw, Premier league, United",8,50,16.0,Sarah_Everard_Vigils_2021
+The Guardian,False,"Nicola sturgeon, Stimulus, Tax",2,50,4.0,Sarah_Everard_Vigils_2021
+The Guardian,False,"Pregnant, Princess, Reveals",2,50,4.0,Sarah_Everard_Vigils_2021
+The Nation,False,"Arrested, Cuomo, Police",8,45,17.78,Sarah_Everard_Vigils_2021
+The Nation,False,"Atlanta, Harris, Violence",8,45,17.78,Sarah_Everard_Vigils_2021
+The Nation,False,"Change, Fight, Instagram",20,45,44.44,Sarah_Everard_Vigils_2021
+The Nation,False,"Claims, Meghan, Music",2,45,4.44,Sarah_Everard_Vigils_2021
+The Nation,False,"Europe, Jab, Pandemic",5,45,11.11,Sarah_Everard_Vigils_2021
+The Nation,False,"Nicola sturgeon, Stimulus, Tax",2,45,4.44,Sarah_Everard_Vigils_2021
+The Sun,False,"Arrested, Cuomo, Police",13,50,26.0,Sarah_Everard_Vigils_2021
+The Sun,False,"Atlanta, Harris, Violence",1,50,2.0,Sarah_Everard_Vigils_2021
+The Sun,False,"Change, Fight, Instagram",9,50,18.0,Sarah_Everard_Vigils_2021
+The Sun,False,"Claims, Meghan, Music",3,50,6.0,Sarah_Everard_Vigils_2021
+The Sun,False,"League draw, Premier league, United",1,50,2.0,Sarah_Everard_Vigils_2021
+The Sun,False,"Pregnant, Princess, Reveals",23,50,46.0,Sarah_Everard_Vigils_2021
+The Telegraph,False,"Arrested, Cuomo, Police",4,50,8.0,Sarah_Everard_Vigils_2021
+The Telegraph,False,"Change, Fight, Instagram",24,50,48.0,Sarah_Everard_Vigils_2021
+The Telegraph,False,"Claims, Meghan, Music",2,50,4.0,Sarah_Everard_Vigils_2021
+The Telegraph,False,"Comic relief, Line duty, Red nose",3,50,6.0,Sarah_Everard_Vigils_2021
+The Telegraph,False,"Europe, Jab, Pandemic",8,50,16.0,Sarah_Everard_Vigils_2021
+The Telegraph,False,"League draw, Premier league, United",7,50,14.0,Sarah_Everard_Vigils_2021
+The Telegraph,False,"Nicola sturgeon, Stimulus, Tax",2,50,4.0,Sarah_Everard_Vigils_2021
+The Washington Times,False,"Arrested, Cuomo, Police",30,50,60.0,Sarah_Everard_Vigils_2021
+The Washington Times,False,"Atlanta, Harris, Violence",4,50,8.0,Sarah_Everard_Vigils_2021
+The Washington Times,False,"Change, Fight, Instagram",12,50,24.0,Sarah_Everard_Vigils_2021
+The Washington Times,False,"Diet, Final, Hora",1,50,2.0,Sarah_Everard_Vigils_2021
+The Washington Times,False,"Europe, Jab, Pandemic",3,50,6.0,Sarah_Everard_Vigils_2021
+es,False,"Change, Fight, Instagram",14,50,28.0,Sarah_Everard_Vigils_2021
+es,False,"Diet, Final, Hora",32,50,64.0,Sarah_Everard_Vigils_2021
+es,False,"Europe, Jab, Pandemic",2,50,4.0,Sarah_Everard_Vigils_2021
+es,False,"Nord, Paris, Pays",2,50,4.0,Sarah_Everard_Vigils_2021
+i,False,"Arrested, Cuomo, Police",3,50,6.0,Sarah_Everard_Vigils_2021
+i,False,"Change, Fight, Instagram",14,50,28.0,Sarah_Everard_Vigils_2021
+i,False,"Claims, Meghan, Music",4,50,8.0,Sarah_Everard_Vigils_2021
+i,False,"Comic relief, Line duty, Red nose",13,50,26.0,Sarah_Everard_Vigils_2021
+i,False,"Europe, Jab, Pandemic",3,50,6.0,Sarah_Everard_Vigils_2021
+i,False,"League draw, Premier league, United",3,50,6.0,Sarah_Everard_Vigils_2021
+i,False,"Nicola sturgeon, Stimulus, Tax",5,50,10.0,Sarah_Everard_Vigils_2021
+i,False,"Pregnant, Princess, Reveals",5,50,10.0,Sarah_Everard_Vigils_2021
+Associated Press News,False,"China, Deaths, Refugee",1,2,50.0,Swiss_Womens_Strike_2019
+Associated Press News,False,"France, Summit, Tory",1,2,50.0,Swiss_Womens_Strike_2019
+CNBC,False,"Action, Island, Win",1,50,2.0,Swiss_Womens_Strike_2019
+CNBC,False,"Biggest, Economy, Facebook",29,50,58.0,Swiss_Womens_Strike_2019
+CNBC,False,"China, Deaths, Refugee",7,50,14.0,Swiss_Womens_Strike_2019
+CNBC,False,"France, Summit, Tory",3,50,6.0,Swiss_Womens_Strike_2019
+CNBC,False,"Girl, Oregon, Shooting",7,50,14.0,Swiss_Womens_Strike_2019
+CNBC,False,"League, Manager, Transfer",3,50,6.0,Swiss_Womens_Strike_2019
+Daily Mail,False,"Action, Island, Win",10,34,29.41,Swiss_Womens_Strike_2019
+Daily Mail,False,"Biggest, Economy, Facebook",2,34,5.88,Swiss_Womens_Strike_2019
+Daily Mail,False,"China, Deaths, Refugee",6,34,17.65,Swiss_Womens_Strike_2019
+Daily Mail,False,"League, Manager, Transfer",16,34,47.06,Swiss_Womens_Strike_2019
+Deutsche Welle,False,"China, Deaths, Refugee",4,50,8.0,Swiss_Womens_Strike_2019
+Deutsche Welle,False,"France, Summit, Tory",46,50,92.0,Swiss_Womens_Strike_2019
+Die Zeit,False,"China, Deaths, Refugee",1,50,2.0,Swiss_Womens_Strike_2019
+Die Zeit,False,"France, Summit, Tory",48,50,96.0,Swiss_Womens_Strike_2019
+Die Zeit,False,"Girl, Oregon, Shooting",1,50,2.0,Swiss_Womens_Strike_2019
+Euronews (EN),False,"Action, Island, Win",3,50,6.0,Swiss_Womens_Strike_2019
+Euronews (EN),False,"China, Deaths, Refugee",20,50,40.0,Swiss_Womens_Strike_2019
+Euronews (EN),False,"France, Summit, Tory",24,50,48.0,Swiss_Womens_Strike_2019
+Euronews (EN),False,"Girl, Oregon, Shooting",3,50,6.0,Swiss_Womens_Strike_2019
+Fox News,False,"Action, Island, Win",9,50,18.0,Swiss_Womens_Strike_2019
+Fox News,False,"China, Deaths, Refugee",19,50,38.0,Swiss_Womens_Strike_2019
+Fox News,False,"France, Summit, Tory",2,50,4.0,Swiss_Womens_Strike_2019
+Fox News,False,"Girl, Oregon, Shooting",18,50,36.0,Swiss_Womens_Strike_2019
+Fox News,False,"League, Manager, Transfer",2,50,4.0,Swiss_Womens_Strike_2019
+Frankfurter Allgemeine Zeitung,False,"China, Deaths, Refugee",1,50,2.0,Swiss_Womens_Strike_2019
+Frankfurter Allgemeine Zeitung,False,"France, Summit, Tory",49,50,98.0,Swiss_Womens_Strike_2019
+Le Monde,False,"China, Deaths, Refugee",2,50,4.0,Swiss_Womens_Strike_2019
+Le Monde,False,"France, Summit, Tory",48,50,96.0,Swiss_Womens_Strike_2019
+The Sun,False,"Action, Island, Win",13,50,26.0,Swiss_Womens_Strike_2019
+The Sun,False,"China, Deaths, Refugee",8,50,16.0,Swiss_Womens_Strike_2019
+The Sun,False,"France, Summit, Tory",5,50,10.0,Swiss_Womens_Strike_2019
+The Sun,False,"Girl, Oregon, Shooting",5,50,10.0,Swiss_Womens_Strike_2019
+The Sun,False,"League, Manager, Transfer",19,50,38.0,Swiss_Womens_Strike_2019
+The Telegraph,False,"Action, Island, Win",19,50,38.0,Swiss_Womens_Strike_2019
+The Telegraph,False,"Biggest, Economy, Facebook",3,50,6.0,Swiss_Womens_Strike_2019
+The Telegraph,False,"China, Deaths, Refugee",8,50,16.0,Swiss_Womens_Strike_2019
+The Telegraph,False,"France, Summit, Tory",15,50,30.0,Swiss_Womens_Strike_2019
+The Telegraph,False,"Girl, Oregon, Shooting",3,50,6.0,Swiss_Womens_Strike_2019
+The Telegraph,False,"League, Manager, Transfer",2,50,4.0,Swiss_Womens_Strike_2019
+The Washington Times,False,"Action, Island, Win",3,50,6.0,Swiss_Womens_Strike_2019
+The Washington Times,False,"China, Deaths, Refugee",11,50,22.0,Swiss_Womens_Strike_2019
+The Washington Times,False,"France, Summit, Tory",4,50,8.0,Swiss_Womens_Strike_2019
+The Washington Times,False,"Girl, Oregon, Shooting",32,50,64.0,Swiss_Womens_Strike_2019
+Associated Press News,False,"Data, Jan, Qanon",1,7,14.29,Women_Life_Freedom_2022
+Associated Press News,False,"Elections, Female, Giorgia meloni",1,7,14.29,Women_Life_Freedom_2022
+Associated Press News,False,"Home, Korea, Store",2,7,28.57,Women_Life_Freedom_2022
+Associated Press News,False,"Kanzler, Scholz, Strike",3,7,42.86,Women_Life_Freedom_2022
+Business Insider,False,"Arizona, Democrats, Gop",1,50,2.0,Women_Life_Freedom_2022
+Business Insider,False,"Dakota, Texas, Win",2,50,4.0,Women_Life_Freedom_2022
+Business Insider,False,"Data, Jan, Qanon",13,50,26.0,Women_Life_Freedom_2022
+Business Insider,False,"Death, Festnahmen, Protesten",1,50,2.0,Women_Life_Freedom_2022
+Business Insider,False,"Florida, Launch, Nasa",1,50,2.0,Women_Life_Freedom_2022
+Business Insider,False,"Home, Korea, Store",18,50,36.0,Women_Life_Freedom_2022
+Business Insider,False,"Inflation, Markets, Rates",5,50,10.0,Women_Life_Freedom_2022
+Business Insider,False,"Liz, Mini budget, Tax cuts",3,50,6.0,Women_Life_Freedom_2022
+Business Insider,False,"Putin, Russian, Ukraine",5,50,10.0,Women_Life_Freedom_2022
+Business Insider,False,"Tensions, Travel, Won",1,50,2.0,Women_Life_Freedom_2022
+CBC News,False,"Cancer, Horror, Portugal",1,50,2.0,Women_Life_Freedom_2022
+CBC News,False,"Comeback, England, Southgate",4,50,8.0,Women_Life_Freedom_2022
+CBC News,False,"Dakota, Texas, Win",3,50,6.0,Women_Life_Freedom_2022
+CBC News,False,"Data, Jan, Qanon",8,50,16.0,Women_Life_Freedom_2022
+CBC News,False,"Doubles, Laver cup, Roger",1,50,2.0,Women_Life_Freedom_2022
+CBC News,False,"East coast, Fiona, Hurricane",8,50,16.0,Women_Life_Freedom_2022
+CBC News,False,"Florida, Launch, Nasa",2,50,4.0,Women_Life_Freedom_2022
+CBC News,False,"Home, Korea, Store",19,50,38.0,Women_Life_Freedom_2022
+CBC News,False,"King charles, Palace, Queen",2,50,4.0,Women_Life_Freedom_2022
+CBC News,False,"Putin, Russian, Ukraine",2,50,4.0,Women_Life_Freedom_2022
+CNBC,False,"Arizona, Democrats, Gop",1,50,2.0,Women_Life_Freedom_2022
+CNBC,False,"Data, Jan, Qanon",1,50,2.0,Women_Life_Freedom_2022
+CNBC,False,"Euros, Latinos, Mundo",3,50,6.0,Women_Life_Freedom_2022
+CNBC,False,"Home, Korea, Store",19,50,38.0,Women_Life_Freedom_2022
+CNBC,False,"Inflation, Markets, Rates",23,50,46.0,Women_Life_Freedom_2022
+CNBC,False,"Liz, Mini budget, Tax cuts",3,50,6.0,Women_Life_Freedom_2022
+Daily Mail,False,"Arizona, Democrats, Gop",1,50,2.0,Women_Life_Freedom_2022
+Daily Mail,False,"Cancer, Horror, Portugal",1,50,2.0,Women_Life_Freedom_2022
+Daily Mail,False,"Dakota, Texas, Win",10,50,20.0,Women_Life_Freedom_2022
+Daily Mail,False,"Data, Jan, Qanon",5,50,10.0,Women_Life_Freedom_2022
+Daily Mail,False,"Death, Festnahmen, Protesten",1,50,2.0,Women_Life_Freedom_2022
+Daily Mail,False,"Florida, Launch, Nasa",1,50,2.0,Women_Life_Freedom_2022
+Daily Mail,False,"Home, Korea, Store",13,50,26.0,Women_Life_Freedom_2022
+Daily Mail,False,"Kanzler, Scholz, Strike",1,50,2.0,Women_Life_Freedom_2022
+Daily Mail,False,"Kardashian, Strictly, Strictly dancing",3,50,6.0,Women_Life_Freedom_2022
+Daily Mail,False,"Keir starmer, Tory, Voting",1,50,2.0,Women_Life_Freedom_2022
+Daily Mail,False,"King charles, Palace, Queen",8,50,16.0,Women_Life_Freedom_2022
+Daily Mail,False,"Liz, Mini budget, Tax cuts",3,50,6.0,Women_Life_Freedom_2022
+Daily Mail,False,"Putin, Russian, Ukraine",2,50,4.0,Women_Life_Freedom_2022
+Deutsche Welle,False,"Cancer, Horror, Portugal",23,50,46.0,Women_Life_Freedom_2022
+Deutsche Welle,False,"Death, Festnahmen, Protesten",2,50,4.0,Women_Life_Freedom_2022
+Deutsche Welle,False,"Home, Korea, Store",1,50,2.0,Women_Life_Freedom_2022
+Deutsche Welle,False,"Kanzler, Scholz, Strike",1,50,2.0,Women_Life_Freedom_2022
+Deutsche Welle,False,"Konig, Plant, Winter",16,50,32.0,Women_Life_Freedom_2022
+Deutsche Welle,False,"Putins, Referendums, Weiter",7,50,14.0,Women_Life_Freedom_2022
+Die Tageszeitung (taz),False,"Death, Festnahmen, Protesten",4,50,8.0,Women_Life_Freedom_2022
+Die Tageszeitung (taz),False,"Home, Korea, Store",4,50,8.0,Women_Life_Freedom_2022
+Die Tageszeitung (taz),False,"Kanzler, Scholz, Strike",2,50,4.0,Women_Life_Freedom_2022
+Die Tageszeitung (taz),False,"Konig, Plant, Winter",32,50,64.0,Women_Life_Freedom_2022
+Die Tageszeitung (taz),False,"Putins, Referendums, Weiter",7,50,14.0,Women_Life_Freedom_2022
+Die Tageszeitung (taz),False,"Tensions, Travel, Won",1,50,2.0,Women_Life_Freedom_2022
+El Mundo,False,"Euros, Latinos, Mundo",50,50,100.0,Women_Life_Freedom_2022
+El País,False,"Euros, Latinos, Mundo",4,4,100.0,Women_Life_Freedom_2022
+Euronews (EN),False,"Data, Jan, Qanon",1,50,2.0,Women_Life_Freedom_2022
+Euronews (EN),False,"Death, Festnahmen, Protesten",2,50,4.0,Women_Life_Freedom_2022
+Euronews (EN),False,"Doubles, Laver cup, Roger",1,50,2.0,Women_Life_Freedom_2022
+Euronews (EN),False,"East coast, Fiona, Hurricane",1,50,2.0,Women_Life_Freedom_2022
+Euronews (EN),False,"Elections, Female, Giorgia meloni",7,50,14.0,Women_Life_Freedom_2022
+Euronews (EN),False,"Euros, Latinos, Mundo",2,50,4.0,Women_Life_Freedom_2022
+Euronews (EN),False,"Florida, Launch, Nasa",1,50,2.0,Women_Life_Freedom_2022
+Euronews (EN),False,"France, Paris, Uefa",1,50,2.0,Women_Life_Freedom_2022
+Euronews (EN),False,"Home, Korea, Store",20,50,40.0,Women_Life_Freedom_2022
+Euronews (EN),False,"Kardashian, Strictly, Strictly dancing",1,50,2.0,Women_Life_Freedom_2022
+Euronews (EN),False,"Putin, Russian, Ukraine",12,50,24.0,Women_Life_Freedom_2022
+Euronews (EN),False,"Tensions, Travel, Won",1,50,2.0,Women_Life_Freedom_2022
+Euronews (FR),False,"Death, Festnahmen, Protesten",3,50,6.0,Women_Life_Freedom_2022
+Euronews (FR),False,"Doubles, Laver cup, Roger",1,50,2.0,Women_Life_Freedom_2022
+Euronews (FR),False,"Elections, Female, Giorgia meloni",1,50,2.0,Women_Life_Freedom_2022
+Euronews (FR),False,"Florida, Launch, Nasa",2,50,4.0,Women_Life_Freedom_2022
+Euronews (FR),False,"France, Paris, Uefa",25,50,50.0,Women_Life_Freedom_2022
+Euronews (FR),False,"Home, Korea, Store",4,50,8.0,Women_Life_Freedom_2022
+Euronews (FR),False,"Putins, Referendums, Weiter",14,50,28.0,Women_Life_Freedom_2022
+Fox News,False,"Arizona, Democrats, Gop",3,50,6.0,Women_Life_Freedom_2022
+Fox News,False,"Comeback, England, Southgate",1,50,2.0,Women_Life_Freedom_2022
+Fox News,False,"Dakota, Texas, Win",7,50,14.0,Women_Life_Freedom_2022
+Fox News,False,"Data, Jan, Qanon",12,50,24.0,Women_Life_Freedom_2022
+Fox News,False,"Elections, Female, Giorgia meloni",2,50,4.0,Women_Life_Freedom_2022
+Fox News,False,"Florida, Launch, Nasa",3,50,6.0,Women_Life_Freedom_2022
+Fox News,False,"Home, Korea, Store",16,50,32.0,Women_Life_Freedom_2022
+Fox News,False,"King charles, Palace, Queen",1,50,2.0,Women_Life_Freedom_2022
+Fox News,False,"Putin, Russian, Ukraine",3,50,6.0,Women_Life_Freedom_2022
+Fox News,False,"Tensions, Travel, Won",2,50,4.0,Women_Life_Freedom_2022
+Frankfurter Allgemeine Zeitung,False,"Death, Festnahmen, Protesten",2,50,4.0,Women_Life_Freedom_2022
+Frankfurter Allgemeine Zeitung,False,"Doubles, Laver cup, Roger",1,50,2.0,Women_Life_Freedom_2022
+Frankfurter Allgemeine Zeitung,False,"France, Paris, Uefa",2,50,4.0,Women_Life_Freedom_2022
+Frankfurter Allgemeine Zeitung,False,"Home, Korea, Store",2,50,4.0,Women_Life_Freedom_2022
+Frankfurter Allgemeine Zeitung,False,"Konig, Plant, Winter",31,50,62.0,Women_Life_Freedom_2022
+Frankfurter Allgemeine Zeitung,False,"Putin, Russian, Ukraine",1,50,2.0,Women_Life_Freedom_2022
+Frankfurter Allgemeine Zeitung,False,"Putins, Referendums, Weiter",11,50,22.0,Women_Life_Freedom_2022
+Le Figaro,False,"Doubles, Laver cup, Roger",2,50,4.0,Women_Life_Freedom_2022
+Le Figaro,False,"Elections, Female, Giorgia meloni",1,50,2.0,Women_Life_Freedom_2022
+Le Figaro,False,"Florida, Launch, Nasa",1,50,2.0,Women_Life_Freedom_2022
+Le Figaro,False,"France, Paris, Uefa",43,50,86.0,Women_Life_Freedom_2022
+Le Figaro,False,"Home, Korea, Store",2,50,4.0,Women_Life_Freedom_2022
+Le Figaro,False,"Putins, Referendums, Weiter",1,50,2.0,Women_Life_Freedom_2022
+Le Monde,False,"Arizona, Democrats, Gop",1,50,2.0,Women_Life_Freedom_2022
+Le Monde,False,"Death, Festnahmen, Protesten",2,50,4.0,Women_Life_Freedom_2022
+Le Monde,False,"Doubles, Laver cup, Roger",1,50,2.0,Women_Life_Freedom_2022
+Le Monde,False,"East coast, Fiona, Hurricane",1,50,2.0,Women_Life_Freedom_2022
+Le Monde,False,"Elections, Female, Giorgia meloni",4,50,8.0,Women_Life_Freedom_2022
+Le Monde,False,"Euros, Latinos, Mundo",1,50,2.0,Women_Life_Freedom_2022
+Le Monde,False,"Florida, Launch, Nasa",1,50,2.0,Women_Life_Freedom_2022
+Le Monde,False,"France, Paris, Uefa",22,50,44.0,Women_Life_Freedom_2022
+Le Monde,False,"Home, Korea, Store",9,50,18.0,Women_Life_Freedom_2022
+Le Monde,False,"Inflation, Markets, Rates",1,50,2.0,Women_Life_Freedom_2022
+Le Monde,False,"Kanzler, Scholz, Strike",1,50,2.0,Women_Life_Freedom_2022
+Le Monde,False,"Putin, Russian, Ukraine",3,50,6.0,Women_Life_Freedom_2022
+Le Monde,False,"Putins, Referendums, Weiter",3,50,6.0,Women_Life_Freedom_2022
+Reuters,False,"Arizona, Democrats, Gop",1,50,2.0,Women_Life_Freedom_2022
+Reuters,False,"Cancer, Horror, Portugal",1,50,2.0,Women_Life_Freedom_2022
+Reuters,False,"Comeback, England, Southgate",4,50,8.0,Women_Life_Freedom_2022
+Reuters,False,"Dakota, Texas, Win",1,50,2.0,Women_Life_Freedom_2022
+Reuters,False,"Death, Festnahmen, Protesten",3,50,6.0,Women_Life_Freedom_2022
+Reuters,False,"Doubles, Laver cup, Roger",1,50,2.0,Women_Life_Freedom_2022
+Reuters,False,"Elections, Female, Giorgia meloni",1,50,2.0,Women_Life_Freedom_2022
+Reuters,False,"Florida, Launch, Nasa",3,50,6.0,Women_Life_Freedom_2022
+Reuters,False,"Home, Korea, Store",11,50,22.0,Women_Life_Freedom_2022
+Reuters,False,"Inflation, Markets, Rates",3,50,6.0,Women_Life_Freedom_2022
+Reuters,False,"Kanzler, Scholz, Strike",7,50,14.0,Women_Life_Freedom_2022
+Reuters,False,"Kardashian, Strictly, Strictly dancing",2,50,4.0,Women_Life_Freedom_2022
+Reuters,False,"King charles, Palace, Queen",1,50,2.0,Women_Life_Freedom_2022
+Reuters,False,"Putin, Russian, Ukraine",9,50,18.0,Women_Life_Freedom_2022
+Reuters,False,"Tensions, Travel, Won",2,50,4.0,Women_Life_Freedom_2022
+Rolling Stone,False,"Arizona, Democrats, Gop",1,50,2.0,Women_Life_Freedom_2022
+Rolling Stone,False,"Comeback, England, Southgate",1,50,2.0,Women_Life_Freedom_2022
+Rolling Stone,False,"Dakota, Texas, Win",1,50,2.0,Women_Life_Freedom_2022
+Rolling Stone,False,"Data, Jan, Qanon",5,50,10.0,Women_Life_Freedom_2022
+Rolling Stone,False,"Florida, Launch, Nasa",1,50,2.0,Women_Life_Freedom_2022
+Rolling Stone,False,"Home, Korea, Store",16,50,32.0,Women_Life_Freedom_2022
+Rolling Stone,False,"Inflation, Markets, Rates",1,50,2.0,Women_Life_Freedom_2022
+Rolling Stone,False,"Kardashian, Strictly, Strictly dancing",23,50,46.0,Women_Life_Freedom_2022
+Rolling Stone,False,"King charles, Palace, Queen",1,50,2.0,Women_Life_Freedom_2022
+Spiegel Online,False,"Death, Festnahmen, Protesten",6,50,12.0,Women_Life_Freedom_2022
+Spiegel Online,False,"Florida, Launch, Nasa",1,50,2.0,Women_Life_Freedom_2022
+Spiegel Online,False,"France, Paris, Uefa",3,50,6.0,Women_Life_Freedom_2022
+Spiegel Online,False,"Home, Korea, Store",3,50,6.0,Women_Life_Freedom_2022
+Spiegel Online,False,"Kanzler, Scholz, Strike",5,50,10.0,Women_Life_Freedom_2022
+Spiegel Online,False,"Konig, Plant, Winter",23,50,46.0,Women_Life_Freedom_2022
+Spiegel Online,False,"Putins, Referendums, Weiter",9,50,18.0,Women_Life_Freedom_2022
+Tagesschau,False,"Death, Festnahmen, Protesten",6,50,12.0,Women_Life_Freedom_2022
+Tagesschau,False,"Doubles, Laver cup, Roger",1,50,2.0,Women_Life_Freedom_2022
+Tagesschau,False,"Elections, Female, Giorgia meloni",1,50,2.0,Women_Life_Freedom_2022
+Tagesschau,False,"Florida, Launch, Nasa",1,50,2.0,Women_Life_Freedom_2022
+Tagesschau,False,"France, Paris, Uefa",1,50,2.0,Women_Life_Freedom_2022
+Tagesschau,False,"Home, Korea, Store",2,50,4.0,Women_Life_Freedom_2022
+Tagesschau,False,"Kanzler, Scholz, Strike",3,50,6.0,Women_Life_Freedom_2022
+Tagesschau,False,"Konig, Plant, Winter",25,50,50.0,Women_Life_Freedom_2022
+Tagesschau,False,"Putins, Referendums, Weiter",9,50,18.0,Women_Life_Freedom_2022
+Tagesschau,False,"Tensions, Travel, Won",1,50,2.0,Women_Life_Freedom_2022
+The BBC,False,"Comeback, England, Southgate",8,49,16.33,Women_Life_Freedom_2022
+The BBC,False,"Data, Jan, Qanon",5,49,10.2,Women_Life_Freedom_2022
+The BBC,False,"Elections, Female, Giorgia meloni",1,49,2.04,Women_Life_Freedom_2022
+The BBC,False,"Florida, Launch, Nasa",1,49,2.04,Women_Life_Freedom_2022
+The BBC,False,"Home, Korea, Store",22,49,44.9,Women_Life_Freedom_2022
+The BBC,False,"Inflation, Markets, Rates",1,49,2.04,Women_Life_Freedom_2022
+The BBC,False,"Kardashian, Strictly, Strictly dancing",2,49,4.08,Women_Life_Freedom_2022
+The BBC,False,"King charles, Palace, Queen",1,49,2.04,Women_Life_Freedom_2022
+The BBC,False,"Konig, Plant, Winter",3,49,6.12,Women_Life_Freedom_2022
+The BBC,False,"Putin, Russian, Ukraine",4,49,8.16,Women_Life_Freedom_2022
+The BBC,False,"Tensions, Travel, Won",1,49,2.04,Women_Life_Freedom_2022
+The Globe and Mail,False,"Comeback, England, Southgate",2,50,4.0,Women_Life_Freedom_2022
+The Globe and Mail,False,"Dakota, Texas, Win",3,50,6.0,Women_Life_Freedom_2022
+The Globe and Mail,False,"Data, Jan, Qanon",8,50,16.0,Women_Life_Freedom_2022
+The Globe and Mail,False,"East coast, Fiona, Hurricane",3,50,6.0,Women_Life_Freedom_2022
+The Globe and Mail,False,"Florida, Launch, Nasa",2,50,4.0,Women_Life_Freedom_2022
+The Globe and Mail,False,"Home, Korea, Store",22,50,44.0,Women_Life_Freedom_2022
+The Globe and Mail,False,"Inflation, Markets, Rates",3,50,6.0,Women_Life_Freedom_2022
+The Globe and Mail,False,"Kanzler, Scholz, Strike",1,50,2.0,Women_Life_Freedom_2022
+The Globe and Mail,False,"Putin, Russian, Ukraine",3,50,6.0,Women_Life_Freedom_2022
+The Globe and Mail,False,"Tensions, Travel, Won",3,50,6.0,Women_Life_Freedom_2022
+The Guardian,False,"Arizona, Democrats, Gop",1,49,2.04,Women_Life_Freedom_2022
+The Guardian,False,"Comeback, England, Southgate",8,49,16.33,Women_Life_Freedom_2022
+The Guardian,False,"Data, Jan, Qanon",2,49,4.08,Women_Life_Freedom_2022
+The Guardian,False,"Doubles, Laver cup, Roger",2,49,4.08,Women_Life_Freedom_2022
+The Guardian,False,"East coast, Fiona, Hurricane",1,49,2.04,Women_Life_Freedom_2022
+The Guardian,False,"Elections, Female, Giorgia meloni",1,49,2.04,Women_Life_Freedom_2022
+The Guardian,False,"Florida, Launch, Nasa",3,49,6.12,Women_Life_Freedom_2022
+The Guardian,False,"Home, Korea, Store",17,49,34.69,Women_Life_Freedom_2022
+The Guardian,False,"Inflation, Markets, Rates",1,49,2.04,Women_Life_Freedom_2022
+The Guardian,False,"Kanzler, Scholz, Strike",1,49,2.04,Women_Life_Freedom_2022
+The Guardian,False,"Keir starmer, Tory, Voting",5,49,10.2,Women_Life_Freedom_2022
+The Guardian,False,"King charles, Palace, Queen",1,49,2.04,Women_Life_Freedom_2022
+The Guardian,False,"Liz, Mini budget, Tax cuts",3,49,6.12,Women_Life_Freedom_2022
+The Guardian,False,"Putin, Russian, Ukraine",2,49,4.08,Women_Life_Freedom_2022
+The Guardian,False,"Tensions, Travel, Won",1,49,2.04,Women_Life_Freedom_2022
+The Independent,False,"Arizona, Democrats, Gop",1,50,2.0,Women_Life_Freedom_2022
+The Independent,False,"Comeback, England, Southgate",7,50,14.0,Women_Life_Freedom_2022
+The Independent,False,"Data, Jan, Qanon",3,50,6.0,Women_Life_Freedom_2022
+The Independent,False,"Doubles, Laver cup, Roger",1,50,2.0,Women_Life_Freedom_2022
+The Independent,False,"East coast, Fiona, Hurricane",1,50,2.0,Women_Life_Freedom_2022
+The Independent,False,"Euros, Latinos, Mundo",2,50,4.0,Women_Life_Freedom_2022
+The Independent,False,"Home, Korea, Store",19,50,38.0,Women_Life_Freedom_2022
+The Independent,False,"Kanzler, Scholz, Strike",2,50,4.0,Women_Life_Freedom_2022
+The Independent,False,"Kardashian, Strictly, Strictly dancing",1,50,2.0,Women_Life_Freedom_2022
+The Independent,False,"Keir starmer, Tory, Voting",6,50,12.0,Women_Life_Freedom_2022
+The Independent,False,"King charles, Palace, Queen",1,50,2.0,Women_Life_Freedom_2022
+The Independent,False,"Liz, Mini budget, Tax cuts",4,50,8.0,Women_Life_Freedom_2022
+The Independent,False,"Putin, Russian, Ukraine",2,50,4.0,Women_Life_Freedom_2022
+The Intercept,False,"Arizona, Democrats, Gop",5,50,10.0,Women_Life_Freedom_2022
+The Intercept,False,"Data, Jan, Qanon",9,50,18.0,Women_Life_Freedom_2022
+The Intercept,False,"Death, Festnahmen, Protesten",2,50,4.0,Women_Life_Freedom_2022
+The Intercept,False,"Elections, Female, Giorgia meloni",1,50,2.0,Women_Life_Freedom_2022
+The Intercept,False,"Euros, Latinos, Mundo",6,50,12.0,Women_Life_Freedom_2022
+The Intercept,False,"France, Paris, Uefa",1,50,2.0,Women_Life_Freedom_2022
+The Intercept,False,"Home, Korea, Store",10,50,20.0,Women_Life_Freedom_2022
+The Intercept,False,"Inflation, Markets, Rates",2,50,4.0,Women_Life_Freedom_2022
+The Intercept,False,"Kanzler, Scholz, Strike",9,50,18.0,Women_Life_Freedom_2022
+The Intercept,False,"Putin, Russian, Ukraine",4,50,8.0,Women_Life_Freedom_2022
+The Intercept,False,"Tensions, Travel, Won",1,50,2.0,Women_Life_Freedom_2022
+The Nation,False,"Arizona, Democrats, Gop",4,42,9.52,Women_Life_Freedom_2022
+The Nation,False,"Data, Jan, Qanon",7,42,16.67,Women_Life_Freedom_2022
+The Nation,False,"Elections, Female, Giorgia meloni",1,42,2.38,Women_Life_Freedom_2022
+The Nation,False,"Euros, Latinos, Mundo",1,42,2.38,Women_Life_Freedom_2022
+The Nation,False,"Home, Korea, Store",24,42,57.14,Women_Life_Freedom_2022
+The Nation,False,"Kanzler, Scholz, Strike",1,42,2.38,Women_Life_Freedom_2022
+The Nation,False,"King charles, Palace, Queen",2,42,4.76,Women_Life_Freedom_2022
+The Nation,False,"Putin, Russian, Ukraine",1,42,2.38,Women_Life_Freedom_2022
+The Nation,False,"Tensions, Travel, Won",1,42,2.38,Women_Life_Freedom_2022
+The New Yorker,False,"Data, Jan, Qanon",7,45,15.56,Women_Life_Freedom_2022
+The New Yorker,False,"Death, Festnahmen, Protesten",1,45,2.22,Women_Life_Freedom_2022
+The New Yorker,False,"Doubles, Laver cup, Roger",1,45,2.22,Women_Life_Freedom_2022
+The New Yorker,False,"Elections, Female, Giorgia meloni",2,45,4.44,Women_Life_Freedom_2022
+The New Yorker,False,"Home, Korea, Store",17,45,37.78,Women_Life_Freedom_2022
+The New Yorker,False,"Kardashian, Strictly, Strictly dancing",6,45,13.33,Women_Life_Freedom_2022
+The New Yorker,False,"King charles, Palace, Queen",6,45,13.33,Women_Life_Freedom_2022
+The New Yorker,False,"Konig, Plant, Winter",2,45,4.44,Women_Life_Freedom_2022
+The New Yorker,False,"Putin, Russian, Ukraine",3,45,6.67,Women_Life_Freedom_2022
+The Sun,False,"Comeback, England, Southgate",6,50,12.0,Women_Life_Freedom_2022
+The Sun,False,"Data, Jan, Qanon",4,50,8.0,Women_Life_Freedom_2022
+The Sun,False,"Home, Korea, Store",27,50,54.0,Women_Life_Freedom_2022
+The Sun,False,"Kardashian, Strictly, Strictly dancing",9,50,18.0,Women_Life_Freedom_2022
+The Sun,False,"Keir starmer, Tory, Voting",1,50,2.0,Women_Life_Freedom_2022
+The Sun,False,"King charles, Palace, Queen",1,50,2.0,Women_Life_Freedom_2022
+The Sun,False,"Putin, Russian, Ukraine",2,50,4.0,Women_Life_Freedom_2022
+The Telegraph,False,"Comeback, England, Southgate",9,50,18.0,Women_Life_Freedom_2022
+The Telegraph,False,"Data, Jan, Qanon",3,50,6.0,Women_Life_Freedom_2022
+The Telegraph,False,"Doubles, Laver cup, Roger",1,50,2.0,Women_Life_Freedom_2022
+The Telegraph,False,"Home, Korea, Store",19,50,38.0,Women_Life_Freedom_2022
+The Telegraph,False,"Kanzler, Scholz, Strike",1,50,2.0,Women_Life_Freedom_2022
+The Telegraph,False,"Kardashian, Strictly, Strictly dancing",2,50,4.0,Women_Life_Freedom_2022
+The Telegraph,False,"Keir starmer, Tory, Voting",2,50,4.0,Women_Life_Freedom_2022
+The Telegraph,False,"King charles, Palace, Queen",2,50,4.0,Women_Life_Freedom_2022
+The Telegraph,False,"Konig, Plant, Winter",1,50,2.0,Women_Life_Freedom_2022
+The Telegraph,False,"Liz, Mini budget, Tax cuts",7,50,14.0,Women_Life_Freedom_2022
+The Telegraph,False,"Putin, Russian, Ukraine",3,50,6.0,Women_Life_Freedom_2022
+The Washington Times,False,"Arizona, Democrats, Gop",6,50,12.0,Women_Life_Freedom_2022
+The Washington Times,False,"Dakota, Texas, Win",1,50,2.0,Women_Life_Freedom_2022
+The Washington Times,False,"Data, Jan, Qanon",9,50,18.0,Women_Life_Freedom_2022
+The Washington Times,False,"Death, Festnahmen, Protesten",1,50,2.0,Women_Life_Freedom_2022
+The Washington Times,False,"East coast, Fiona, Hurricane",2,50,4.0,Women_Life_Freedom_2022
+The Washington Times,False,"Florida, Launch, Nasa",1,50,2.0,Women_Life_Freedom_2022
+The Washington Times,False,"Home, Korea, Store",17,50,34.0,Women_Life_Freedom_2022
+The Washington Times,False,"Inflation, Markets, Rates",1,50,2.0,Women_Life_Freedom_2022
+The Washington Times,False,"Kanzler, Scholz, Strike",3,50,6.0,Women_Life_Freedom_2022
+The Washington Times,False,"Kardashian, Strictly, Strictly dancing",1,50,2.0,Women_Life_Freedom_2022
+The Washington Times,False,"King charles, Palace, Queen",2,50,4.0,Women_Life_Freedom_2022
+The Washington Times,False,"Putin, Russian, Ukraine",4,50,8.0,Women_Life_Freedom_2022
+The Washington Times,False,"Tensions, Travel, Won",2,50,4.0,Women_Life_Freedom_2022
+Voice Of America,False,"Arizona, Democrats, Gop",2,50,4.0,Women_Life_Freedom_2022
+Voice Of America,False,"Data, Jan, Qanon",1,50,2.0,Women_Life_Freedom_2022
+Voice Of America,False,"Death, Festnahmen, Protesten",10,50,20.0,Women_Life_Freedom_2022
+Voice Of America,False,"Doubles, Laver cup, Roger",1,50,2.0,Women_Life_Freedom_2022
+Voice Of America,False,"East coast, Fiona, Hurricane",3,50,6.0,Women_Life_Freedom_2022
+Voice Of America,False,"Florida, Launch, Nasa",2,50,4.0,Women_Life_Freedom_2022
+Voice Of America,False,"Home, Korea, Store",6,50,12.0,Women_Life_Freedom_2022
+Voice Of America,False,"Inflation, Markets, Rates",1,50,2.0,Women_Life_Freedom_2022
+Voice Of America,False,"Kanzler, Scholz, Strike",10,50,20.0,Women_Life_Freedom_2022
+Voice Of America,False,"King charles, Palace, Queen",1,50,2.0,Women_Life_Freedom_2022
+Voice Of America,False,"Putin, Russian, Ukraine",7,50,14.0,Women_Life_Freedom_2022
+Voice Of America,False,"Tensions, Travel, Won",6,50,12.0,Women_Life_Freedom_2022
+Washington Post,False,"Arizona, Democrats, Gop",1,50,2.0,Women_Life_Freedom_2022
+Washington Post,False,"Comeback, England, Southgate",1,50,2.0,Women_Life_Freedom_2022
+Washington Post,False,"Dakota, Texas, Win",43,50,86.0,Women_Life_Freedom_2022
+Washington Post,False,"Data, Jan, Qanon",2,50,4.0,Women_Life_Freedom_2022
+Washington Post,False,"Home, Korea, Store",2,50,4.0,Women_Life_Freedom_2022
+Washington Post,False,"Konig, Plant, Winter",1,50,2.0,Women_Life_Freedom_2022
+es,False,"Euros, Latinos, Mundo",42,50,84.0,Women_Life_Freedom_2022
+es,False,"France, Paris, Uefa",2,50,4.0,Women_Life_Freedom_2022
+es,False,"Home, Korea, Store",3,50,6.0,Women_Life_Freedom_2022
+es,False,"Kanzler, Scholz, Strike",1,50,2.0,Women_Life_Freedom_2022
+es,False,"Putins, Referendums, Weiter",2,50,4.0,Women_Life_Freedom_2022
+i,False,"Arizona, Democrats, Gop",1,50,2.0,Women_Life_Freedom_2022
+i,False,"Comeback, England, Southgate",2,50,4.0,Women_Life_Freedom_2022
+i,False,"Data, Jan, Qanon",2,50,4.0,Women_Life_Freedom_2022
+i,False,"Doubles, Laver cup, Roger",3,50,6.0,Women_Life_Freedom_2022
+i,False,"East coast, Fiona, Hurricane",1,50,2.0,Women_Life_Freedom_2022
+i,False,"Elections, Female, Giorgia meloni",1,50,2.0,Women_Life_Freedom_2022
+i,False,"Home, Korea, Store",22,50,44.0,Women_Life_Freedom_2022
+i,False,"Inflation, Markets, Rates",1,50,2.0,Women_Life_Freedom_2022
+i,False,"Kardashian, Strictly, Strictly dancing",6,50,12.0,Women_Life_Freedom_2022
+i,False,"Keir starmer, Tory, Voting",1,50,2.0,Women_Life_Freedom_2022
+i,False,"King charles, Palace, Queen",2,50,4.0,Women_Life_Freedom_2022
+i,False,"Liz, Mini budget, Tax cuts",6,50,12.0,Women_Life_Freedom_2022
+i,False,"Putin, Russian, Ukraine",2,50,4.0,Women_Life_Freedom_2022
+Daily Mail,False,"Alternative, Six, Utd",15,23,65.22,Womens_March_2017
+Daily Mail,False,"Anthony, Manchester united, Striker",8,23,34.78,Womens_March_2017
+Deutsche Welle,False,"Alternative, Six, Utd",4,4,100.0,Womens_March_2017
+The Telegraph,False,"Alternative, Six, Utd",28,49,57.14,Womens_March_2017
+The Telegraph,False,"Anthony, Manchester united, Striker",1,49,2.04,Womens_March_2017
+The Telegraph,False,Debate,1,49,2.04,Womens_March_2017
+The Telegraph,False,"Debate, Nations, Obsession",19,49,38.78,Womens_March_2017

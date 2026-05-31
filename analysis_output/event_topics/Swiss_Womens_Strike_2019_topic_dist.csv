@@ -1,0 +1,46 @@
+publisher,is_control,event_topic_label,n_articles,total_articles,topic_share_pct,event_label
+Associated Press News,False,"China, Deaths, Refugee",1,2,50.0,Swiss_Womens_Strike_2019
+Associated Press News,False,"France, Summit, Tory",1,2,50.0,Swiss_Womens_Strike_2019
+CNBC,False,"Action, Island, Win",1,50,2.0,Swiss_Womens_Strike_2019
+CNBC,False,"Biggest, Economy, Facebook",29,50,58.0,Swiss_Womens_Strike_2019
+CNBC,False,"China, Deaths, Refugee",7,50,14.0,Swiss_Womens_Strike_2019
+CNBC,False,"France, Summit, Tory",3,50,6.0,Swiss_Womens_Strike_2019
+CNBC,False,"Girl, Oregon, Shooting",7,50,14.0,Swiss_Womens_Strike_2019
+CNBC,False,"League, Manager, Transfer",3,50,6.0,Swiss_Womens_Strike_2019
+Daily Mail,False,"Action, Island, Win",10,34,29.41,Swiss_Womens_Strike_2019
+Daily Mail,False,"Biggest, Economy, Facebook",2,34,5.88,Swiss_Womens_Strike_2019
+Daily Mail,False,"China, Deaths, Refugee",6,34,17.65,Swiss_Womens_Strike_2019
+Daily Mail,False,"League, Manager, Transfer",16,34,47.06,Swiss_Womens_Strike_2019
+Deutsche Welle,False,"China, Deaths, Refugee",4,50,8.0,Swiss_Womens_Strike_2019
+Deutsche Welle,False,"France, Summit, Tory",46,50,92.0,Swiss_Womens_Strike_2019
+Die Zeit,False,"China, Deaths, Refugee",1,50,2.0,Swiss_Womens_Strike_2019
+Die Zeit,False,"France, Summit, Tory",48,50,96.0,Swiss_Womens_Strike_2019
+Die Zeit,False,"Girl, Oregon, Shooting",1,50,2.0,Swiss_Womens_Strike_2019
+Euronews (EN),False,"Action, Island, Win",3,50,6.0,Swiss_Womens_Strike_2019
+Euronews (EN),False,"China, Deaths, Refugee",20,50,40.0,Swiss_Womens_Strike_2019
+Euronews (EN),False,"France, Summit, Tory",24,50,48.0,Swiss_Womens_Strike_2019
+Euronews (EN),False,"Girl, Oregon, Shooting",3,50,6.0,Swiss_Womens_Strike_2019
+Fox News,False,"Action, Island, Win",9,50,18.0,Swiss_Womens_Strike_2019
+Fox News,False,"China, Deaths, Refugee",19,50,38.0,Swiss_Womens_Strike_2019
+Fox News,False,"France, Summit, Tory",2,50,4.0,Swiss_Womens_Strike_2019
+Fox News,False,"Girl, Oregon, Shooting",18,50,36.0,Swiss_Womens_Strike_2019
+Fox News,False,"League, Manager, Transfer",2,50,4.0,Swiss_Womens_Strike_2019
+Frankfurter Allgemeine Zeitung,False,"China, Deaths, Refugee",1,50,2.0,Swiss_Womens_Strike_2019
+Frankfurter Allgemeine Zeitung,False,"France, Summit, Tory",49,50,98.0,Swiss_Womens_Strike_2019
+Le Monde,False,"China, Deaths, Refugee",2,50,4.0,Swiss_Womens_Strike_2019
+Le Monde,False,"France, Summit, Tory",48,50,96.0,Swiss_Womens_Strike_2019
+The Sun,False,"Action, Island, Win",13,50,26.0,Swiss_Womens_Strike_2019
+The Sun,False,"China, Deaths, Refugee",8,50,16.0,Swiss_Womens_Strike_2019
+The Sun,False,"France, Summit, Tory",5,50,10.0,Swiss_Womens_Strike_2019
+The Sun,False,"Girl, Oregon, Shooting",5,50,10.0,Swiss_Womens_Strike_2019
+The Sun,False,"League, Manager, Transfer",19,50,38.0,Swiss_Womens_Strike_2019
+The Telegraph,False,"Action, Island, Win",19,50,38.0,Swiss_Womens_Strike_2019
+The Telegraph,False,"Biggest, Economy, Facebook",3,50,6.0,Swiss_Womens_Strike_2019
+The Telegraph,False,"China, Deaths, Refugee",8,50,16.0,Swiss_Womens_Strike_2019
+The Telegraph,False,"France, Summit, Tory",15,50,30.0,Swiss_Womens_Strike_2019
+The Telegraph,False,"Girl, Oregon, Shooting",3,50,6.0,Swiss_Womens_Strike_2019
+The Telegraph,False,"League, Manager, Transfer",2,50,4.0,Swiss_Womens_Strike_2019
+The Washington Times,False,"Action, Island, Win",3,50,6.0,Swiss_Womens_Strike_2019
+The Washington Times,False,"China, Deaths, Refugee",11,50,22.0,Swiss_Womens_Strike_2019
+The Washington Times,False,"France, Summit, Tory",4,50,8.0,Swiss_Womens_Strike_2019
+The Washington Times,False,"Girl, Oregon, Shooting",32,50,64.0,Swiss_Womens_Strike_2019

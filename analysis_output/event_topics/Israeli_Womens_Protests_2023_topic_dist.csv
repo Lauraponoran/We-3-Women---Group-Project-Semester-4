@@ -1,0 +1,254 @@
+publisher,is_control,event_topic_label,n_articles,total_articles,topic_share_pct,event_label
+Associated Press News,False,"Arrested, Family, Fox",5,49,10.2,Israeli_Womens_Protests_2023
+Associated Press News,False,"Biden, Debt, Supreme court",2,49,4.08,Israeli_Womens_Protests_2023
+Associated Press News,False,"Coach, Contract, Seasons",5,49,10.2,Israeli_Womens_Protests_2023
+Associated Press News,False,"Cup, Foden, Pick",8,49,16.33,Israeli_Womens_Protests_2023
+Associated Press News,False,"Derailment, Ohio, Train",2,49,4.08,Israeli_Womens_Protests_2023
+Associated Press News,False,"Diana, Militar, Nuclear",10,49,20.41,Israeli_Womens_Protests_2023
+Associated Press News,False,"Home, Market, Surplus",10,49,20.41,Israeli_Womens_Protests_2023
+Associated Press News,False,"Nachrichten, Study, Wegen",7,49,14.29,Israeli_Womens_Protests_2023
+Business Insider,False,"Arrested, Family, Fox",5,48,10.42,Israeli_Womens_Protests_2023
+Business Insider,False,"Biden, Debt, Supreme court",6,48,12.5,Israeli_Womens_Protests_2023
+Business Insider,False,"Chinese, Covid, Hearing",1,48,2.08,Israeli_Womens_Protests_2023
+Business Insider,False,"Derailment, Ohio, Train",1,48,2.08,Israeli_Womens_Protests_2023
+Business Insider,False,"Home, Market, Surplus",11,48,22.92,Israeli_Womens_Protests_2023
+Business Insider,False,"Nachrichten, Study, Wegen",22,48,45.83,Israeli_Womens_Protests_2023
+Business Insider,False,"Putin, Russia, Russie",2,48,4.17,Israeli_Womens_Protests_2023
+CBC News,False,"Arrested, Family, Fox",13,50,26.0,Israeli_Womens_Protests_2023
+CBC News,False,"Awards, Festival, Jury",2,50,4.0,Israeli_Womens_Protests_2023
+CBC News,False,"Chinese, Covid, Hearing",4,50,8.0,Israeli_Womens_Protests_2023
+CBC News,False,"Coach, Contract, Seasons",2,50,4.0,Israeli_Womens_Protests_2023
+CBC News,False,"Derailment, Ohio, Train",2,50,4.0,Israeli_Womens_Protests_2023
+CBC News,False,"Home, Market, Surplus",10,50,20.0,Israeli_Womens_Protests_2023
+CBC News,False,"Nachrichten, Study, Wegen",14,50,28.0,Israeli_Womens_Protests_2023
+CBC News,False,"Parliament, Security, Tiktok",3,50,6.0,Israeli_Womens_Protests_2023
+CNBC,False,"Arrested, Family, Fox",2,50,4.0,Israeli_Womens_Protests_2023
+CNBC,False,"Biden, Debt, Supreme court",5,50,10.0,Israeli_Womens_Protests_2023
+CNBC,False,"Chinese, Covid, Hearing",4,50,8.0,Israeli_Womens_Protests_2023
+CNBC,False,"Desantis, Disney, Health care",1,50,2.0,Israeli_Womens_Protests_2023
+CNBC,False,"Diana, Militar, Nuclear",1,50,2.0,Israeli_Womens_Protests_2023
+CNBC,False,"Home, Market, Surplus",27,50,54.0,Israeli_Womens_Protests_2023
+CNBC,False,"Nachrichten, Study, Wegen",10,50,20.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Arrested, Family, Fox",27,50,54.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Brexit, Northern, Rishi sunak",1,50,2.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Chinese, Covid, Hearing",1,50,2.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Coach, Contract, Seasons",1,50,2.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Cup, Foden, Pick",4,50,8.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Derailment, Ohio, Train",1,50,2.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Desantis, Disney, Health care",1,50,2.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Home, Market, Surplus",2,50,4.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Nachrichten, Study, Wegen",9,50,18.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Parliament, Security, Tiktok",2,50,4.0,Israeli_Womens_Protests_2023
+Daily Mail,False,"Putin, Russia, Russie",1,50,2.0,Israeli_Womens_Protests_2023
+Deutsche Welle,False,"Diana, Militar, Nuclear",1,50,2.0,Israeli_Womens_Protests_2023
+Deutsche Welle,False,"Est, Fevrier, Turquie",1,50,2.0,Israeli_Womens_Protests_2023
+Deutsche Welle,False,"Geht, Koalition, Spd",16,50,32.0,Israeli_Womens_Protests_2023
+Deutsche Welle,False,"Iaea, Iranian, Pressure",1,50,2.0,Israeli_Womens_Protests_2023
+Deutsche Welle,False,"Nachrichten, Study, Wegen",26,50,52.0,Israeli_Womens_Protests_2023
+Deutsche Welle,False,"Putin, Russia, Russie",5,50,10.0,Israeli_Womens_Protests_2023
+Die Tageszeitung (taz),False,"Est, Fevrier, Turquie",4,50,8.0,Israeli_Womens_Protests_2023
+Die Tageszeitung (taz),False,"Geht, Koalition, Spd",25,50,50.0,Israeli_Womens_Protests_2023
+Die Tageszeitung (taz),False,"Iaea, Iranian, Pressure",2,50,4.0,Israeli_Womens_Protests_2023
+Die Tageszeitung (taz),False,"Nachrichten, Study, Wegen",16,50,32.0,Israeli_Womens_Protests_2023
+Die Tageszeitung (taz),False,"Putin, Russia, Russie",3,50,6.0,Israeli_Womens_Protests_2023
+El Mundo,False,"Diana, Militar, Nuclear",16,16,100.0,Israeli_Womens_Protests_2023
+Euronews (EN),False,"Awards, Festival, Jury",2,50,4.0,Israeli_Womens_Protests_2023
+Euronews (EN),False,"Brexit, Northern, Rishi sunak",3,50,6.0,Israeli_Womens_Protests_2023
+Euronews (EN),False,"Chinese, Covid, Hearing",3,50,6.0,Israeli_Womens_Protests_2023
+Euronews (EN),False,"Desantis, Disney, Health care",1,50,2.0,Israeli_Womens_Protests_2023
+Euronews (EN),False,"Iaea, Iranian, Pressure",1,50,2.0,Israeli_Womens_Protests_2023
+Euronews (EN),False,"Nachrichten, Study, Wegen",27,50,54.0,Israeli_Womens_Protests_2023
+Euronews (EN),False,"Parliament, Security, Tiktok",2,50,4.0,Israeli_Womens_Protests_2023
+Euronews (EN),False,"Putin, Russia, Russie",11,50,22.0,Israeli_Womens_Protests_2023
+Euronews (FR),False,"Awards, Festival, Jury",4,50,8.0,Israeli_Womens_Protests_2023
+Euronews (FR),False,"Diana, Militar, Nuclear",1,50,2.0,Israeli_Womens_Protests_2023
+Euronews (FR),False,"Est, Fevrier, Turquie",25,50,50.0,Israeli_Womens_Protests_2023
+Euronews (FR),False,"Iaea, Iranian, Pressure",2,50,4.0,Israeli_Womens_Protests_2023
+Euronews (FR),False,"Nachrichten, Study, Wegen",13,50,26.0,Israeli_Womens_Protests_2023
+Euronews (FR),False,"Putin, Russia, Russie",5,50,10.0,Israeli_Womens_Protests_2023
+Fox News,False,"Arrested, Family, Fox",21,50,42.0,Israeli_Womens_Protests_2023
+Fox News,False,"Chinese, Covid, Hearing",3,50,6.0,Israeli_Womens_Protests_2023
+Fox News,False,"Coach, Contract, Seasons",3,50,6.0,Israeli_Womens_Protests_2023
+Fox News,False,"Derailment, Ohio, Train",3,50,6.0,Israeli_Womens_Protests_2023
+Fox News,False,"Desantis, Disney, Health care",2,50,4.0,Israeli_Womens_Protests_2023
+Fox News,False,"Home, Market, Surplus",4,50,8.0,Israeli_Womens_Protests_2023
+Fox News,False,"Nachrichten, Study, Wegen",12,50,24.0,Israeli_Womens_Protests_2023
+Fox News,False,"Parliament, Security, Tiktok",2,50,4.0,Israeli_Womens_Protests_2023
+Frankfurter Allgemeine Zeitung,False,"Awards, Festival, Jury",1,50,2.0,Israeli_Womens_Protests_2023
+Frankfurter Allgemeine Zeitung,False,"Est, Fevrier, Turquie",3,50,6.0,Israeli_Womens_Protests_2023
+Frankfurter Allgemeine Zeitung,False,"Geht, Koalition, Spd",22,50,44.0,Israeli_Womens_Protests_2023
+Frankfurter Allgemeine Zeitung,False,"Iaea, Iranian, Pressure",2,50,4.0,Israeli_Womens_Protests_2023
+Frankfurter Allgemeine Zeitung,False,"Nachrichten, Study, Wegen",14,50,28.0,Israeli_Womens_Protests_2023
+Frankfurter Allgemeine Zeitung,False,"Putin, Russia, Russie",8,50,16.0,Israeli_Womens_Protests_2023
+La Vanguardia,False,"Diana, Militar, Nuclear",49,50,98.0,Israeli_Womens_Protests_2023
+La Vanguardia,False,"Est, Fevrier, Turquie",1,50,2.0,Israeli_Womens_Protests_2023
+Le Figaro,False,"Awards, Festival, Jury",5,50,10.0,Israeli_Womens_Protests_2023
+Le Figaro,False,"Diana, Militar, Nuclear",1,50,2.0,Israeli_Womens_Protests_2023
+Le Figaro,False,"Est, Fevrier, Turquie",35,50,70.0,Israeli_Womens_Protests_2023
+Le Figaro,False,"Geht, Koalition, Spd",1,50,2.0,Israeli_Womens_Protests_2023
+Le Figaro,False,"Iaea, Iranian, Pressure",1,50,2.0,Israeli_Womens_Protests_2023
+Le Figaro,False,"Nachrichten, Study, Wegen",2,50,4.0,Israeli_Womens_Protests_2023
+Le Figaro,False,"Putin, Russia, Russie",5,50,10.0,Israeli_Womens_Protests_2023
+Le Monde,False,"Arrested, Family, Fox",1,50,2.0,Israeli_Womens_Protests_2023
+Le Monde,False,"Brexit, Northern, Rishi sunak",1,50,2.0,Israeli_Womens_Protests_2023
+Le Monde,False,"Chinese, Covid, Hearing",5,50,10.0,Israeli_Womens_Protests_2023
+Le Monde,False,"Diana, Militar, Nuclear",3,50,6.0,Israeli_Womens_Protests_2023
+Le Monde,False,"Est, Fevrier, Turquie",21,50,42.0,Israeli_Womens_Protests_2023
+Le Monde,False,"Iaea, Iranian, Pressure",1,50,2.0,Israeli_Womens_Protests_2023
+Le Monde,False,"Nachrichten, Study, Wegen",11,50,22.0,Israeli_Womens_Protests_2023
+Le Monde,False,"Putin, Russia, Russie",7,50,14.0,Israeli_Womens_Protests_2023
+Reuters,False,"Arrested, Family, Fox",3,50,6.0,Israeli_Womens_Protests_2023
+Reuters,False,"Biden, Debt, Supreme court",1,50,2.0,Israeli_Womens_Protests_2023
+Reuters,False,"Brexit, Northern, Rishi sunak",3,50,6.0,Israeli_Womens_Protests_2023
+Reuters,False,"Coach, Contract, Seasons",1,50,2.0,Israeli_Womens_Protests_2023
+Reuters,False,"Cup, Foden, Pick",1,50,2.0,Israeli_Womens_Protests_2023
+Reuters,False,"Diana, Militar, Nuclear",1,50,2.0,Israeli_Womens_Protests_2023
+Reuters,False,"Est, Fevrier, Turquie",1,50,2.0,Israeli_Womens_Protests_2023
+Reuters,False,"Geht, Koalition, Spd",1,50,2.0,Israeli_Womens_Protests_2023
+Reuters,False,"Home, Market, Surplus",12,50,24.0,Israeli_Womens_Protests_2023
+Reuters,False,"Nachrichten, Study, Wegen",24,50,48.0,Israeli_Womens_Protests_2023
+Reuters,False,"Putin, Russia, Russie",2,50,4.0,Israeli_Womens_Protests_2023
+Rolling Stone,False,"Arrested, Family, Fox",33,50,66.0,Israeli_Womens_Protests_2023
+Rolling Stone,False,"Chinese, Covid, Hearing",1,50,2.0,Israeli_Womens_Protests_2023
+Rolling Stone,False,"Home, Market, Surplus",1,50,2.0,Israeli_Womens_Protests_2023
+Rolling Stone,False,"Nachrichten, Study, Wegen",14,50,28.0,Israeli_Womens_Protests_2023
+Rolling Stone,False,"Parliament, Security, Tiktok",1,50,2.0,Israeli_Womens_Protests_2023
+Spiegel Online,False,"Awards, Festival, Jury",1,50,2.0,Israeli_Womens_Protests_2023
+Spiegel Online,False,"Diana, Militar, Nuclear",1,50,2.0,Israeli_Womens_Protests_2023
+Spiegel Online,False,"Est, Fevrier, Turquie",5,50,10.0,Israeli_Womens_Protests_2023
+Spiegel Online,False,"Geht, Koalition, Spd",26,50,52.0,Israeli_Womens_Protests_2023
+Spiegel Online,False,"Iaea, Iranian, Pressure",4,50,8.0,Israeli_Womens_Protests_2023
+Spiegel Online,False,"Nachrichten, Study, Wegen",11,50,22.0,Israeli_Womens_Protests_2023
+Spiegel Online,False,"Putin, Russia, Russie",2,50,4.0,Israeli_Womens_Protests_2023
+Tagesschau,False,"Arrested, Family, Fox",2,50,4.0,Israeli_Womens_Protests_2023
+Tagesschau,False,"Est, Fevrier, Turquie",2,50,4.0,Israeli_Womens_Protests_2023
+Tagesschau,False,"Geht, Koalition, Spd",22,50,44.0,Israeli_Womens_Protests_2023
+Tagesschau,False,"Iaea, Iranian, Pressure",2,50,4.0,Israeli_Womens_Protests_2023
+Tagesschau,False,"Nachrichten, Study, Wegen",21,50,42.0,Israeli_Womens_Protests_2023
+Tagesschau,False,"Putin, Russia, Russie",1,50,2.0,Israeli_Womens_Protests_2023
+The BBC,False,"Arrested, Family, Fox",8,50,16.0,Israeli_Womens_Protests_2023
+The BBC,False,"Biden, Debt, Supreme court",1,50,2.0,Israeli_Womens_Protests_2023
+The BBC,False,"Brexit, Northern, Rishi sunak",3,50,6.0,Israeli_Womens_Protests_2023
+The BBC,False,"Cup, Foden, Pick",5,50,10.0,Israeli_Womens_Protests_2023
+The BBC,False,"Derailment, Ohio, Train",2,50,4.0,Israeli_Womens_Protests_2023
+The BBC,False,"Home, Market, Surplus",7,50,14.0,Israeli_Womens_Protests_2023
+The BBC,False,"Nachrichten, Study, Wegen",21,50,42.0,Israeli_Womens_Protests_2023
+The BBC,False,"Parliament, Security, Tiktok",2,50,4.0,Israeli_Womens_Protests_2023
+The BBC,False,"Putin, Russia, Russie",1,50,2.0,Israeli_Womens_Protests_2023
+The Gateway Pundit,False,"Arrested, Family, Fox",16,50,32.0,Israeli_Womens_Protests_2023
+The Gateway Pundit,False,"Biden, Debt, Supreme court",3,50,6.0,Israeli_Womens_Protests_2023
+The Gateway Pundit,False,"Chinese, Covid, Hearing",5,50,10.0,Israeli_Womens_Protests_2023
+The Gateway Pundit,False,"Derailment, Ohio, Train",1,50,2.0,Israeli_Womens_Protests_2023
+The Gateway Pundit,False,"Desantis, Disney, Health care",4,50,8.0,Israeli_Womens_Protests_2023
+The Gateway Pundit,False,"Home, Market, Surplus",3,50,6.0,Israeli_Womens_Protests_2023
+The Gateway Pundit,False,"Nachrichten, Study, Wegen",17,50,34.0,Israeli_Womens_Protests_2023
+The Gateway Pundit,False,"Putin, Russia, Russie",1,50,2.0,Israeli_Womens_Protests_2023
+The Globe and Mail,False,"Arrested, Family, Fox",7,50,14.0,Israeli_Womens_Protests_2023
+The Globe and Mail,False,"Chinese, Covid, Hearing",4,50,8.0,Israeli_Womens_Protests_2023
+The Globe and Mail,False,"Coach, Contract, Seasons",3,50,6.0,Israeli_Womens_Protests_2023
+The Globe and Mail,False,"Derailment, Ohio, Train",1,50,2.0,Israeli_Womens_Protests_2023
+The Globe and Mail,False,"Diana, Militar, Nuclear",1,50,2.0,Israeli_Womens_Protests_2023
+The Globe and Mail,False,"Home, Market, Surplus",11,50,22.0,Israeli_Womens_Protests_2023
+The Globe and Mail,False,"Nachrichten, Study, Wegen",19,50,38.0,Israeli_Womens_Protests_2023
+The Globe and Mail,False,"Parliament, Security, Tiktok",3,50,6.0,Israeli_Womens_Protests_2023
+The Globe and Mail,False,"Putin, Russia, Russie",1,50,2.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Arrested, Family, Fox",9,50,18.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Biden, Debt, Supreme court",2,50,4.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Brexit, Northern, Rishi sunak",3,50,6.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Chinese, Covid, Hearing",1,50,2.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Coach, Contract, Seasons",1,50,2.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Cup, Foden, Pick",10,50,20.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Derailment, Ohio, Train",2,50,4.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Diana, Militar, Nuclear",1,50,2.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Est, Fevrier, Turquie",1,50,2.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Home, Market, Surplus",3,50,6.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Iaea, Iranian, Pressure",1,50,2.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Nachrichten, Study, Wegen",15,50,30.0,Israeli_Womens_Protests_2023
+The Guardian,False,"Putin, Russia, Russie",1,50,2.0,Israeli_Womens_Protests_2023
+The Independent,False,"Arrested, Family, Fox",17,50,34.0,Israeli_Womens_Protests_2023
+The Independent,False,"Biden, Debt, Supreme court",3,50,6.0,Israeli_Womens_Protests_2023
+The Independent,False,"Brexit, Northern, Rishi sunak",1,50,2.0,Israeli_Womens_Protests_2023
+The Independent,False,"Chinese, Covid, Hearing",2,50,4.0,Israeli_Womens_Protests_2023
+The Independent,False,"Cup, Foden, Pick",8,50,16.0,Israeli_Womens_Protests_2023
+The Independent,False,"Derailment, Ohio, Train",2,50,4.0,Israeli_Womens_Protests_2023
+The Independent,False,"Home, Market, Surplus",2,50,4.0,Israeli_Womens_Protests_2023
+The Independent,False,"Nachrichten, Study, Wegen",15,50,30.0,Israeli_Womens_Protests_2023
+The Intercept,False,"Arrested, Family, Fox",1,7,14.29,Israeli_Womens_Protests_2023
+The Intercept,False,"Diana, Militar, Nuclear",2,7,28.57,Israeli_Womens_Protests_2023
+The Intercept,False,"Nachrichten, Study, Wegen",4,7,57.14,Israeli_Womens_Protests_2023
+The Nation,False,"Arrested, Family, Fox",3,13,23.08,Israeli_Womens_Protests_2023
+The Nation,False,"Biden, Debt, Supreme court",2,13,15.38,Israeli_Womens_Protests_2023
+The Nation,False,"Desantis, Disney, Health care",1,13,7.69,Israeli_Womens_Protests_2023
+The Nation,False,"Diana, Militar, Nuclear",1,13,7.69,Israeli_Womens_Protests_2023
+The Nation,False,"Home, Market, Surplus",1,13,7.69,Israeli_Womens_Protests_2023
+The Nation,False,"Nachrichten, Study, Wegen",5,13,38.46,Israeli_Womens_Protests_2023
+The New Yorker,False,"Arrested, Family, Fox",16,35,45.71,Israeli_Womens_Protests_2023
+The New Yorker,False,"Biden, Debt, Supreme court",1,35,2.86,Israeli_Womens_Protests_2023
+The New Yorker,False,"Chinese, Covid, Hearing",1,35,2.86,Israeli_Womens_Protests_2023
+The New Yorker,False,"Diana, Militar, Nuclear",2,35,5.71,Israeli_Womens_Protests_2023
+The New Yorker,False,"Geht, Koalition, Spd",1,35,2.86,Israeli_Womens_Protests_2023
+The New Yorker,False,"Home, Market, Surplus",2,35,5.71,Israeli_Womens_Protests_2023
+The New Yorker,False,"Iaea, Iranian, Pressure",1,35,2.86,Israeli_Womens_Protests_2023
+The New Yorker,False,"Nachrichten, Study, Wegen",10,35,28.57,Israeli_Womens_Protests_2023
+The New Yorker,False,"Putin, Russia, Russie",1,35,2.86,Israeli_Womens_Protests_2023
+The Sun,False,"Arrested, Family, Fox",16,50,32.0,Israeli_Womens_Protests_2023
+The Sun,False,"Biden, Debt, Supreme court",1,50,2.0,Israeli_Womens_Protests_2023
+The Sun,False,"Brexit, Northern, Rishi sunak",4,50,8.0,Israeli_Womens_Protests_2023
+The Sun,False,"Coach, Contract, Seasons",1,50,2.0,Israeli_Womens_Protests_2023
+The Sun,False,"Cup, Foden, Pick",10,50,20.0,Israeli_Womens_Protests_2023
+The Sun,False,"Derailment, Ohio, Train",2,50,4.0,Israeli_Womens_Protests_2023
+The Sun,False,"Diana, Militar, Nuclear",1,50,2.0,Israeli_Womens_Protests_2023
+The Sun,False,"Home, Market, Surplus",1,50,2.0,Israeli_Womens_Protests_2023
+The Sun,False,"Nachrichten, Study, Wegen",13,50,26.0,Israeli_Womens_Protests_2023
+The Sun,False,"Putin, Russia, Russie",1,50,2.0,Israeli_Womens_Protests_2023
+The Telegraph,False,"Arrested, Family, Fox",16,50,32.0,Israeli_Womens_Protests_2023
+The Telegraph,False,"Awards, Festival, Jury",1,50,2.0,Israeli_Womens_Protests_2023
+The Telegraph,False,"Biden, Debt, Supreme court",3,50,6.0,Israeli_Womens_Protests_2023
+The Telegraph,False,"Brexit, Northern, Rishi sunak",4,50,8.0,Israeli_Womens_Protests_2023
+The Telegraph,False,"Cup, Foden, Pick",3,50,6.0,Israeli_Womens_Protests_2023
+The Telegraph,False,"Derailment, Ohio, Train",1,50,2.0,Israeli_Womens_Protests_2023
+The Telegraph,False,"Desantis, Disney, Health care",1,50,2.0,Israeli_Womens_Protests_2023
+The Telegraph,False,"Diana, Militar, Nuclear",1,50,2.0,Israeli_Womens_Protests_2023
+The Telegraph,False,"Home, Market, Surplus",4,50,8.0,Israeli_Womens_Protests_2023
+The Telegraph,False,"Nachrichten, Study, Wegen",15,50,30.0,Israeli_Womens_Protests_2023
+The Telegraph,False,"Parliament, Security, Tiktok",1,50,2.0,Israeli_Womens_Protests_2023
+The Washington Times,False,"Arrested, Family, Fox",12,50,24.0,Israeli_Womens_Protests_2023
+The Washington Times,False,"Biden, Debt, Supreme court",3,50,6.0,Israeli_Womens_Protests_2023
+The Washington Times,False,"Chinese, Covid, Hearing",7,50,14.0,Israeli_Womens_Protests_2023
+The Washington Times,False,"Cup, Foden, Pick",1,50,2.0,Israeli_Womens_Protests_2023
+The Washington Times,False,"Desantis, Disney, Health care",3,50,6.0,Israeli_Womens_Protests_2023
+The Washington Times,False,"Diana, Militar, Nuclear",1,50,2.0,Israeli_Womens_Protests_2023
+The Washington Times,False,"Home, Market, Surplus",1,50,2.0,Israeli_Womens_Protests_2023
+The Washington Times,False,"Nachrichten, Study, Wegen",20,50,40.0,Israeli_Womens_Protests_2023
+The Washington Times,False,"Parliament, Security, Tiktok",2,50,4.0,Israeli_Womens_Protests_2023
+Voice Of America,False,"Arrested, Family, Fox",2,50,4.0,Israeli_Womens_Protests_2023
+Voice Of America,False,"Biden, Debt, Supreme court",1,50,2.0,Israeli_Womens_Protests_2023
+Voice Of America,False,"Brexit, Northern, Rishi sunak",2,50,4.0,Israeli_Womens_Protests_2023
+Voice Of America,False,"Chinese, Covid, Hearing",9,50,18.0,Israeli_Womens_Protests_2023
+Voice Of America,False,"Derailment, Ohio, Train",1,50,2.0,Israeli_Womens_Protests_2023
+Voice Of America,False,"Desantis, Disney, Health care",2,50,4.0,Israeli_Womens_Protests_2023
+Voice Of America,False,"Home, Market, Surplus",1,50,2.0,Israeli_Womens_Protests_2023
+Voice Of America,False,"Nachrichten, Study, Wegen",21,50,42.0,Israeli_Womens_Protests_2023
+Voice Of America,False,"Parliament, Security, Tiktok",3,50,6.0,Israeli_Womens_Protests_2023
+Voice Of America,False,"Putin, Russia, Russie",8,50,16.0,Israeli_Womens_Protests_2023
+Washington Post,False,"Arrested, Family, Fox",5,50,10.0,Israeli_Womens_Protests_2023
+Washington Post,False,"Biden, Debt, Supreme court",1,50,2.0,Israeli_Womens_Protests_2023
+Washington Post,False,"Chinese, Covid, Hearing",3,50,6.0,Israeli_Womens_Protests_2023
+Washington Post,False,"Coach, Contract, Seasons",6,50,12.0,Israeli_Womens_Protests_2023
+Washington Post,False,"Cup, Foden, Pick",2,50,4.0,Israeli_Womens_Protests_2023
+Washington Post,False,"Derailment, Ohio, Train",2,50,4.0,Israeli_Womens_Protests_2023
+Washington Post,False,"Home, Market, Surplus",23,50,46.0,Israeli_Womens_Protests_2023
+Washington Post,False,"Nachrichten, Study, Wegen",7,50,14.0,Israeli_Womens_Protests_2023
+Washington Post,False,"Putin, Russia, Russie",1,50,2.0,Israeli_Womens_Protests_2023
+es,False,"Diana, Militar, Nuclear",49,50,98.0,Israeli_Womens_Protests_2023
+es,False,"Nachrichten, Study, Wegen",1,50,2.0,Israeli_Womens_Protests_2023
+i,False,"Arrested, Family, Fox",12,50,24.0,Israeli_Womens_Protests_2023
+i,False,"Biden, Debt, Supreme court",1,50,2.0,Israeli_Womens_Protests_2023
+i,False,"Brexit, Northern, Rishi sunak",11,50,22.0,Israeli_Womens_Protests_2023
+i,False,"Coach, Contract, Seasons",1,50,2.0,Israeli_Womens_Protests_2023
+i,False,"Cup, Foden, Pick",4,50,8.0,Israeli_Womens_Protests_2023
+i,False,"Derailment, Ohio, Train",1,50,2.0,Israeli_Womens_Protests_2023
+i,False,"Home, Market, Surplus",4,50,8.0,Israeli_Womens_Protests_2023
+i,False,"Nachrichten, Study, Wegen",12,50,24.0,Israeli_Womens_Protests_2023
+i,False,"Parliament, Security, Tiktok",1,50,2.0,Israeli_Womens_Protests_2023
+i,False,"Putin, Russia, Russie",3,50,6.0,Israeli_Womens_Protests_2023
