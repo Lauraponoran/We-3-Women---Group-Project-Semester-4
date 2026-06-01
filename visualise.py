@@ -1045,25 +1045,44 @@ def chart_demographic_distribution(df: pd.DataFrame, out_dir: str, dpi: int) -> 
 
     # Country/region map — group publishers by outlet origin
     OUTLET_REGION: dict[str, str] = {
-        "APNews": "USA", "Reuters": "UK/International", "VoiceOfAmerica": "USA",
-        "WashingtonPost": "USA", "TheNewYorker": "USA", "TheNation": "USA",
-        "TheIntercept": "USA", "RollingStone": "USA", "LATimes": "USA",
-        "BusinessInsider": "USA", "CNBC": "USA", "FoxNews": "USA",
-        "WashingtonTimes": "USA", "FreeBeacon": "USA", "TheGatewayPundit": "USA",
-        "BBC": "UK/International", "TheGuardian": "UK/International",
-        "TheIndependent": "UK/International", "EuronewsEN": "EU/International",
-        "iNews": "UK/International", "DailyMail": "UK/International",
-        "TheTelegraph": "UK/International", "TheSun": "UK/International",
-        "DW": "Germany/DACH", "SpiegelOnline": "Germany/DACH",
-        "DieZeit": "Germany/DACH", "Tagesschau": "Germany/DACH",
-        "FAZ": "Germany/DACH", "Taz": "Germany/DACH",
-        "DerStandard": "Germany/DACH", "DiePresse": "Germany/DACH", "ORF": "Germany/DACH",
-        "CBCNews": "Canada", "NationalPost": "Canada", "TheGlobeAndMail": "Canada",
-        "LeMonde": "France", "LeFigaro": "France", "EuronewsFR": "EU/International",
-        "ElPais": "Spain/LatAm", "ElMundo": "Spain/LatAm", "ElDiario": "Spain/LatAm",
-        "LaVanguardia": "Spain/LatAm", "ABC": "Spain/LatAm", "Publico": "Spain/LatAm",
-        "IsraelNachrichten": "Israel",
+        "Associated Press News":        "USA",
+        "CNBC":                         "USA",
+        "Voice Of America":             "USA",
+        "Washington Post":              "USA",
+        "The New Yorker":               "USA",
+        "The Nation":                   "USA",
+        "The Intercept":                "USA",
+        "Rolling Stone":                "USA",
+        "Business Insider":             "USA",
+        "Fox News":                     "USA",
+        "The Washington Times":         "USA",
+        "The Gateway Pundit":           "USA",
+        "The BBC":                      "UK/International",
+        "The Guardian":                 "UK/International",
+        "The Independent":              "UK/International",
+        "Daily Mail":                   "UK/International",
+        "The Telegraph":                "UK/International",
+        "The Sun":                      "UK/International",
+        "i":                            "UK/International",
+        "Reuters":                      "UK/International",
+        "Deutsche Welle":               "Germany/DACH",
+        "Spiegel Online":               "Germany/DACH",
+        "Die Zeit":                     "Germany/DACH",
+        "Tagesschau":                   "Germany/DACH",
+        "Frankfurter Allgemeine Zeitung": "Germany/DACH",
+        "Die Tageszeitung (taz)":       "Germany/DACH",
+        "CBC News":                     "Canada",
+        "The Globe and Mail":           "Canada",
+        "Le Monde":                     "France",
+        "Le Figaro":                    "France",
+        "Euronews (EN)":                "EU/International",
+        "Euronews (FR)":                "EU/International",
+        "El País":                      "Spain/LatAm",
+        "El Mundo":                     "Spain/LatAm",
+        "elDiario.es":                  "Spain/LatAm",
+        "La Vanguardia":                "Spain/LatAm",
     }
+    
     REGION_COLOR = {
         "USA":              "#7F77DD",
         "UK/International": "#1D9E75",
@@ -1075,7 +1094,11 @@ def chart_demographic_distribution(df: pd.DataFrame, out_dir: str, dpi: int) -> 
         "Israel":           "#888780",
     }
 
-    protest_df["region"] = protest_df["publisher"].map(OUTLET_REGION).fillna("Other")
+    _OUTLET_REGION_LOWER = {k.lower(): v for k, v in OUTLET_REGION.items()}
+
+    protest_df["region"] = protest_df["publisher"].map(
+        lambda p: OUTLET_REGION.get(p, _OUTLET_REGION_LOWER.get(str(p).lower(), "Other"))
+    )
 
     fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(24, 8))
     fig.patch.set_facecolor(LAVENDER_CREAM)
