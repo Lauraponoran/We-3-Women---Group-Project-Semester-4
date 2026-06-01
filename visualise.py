@@ -1581,10 +1581,13 @@ def main() -> None:
     name_map = {row["Topic"]: clean_topic_name(row["Name"]) for _, row in info_df.iterrows()}
 
     if "topic_id" in df.columns:
+        # ← ADD THIS before the filter
+        df_unfiltered = df.copy()
         df = df[df["topic_id"].notna() & (df["topic_id"] != -1)].copy()
         df["topic_id"] = df["topic_id"].astype(int)
         df["friendly_name"] = df["topic_id"].map(name_map).fillna("Unknown")
     else:
+        df_unfiltered = df.copy()
         df["friendly_name"] = "Unknown"
 
     # ── Load per-event topic label maps ───────────────────────────────────────
@@ -1633,7 +1636,7 @@ def main() -> None:
     # ── Static diagrams ───────────────────────────────────────────────────────
     chart_pipeline_diagram(args.out_dir, DPI)
     chart_workflow_diagram(args.out_dir, DPI)
-    chart_model_performance(df, args.topic_info, args.out_dir, DPI)
+    chart_model_performance(df_unfiltered, args.topic_info, args.out_dir, DPI)
 
     # ── Bias report ───────────────────────────────────────────────────────────
     print("\nGenerating bias report ...")
