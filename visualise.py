@@ -26,6 +26,8 @@ Charts produced
   18. fairness_subgroup_intersection.png   — sentiment heatmap: event × ideology
   19. confusion_matrix_sentiment.png       — sentiment label distribution / confusion matrix
   20. workflow_diagram.png                 — extended pipeline diagram
+  21. topic_pie_control_{event}.png (× N)  — per-event CONTROL week topic donuts
+  22. topic_pie_control_weeks_normalised.png — overall normalised control week topic breakdown
 
 Per-event topic model note
 --------------------------
@@ -64,6 +66,7 @@ import pandas as pd
 
 DEFAULT_SENTIMENT  = os.path.join("analysis_output", "articles_with_sentiment.csv")
 DEFAULT_TOPIC_INFO = os.path.join("analysis_output", "topic_info.csv")
+DEFAULT_CONTROL_TOPIC_INFO = os.path.join("analysis_output", "control_topic_info.csv")
 DEFAULT_CONTROL    = os.path.join("control")
 DEFAULT_TOPICS     = os.path.join("analysis_output", "articles_with_topics.parquet")
 OUTPUT_DIR         = os.path.join("analysis_output", "figures")
@@ -82,29 +85,61 @@ PALETTE = [
     "#BA7517", "#888780", "#5DCAA5", "#F0997B", "#AFA9EC", "#9FE1CB",
 ]
 
+_AS_LEFT       = -1.5
+_AS_LEAN_LEFT  = -0.75
+_AS_CENTER     =  0.0
+_AS_LEAN_RIGHT = +0.75
+_AS_RIGHT      = +1.5
+_AS_FAR_LEFT   = -2.0
+_AS_FAR_RIGHT  = +2.0
+
 IDEOLOGY_SCORES: dict[str, float] = {
-    "APNews": 0.0, "Reuters": 0.0, "VoiceOfAmerica": 0.2,
-    "WashingtonPost": -0.8, "TheNewYorker": -1.0,
-    "TheNation": -1.5, "TheIntercept": -1.5, "RollingStone": -1.0,
-    "LATimes": -0.8, "BusinessInsider": -0.3,
-    "CNBC": -0.2, "FoxNews": 1.5, "WashingtonTimes": 1.2,
-    "FreeBeacon": 1.3, "TheGatewayPundit": 2.0,
-    "BBC": -0.2, "TheGuardian": -1.0, "TheIndependent": -0.5,
-    "EuronewsEN": 0.0, "iNews": -0.3, "DailyMail": 1.2,
-    "TheTelegraph": 1.0, "TheSun": 1.3,
-    "DW": 0.0, "SpiegelOnline": -0.5, "DieZeit": -0.5,
-    "Tagesschau": 0.0, "FAZ": 0.5, "Taz": -1.5,
-    "DerStandard": -0.5, "DiePresse": 0.5, "ORF": 0.0,
-    "CBCNews": -0.3, "NationalPost": 0.8, "TheGlobeAndMail": 0.2,
-    "LeMonde": -0.3, "LeFigaro": 0.8, "EuronewsFR": 0.0,
-    "ElPais": -0.5, "ElMundo": 0.5, "ElDiario": -1.2,
-    "LaVanguardia": 0.0, "ABC": 1.0, "Publico": -1.2,
-    "IsraelNachrichten": 0.5,
+    "APNews":           _AS_CENTER,
+    "Reuters":          _AS_CENTER,
+    "VoiceOfAmerica":   _AS_LEAN_LEFT,
+    "WashingtonPost":   _AS_LEAN_LEFT,
+    "TheNewYorker":     _AS_LEFT,
+    "TheNation":        _AS_FAR_LEFT,
+    "TheIntercept":     _AS_LEFT,
+    "RollingStone":     _AS_LEFT,
+    "LATimes":          _AS_LEAN_LEFT,
+    "BusinessInsider":  _AS_LEAN_LEFT,
+    "CNBC":             _AS_CENTER,
+    "FoxNews":          _AS_RIGHT,
+    "WashingtonTimes":  _AS_LEAN_RIGHT,
+    "FreeBeacon":       _AS_LEAN_RIGHT,
+    "TheGatewayPundit": _AS_FAR_RIGHT,
+    "BBC":              _AS_CENTER,
+    "TheGuardian":      _AS_LEFT,
+    "TheIndependent":   _AS_LEAN_LEFT,
+    "iNews":            _AS_LEAN_LEFT,
+    "DailyMail":        _AS_RIGHT,
+    "TheTelegraph":     _AS_LEAN_RIGHT,
+    "TheSun":           _AS_RIGHT,
+    "EuronewsEN":       _AS_CENTER,
+    "EuronewsFR":       _AS_CENTER,
+    "DW":               _AS_CENTER,
+    "SpiegelOnline":    _AS_LEAN_LEFT,
+    "DieZeit":          _AS_LEAN_LEFT,
+    "Tagesschau":       _AS_CENTER,
+    "FAZ":              _AS_LEAN_RIGHT,
+    "Taz":              _AS_FAR_LEFT,
+    "DerStandard":      _AS_LEAN_LEFT,
+    "DiePresse":        _AS_LEAN_RIGHT,
+    "ORF":              _AS_CENTER,
+    "CBCNews":          _AS_LEAN_LEFT,
+    "NationalPost":     _AS_LEAN_RIGHT,
+    "TheGlobeAndMail":  _AS_CENTER,
+    "LeMonde":          _AS_LEAN_LEFT,
+    "LeFigaro":         _AS_LEAN_RIGHT,
+    "ElPais":           _AS_LEAN_LEFT,
+    "ElMundo":          _AS_LEAN_RIGHT,
+    "ElDiario":         _AS_LEFT,
+    "LaVanguardia":     _AS_CENTER,
+    "ABC":              _AS_RIGHT,
+    "Publico":          _AS_LEFT,
 }
 
-# FIX: case-insensitive ideology lookup — publisher names extracted from URLs
-# are often lowercased, so .map(IDEOLOGY_SCORES) silently returns NaN for most
-# publishers, collapsing all ideology breakdowns to a single "centre" bin.
 _IDEOLOGY_LOWER: dict[str, float] = {k.lower(): v for k, v in IDEOLOGY_SCORES.items()}
 
 
@@ -128,22 +163,16 @@ EVENT_COVERAGE_NOTES: dict[str, str] = {
 }
 
 FEMINIST_KEYWORDS = [
-    # Core feminist / gender
     "women", "feminist", "feminism", "frauen", "mujeres", "femmes", "gender",
     "equality", "sexism", "misogyn", "patriarch", "suffrag",
-    # Rights / movement language
     "rights", "reproductive", "bodily", "autonomy",
-    # Abortion / choice spectrum — all variants
     "abortion", "roe", "wade", "pro-choice", "prochoice", "pro choice",
     "pro-life", "prolife", "pro life",
     "choice", "planned parenthood", "contraception", "birth control",
-    # Violence against women
     "domestic", "violence", "assault", "harassment", "rape", "metoo", "me too",
     "everard", "femicide",
-    # International movement terms
     "familia", "peace", "strike", "greve", "huelga", "streik",
     "march", "rally", "uprising",
-    # Multilingual markers
     "frauen", "gleichstellung", "igualdad", "egalite",
 ]
 
@@ -156,7 +185,6 @@ _OTHER_LABELS = {"other", "outlier", "unknown", "all other topics"}
 
 
 def _normalise_other(label: str) -> str:
-    """Collapse all catch-all labels into a single canonical 'All Other Topics'."""
     if str(label).strip().lower() in _OTHER_LABELS:
         return "All Other Topics"
     return label
@@ -165,7 +193,6 @@ def _normalise_other(label: str) -> str:
 def clean_topic_name(name: str) -> str:
     if not isinstance(name, str) or not name.strip():
         return "Unknown"
-    # Remap outlier/noise topics before any further processing
     if name.strip().lower() in _OTHER_LABELS or name.strip() == "-1":
         return "All Other Topics"
     parts = name.split("_")
@@ -173,8 +200,6 @@ def clean_topic_name(name: str) -> str:
     words = [w for w in parts[start_idx : start_idx + 3] if w]
     if not words:
         return name.capitalize()
-    # Normalise word order so "Marilyn, Monroe, Warhol" and "Warhol, Monroe,
-    # Marilyn" resolve to the same canonical label — sort alphabetically.
     normalised = sorted(w.capitalize() for w in words)
     return ", ".join(normalised)
 
@@ -183,7 +208,6 @@ def is_feminist(name: str) -> bool:
     return any(k in str(name).lower() for k in FEMINIST_KEYWORDS)
 
 def _subnote(fig: plt.Figure, text: str) -> None:
-    """Helper to add a consistent footnote line to the bottom of charts."""
     fig.text(0.5, 0.01, text, ha="center", fontsize=9,
              color=DARK_PLUM, alpha=0.65, style="italic")
 
@@ -244,11 +268,8 @@ def _slice_colors(slices: pd.Series) -> tuple[list, list, list]:
 
 
 def _build_slices(counts: pd.Series, top_n: int) -> pd.Series:
-    """Raw counts — used for the all-topics inventory chart only."""
-    # Absorb any pre-existing catch-all label into the remainder sum
     pre_other = counts[counts.index.map(lambda l: l == "All Other Topics")].sum()
     counts = counts[counts.index.map(lambda l: l != "All Other Topics")]
-
     top     = counts.head(top_n)
     rest    = counts.iloc[top_n:]
     rescued = rest[rest.index.map(is_feminist)]
@@ -262,14 +283,9 @@ def _build_slices(counts: pd.Series, top_n: int) -> pd.Series:
 def _build_slices_normalised(df: pd.DataFrame, top_n: int,
                               subset_col: str | None = None,
                               label_col: str = "friendly_name") -> pd.Series:
-    """
-    Normalised slices — proportions rather than raw counts.
-    label_col lets callers use event_topic_friendly_name for per-event charts.
-    """
     if label_col not in df.columns:
         return pd.Series(dtype=float)
 
-    # Normalise catch-all labels in the source column before counting
     df = df.copy()
     df[label_col] = df[label_col].map(_normalise_other)
 
@@ -284,7 +300,6 @@ def _build_slices_normalised(df: pd.DataFrame, top_n: int,
     else:
         mean_props = df[label_col].value_counts(normalize=True).sort_values(ascending=False)
 
-    # Pull out any pre-existing "All Other Topics" so it folds into the remainder
     pre_other = mean_props.get("All Other Topics", 0.0)
     mean_props = mean_props[mean_props.index != "All Other Topics"]
 
@@ -324,11 +339,6 @@ def _donut_with_legend(fig, ax, slices, pie_colors, explode, edge_colors,
 
 
 def _load_event_model_notes(topic_info_dir: str) -> dict[str, dict]:
-    """
-    Load event_topics/event_model_notes.csv written by topic_model.py.
-    Returns dict keyed by event_label with status/sparse metadata.
-    Falls back to empty dict if the file doesn't exist (older runs).
-    """
     path = os.path.join(topic_info_dir, "event_model_notes.csv")
     if not os.path.exists(path):
         return {}
@@ -345,10 +355,6 @@ def _load_event_model_notes(topic_info_dir: str) -> dict[str, dict]:
 
 def _event_footnote(event: str, model_notes: dict, n_articles: int,
                      model_note: str = "") -> str:
-    """Build a consistent footnote line for per-event charts.
-
-    Format:  n=1,426 articles · per-event topic model [· sparse corpus — fallback min_size=5]
-    """
     parts = [f"n={n_articles:,} articles", model_note]
     note  = model_notes.get(event, {})
     if note.get("is_sparse"):
@@ -359,11 +365,6 @@ def _event_footnote(event: str, model_notes: dict, n_articles: int,
 
 
 def _load_per_event_topic_names(topic_info_dir: str) -> dict[str, dict[int, str]]:
-    """
-    Load per-event topic label maps from analysis_output/event_topics/*_topic_info.csv.
-
-    Returns dict keyed by event_label, values are {topic_id: friendly_name}.
-    """
     maps: dict[str, dict[int, str]] = {}
     pattern = os.path.join(topic_info_dir, "*_topic_info.csv")
     for path in glob.glob(pattern):
@@ -391,41 +392,79 @@ def load_control_data(control_dir: str, name_map: dict) -> "pd.DataFrame | None"
     if not os.path.isdir(control_dir):
         print(f"  ⚠️  Control dir not found: {control_dir} — protest vs control skipped.")
         return None
+        
     csv_files = [f for f in glob.glob(os.path.join(control_dir, "**", "*.csv"), recursive=True)
                  if "incremental" not in f]
+                 
     if not csv_files:
         print(f"  ⚠️  No CSVs in {control_dir} — protest vs control skipped.")
         return None
+        
     dfs = []
     for f in csv_files:
         try:
             dfs.append(pd.read_csv(f))
         except Exception as e:
             print(f"  ⚠️  Could not read {f}: {e}")
+            
     if not dfs:
         return None
+        
     ctrl = pd.concat(dfs, ignore_index=True)
+    
+    # ── UPDATED MAPPING BLOCK INSIDE load_control_data ──
+    control_info_path = os.path.join("analysis_output", "control_topic_info.csv")
+    control_name_map = {}
+    
+    if os.path.exists(control_info_path):
+        ctdf = pd.read_csv(control_info_path)
+        # Standardize matching key columns
+        topic_col = "Topic" if "Topic" in ctdf.columns else "topic"
+        name_col = "Name" if "Name" in ctdf.columns else "name"
+        
+        control_name_map = {
+            int(row[topic_col]): clean_topic_name(row[name_col]) 
+            for _, row in ctdf.iterrows() 
+            if row[topic_col] != -1 and pd.notna(row[topic_col])
+        }
+        print("  ℹ️  Loaded isolated control topic naming dictionary.")
+        
+    # Crucial Fix: Force the column population on the control data directly!
+    if "topic_id" in ctrl.columns and control_name_map:
+        ctrl["friendly_name"] = ctrl["topic_id"].map(control_name_map)
+    elif "topic_label" in ctrl.columns:
+        # Fallback if your processing script saved strings directly to topic_label
+        ctrl["friendly_name"] = ctrl["topic_label"]
+
+    # Fill remaining blanks so the data column structurally exists
+    if "friendly_name" not in ctrl.columns:
+        ctrl["friendly_name"] = "Unknown"
+    else:
+        ctrl["friendly_name"] = ctrl["friendly_name"].fillna("Unknown")
+    # ──────────────────────────────────────────────────────────────────
+        
     if "url" in ctrl.columns:
         ctrl.drop_duplicates(subset=["url"], inplace=True)
+        
     ctrl["is_control"] = True
+    
     if "publisher" in ctrl.columns:
         ctrl["publisher"] = (
             ctrl["publisher"].astype(str)
             .str.extract(r"\.([A-Za-z0-9]+)")[0]
             .fillna(ctrl["publisher"].astype(str))
         )
-    if "topic_id" in ctrl.columns and name_map:
-        ctrl["friendly_name"] = ctrl["topic_id"].map(name_map).fillna("Unknown")
+        
     if "sentiment_score" not in ctrl.columns:
         ctrl["sentiment_score"] = 0.0
-    # FIX: derive sentiment_label for control articles too
+        
     if "sentiment_label" not in ctrl.columns and "sentiment_score" in ctrl.columns:
         ctrl["sentiment_label"] = ctrl["sentiment_score"].apply(
             lambda s: "positive" if s >= 0.05 else ("negative" if s <= -0.05 else "neutral")
         )
+        
     print(f"  Loaded {len(ctrl):,} control articles from {control_dir}")
     return ctrl
-
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ❹  CHART 1 — SENTIMENT BY OUTLET
@@ -480,7 +519,6 @@ def chart_topics_by_event(df: pd.DataFrame, out_dir: str, dpi: int,
         ax.set_title(event.replace("_", " ").title(), fontweight="bold", color=DARK_PLUM)
         ax.set_xlabel("% of Articles (within-event)", color=DARK_PLUM)
 
-        # Sparse footnote per subplot
         note = model_notes.get(event, {})
         if note.get("is_sparse"):
             used = note.get("min_topic_size_used", "?")
@@ -503,13 +541,6 @@ def chart_topics_by_event(df: pd.DataFrame, out_dir: str, dpi: int,
 
 def _attach_event_friendly_names(sub: pd.DataFrame, event: str,
                                   event_topic_maps: dict) -> str:
-    """
-    Add event_topic_friendly_name column to sub using the per-event topic map.
-    Returns the name of the column to use for plotting.
-    Falls back to 'friendly_name' (global model) if per-event data unavailable
-    OR if every article in the subset is an outlier (event model failed).
-    """
-    # Check whether per-event topics exist and have at least some non-outlier assignments
     has_event_topics = False
     if event in event_topic_maps and "event_topic_id" in sub.columns:
         if (sub["event_topic_id"] != -1).any():
@@ -529,7 +560,6 @@ def _attach_event_friendly_names(sub: pd.DataFrame, event: str,
             sub["event_topic_friendly_name"] = sub["event_topic_label"].apply(clean_topic_name)
         return "event_topic_friendly_name"
     else:
-        # Per-event model failed entirely — use global model labels
         return "friendly_name"
 
 
@@ -654,12 +684,6 @@ def chart_topic_pie_all(df: pd.DataFrame, out_dir: str, dpi: int) -> None:
 
 
 def chart_topic_pie_all_normalised(df: pd.DataFrame, out_dir: str, dpi: int) -> None:
-    """Normalised version of chart_topic_pie_all — mean proportion per event.
-
-    Directly comparable to topic_pie_all_topics.png but with equal event weighting
-    so large events don't dominate. Shows ALL topics (no top_n cutoff, no collapsing
-    into 'All Other Topics') so the full topic inventory is visible at a glance.
-    """
     if "friendly_name" not in df.columns:
         print("  ⚠️  chart_topic_pie_all_normalised: 'friendly_name' missing — skipping."); return
 
@@ -667,7 +691,6 @@ def chart_topic_pie_all_normalised(df: pd.DataFrame, out_dir: str, dpi: int) -> 
     protest_df = protest_df.copy()
     protest_df["friendly_name"] = protest_df["friendly_name"].map(_normalise_other)
 
-    # Mean proportion per event (equal event weighting)
     if "event_label" in protest_df.columns:
         groups = []
         for _, grp in protest_df.groupby("event_label"):
@@ -826,7 +849,6 @@ def chart_ideological_gap(df: pd.DataFrame, out_dir: str, dpi: int) -> None:
     agg.columns = ["protest","control"]
     agg = agg.dropna()
     agg["gap"]      = agg["protest"] - agg["control"]
-    # FIX: use _ideology_score for case-insensitive lookup
     agg["ideology"] = agg.index.map(_ideology_score)
     agg = agg.dropna(subset=["ideology"])
     if agg.empty:
@@ -933,7 +955,7 @@ def chart_pipeline_diagram(out_dir: str, dpi: int) -> None:
         ("build_corpus.py",                 "Merge per-event parquets\nDeduplicate by URL"),
         ("sentiment_analysis.py",           "Lingua detection\nopus-mt translation\nVADER scoring"),
         ("topic_model.py",                  "all-MiniLM-L6-v2\nBERTopic (HDBSCAN)\nOutlier reduction"),
-        ("visualise.py",                    "20 publication figures\nbias_report.csv"),
+        ("visualise.py",                    "22 publication figures\nbias_report.csv"),
     ]
     fig, ax = plt.subplots(figsize=(16, 4))
     fig.patch.set_facecolor(LAVENDER_CREAM)
@@ -1003,7 +1025,6 @@ def generate_bias_report(df: pd.DataFrame, out_dir: str) -> None:
 
     pub_counts = df["publisher"].value_counts().reset_index()
     pub_counts.columns = ["publisher","n_articles"]
-    # FIX: use _ideology_score for case-insensitive lookup
     pub_counts["ideology_score"] = pub_counts["publisher"].apply(_ideology_score)
     pub_counts["ideology_bin"] = pd.cut(
         pub_counts["ideology_score"], bins=[-3,-0.5,0.5,3],
@@ -1043,7 +1064,6 @@ def chart_demographic_distribution(df: pd.DataFrame, out_dir: str, dpi: int) -> 
     lang_pal = {"EN": DEEP_PURPLE, "DE": RASPBERRY, "FR": MUTED_TEAL,
                 "ES": FEMINIST_COLOUR, "OTHER": "#BDBDBD"}
 
-    # Country/region map — group publishers by outlet origin
     OUTLET_REGION: dict[str, str] = {
         "Associated Press News":        "USA",
         "CNBC":                         "USA",
@@ -1082,7 +1102,7 @@ def chart_demographic_distribution(df: pd.DataFrame, out_dir: str, dpi: int) -> 
         "elDiario.es":                  "Spain/LatAm",
         "La Vanguardia":                "Spain/LatAm",
     }
-    
+
     REGION_COLOR = {
         "USA":              "#7F77DD",
         "UK/International": "#1D9E75",
@@ -1103,7 +1123,6 @@ def chart_demographic_distribution(df: pd.DataFrame, out_dir: str, dpi: int) -> 
     fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(24, 8))
     fig.patch.set_facecolor(LAVENDER_CREAM)
 
-    # ── Panel A: language by event ────────────────────────────────────────────
     _base_style(fig, ax1, grid_axis="x")
     event_lang = protest_df.groupby(["event_label", "language"]).size().reset_index(name="n")
     events = sorted(protest_df["event_label"].dropna().unique())
@@ -1120,7 +1139,6 @@ def chart_demographic_distribution(df: pd.DataFrame, out_dir: str, dpi: int) -> 
     ax1.set_title("A — Articles by event × language", fontweight="bold", color=DARK_PLUM)
     ax1.legend(title="Language", frameon=False, fontsize=9)
 
-    # ── Panel B: publisher article volume, coloured by region ─────────────────
     _base_style(fig, ax2, grid_axis="x")
     pub_counts = protest_df.groupby("publisher").size().sort_values()
     pub_regions = protest_df.groupby("publisher")["region"].first()
@@ -1135,7 +1153,6 @@ def chart_demographic_distribution(df: pd.DataFrame, out_dir: str, dpi: int) -> 
     ax2.legend(handles=handles, title="Region", frameon=False, fontsize=8,
                bbox_to_anchor=(1, 1), loc="upper left")
 
-    # ── Panel C: region totals ────────────────────────────────────────────────
     _base_style(fig, ax3, grid_axis="x")
     region_counts = protest_df.groupby("region").size().sort_values()
     rcolors = [REGION_COLOR.get(r, "#BDBDBD") for r in region_counts.index]
@@ -1223,7 +1240,6 @@ def chart_model_performance(df: pd.DataFrame, topic_info_path: str,
     fig, axes = plt.subplots(1, 3, figsize=(21, 6))
     fig.patch.set_facecolor(LAVENDER_CREAM)
 
-    # Panel A: topic size distribution
     ax = axes[0]; _base_style(fig, ax, grid_axis="y")
     topic_sizes = df["topic_id"].value_counts().sort_index()
     sizes_no_out = topic_sizes[topic_sizes.index != -1]
@@ -1235,9 +1251,6 @@ def chart_model_performance(df: pd.DataFrame, topic_info_path: str,
     ax.set_title(f"A — Topic Size Distribution\n({len(sizes_no_out)} topics)",
                  fontweight="bold", color=DARK_PLUM)
 
-    # Panel B: outlier rate by event
-    # FIX: apply on the Series directly to avoid FutureWarning about groupby
-    # operating on grouping columns
     ax = axes[1]; _base_style(fig, ax, grid_axis="x")
     protest_df = df[~df["is_control"]] if "is_control" in df.columns else df
     outlier_rate = (protest_df.groupby("event_label")["topic_id"]
@@ -1251,7 +1264,6 @@ def chart_model_performance(df: pd.DataFrame, topic_info_path: str,
     for i, (event, val) in enumerate(outlier_rate.items()):
         ax.text(val+0.3, i, f"{val:.1f}%", va="center", fontsize=8, color=DARK_PLUM)
 
-    # Panel C: per-event topic counts
     ax = axes[2]; _base_style(fig, ax, grid_axis="x")
     event_topics_dir = os.path.join(os.path.dirname(topic_info_path), "event_topics")
     event_info_files = glob.glob(os.path.join(event_topics_dir, "*_topic_info.csv"))
@@ -1307,10 +1319,9 @@ def chart_subgroup_comparison(df: pd.DataFrame, out_dir: str, dpi: int) -> None:
     if heat.empty:
         print("  ⚠️  chart_subgroup_comparison: empty heatmap — skipping."); return
 
-    # Diverging palette centred at 0 — red=negative, white=neutral, green=positive
     vabs = max(abs(heat.values[~np.isnan(heat.values)].max()),
                abs(heat.values[~np.isnan(heat.values)].min()))
-    vabs = max(vabs, 0.05)  # avoid degenerate range
+    vabs = max(vabs, 0.05)
 
     fig, ax = plt.subplots(figsize=(7, max(5, len(heat) * 0.65)))
     fig.patch.set_facecolor(LAVENDER_CREAM)
@@ -1318,7 +1329,7 @@ def chart_subgroup_comparison(df: pd.DataFrame, out_dir: str, dpi: int) -> None:
 
     sns.heatmap(
         heat,
-        cmap="RdYlGn",          # red → yellow → green — clear negative/positive signal
+        cmap="RdYlGn",
         center=0,
         vmin=-vabs, vmax=vabs,
         annot=True, fmt=".2f",
@@ -1380,7 +1391,6 @@ def chart_confusion_matrix(df: pd.DataFrame, out_dir: str, dpi: int,
             protest_df["publisher"].apply(_ideology_score),
             bins=[-3, -0.5, 0.5, 3], labels=["Left", "Centre", "Right"]
         ).astype(str).replace("nan", "Unknown")
-        # Drop unknowns so colour scale is meaningful
         protest_df = protest_df[protest_df["ideology_bin"] != "Unknown"]
         cm = (protest_df.groupby(["ideology_bin", "sentiment_label"])
               .size().unstack("sentiment_label", fill_value=0))
@@ -1394,11 +1404,9 @@ def chart_confusion_matrix(df: pd.DataFrame, out_dir: str, dpi: int,
                        "rows=ideology bin · values=% of row")
         fmt_float   = True
 
-    # Use a 3-colour diverging map: green (positive) → white → red (negative)
-    # For the confusion matrix (raw counts): sequential purple is fine
     if fmt_float:
-        cmap = "RdYlGn_r"   # proxy: positive% = good (green), negative% = red
-        vcenter = 33.3      # equal split baseline for 3 labels
+        cmap = "RdYlGn_r"
+        vcenter = 33.3
         vabs    = max(abs(matrix_vals.max() - vcenter), abs(matrix_vals.min() - vcenter))
         vmin, vmax = vcenter - vabs, vcenter + vabs
         norm = None
@@ -1423,7 +1431,6 @@ def chart_confusion_matrix(df: pd.DataFrame, out_dir: str, dpi: int,
     ax.set_yticklabels(row_labels, color=DARK_PLUM, fontsize=12, fontweight="bold")
     ax.tick_params(length=0)
 
-    # High-contrast cell text — always dark on light cells, white on dark
     thresh = matrix_vals.max() * 0.6
     for i in range(matrix_vals.shape[0]):
         for j in range(matrix_vals.shape[1]):
@@ -1457,7 +1464,7 @@ def chart_workflow_diagram(out_dir: str, dpi: int) -> None:
         "build":     (5.2,  "data",     "build_corpus.py",                   "Merge + deduplicate",                       "corpus_all.parquet"),
         "sentiment": (8.6,  "data",     "sentiment_analysis.py",             "Lingua → opus-mt → VADER",                  "articles_with_sentiment.parquet"),
         "topic":     (12.0, "data",     "topic_model.py",                    "all-MiniLM + BERTopic",                     "articles_with_topics.parquet"),
-        "vis":       (15.8, "data",     "visualise.py",                      "20 charts + bias_report",                   "figures/*.png"),
+        "vis":       (15.8, "data",     "visualise.py",                      "22 charts + bias_report",                   "figures/*.png"),
         "bias":      (18.8, "analysis", "bias_report.csv",                   "Coverage · language\n· ideology stats",     "Supplementary table"),
     }
     arrows = [("collect","build",False),("control","build",True),
@@ -1489,6 +1496,121 @@ def chart_workflow_diagram(out_dir: str, dpi: int) -> None:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
+# ㉓  CHART 19 — PER-EVENT CONTROL WEEK TOPIC PIES  (NEW)
+# ══════════════════════════════════════════════════════════════════════════════
+
+def chart_topic_pies_control_per_event(df: pd.DataFrame, out_dir: str, dpi: int,
+                                        top_n: int) -> None:
+    """
+    One donut chart per matched control week, showing the global-model topic
+    distribution for articles collected during that control period.
+
+    Uses the global friendly_name column (same vocabulary as the protest-week
+    overview pies) so protest and control topic distributions are directly
+    comparable.  Per-event topic models are NOT used here because they were
+    trained on protest-week articles only.
+
+    Output filenames: topic_pie_control_{event_label}.png
+    """
+    if "is_control" not in df.columns:
+        print("  ⚠️  chart_topic_pies_control_per_event: 'is_control' column missing — skipping.")
+        return
+    if "friendly_name" not in df.columns:
+        print("  ⚠️  chart_topic_pies_control_per_event: 'friendly_name' column missing — skipping.")
+        return
+
+    control_df = df[df["is_control"]].copy()
+    if control_df.empty:
+        print("  ⚠️  chart_topic_pies_control_per_event: no control articles found — skipping.")
+        return
+    if "event_label" not in control_df.columns:
+        print("  ⚠️  chart_topic_pies_control_per_event: 'event_label' column missing — skipping.")
+        return
+
+    control_df["friendly_name"] = control_df["friendly_name"].map(_normalise_other)
+
+    for event in sorted(control_df["event_label"].dropna().unique()):
+        sub = control_df[control_df["event_label"] == event]
+        if sub.empty:
+            continue
+
+        slices = _build_slices_normalised(sub, top_n, label_col="friendly_name")
+        if slices.empty:
+            print(f"  ⚠️  [{event}] control week: no topics after slicing — skipping.")
+            continue
+
+        colors, explode, edges = _slice_colors(slices)
+        fig, ax = plt.subplots(figsize=(13, 8))
+        subtitle = (
+            f"n={len(sub):,} articles · global topic model · "
+            f"matched control week for {event.replace('_', ' ').title()}"
+        )
+        _donut_with_legend(
+            fig, ax, slices, colors, explode, edges,
+            title=f"Control Week Topics — {event.replace('_', ' ').title()}",
+            subtitle=subtitle,
+            pct_label="%",
+        )
+        safe = event.replace(" ", "_").replace("/", "-")
+        _save(fig, os.path.join(out_dir, f"topic_pie_control_{safe}.png"), dpi)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# ㉔  CHART 20 — OVERALL NORMALISED CONTROL WEEK TOPIC BREAKDOWN  (NEW)
+# ══════════════════════════════════════════════════════════════════════════════
+
+def chart_topic_pie_control_normalised(df: pd.DataFrame, out_dir: str, dpi: int,
+                                        top_n: int) -> None:
+    """
+    Single donut showing the mean topic proportion across ALL matched control
+    weeks, weighted equally per event (same normalisation logic as the protest
+    overview pie so the two charts are directly comparable).
+
+    Output: topic_pie_control_weeks_normalised.png
+    """
+    if "is_control" not in df.columns:
+        print("  ⚠️  chart_topic_pie_control_normalised: 'is_control' column missing — skipping.")
+        return
+    if "friendly_name" not in df.columns:
+        print("  ⚠️  chart_topic_pie_control_normalised: 'friendly_name' column missing — skipping.")
+        return
+
+    control_df = df[df["is_control"]].copy()
+    if control_df.empty:
+        print("  ⚠️  chart_topic_pie_control_normalised: no control articles found — skipping.")
+        return
+
+    control_df["friendly_name"] = control_df["friendly_name"].map(_normalise_other)
+
+    # Normalise per event then average — identical logic to _build_slices_normalised
+    # with subset_col="event_label", but we call that helper directly.
+    slices = _build_slices_normalised(
+        control_df, top_n,
+        subset_col="event_label" if "event_label" in control_df.columns else None,
+        label_col="friendly_name",
+    )
+    if slices.empty:
+        print("  ⚠️  chart_topic_pie_control_normalised: empty after slicing — skipping.")
+        return
+
+    n_events = (control_df["event_label"].nunique()
+                if "event_label" in control_df.columns else "?")
+
+    colors, explode, edges = _slice_colors(slices)
+    fig, ax = plt.subplots(figsize=(14, 9))
+    _donut_with_legend(
+        fig, ax, slices, colors, explode, edges,
+        title="Topic Distribution: All Control Weeks (Global Model, Normalised)",
+        subtitle=(
+            f"Mean proportion across {n_events} matched control events · "
+            "global topic vocabulary · equal event weighting · ★ = feminist/protest topic"
+        ),
+        pct_label="%",
+    )
+    _save(fig, os.path.join(out_dir, "topic_pie_control_weeks_normalised.png"), dpi)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
 # ⓱  MAIN
 # ══════════════════════════════════════════════════════════════════════════════
 
@@ -1511,9 +1633,6 @@ def main() -> None:
     df["is_control"] = df["is_control"].astype(bool) if "is_control" in df.columns else False
     print(f"  {len(df):,} articles")
 
-    # FIX: derive sentiment_label from sentiment_score if missing.
-    # sentiment_analysis.py saves sentiment_score but not the string label,
-    # so chart_confusion_matrix always skipped with the original code.
     if "sentiment_label" not in df.columns and "sentiment_score" in df.columns:
         df["sentiment_label"] = df["sentiment_score"].apply(
             lambda s: "positive" if s >= 0.05 else ("negative" if s <= -0.05 else "neutral")
@@ -1521,34 +1640,20 @@ def main() -> None:
         print(f"  Derived sentiment_label: {df['sentiment_label'].value_counts().to_dict()}")
 
     # ── Merge topic columns ───────────────────────────────────────────────────
-    # FIX 1: always merge from the parquet regardless of whether topic_id
-    # already exists on df (a stale copy from a previous run would otherwise
-    # block the merge entirely, leaving event_topic_* columns absent).
-    #
-    # FIX 2: expand topic_cols to include event_topic_id / event_topic_label —
-    # the old filter (startswith("topic")) silently dropped those columns
-    # because they start with "event_", causing per-event pies to fall back to
-    # global labels on every run.
-    #
-    # FIX 3: pull "language" from the parquet so the language column is the
-    # Lingua-detected value from sentiment_analysis.py rather than the coarse
-    # publisher→language hardcoded map used previously.
     if os.path.exists(args.topics):
         print(f"Merging topic assignments from {args.topics} ...")
         topics_df = pd.read_parquet(args.topics)
         topic_cols = [
             c for c in topics_df.columns
-            if c.startswith("topic")        # topic_id, topic_id_raw, topic_label
-            or c.startswith("event_topic")  # event_topic_id, event_topic_label
-            or c in ("url", "language")     # pull Lingua-detected language too
+            if c.startswith("topic")
+            or c.startswith("event_topic")
+            or c in ("url", "language")
         ]
         if "url" in df.columns and "url" in topics_df.columns:
-            # Drop stale copies of any columns we are about to merge fresh
             stale = [c for c in topic_cols if c != "url" and c in df.columns]
             if stale:
                 df = df.drop(columns=stale)
             df = df.merge(topics_df[topic_cols], on="url", how="left")
-            # Reconcile language columns if both CSV and parquet had one
             if "language_x" in df.columns and "language_y" in df.columns:
                 df["language"] = df["language_y"].fillna(df["language_x"])
                 df.drop(columns=["language_x", "language_y"], inplace=True)
@@ -1558,9 +1663,7 @@ def main() -> None:
     else:
         print(f"  ⚠️  topics file not found: {args.topics}")
 
-    # ── Publisher-based language fallback for articles still missing language ─
-    # Only applied to rows where language is still NaN after the parquet merge
-    # (e.g. control articles that never passed through sentiment_analysis.py).
+    # ── Publisher-based language fallback ─────────────────────────────────────
     corpus_lang_map = {
         "DW":"DE","SpiegelOnline":"DE","DieZeit":"DE","Tagesschau":"DE","FAZ":"DE","Taz":"DE",
         "DerStandard":"DE","DiePresse":"DE","ORF":"DE","IsraelNachrichten":"DE",
@@ -1581,7 +1684,6 @@ def main() -> None:
     name_map = {row["Topic"]: clean_topic_name(row["Name"]) for _, row in info_df.iterrows()}
 
     if "topic_id" in df.columns:
-        # ← ADD THIS before the filter
         df_unfiltered = df.copy()
         df = df[df["topic_id"].notna() & (df["topic_id"] != -1)].copy()
         df["topic_id"] = df["topic_id"].astype(int)
@@ -1598,7 +1700,6 @@ def main() -> None:
     else:
         print("  ⚠️  No per-event topic maps found — per-event pies will use global labels")
 
-    # Load sparse/fallback metadata written by topic_model.py
     model_notes = _load_event_model_notes(event_topics_dir)
 
     # ── Load control data ─────────────────────────────────────────────────────
@@ -1606,8 +1707,15 @@ def main() -> None:
     if ctrl is not None:
         if "language" not in ctrl.columns:
             ctrl["language"] = ctrl["publisher"].map(corpus_lang_map).fillna("EN")
-        shared   = [c for c in df.columns if c in ctrl.columns]
-        combined = pd.concat([df[shared], ctrl[shared]], ignore_index=True)
+        
+        # Ensure 'friendly_name' matches on the protest dataframe side too
+        df_label_col = next((c for c in ["friendly_name", "topic_label", "topic_name"] if c in df.columns), None)
+        if df_label_col and df_label_col != "friendly_name":
+            df["friendly_name"] = df[df_label_col]
+            
+        # We copy the data over before wiping structural IDs for concatenation
+        shared_cols = [c for c in df.columns if c in ctrl.columns]
+        combined = pd.concat([df[shared_cols], ctrl[shared_cols]], ignore_index=True)
     else:
         combined = df.copy()
 
@@ -1632,6 +1740,10 @@ def main() -> None:
     chart_fairness_metric_comparison(combined, args.out_dir, DPI)
     chart_subgroup_comparison(combined, args.out_dir, DPI)
     chart_confusion_matrix(combined, args.out_dir, DPI, args.confusion_labels)
+
+    # ── Control-week topic breakdowns (NEW) ───────────────────────────────────
+    chart_topic_pies_control_per_event(combined, args.out_dir, DPI, args.top_n)
+    chart_topic_pie_control_normalised(combined, args.out_dir, DPI, args.top_n)
 
     # ── Static diagrams ───────────────────────────────────────────────────────
     chart_pipeline_diagram(args.out_dir, DPI)
