@@ -182,6 +182,10 @@ def clean_topic_name(name: str) -> str:
 def is_feminist(name: str) -> bool:
     return any(k in str(name).lower() for k in FEMINIST_KEYWORDS)
 
+def _subnote(fig: plt.Figure, text: str) -> None:
+    """Helper to add a consistent footnote line to the bottom of charts."""
+    fig.text(0.5, 0.01, text, ha="center", fontsize=9,
+             color=DARK_PLUM, alpha=0.65, style="italic")
 
 def _base_style(fig, ax, grid_axis: str = "both") -> None:
     fig.patch.set_facecolor(LAVENDER_CREAM)
@@ -238,10 +242,6 @@ def _slice_colors(slices: pd.Series) -> tuple[list, list, list]:
             non_fem_idx += 1
     return pie_colors, explode, edge_colors
 
-def _subnote(fig: plt.Figure, text: str) -> None:
-    """Helper to add a consistent footnote line to the bottom of global charts."""
-    fig.text(0.5, 0.01, text, ha="center", fontsize=9,
-             color=DARK_PLUM, alpha=0.65, style="italic")
 
 def _build_slices(counts: pd.Series, top_n: int) -> pd.Series:
     """Raw counts — used for the all-topics inventory chart only."""
@@ -1039,49 +1039,95 @@ def chart_demographic_distribution(df: pd.DataFrame, out_dir: str, dpi: int) -> 
     if "language" not in df.columns:
         print("  ⚠️  chart_demographic_distribution: 'language' missing — skipping."); return
     protest_df = (df[~df["is_control"]] if "is_control" in df.columns else df).copy()
-    # FIX: use _ideology_score for case-insensitive lookup
-    protest_df["ideology_score"] = protest_df["publisher"].apply(_ideology_score)
-    protest_df["ideology_bin"] = pd.cut(
-        protest_df["ideology_score"], bins=[-3,-0.5,0.5,3],
-        labels=["Left","Centre","Right"]).astype(str).replace("nan","Unknown")
+
     lang_pal = {"EN": DEEP_PURPLE, "DE": RASPBERRY, "FR": MUTED_TEAL,
                 "ES": FEMINIST_COLOUR, "OTHER": "#BDBDBD"}
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 7))
+
+    # Country/region map — group publishers by outlet origin
+    OUTLET_REGION: dict[str, str] = {
+        "APNews": "USA", "Reuters": "UK/International", "VoiceOfAmerica": "USA",
+        "WashingtonPost": "USA", "TheNewYorker": "USA", "TheNation": "USA",
+        "TheIntercept": "USA", "RollingStone": "USA", "LATimes": "USA",
+        "BusinessInsider": "USA", "CNBC": "USA", "FoxNews": "USA",
+        "WashingtonTimes": "USA", "FreeBeacon": "USA", "TheGatewayPundit": "USA",
+        "BBC": "UK/International", "TheGuardian": "UK/International",
+        "TheIndependent": "UK/International", "EuronewsEN": "EU/International",
+        "iNews": "UK/International", "DailyMail": "UK/International",
+        "TheTelegraph": "UK/International", "TheSun": "UK/International",
+        "DW": "Germany/DACH", "SpiegelOnline": "Germany/DACH",
+        "DieZeit": "Germany/DACH", "Tagesschau": "Germany/DACH",
+        "FAZ": "Germany/DACH", "Taz": "Germany/DACH",
+        "DerStandard": "Germany/DACH", "DiePresse": "Germany/DACH", "ORF": "Germany/DACH",
+        "CBCNews": "Canada", "NationalPost": "Canada", "TheGlobeAndMail": "Canada",
+        "LeMonde": "France", "LeFigaro": "France", "EuronewsFR": "EU/International",
+        "ElPais": "Spain/LatAm", "ElMundo": "Spain/LatAm", "ElDiario": "Spain/LatAm",
+        "LaVanguardia": "Spain/LatAm", "ABC": "Spain/LatAm", "Publico": "Spain/LatAm",
+        "IsraelNachrichten": "Israel",
+    }
+    REGION_COLOR = {
+        "USA":              "#7F77DD",
+        "UK/International": "#1D9E75",
+        "Germany/DACH":     "#D85A30",
+        "EU/International": "#378ADD",
+        "France":           "#D4537E",
+        "Spain/LatAm":      "#639922",
+        "Canada":           "#BA7517",
+        "Israel":           "#888780",
+    }
+
+    protest_df["region"] = protest_df["publisher"].map(OUTLET_REGION).fillna("Other")
+
+    fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(24, 8))
     fig.patch.set_facecolor(LAVENDER_CREAM)
 
-    _base_style(fig, ax1, grid_axis="y")
-    ideol_lang = protest_df.groupby(["ideology_bin","language"]).size().reset_index(name="n")
-    bins  = ["Left","Centre","Right","Unknown"]
-    x_pos = np.arange(len(bins)); bottom = np.zeros(len(bins))
-    for lang in ["EN","DE","FR","ES","OTHER"]:
-        sub  = ideol_lang[ideol_lang["language"]==lang].set_index("ideology_bin")
-        vals = np.array([sub.loc[b,"n"] if b in sub.index else 0 for b in bins])
-        if vals.sum() == 0: continue
-        ax1.bar(x_pos, vals, bottom=bottom, color=lang_pal.get(lang,"#BDBDBD"), label=lang, alpha=0.9)
-        bottom += vals
-    ax1.set_xticks(x_pos); ax1.set_xticklabels(bins, color=DARK_PLUM)
-    ax1.set_ylabel("Number of Articles", color=DARK_PLUM)
-    ax1.set_title("A — Article Volume by Outlet Ideology × Language", fontweight="bold", color=DARK_PLUM)
-    ax1.legend(title="Language", frameon=False, fontsize=9)
-
-    _base_style(fig, ax2, grid_axis="x")
-    event_lang = protest_df.groupby(["event_label","language"]).size().reset_index(name="n")
+    # ── Panel A: language by event ────────────────────────────────────────────
+    _base_style(fig, ax1, grid_axis="x")
+    event_lang = protest_df.groupby(["event_label", "language"]).size().reset_index(name="n")
     events = sorted(protest_df["event_label"].dropna().unique())
     y_pos  = np.arange(len(events)); left = np.zeros(len(events))
-    for lang in ["EN","DE","FR","ES","OTHER"]:
-        sub  = event_lang[event_lang["language"]==lang].set_index("event_label")
-        vals = np.array([sub.loc[e,"n"] if e in sub.index else 0 for e in events])
+    for lang in ["EN", "DE", "FR", "ES", "OTHER"]:
+        sub  = event_lang[event_lang["language"] == lang].set_index("event_label")
+        vals = np.array([sub.loc[e, "n"] if e in sub.index else 0 for e in events])
         if vals.sum() == 0: continue
-        ax2.barh(y_pos, vals, left=left, color=lang_pal.get(lang,"#BDBDBD"), label=lang, alpha=0.9)
+        ax1.barh(y_pos, vals, left=left, color=lang_pal[lang], label=lang, alpha=0.9)
         left += vals
-    ax2.set_yticks(y_pos)
-    ax2.set_yticklabels([e.replace("_"," ") for e in events], color=DARK_PLUM, fontsize=9)
-    ax2.set_xlabel("Number of Articles", color=DARK_PLUM)
-    ax2.set_title("B — Article Volume by Event × Language", fontweight="bold", color=DARK_PLUM)
-    ax2.legend(title="Language", frameon=False, fontsize=9)
+    ax1.set_yticks(y_pos)
+    ax1.set_yticklabels([e.replace("_", " ") for e in events], color=DARK_PLUM, fontsize=9)
+    ax1.set_xlabel("Number of articles", color=DARK_PLUM)
+    ax1.set_title("A — Articles by event × language", fontweight="bold", color=DARK_PLUM)
+    ax1.legend(title="Language", frameon=False, fontsize=9)
 
-    fig.suptitle("Demographic Distribution of the Corpus",
+    # ── Panel B: publisher article volume, coloured by region ─────────────────
+    _base_style(fig, ax2, grid_axis="x")
+    pub_counts = protest_df.groupby("publisher").size().sort_values()
+    pub_regions = protest_df.groupby("publisher")["region"].first()
+    colors = [REGION_COLOR.get(pub_regions.get(p, "Other"), "#BDBDBD") for p in pub_counts.index]
+    ax2.barh(pub_counts.index, pub_counts.values, color=colors, alpha=0.88)
+    ax2.set_xlabel("Number of articles", color=DARK_PLUM)
+    ax2.set_title("B — Article volume by publisher", fontweight="bold", color=DARK_PLUM)
+    ax2.tick_params(axis="y", labelsize=8)
+    handles = [mpatches.Patch(color=c, label=r)
+               for r, c in REGION_COLOR.items()
+               if r in pub_regions.values]
+    ax2.legend(handles=handles, title="Region", frameon=False, fontsize=8,
+               bbox_to_anchor=(1, 1), loc="upper left")
+
+    # ── Panel C: region totals ────────────────────────────────────────────────
+    _base_style(fig, ax3, grid_axis="x")
+    region_counts = protest_df.groupby("region").size().sort_values()
+    rcolors = [REGION_COLOR.get(r, "#BDBDBD") for r in region_counts.index]
+    bars = ax3.barh(region_counts.index, region_counts.values, color=rcolors, alpha=0.88)
+    for bar, val in zip(bars, region_counts.values):
+        ax3.text(bar.get_width() + region_counts.max() * 0.01,
+                 bar.get_y() + bar.get_height() / 2,
+                 f"{val:,}", va="center", fontsize=9, color=DARK_PLUM)
+    ax3.set_xlabel("Number of articles", color=DARK_PLUM)
+    ax3.set_title("C — Articles by outlet region", fontweight="bold", color=DARK_PLUM)
+    ax3.set_xlim(0, region_counts.max() * 1.15)
+
+    fig.suptitle("Corpus demographic distribution",
                  fontsize=15, fontweight="bold", color=DARK_PLUM, y=1.02)
+    _subnote(fig, "Protest articles only · region assigned by outlet country of origin")
     plt.tight_layout()
     _save(fig, os.path.join(out_dir, "demographic_distribution.png"), dpi)
 
@@ -1221,37 +1267,53 @@ def chart_subgroup_comparison(df: pd.DataFrame, out_dir: str, dpi: int) -> None:
         import seaborn as sns
     except ImportError:
         print("  ⚠️  chart_subgroup_comparison: seaborn not installed — skipping.")
-        print("       pip install seaborn")
         return
 
     protest_df = (df[df["is_control"] == False] if "is_control" in df.columns else df).copy()
     if protest_df.empty:
         print("  ⚠️  chart_subgroup_comparison: protest dataset empty — skipping."); return
 
-    # FIX: use _ideology_score for case-insensitive lookup
-    protest_df["ideology_score"] = protest_df["publisher"].apply(_ideology_score)
-    protest_df["ideology_bin"] = protest_df["ideology_score"].apply(
+    protest_df["ideology_bin"] = protest_df["publisher"].apply(_ideology_score).apply(
         lambda s: "Unknown" if pd.isna(s) else ("Left" if s < -0.3 else ("Right" if s > 0.3 else "Centre")))
     protest_df = protest_df[protest_df["ideology_bin"] != "Unknown"]
 
-    heat = (protest_df.groupby(["event_label","ideology_bin"])["sentiment_score"]
-            .mean().unstack("ideology_bin").fillna(0))
-    cols = [c for c in ["Left","Centre","Right"] if c in heat.columns]
+    heat = (protest_df.groupby(["event_label", "ideology_bin"])["sentiment_score"]
+            .mean().unstack("ideology_bin").fillna(np.nan))
+    cols = [c for c in ["Left", "Centre", "Right"] if c in heat.columns]
     heat = heat[cols]
     if heat.empty:
         print("  ⚠️  chart_subgroup_comparison: empty heatmap — skipping."); return
 
-    fig, ax = plt.subplots(figsize=(10, max(5, len(heat)*0.45)))
-    _base_style(fig, ax, grid_axis="none")
-    sns.heatmap(heat, cmap="Purples", annot=True, fmt=".2f",
-                linewidths=0.8, linecolor=LAVENDER_CREAM,
-                cbar_kws={"label": "Mean Sentiment Score"}, ax=ax,
-                annot_kws={"fontsize": 9, "color": DARK_PLUM})
-    ax.set_title("Sentiment Across Movements & Ideologies",
+    # Diverging palette centred at 0 — red=negative, white=neutral, green=positive
+    vabs = max(abs(heat.values[~np.isnan(heat.values)].max()),
+               abs(heat.values[~np.isnan(heat.values)].min()))
+    vabs = max(vabs, 0.05)  # avoid degenerate range
+
+    fig, ax = plt.subplots(figsize=(7, max(5, len(heat) * 0.65)))
+    fig.patch.set_facecolor(LAVENDER_CREAM)
+    ax.set_facecolor(LAVENDER_CREAM)
+
+    sns.heatmap(
+        heat,
+        cmap="RdYlGn",          # red → yellow → green — clear negative/positive signal
+        center=0,
+        vmin=-vabs, vmax=vabs,
+        annot=True, fmt=".2f",
+        annot_kws={"fontsize": 12, "fontweight": "bold", "color": DARK_PLUM},
+        linewidths=1.5, linecolor=LAVENDER_CREAM,
+        cbar_kws={"label": "Mean sentiment score", "shrink": 0.8},
+        ax=ax,
+    )
+    ax.set_title("Sentiment across movements & ideologies",
                  fontweight="bold", fontsize=13, color=DARK_PLUM, pad=15)
-    ax.set_xlabel("Publisher Political Leaning", color=DARK_PLUM, labelpad=10)
-    ax.set_ylabel("Protest Event", color=DARK_PLUM, labelpad=10)
-    plt.xticks(rotation=0, color=DARK_PLUM); plt.yticks(rotation=0, color=DARK_PLUM)
+    ax.set_xlabel("Publisher political leaning", color=DARK_PLUM, labelpad=10, fontsize=11)
+    ax.set_ylabel("Protest event", color=DARK_PLUM, labelpad=10, fontsize=11)
+    ax.tick_params(axis="x", labelsize=11, colors=DARK_PLUM, rotation=0)
+    ax.tick_params(axis="y", labelsize=10, colors=DARK_PLUM, rotation=0)
+    ax.set_yticklabels([l.get_text().replace("_", " ") for l in ax.get_yticklabels()])
+    _subnote(fig, "Red = more negative · green = more positive · white = neutral (0) · "
+             "unknown-ideology publishers excluded")
+    plt.tight_layout()
     _save(fig, os.path.join(out_dir, "fairness_subgroup_intersection.png"), dpi)
 
 
@@ -1270,56 +1332,87 @@ def chart_confusion_matrix(df: pd.DataFrame, out_dir: str, dpi: int,
     if labelled_sample_path and os.path.exists(labelled_sample_path):
         try:
             gt     = pd.read_csv(labelled_sample_path)
-            merged = protest_df.merge(gt[["url","human_label"]], on="url", how="inner")
+            merged = protest_df.merge(gt[["url", "human_label"]], on="url", how="inner")
             if merged.empty:
                 raise ValueError("No overlapping URLs")
             cm = pd.crosstab(merged["human_label"].str.lower(),
                              merged["sentiment_label"].str.lower(),
                              rownames=["Human"], colnames=["VADER"]
                              ).reindex(index=label_order, columns=label_order, fill_value=0)
-            n_total  = cm.values.sum()
-            accuracy = np.diag(cm.values).sum() / max(n_total, 1)
-            title      = f"Sentiment Confusion Matrix (n={n_total}; acc={accuracy:.1%})"
-            subtitle   = "Rows=human · Columns=VADER"
-            matrix_vals = cm.values
+            n_total     = cm.values.sum()
+            accuracy    = np.diag(cm.values).sum() / max(n_total, 1)
+            title       = f"Sentiment confusion matrix  (acc={accuracy:.1%})"
+            subtitle    = f"n={n_total:,} · rows=human label · columns=VADER prediction"
+            matrix_vals = cm.values.astype(float)
             col_labels  = label_order
+            row_labels  = label_order
+            fmt_float   = False
         except Exception as e:
             print(f"  ⚠️  Could not load labelled sample ({e}) — falling back to proxy matrix.")
             labelled_sample_path = None
 
     if not (labelled_sample_path and os.path.exists(str(labelled_sample_path or ""))):
         protest_df = protest_df.copy()
-        # FIX: use _ideology_score for case-insensitive lookup
         protest_df["ideology_bin"] = pd.cut(
             protest_df["publisher"].apply(_ideology_score),
-            bins=[-3,-0.5,0.5,3], labels=["Left","Centre","Right"]
-        ).astype(str).replace("nan","Unknown")
-        cm = (protest_df.groupby(["ideology_bin","sentiment_label"])
+            bins=[-3, -0.5, 0.5, 3], labels=["Left", "Centre", "Right"]
+        ).astype(str).replace("nan", "Unknown")
+        # Drop unknowns so colour scale is meaningful
+        protest_df = protest_df[protest_df["ideology_bin"] != "Unknown"]
+        cm = (protest_df.groupby(["ideology_bin", "sentiment_label"])
               .size().unstack("sentiment_label", fill_value=0))
-        cm = cm.div(cm.sum(axis=1), axis=0) * 100
-        cm = cm.reindex(columns=[c for c in label_order if c in cm.columns])
-        matrix_vals = cm.values
-        label_order = cm.index.tolist()
+        cm  = cm.div(cm.sum(axis=1), axis=0) * 100
+        cm  = cm.reindex(columns=[c for c in label_order if c in cm.columns])
+        matrix_vals = cm.values.astype(float)
+        row_labels  = cm.index.tolist()
         col_labels  = cm.columns.tolist()
-        title    = "Sentiment Distribution by Outlet Ideology (proxy validation)"
-        subtitle = "Rows=ideology · Columns=VADER label · Values=% of row"
+        title       = "Sentiment distribution by outlet ideology"
+        subtitle    = ("Proxy validation — no ground-truth labels supplied · "
+                       "rows=ideology bin · values=% of row")
+        fmt_float   = True
 
-    fig, ax = plt.subplots(figsize=(8, 6))
+    # Use a 3-colour diverging map: green (positive) → white → red (negative)
+    # For the confusion matrix (raw counts): sequential purple is fine
+    if fmt_float:
+        cmap = "RdYlGn_r"   # proxy: positive% = good (green), negative% = red
+        vcenter = 33.3      # equal split baseline for 3 labels
+        vabs    = max(abs(matrix_vals.max() - vcenter), abs(matrix_vals.min() - vcenter))
+        vmin, vmax = vcenter - vabs, vcenter + vabs
+        norm = None
+    else:
+        cmap = "Purples"
+        vmin, vmax, vcenter, norm = None, None, None, None
+
+    fig, ax = plt.subplots(figsize=(max(6, len(col_labels) * 2.2),
+                                    max(4, len(row_labels) * 1.4)))
     fig.patch.set_facecolor(LAVENDER_CREAM)
     ax.set_facecolor(LAVENDER_CREAM)
-    im = ax.imshow(matrix_vals, cmap="Purples", aspect="auto")
-    plt.colorbar(im, ax=ax, label="Count / %")
-    ax.set_xticks(range(len(col_labels))); ax.set_xticklabels(col_labels, color=DARK_PLUM, fontsize=11)
-    ax.set_yticks(range(len(label_order))); ax.set_yticklabels(label_order, color=DARK_PLUM, fontsize=11)
-    thresh = matrix_vals.max() / 2.0
+
+    im = ax.imshow(matrix_vals, cmap=cmap, aspect="auto",
+                   vmin=vmin, vmax=vmax)
+    cbar = plt.colorbar(im, ax=ax, shrink=0.8)
+    cbar.set_label("% of row" if fmt_float else "Count", color=DARK_PLUM, fontsize=10)
+    cbar.ax.tick_params(colors=DARK_PLUM)
+
+    ax.set_xticks(range(len(col_labels)))
+    ax.set_xticklabels(col_labels, color=DARK_PLUM, fontsize=12, fontweight="bold")
+    ax.set_yticks(range(len(row_labels)))
+    ax.set_yticklabels(row_labels, color=DARK_PLUM, fontsize=12, fontweight="bold")
+    ax.tick_params(length=0)
+
+    # High-contrast cell text — always dark on light cells, white on dark
+    thresh = matrix_vals.max() * 0.6
     for i in range(matrix_vals.shape[0]):
         for j in range(matrix_vals.shape[1]):
-            val = matrix_vals[i,j]
-            ax.text(j, i, f"{val:.1f}" if isinstance(val,float) else f"{int(val)}",
-                    ha="center", va="center", fontsize=12, fontweight="bold",
-                    color="white" if val > thresh else DARK_PLUM)
-    ax.set_title(title, fontweight="bold", fontsize=12, color=DARK_PLUM, pad=14)
-    ax.set_xlabel(subtitle, color=DARK_PLUM, fontsize=9)
+            val  = matrix_vals[i, j]
+            txt  = f"{val:.1f}%" if fmt_float else f"{int(val)}"
+            dark = val < thresh
+            ax.text(j, i, txt, ha="center", va="center", fontsize=14,
+                    fontweight="bold",
+                    color=DARK_PLUM if dark else "white")
+
+    ax.set_title(title, fontweight="bold", fontsize=13, color=DARK_PLUM, pad=16)
+    _subnote(fig, subtitle)
     plt.tight_layout()
     _save(fig, os.path.join(out_dir, "confusion_matrix_sentiment.png"), dpi)
 
