@@ -1609,6 +1609,77 @@ def chart_topic_pie_control_normalised(df: pd.DataFrame, out_dir: str, dpi: int,
     )
     _save(fig, os.path.join(out_dir, "topic_pie_control_weeks_normalised.png"), dpi)
 
+def chart_topic_pie_control_aggregated_normalised(ctrl_df, output_dir):
+    """
+    Generates a single, aggregated donut chart for all control weeks combined.
+    The topic slices are normalized based on their global distribution across all control data.
+    """
+    import matplotlib.pyplot as plt
+    import os
+
+    # Ensure the target column exists
+    if "friendly_name" not in ctrl_df.columns:
+        print("  ⚠️  chart_topic_pie_control_aggregated_normalised: 'friendly_name' column missing — skipping.")
+        return
+
+    print("📊 Generating aggregated, normalized pie chart for ALL control weeks combined...")
+
+    # Filter out uninformative categories to ensure a clean baseline chart
+    clean_ctrl = ctrl_df[~ctrl_df["friendly_name"].isin(["Unknown", "outlier", "Other"])].copy()
+    
+    if clean_ctrl.empty:
+        print("  ⚠️  No valid topics found to aggregate for control weeks.")
+        return
+
+    # Count frequencies of each topic across the entire control dataset
+    topic_counts = clean_ctrl["friendly_name"].value_counts()
+    total_count = topic_counts.sum()
+    
+    # Calculate percentages
+    percentages = (topic_counts / total_count) * 100
+
+    # Group tiny slices (< 1.5%) into an 'All Other Topics' bucket for visual legibility
+    threshold = 1.5
+    large_slices = percentages[percentages >= threshold]
+    small_slices_sum = percentages[percentages < threshold].sum()
+    
+    if small_slices_sum > 0:
+        large_slices["All Other Topics"] = small_slices_sum
+
+    # Setup colors and figure
+    colors = plt.colormaps["tab20"](range(len(large_slices)))
+    fig, ax = plt.subplots(figsize=(10, 8), facecolor="#f8f1f9")
+    ax.set_facecolor("#f8f1f9")
+
+    # Generate the donut chart
+    wedges, texts, autotexts = ax.pie(
+        large_slices,
+        autopct="%1.1f%%",
+        startangle=140,
+        colors=colors,
+        pctdistance=0.75,
+        textprops=dict(color="#2c1a30", weight="bold", fontsize=10),
+        wedgeprops=dict(width=0.4, edgecolor='w', linewidth=2)  # width=0.4 creates the inner hole
+    )
+
+    # Clean layout and add labels matching the protest charts style
+    legend_labels = [f"{label} — {pct:.1f}%" for label, pct in zip(large_slices.index, large_slices)]
+    ax.legend(
+        wedges, 
+        legend_labels, 
+        title="Control Background Topics", 
+        loc="center left", 
+        bbox_to_anchor=(1, 0.5),
+        frameon=False
+    )
+    
+    ax.set_title("Global Background Topics — Combined Control Weeks Baseline", color="#2c1a30", weight="bold", fontsize=14, pad=20)
+    
+    # Save the output figure
+    out_path = os.path.join(output_dir, "topic_pie_control_aggregated_normalised.png")
+    fig.savefig(out_path, dpi=300, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  Saved → {out_path}")
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ⓱  MAIN
@@ -1744,6 +1815,7 @@ def main() -> None:
     # ── Control-week topic breakdowns (NEW) ───────────────────────────────────
     chart_topic_pies_control_per_event(combined, args.out_dir, DPI, args.top_n)
     chart_topic_pie_control_normalised(combined, args.out_dir, DPI, args.top_n)
+    chart_topic_pie_control_aggregated_normalised(ctrl, args.out_dir)
 
     # ── Static diagrams ───────────────────────────────────────────────────────
     chart_pipeline_diagram(args.out_dir, DPI)
