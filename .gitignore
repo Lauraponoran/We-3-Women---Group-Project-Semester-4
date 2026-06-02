@@ -9,6 +9,7 @@ venv-agent/
 *output
 output*
 
-# exceptions
+# exceptions and specific ignores
 !analysis_output/
+analysis_output/bertopic_model/
 !analysis_output/**
