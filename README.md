@@ -10,12 +10,14 @@ A computational analysis of how ideologically diverse news outlets cover women's
 2. [Pipeline Overview](#pipeline-overview)
 3. [Setup](#setup)
 4. [Scripts](#scripts)
-   - [collect\_articles.py](#collect_articlespy)
-   - [build\_corpus.py](#build_corpuspy)
-   - [sentiment\_analysis.py](#sentiment_analysispy)
-   - [topic\_model.py](#topic_modelpy)
+   - [collect_articles.py](#collect_articlespy)
+   - [build_corpus.py](#build_corpuspy)
+   - [sentiment_analysis.py](#sentiment_analysispy)
+   - [topic_model.py](#topic_modelpy)
    - [visualise.py](#visualisepy)
-   - [failure\_analysis.py](#failure_analysispy)
+   - [process_control_isolated.py](#process_control_isolatedpy)
+   - [failure_analysis.py](#failure_analysispy)
+   - [run_single.sh](#run_singlesh)
 5. [Reproduction Commands](#reproduction-commands)
 6. [Bias Awareness & Mitigation](#bias-awareness--mitigation)
 7. [Design Decisions](#design-decisions)
@@ -67,6 +69,21 @@ topic_model.py                  ← reads translated text -> BERTopic (global + 
 visualise.py                    ← publication figures + bias report
          |
     analysis_output/figures/
+
+process_control_isolated.py     ← optional control-only BERTopic model
+         |                          trained only on control-week articles
+    control/* updated with
+    topic_id / topic_label
+
+failure_analysis.py            ← generates methods appendix figure
+         |
+    analysis_output/figures/
+    +-- appendix_failure_analysis.png
+
+run_single.sh                  ← SLURM batch script for large-scale
+                                  article collection on Snellius HPC
+
+requirements.txt               ← pinned project dependencies
 ```
 
 **Pipeline order matters:** `topic_model.py` must run *after* `sentiment_analysis.py` because it uses the `translated_title` column produced by the sentiment script. Running topic modelling on raw multilingual text causes language-homogeneous clusters. See [Design Decisions](#design-decisions) and `appendix_failure_analysis.png` for details.
@@ -75,17 +92,27 @@ visualise.py                    ← publication figures + bias report
 
 ## Setup
 
+Clone the repository and install dependencies:
+
 ```bash
-pip install fundus bertopic sentence-transformers pandas pyarrow tqdm \
-            lingua-language-detector transformers sentencepiece torch \
-            vaderSentiment matplotlib numpy seaborn
+pip install -r requirements.txt
 ```
+
+Python 3.10+ is recommended.
+
+### Main dependencies
+
+- Fundus (CC-News article collection)
+- BERTopic (topic modelling)
+- Sentence Transformers (semantic embeddings)
+- HDBSCAN + UMAP (topic clustering)
+- VADER Sentiment
+- Pandas / PyArrow (data processing)
+- Ollama (optional local LLM support)
 
 > **Note:** `lingua-language-detector` is the Rust-backed language detection library by Martin Möller. Do **not** install the unrelated `lingua` package — they share a name but are incompatible.
 
-> **Note:** `seaborn` is required by `visualise.py` for the `fairness_subgroup_intersection.png` heatmap chart. Without it that chart is skipped but all others still generate.
-
-Python 3.10+ recommended. GPU optional but speeds up translation significantly; pass `--device cuda` to `sentiment_analysis.py` if available.
+> **Note:** GPU acceleration is optional but significantly speeds up translation during sentiment analysis.
 
 ---
 
@@ -250,23 +277,104 @@ python visualise.py --confusion-labels path/to/labelled_sample.csv
 **Ideological scoring:** publisher ideology scores are hand-assigned based on AllSides and Ad Fontes Media ratings. The `sentiment_ideological_gap.png` figure directly tests whether leaning predicts more negative protest-week coverage by plotting protest−control sentiment delta against ideology score and fitting a trend line.
 
 ---
+### `process_control_isolated.py`
+
+Optional utility script that trains a completely separate BERTopic model using only control-week articles.
+
+Unlike the main pipeline, which applies a shared global topic vocabulary across protest and control weeks, this script creates an independent topic space for the control corpus. This can be useful for diagnostic analyses, robustness checks, or exploratory comparisons.
+
+The script:
+
+1. Loads all files in `control/`
+2. Removes HTML artefacts from titles
+3. Builds a multilingual stopword list
+4. Trains a dedicated BERTopic model on control articles only
+5. Generates topic labels and topic IDs
+6. Writes the results back into the original control CSV and Parquet files
+
+```bash
+python process_control_isolated.py
+```
+
+Outputs:
+
+```text
+analysis_output/
++-- control_topic_info.csv
+
+control/
++-- */*.csv
++-- */*.parquet
+    (updated with topic_id and topic_label columns)
+```
+
+**Note:** This script is not required for reproducing the main results reported in the paper. It was developed as an exploratory robustness analysis.
+---
 
 ### `failure_analysis.py`
 
-Generates `appendix_failure_analysis.png` — a methods appendix figure documenting four alternative approaches that were evaluated and rejected:
+Generates a publication-ready methods appendix figure (`appendix_failure_analysis.png`) documenting alternative modelling strategies that were evaluated and ultimately rejected during pipeline development.
 
-- **Panel A:** Body text vs title-only topic labels (title-only adopted)
-- **Panel B:** Effect of `min_topic_size` on cluster granularity
-- **Panel C:** Fixed vs adaptive `min_topic_size` per event (four pre-2019 events failed with fixed size)
-- **Panel D:** Multilingual embedding collapse before/after translation
-- **Panel E:** Pipeline ordering — topic modelling before vs after translation
+The figure provides transparency about major methodological decisions and demonstrates why the final pipeline configuration was adopted.
+
+Panels include:
+
+- **A:** Full-body topic modelling versus title-only topic modelling
+- **B:** Sensitivity analysis of `min_topic_size`
+- **C:** Fixed versus adaptive per-event topic modelling
+- **D:** Multilingual clustering before and after translation
+- **E:** Pipeline ordering (topic modelling before vs after translation)
 
 ```bash
 python failure_analysis.py
 ```
 
-Output: `appendix_failure_analysis.png` in the current directory.
+Output:
 
+```text
+analysis_output/figures/
++-- appendix_failure_analysis.png
+```
+
+This figure is intended for supplementary materials and reproducibility documentation rather than the main analysis pipeline.
+
+---
+### `run_single.sh`
+
+SLURM batch script used to run article collection on the SURF Snellius HPC cluster.
+
+The script:
+
+- activates the project virtual environment
+- launches `collect_articles.py`
+- stores job logs in a dedicated logs directory
+- allows long-running collection jobs to execute without interruption
+
+Submit a job:
+
+```bash
+sbatch run_single.sh
+```
+
+Monitor jobs:
+
+```bash
+squeue -u <username>
+```
+
+Cancel a job:
+
+```bash
+scancel <jobid>
+```
+
+View logs:
+
+```bash
+tail -f logs/<jobid>.out
+```
+
+This script is only required when running the collection stage on a SLURM-managed computing cluster and is not needed for local execution.
 ---
 
 ## Reproduction Commands
@@ -380,16 +488,17 @@ analysis_output/
 +-- sentiment_publisher_topic.csv
 +-- sentiment_language.csv
 +-- sentiment_publisher_language.csv
++-- control_topic_info.csv
 +-- bertopic_model/
 +-- event_topics/
 |   +-- all_events_topic_dist.csv
 |   +-- event_model_notes.csv
 |   +-- {event_label}_topic_info.csv / _topic_dist.csv
 +-- figures/
-    +-- [22 .png files — see Scripts > visualise.py]
-    +-- bias_report.csv
+|   +-- [22 .png files — see Scripts > visualise.py]
+|   +-- appendix_failure_analysis.png
+|   +-- bias_report.csv
 
-appendix_failure_analysis.png   ← methods appendix figure
 ```
 
 ---
